@@ -1,6 +1,6 @@
 # 전화번호부 프로그램
 # 연락처를 추가, 검색, 삭제 할 수 있음
-# 연락처를 추가, 삭제 했을 때 txt 파일에 변경사항 저장.
+# 연락처를 추가, 삭제 했을 때 txt 파일에 변경사항 저장
 
 class Phonebook:
     def __init__(self, filename="phonebook.txt"):
