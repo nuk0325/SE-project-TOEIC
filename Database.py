@@ -10,10 +10,12 @@ cur.execute('''CREATE TABLE IF NOT EXISTS user (
                id TEXT PRIMARY KEY NOT NULL,
                nickname TEXT DEFAULT '사용자',
                password TEXT NOT NULL,
+               is_admin INTEGER CHECK (is_admin IN(0,1)) DEFAULT 0,
                unit_count INTEGER)''')
 # id : 아이디
 # nickname : 닉네임, 기본값은 '사용자'
 # password : 비밀번호
+# is_admin : 어드민 여부 확인(1이면 어드민)
 # unit_count : 사용자가 설정한 하루 학습 유닛 수
 
 
