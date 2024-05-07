@@ -1,7 +1,7 @@
 import sqlite3
 
 # SQLite 데이터베이스 파일 생성 또는 연결
-conn = sqlite3.connect('user.db')
+conn = sqlite3.connect('word.db')
 cur = conn.cursor()
 
 
@@ -18,12 +18,53 @@ cur.execute('''CREATE TABLE IF NOT EXISTS user (
 # is_admin : 어드민 여부 확인(1이면 어드민)
 # unit_count : 사용자가 설정한 하루 학습 유닛 수
 
+cur.execute('''CREATE TABLE IF NOT EXISTS words_db (
+               line_num INTEGER PRIMARY KEY,
+               word TEXT,
+               mean TEXT,
+               sent TEXT,
+               sent_mean TEXT)''')
+# line_num : index로 사용할 단어의 위치
+# word : 영단어
+# mean : 영단어의 뜻
+# sent : 예문
+# sent_mean : 예문 뜻
+
 
 # 오답노트 테이블
 cur.execute('''CREATE TABLE IF NOT EXISTS wrong (
-               user_id TEXT,
-               wrong_num INTEGER CHECK (wrong_num >= 0),
-               FOREIGN KEY (user_id) REFERENCES user(id))''')
+               user_Id TEXT,
+               line_num INTEGER,
+               is_right INTEGER NOT NULL CHECK (is_right IN(0,1)) DEFAULT 0,
+               FOREIGN KEY (user_id) REFERENCES user(id),
+               FOREIGN KEY (line_num) REFERENCES words_db(line_num),
+               PRIMARY KEY (user_id, line_num))''')
+
+# is_right : 오답노트에 해당되는지(해당 단어가 들어가는지?)
+# 기존에는 사용자별로 해당되는 line_num을 일대다 관계로 집어넣었지만
+# 이건 다대다 관계에 모두 집어넣은 후 해당되는 relationship을 true로 바꾸기
+
+
+
+#즐겨찾기 테이블
+cur.execute('''CREATE TABLE IF NOT EXISTS favorite (
+               user_Id TEXT,
+               line_num INTEGER,
+               is_right INTEGER NOT NULL CHECK (is_right IN(0,1)) DEFAULT 0,
+               FOREIGN KEY (user_id) REFERENCES user(id),
+               FOREIGN KEY (line_num) REFERENCES words_db(line_num),
+               PRIMARY KEY (user_id, line_num))''')
+# 오답노트와 동일
+# 혹시 둘을 같은 테이블로 묶고 wrong_is_right / fav_is_right와 같은 식으로
+# 둘을 합쳐도 좋을까 생각 중
+
+
+
+# 오답노트 테이블
+#cur.execute('''CREATE TABLE IF NOT EXISTS wrong (
+#               user_id TEXT,
+#               wrong_num INTEGER CHECK (wrong_num >= 0),
+#               FOREIGN KEY (user_id) REFERENCES user(id))''')
 # wrong_num : 단어장 파일에서의 index
 # 한 사용자는 여러개의 wrong 레코드를 가진다
 # 2,4,5번째 단어를 틀렸으면 2,4,5라는 wrong_num을 가지고 있는 3개의 레코드가 생성
@@ -31,10 +72,10 @@ cur.execute('''CREATE TABLE IF NOT EXISTS wrong (
 
 
 # 즐겨찾기 테이블
-cur.execute('''CREATE TABLE IF NOT EXISTS favorite (
-               user_id TEXT,
-               fav_num INTEGER CHECK (fav_num >= 0),
-               FOREIGN KEY (user_id) REFERENCES user(id))''')
+#cur.execute('''CREATE TABLE IF NOT EXISTS favorite (
+#               user_id TEXT,
+#               fav_num INTEGER CHECK (fav_num >= 0),
+#               FOREIGN KEY (user_id) REFERENCES user(id))''')
 # wrong과 동일
 
 
