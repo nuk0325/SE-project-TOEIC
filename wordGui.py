@@ -181,6 +181,6 @@ class VocabularyApp(tk.Tk):
         self.show_page(words_page)
 
 if __name__ == "__main__":
-    excel_file = r"C:\Users\CHO\toicProject\hun\toicPojectSH\토익멍 영단어리스트.xlsx"
+    excel_file = r"C:\Users\CHO\toicProject\hun\토익멍 영단어리스트.xlsx"
     app = VocabularyApp(excel_file)
     app.mainloop()
