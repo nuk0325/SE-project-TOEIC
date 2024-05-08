@@ -1,15 +1,16 @@
 import pandas as pd
 import Database as db
 
+df = pd.read_csv("ÌÜ†ÏùµÎ©ç ÏòÅÎã®Ïñ¥Î¶¨Ïä§Ìä∏.csv")
 
-df = pd.read_csv("≈‰¿Õ∏€ øµ¥‹æÓ∏ÆΩ∫∆Æ.csv")
 row_count = len(df)
 column_count = df.shape[1]
 
-for i in range(row_count) :
-    for j in range(column_count) :
-        db.cur.execute('''INSERT INTO words_db VALUES (?)''', 
-                       df.at[i][j])
+for i in range(row_count):
+    for j in range(column_count):
+        word = df.iat[i, j]
+        db.cur.execute('''INSERT INTO words_db (word) VALUES (?)''', (word,))
+        print(word)
 
 db.conn.commit()
 db.conn.close()
