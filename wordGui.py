@@ -159,6 +159,6 @@ class VocabularyApp(tk.Tk):
         self.current_frame.pack(expand=True, fill=tk.BOTH)
 
 if __name__ == "__main__":
-    excel_file = r"C:\Users\CHO\toicProject\SE-project-TOEIC\토익멍 영단어리스트.xlsx"
+    excel_file = r"토익멍 영단어리스트.xlsx"
     app = VocabularyApp(excel_file)
     app.mainloop()
