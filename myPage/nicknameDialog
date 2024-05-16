@@ -1,0 +1,44 @@
+from PyQt6.QtWidgets import QApplication, QDialog, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QMessageBox
+from myPageService import MyPage
+
+class NicknameDialog(QDialog):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Nickname Dialog")
+
+        self.input = QLineEdit()
+
+        layout = QVBoxLayout()
+        layout.addWidget(QLabel("기존 비밀번호"))
+        layout.addWidget(self.input)
+
+        buttonLayout = QHBoxLayout()
+        cancelBtn = QPushButton("취소")
+        cancelBtn.clicked.connect(self.cancel)
+        saveBtn = QPushButton("저장")
+        saveBtn.clicked.connect(self.save)
+        buttonLayout.addWidget(cancelBtn)
+        buttonLayout.addWidget(saveBtn)
+
+        layout.addLayout(buttonLayout)
+        self.setLayout(layout)
+
+    def cancel(self):
+        self.close()
+
+    def save(self):
+        newUserNickname = self.input.text()
+        
+        if checkUserPassword : # checkUserPassword 확인
+            pass
+        elif newUserPassword != checkNewUserPassword : # newUserPassword == checkNewUserPassword 확인
+            msg = QMessageBox()
+            msg.setText("새로운 비밀번호가 일치하지 않습니다")
+
+            okBtn = QPushButton("확인")
+            msg.addButton(okBtn, QMessageBox.ButtonRole.YesRole)
+            
+            msg.exec()
+        else :
+            MyPage.changePassword(newUserPassword)
+            self.close()
