@@ -2,6 +2,8 @@ import sys
 from PyQt6.QtWidgets import QMainWindow, QApplication, QMessageBox, QPushButton, QLineEdit, QVBoxLayout, QLabel, QHBoxLayout, QDialog
 from myPageUI import MyPageUI
 from passwordDialog import PasswordDialog
+from nicknameDialog import NicknameDialog
+from goalDialog import GoalDialog
 
 class MyPage(QMainWindow):
 
@@ -22,11 +24,12 @@ class MyPage(QMainWindow):
         # self.userGoal = getUserGoal()
 
         self.ui.change_password_button.clicked.connect(self.showChangePassword)
+        self.ui.goal_button.clicked.connect(self.showChangeGoal)
 
     # 비밀번호 변경 팝업 띄우기
     def showChangePassword(self):
-        dialog = PasswordDialog()
-        dialog.exec()
+        passwordDialog = PasswordDialog()
+        passwordDialog.exec()
 
     # 비밀번호 변경
     def changePassword(self, newUserPassword):
@@ -36,17 +39,19 @@ class MyPage(QMainWindow):
 
     # 닉네임 변경 팝업 띄우기
     def showChangeNickname(self):
-        pass
+        nicknameDialog = NicknameDialog()
+        nicknameDialog.exec()
 
     # 닉네임 변경
-    def changeNickname(self):
-        pass
-    
-    # 목표 변경 팝업 띄우기
-    def showChangeGoal(self, newUserNickname):
+    def changeNickname(self, newUserNickname):
         self.newUserNickname = newUserNickname
         # DB와 User 클래스에 반영
-        # User.setUserPassword(newUserPassword)
+        # User.setUserNickname(newUserNickname)
+    
+    # 목표 변경 팝업 띄우기
+    def showChangeGoal(self):
+        goalDialog = GoalDialog()
+        goalDialog.exec()
     
     # 목표 변경
     def changeGoal(self):

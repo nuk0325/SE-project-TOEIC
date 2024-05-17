@@ -1,10 +1,9 @@
 from PyQt6.QtWidgets import QApplication, QDialog, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QMessageBox
-from myPageService import MyPage
 
 class PasswordDialog(QDialog):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Password Dialog")
+        self.setWindowTitle("비밀번호 변경")
 
         # 세 개의 사용자 입력 창 생성
         self.input1 = QLineEdit()
@@ -57,5 +56,6 @@ class PasswordDialog(QDialog):
             
             msg.exec()
         else :
+            from myPageService import MyPage # circular import 방지
             MyPage.changePassword(newUserPassword)
             self.close()

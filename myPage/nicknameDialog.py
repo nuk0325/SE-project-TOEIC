@@ -1,15 +1,14 @@
 from PyQt6.QtWidgets import QApplication, QDialog, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QMessageBox
-from myPageService import MyPage
 
 class NicknameDialog(QDialog):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Nickname Dialog")
+        self.setWindowTitle("닉네임 변경")
 
         self.input = QLineEdit()
 
         layout = QVBoxLayout()
-        layout.addWidget(QLabel("기존 비밀번호"))
+        layout.addWidget(QLabel("새로운 닉네임"))
         layout.addWidget(self.input)
 
         buttonLayout = QHBoxLayout()
@@ -29,16 +28,15 @@ class NicknameDialog(QDialog):
     def save(self):
         newUserNickname = self.input.text()
         
-        if checkUserPassword : # checkUserPassword 확인
-            pass
-        elif newUserPassword != checkNewUserPassword : # newUserPassword == checkNewUserPassword 확인
+        if newUserNickname == "":
             msg = QMessageBox()
-            msg.setText("새로운 비밀번호가 일치하지 않습니다")
+            msg.setText("새로운 닉네임을 입력해주세요")
 
             okBtn = QPushButton("확인")
             msg.addButton(okBtn, QMessageBox.ButtonRole.YesRole)
             
             msg.exec()
         else :
-            MyPage.changePassword(newUserPassword)
+            from myPageService import MyPage
+            MyPage.changePassword(newUserNickname)
             self.close()
