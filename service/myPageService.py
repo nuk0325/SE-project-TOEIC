@@ -1,9 +1,11 @@
 import sys
-from PyQt6.QtWidgets import QMainWindow, QApplication, QMessageBox, QPushButton, QLineEdit, QVBoxLayout, QLabel, QHBoxLayout, QDialog
-from myPageUI import MyPageUI
-from passwordDialog import PasswordDialog
-from nicknameDialog import NicknameDialog
-from goalDialog import GoalDialog
+from PyQt6.QtWidgets import *
+from UI.myPageUI import MyPageUI
+from dialog.passwordDialog import PasswordDialog
+from dialog.nicknameDialog import NicknameDialog
+from dialog.goalDialog import GoalDialog
+from dialog.logOutDialog import LogOutDialog
+from Goto import Goto
 
 class MyPage(QMainWindow):
 
@@ -20,11 +22,16 @@ class MyPage(QMainWindow):
         self.ui = MyPageUI()
         self.ui.setupUi(self)
 
-        # self.userNickname = getUserNickname()
-        # self.userGoal = getUserGoal()
+        self.goto = Goto()
+
+        # self.userNickname = User.getUserNickname()
+        # self.userGoal = User.getUserGoal()
 
         self.ui.change_password_button.clicked.connect(self.showChangePassword)
         self.ui.goal_button.clicked.connect(self.showChangeGoal)
+        self.ui.logout_button.clicked.connect(self.showLogOut)
+
+        self.ui.analysis_button.clicked.connect(self.analysisButtonClicked)
 
     # 비밀번호 변경 팝업 띄우기
     def showChangePassword(self):
@@ -34,6 +41,7 @@ class MyPage(QMainWindow):
     # 비밀번호 변경
     def changePassword(self, newUserPassword):
         self.newUserPassword = newUserPassword
+        print(self.newUserPassword)
         # DB와 User 클래스에 반영
         # User.setUserPassword(newUserPassword)
 
@@ -45,6 +53,7 @@ class MyPage(QMainWindow):
     # 닉네임 변경
     def changeNickname(self, newUserNickname):
         self.newUserNickname = newUserNickname
+        print(self.newUserNickname)
         # DB와 User 클래스에 반영
         # User.setUserNickname(newUserNickname)
     
@@ -54,12 +63,25 @@ class MyPage(QMainWindow):
         goalDialog.exec()
     
     # 목표 변경
-    def changeGoal(self):
-        pass
+    def changeGoal(self, newUserGoal):
+        self.newUserGoal = newUserGoal
+        print(self.newUserGoal)
+        # DB와 User 클래스에 반영
+        # User.setUserGoal(newUserGoal)
     
+    # 로그아웃 팝업 띄우기
+    def showLogOut(self):
+        logOutDialog = LogOutDialog()
+        logOutDialog.exec()
+
     # 로그아웃
     def logOut(self):
-        pass
+        self.goto.gotoLogIn()
+        self.close()
+        
+    def analysisButtonClicked(self):
+        self.goto.gotoReviewTest()
+        self.close()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

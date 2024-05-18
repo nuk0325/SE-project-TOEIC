@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QApplication, QDialog, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QMessageBox
+from PyQt6.QtWidgets import QDialog, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QMessageBox
 
 class PasswordDialog(QDialog):
     def __init__(self):
@@ -37,17 +37,13 @@ class PasswordDialog(QDialog):
         newUserPassword = self.input2.text()
         checkNewUserPassword = self.input3.text()
 
-        if checkUserPassword == "" or newUserPassword == "" or checkNewUserPassword == "":
-            msg = QMessageBox()
-            msg.setText("정보를 모두 입력해주세요")
+        # if checkUserPassword : # checkUserPassword 확인
+        #     # User.getUserPassword(UserId)
+        #     pass
 
-            okBtn = QPushButton("확인")
-            msg.addButton(okBtn, QMessageBox.ButtonRole.YesRole)
-            
-            msg.exec()
-        elif checkUserPassword : # checkUserPassword 확인
-            pass
-        elif newUserPassword != checkNewUserPassword : # newUserPassword == checkNewUserPassword 확인
+        # checkUserPassword == newUserPassword 인지 확인
+        
+        if newUserPassword != checkNewUserPassword : # newUserPassword == checkNewUserPassword 확인
             msg = QMessageBox()
             msg.setText("새로운 비밀번호가 일치하지 않습니다")
 
@@ -55,7 +51,15 @@ class PasswordDialog(QDialog):
             msg.addButton(okBtn, QMessageBox.ButtonRole.YesRole)
             
             msg.exec()
+        elif (checkUserPassword == "") or (newUserPassword == "") or (checkNewUserPassword == ""):
+            msg = QMessageBox()
+            msg.setText("정보를 모두 입력해주세요")
+
+            okBtn = QPushButton("확인")
+            msg.addButton(okBtn, QMessageBox.ButtonRole.YesRole)
+            
+            msg.exec()
         else :
             from myPageService import MyPage # circular import 방지
-            MyPage.changePassword(newUserPassword)
+            MyPage.changePassword(self, newUserPassword)
             self.close()

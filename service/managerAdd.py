@@ -1,6 +1,6 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow
-from reviewTestUI import Ui_MainWindow  # reviewTestUI UI 코드가 있는 파일명
+from UI.managerAddUI import Ui_MainWindow
 
 class MyApp(QMainWindow):
     def __init__(self):

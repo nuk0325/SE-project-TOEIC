@@ -1,4 +1,5 @@
-from PyQt6.QtWidgets import QApplication, QDialog, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QMessageBox, QComboBox
+from PyQt6.QtWidgets import QDialog, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QComboBox
+from PyQt6.QtCore import Qt
 
 class GoalDialog(QDialog):
     def __init__(self):
@@ -12,9 +13,16 @@ class GoalDialog(QDialog):
         self.input.addItem("4")
         self.input.addItem("5")
 
+        msg1 = QLabel("목표 학습 유닛 수")
+        msg1.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        msg2 = QLabel("\n목표 학습 유닛 수를 설정합니다\n\n각 유닛의 테스트 문제를 모두 맞춰야\n해당 유닛을 학습한 것으로 측정됩니다\n\n설정한 목표 학습량만큼 학습하여\n강아지를 성장시켜보세요!")
+        msg2.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
         layout = QVBoxLayout()
-        layout.addWidget(QLabel("목표 학습 유닛 수"))
+        layout.addWidget(msg1)
         layout.addWidget(self.input)
+        layout.addWidget(msg2)
 
         buttonLayout = QHBoxLayout()
         cancelBtn = QPushButton("취소")
@@ -31,17 +39,9 @@ class GoalDialog(QDialog):
         self.close()
 
     def save(self):
-        newUserNickname = self.input.text()
-        
-        if newUserNickname == "":
-            msg = QMessageBox()
-            msg.setText("새로운 닉네임을 입력해주세요")
+        from myPageService import MyPage
 
-            okBtn = QPushButton("확인")
-            msg.addButton(okBtn, QMessageBox.ButtonRole.YesRole)
-            
-            msg.exec()
-        else :
-            from myPageService import MyPage
-            MyPage.changePassword(newUserNickname)
-            self.close()
+        newUserGoal = self.input.currentIndex() + 1
+        MyPage.changeGoal(self, newUserGoal)
+        self.close()
+
