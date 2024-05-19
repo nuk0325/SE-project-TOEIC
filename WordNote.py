@@ -2,11 +2,52 @@ import sys
 sys.path.append('DB') # 아마 sevice같은거 import해서 거기다가 맡길 듯
 import sqlite3
 from Goto import Goto
+from DBcontrol import DBcontrol
 
+class Word :
+    __wordName = ""
+    __fav_is_right = False
+    
+    def __init__(self, idx) :
+        conn = sqlite3.connect('word.db')
+        cur = conn.cursor()
+        user_id = "hello world"
+        self.__wordName = cur.execute('''SELECT words_db SET word WHERE user_id = ? AND line_num = ?, (user_id, idx)''')
+        self.__fav_is_right = self.__checkBookmark(idx)
+        
+    def __checkBookmark(self, idx) :
+        conn = sqlite3.connect('word.db')
+        cur = conn.cursor()
+        user_id = "hello world"
+        boolean = cur.execute('''SELECT wro_fav SET fav_is_right WHERE user_id = ? AND line_num = ?, (user_id, idx)''')
+        if boolean == True :
+            return True
+        else :
+            return False
+        
+    def openMeaning(self) :
+        pass
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 class WordNote :
     _titleName = ""
     _wordList = []
     _wordMeanList = [] # 기존 wordMean을 리스트로 만든 것
+    _testChoice = False
     
     def __init__(self, recievedWordList) :
         self._wordList = recievedWordList
@@ -28,16 +69,17 @@ class WordNote :
     
     def showWordMean(self, wordId) :
         if self._wordMeanList[wordId] == 0 :
-            self._wordList[wordId] = 1
+            self._wordMeanList[wordId] = 1
             # wordId번째 뜻 보기 열리게 하기? 
         else :
-            self._wordList[wordId] = 0
+            self._wordMeanList[wordId] = 0
             # wordId번째 뜻 보기 닫히게 하기?
     
     def showWordMeanAll(self) : # 전체 단어/뜻 보기
         for i in range(len(self._wordList)) :
             if self._wordMeanList[i] == 0 :
                 self.showWordMean(i)
+                
                 
     def use_gotoHome() :
         Goto.gotoHome()
