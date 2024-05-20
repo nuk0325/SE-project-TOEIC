@@ -1,3 +1,7 @@
+'''
+Goto Class
+'''
+
 class Goto():
     def gotoLogIn(self):
         print("go to Log-In Page")
