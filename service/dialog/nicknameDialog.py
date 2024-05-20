@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from PyQt6.QtWidgets import QDialog, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QMessageBox
 
 class NicknameDialog(QDialog):
@@ -38,5 +40,7 @@ class NicknameDialog(QDialog):
             msg.exec()
         else :
             from myPageService import MyPage
-            MyPage.changePassword(newUserNickname)
+
+            myPage = MyPage()
+            myPage.changePassword(newUserNickname)
             self.close()

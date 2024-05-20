@@ -160,12 +160,3 @@ class MyPageUI(object):
         self.goal_progress_label.setText(_translate("MyPageUI", "목표 유닛"))
         self.level_progress_label.setText(_translate("MyPageUI", "목표 유닛"))
 
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MyPageUI = QtWidgets.QMainWindow()
-    ui = Ui_MyPageUI()
-    ui.setupUi(MyPageUI)
-    MyPageUI.show()
-    sys.exit(app.exec())

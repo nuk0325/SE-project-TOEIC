@@ -23,7 +23,9 @@ class LogOutDialog(QDialog):
 
     def yes(self):
         from myPageService import MyPage
-        MyPage.logOut(self)
-
+        myPage = MyPage()
+        myPage.logOut()
+        self.close()
+        
     def no(self):
         self.close()

@@ -61,5 +61,6 @@ class PasswordDialog(QDialog):
             msg.exec()
         else :
             from myPageService import MyPage # circular import 방지
-            MyPage.changePassword(self, newUserPassword)
+            myPage = MyPage()
+            myPage.changePassword(newUserPassword)
             self.close()

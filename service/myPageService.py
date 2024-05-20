@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys
 from PyQt6.QtWidgets import *
 from UI.myPageUI import MyPageUI
@@ -28,10 +30,12 @@ class MyPage(QMainWindow):
         # self.userGoal = User.getUserGoal()
 
         self.ui.change_password_button.clicked.connect(self.showChangePassword)
-        self.ui.goal_button.clicked.connect(self.showChangeGoal)
+        self.ui.set_goal_button.clicked.connect(self.showChangeGoal)
         self.ui.logout_button.clicked.connect(self.showLogOut)
-
-        self.ui.analysis_button.clicked.connect(self.analysisButtonClicked)
+        self.ui.wrong_note_button.clicked.connect(self.wrongNoteButtonClicked)
+        self.ui.bookmark_note_button.clicked.connect(self.bookmarkNoteButtonClicked)
+        
+        self.ui.nickname_label.mousePressEvent = self.showChangeNickname
 
     # 비밀번호 변경 팝업 띄우기
     def showChangePassword(self):
@@ -46,9 +50,12 @@ class MyPage(QMainWindow):
         # User.setUserPassword(newUserPassword)
 
     # 닉네임 변경 팝업 띄우기
-    def showChangeNickname(self):
+    def showChangeNickname(self, event):
+        print("nickname clicked!")
         nicknameDialog = NicknameDialog()
         nicknameDialog.exec()
+
+        event.accept()
 
     # 닉네임 변경
     def changeNickname(self, newUserNickname):
@@ -78,9 +85,13 @@ class MyPage(QMainWindow):
     def logOut(self):
         self.goto.gotoLogIn()
         self.close()
-        
-    def analysisButtonClicked(self):
-        self.goto.gotoReviewTest()
+
+    def wrongNoteButtonClicked(self):
+        self.goto.gotoWrongNote()
+        self.close()
+
+    def bookmarkNoteButtonClicked(self):
+        self.goto.gotoBookmarkNote()
         self.close()
 
 if __name__ == "__main__":
