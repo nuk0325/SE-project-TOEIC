@@ -1,0 +1,23 @@
+
+
+
+class HomeController:
+    def __init__(self):
+        self.user_repository = UserRepository()
+    
+    def printMotivationSentence():
+
+        pass
+
+    def printGoalProgressGage(userGoal):
+        
+        pass
+
+    def printDogProgressGage(userGoal):
+        
+        pass
+
+    def showHelpMesseage():
+
+        pass
+
