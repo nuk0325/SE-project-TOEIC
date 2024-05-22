@@ -8,7 +8,7 @@ class DBcontrol :
         
     def checkBookmark(self, idx) :
         user_id = "user 클래스에서 받아오기"
-        self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?, (user_id, idx)''')
+        self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
         result = self.cur.fetchone()
         if result and result[0] == 1 :
             return True
@@ -27,9 +27,9 @@ class DBcontrol :
         else :
             print("올바르지 않은 입력")
         
-    def changeBookmark(self, boolean) :
+    def changeBookmark(self, boolean, idx) :
         user_id = "user 클래스에서 받아오기"
         if boolean :
-            self.cur.execute('''UPDATE wro_fav SET fav_is_right = 0 WHERE user_id = ? AND line_num = ?, (user_id, idx, )''')
+            self.cur.execute('''UPDATE wro_fav SET fav_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         else :
-            self.cur.execute('''UPDATE wro_fav SET fav_is_right = 1 WHERE user_id = ? AND line_num = ?, (user_id, idx, )''')
+            self.cur.execute('''UPDATE wro_fav SET fav_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))

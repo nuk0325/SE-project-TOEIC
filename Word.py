@@ -12,7 +12,7 @@ class Word :
         return self.db.checkBookmark(self._idx)
         
     def Bookmark(self) : # 즐겨찾기 등록 / 삭제
-        self.db.changeBookmark(self.getBookmark())
+        self.db.changeBookmark(self.getBookmark(), self._idx)
 
     def getWordName(self) :
         return self._wordName
