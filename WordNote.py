@@ -1,91 +1,44 @@
 import sys
-sys.path.append('DB') # 아마 sevice같은거 import해서 거기다가 맡길 듯
-import sqlite3
+from PyQt6.QtWidgets import QApplication
 from Goto import Goto
-from DBcontrol import DBcontrol
-
-class Word :
-    __wordName = ""
-    __fav_is_right = False
-    
-    def __init__(self, idx) :
-        conn = sqlite3.connect('word.db')
-        cur = conn.cursor()
-        user_id = "hello world"
-        self.__wordName = cur.execute('''SELECT words_db SET word WHERE user_id = ? AND line_num = ?, (user_id, idx)''')
-        self.__fav_is_right = self.__checkBookmark(idx)
+from Word import Word
+from uitest.WordNoteUI import MainWindow
         
-    def __checkBookmark(self, idx) :
-        conn = sqlite3.connect('word.db')
-        cur = conn.cursor()
-        user_id = "hello world"
-        boolean = cur.execute('''SELECT wro_fav SET fav_is_right WHERE user_id = ? AND line_num = ?, (user_id, idx)''')
-        if boolean == True :
-            return True
-        else :
-            return False
-        
-    def openMeaning(self) :
-        pass
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-class WordNote :
-    _titleName = ""
-    _wordList = []
-    _wordMeanList = [] # 기존 wordMean을 리스트로 만든 것
-    _testChoice = False
-    
+class WordNote :    
     def __init__(self, recievedWordList) :
-        self._wordList = recievedWordList
-        for i in range(self._wordList) :
-            self._wordMeanList.append(0)
-        
-    def addBookMark(wordId) :
-        conn = sqlite3.connect('word.db')
-        cur = conn.cursor()
-        user_id = "hello world" # 받아오기
-        is_right = cur.execute('''SELECT wro_fav SET fav_is_right WHERE user_id = ? AND line_num = ?, (user_id, wordId)''')
-        if is_right == 1 :
-            print("즐겨찾기 불 꺼지게 하기")
-            cur.execute('''UPDATE wro_fav SET fav_is_right = 0 WHERE user_id = ? AND line_num = ?, (user_id, wordId)''')
-        else :
-            print("즐겨찾기 불 켜지게 하기")
-            cur.execute('''UPDATE wro_fav SET fav_is_right = 1 WHERE user_id = ? AND line_num = ?, (user_id, wordId)''')
-        
-    
-    def showWordMean(self, wordId) :
-        if self._wordMeanList[wordId] == 0 :
-            self._wordMeanList[wordId] = 1
-            # wordId번째 뜻 보기 열리게 하기? 
-        else :
-            self._wordMeanList[wordId] = 0
-            # wordId번째 뜻 보기 닫히게 하기?
-    
-    def showWordMeanAll(self) : # 전체 단어/뜻 보기
-        for i in range(len(self._wordList)) :
-            if self._wordMeanList[i] == 0 :
-                self.showWordMean(i)
+        self._titleName = "" # 맨 위에 들어가는 문장 (ex. 학습하기)
+        self._testName = "" # 맨 아래에 들어가는 문장 (ex. 복습 테스트 시작)
+        self._testChoice = False # 단어 / 뜻 전환 여부 (아직 구현 안 됨)
+        self._wordIdxList = recievedWordList # 단어들의index로 구성된 리스트
+        self._wordList = self._returnWordList() # word 객체로 구성된 리스트
+
+    def _returnWordList(self) : # word 객체 리스트 만드는 함수
+        lst = []
+        for idx in self._wordIdxList :  
+            word = Word(idx)
+            lst.append(word)
+        return lst
+
+    def main(self) : # UI 실행 함수
+        frameCount = len(self._wordIdxList)
+        noteLabel = self._titleName
+        testName = self._testName
+        wordObjList = self._wordList
+        app = QApplication(sys.argv)
+        self.window = MainWindow(frameCount, noteLabel, testName, wordObjList)
+        self.window.show()
+        sys.exit(app.exec())
                 
-                
-    def use_gotoHome() :
+    def use_gotoHome() : # 홈으로 가기 버튼
         Goto.gotoHome()
         
     def use_goBack() : # 뒤로가기 버튼은 자식이 오버라이딩해서 구현하게 할 예정
         pass
     
-    def use_gotoSelectTest() :
+    def use_gotoSelectTest() : # 얘도 자식이 오버라이딩
         pass
+
+#if __name__ == "__main__": # 실제 UI 실행 코드
+#    received_word_list = []  # 받은 단어 목록을 입력하세요.
+#    word_note = WordNote(received_word_list)
+#    word_note.main()

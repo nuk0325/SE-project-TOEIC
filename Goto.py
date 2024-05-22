@@ -12,3 +12,12 @@ class Goto :
     
     def gotoBookmarkNoteTest(wordList) :
         pass
+
+    def gotoTestResult() :
+        pass
+
+    def gotoReviewTest(wordList, testChoice) :
+        pass
+
+    def gotoUnit() :
+        pass
