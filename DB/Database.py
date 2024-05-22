@@ -8,10 +8,10 @@ cur = conn.cursor()
 # 사용자 정보 테이블
 cur.execute('''CREATE TABLE IF NOT EXISTS user (
                id TEXT PRIMARY KEY NOT NULL,
-               nickname TEXT DEFAULT '사용자',
                password TEXT NOT NULL,
-               is_admin INTEGER CHECK (is_admin IN(0,1)) DEFAULT 0,
-               unit_count INTEGER)''')
+               nickname TEXT DEFAULT '사용자',
+               unit_count INTEGER,
+               is_admin INTEGER CHECK (is_admin IN(0,1)) DEFAULT 0)''')
 
 # id : 아이디
 # nickname : 닉네임, 기본값은 '사용자'
