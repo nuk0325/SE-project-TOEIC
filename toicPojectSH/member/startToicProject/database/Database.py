@@ -11,7 +11,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS user (
                password TEXT NOT NULL,
                nickname TEXT DEFAULT '사용자',
                unit_count INTEGER,
-               last_date DATE,
+               last_date TEXT,
                today_learned_unit INTEGER,
                is_admin INTEGER CHECK (is_admin IN(0,1)) DEFAULT 0)''')
 
