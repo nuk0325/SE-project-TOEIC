@@ -7,6 +7,7 @@ class ReviewWordNote(WordNote) : # WordNote를 상속받은 유닛 단어장 클
         self._testName = "복습 테스트 시작"
         self._testChoice = False
         self._wordIdxList = recievedWordList # index로 구성된 리스트
+        self.db = self._makeDBobj()
         self._wordList = self._returnWordList()
 
     def use_goBack() :

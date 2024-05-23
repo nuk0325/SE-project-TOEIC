@@ -4,10 +4,9 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame, QHBo
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtGui import QFont
 from Word import Word
-#from WordNote import WordNote
 
 class MainWindow(QMainWindow):
-    def __init__(self, frameCount, noteLabel, testName, wordObjList):
+    def __init__(self, frameCount, noteLabel, testName, wordObjList, parent): # parent : WorNote 클래스를 의미
         self.frameCount = frameCount # 단어 개수
         self.noteLabel = noteLabel # 맨 위에 들어가는 문장 (ex. 학습하기)
         self.testName = testName # 밑에 들어가는 문장 (ex. 복습 테스트 시작)
@@ -29,7 +28,7 @@ class MainWindow(QMainWindow):
         # 뒤로가기 버튼 생성
         back_button = QPushButton("뒤로가기")
         back_button.setFixedSize(QSize(60, 60))
-        back_button.clicked.connect(WordNote.use_goBack)
+        back_button.clicked.connect(parent.use_goBack)
 
         # Label 추가
         word_note_label = QLabel(noteLabel)
@@ -41,7 +40,7 @@ class MainWindow(QMainWindow):
         # 홈으로 가기 버튼 생성
         home_button = QPushButton("홈")
         home_button.setFixedSize(QSize(60, 60))
-        home_button.clicked.connect(WordNote.use_gotoHome)
+        home_button.clicked.connect(parent.use_gotoHome)
 
         # 상단 프레임 레이아웃 설정
         top_layout = QHBoxLayout()

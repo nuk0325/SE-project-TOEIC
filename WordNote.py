@@ -3,6 +3,7 @@ from PyQt6.QtWidgets import QApplication
 from Goto import Goto
 from Word import Word
 from uitest.WordNoteUI import MainWindow
+from DB.DBcontrol import DBcontrol
         
 class WordNote :    
     def __init__(self, recievedWordList) :
@@ -10,12 +11,16 @@ class WordNote :
         self._testName = "" # 맨 아래에 들어가는 문장 (ex. 복습 테스트 시작)
         self._testChoice = False # 단어 / 뜻 전환 여부 (아직 구현 안 됨)
         self._wordIdxList = recievedWordList # 단어들의index로 구성된 리스트
+        self.db = self._makeDBobj()
         self._wordList = self._returnWordList() # word 객체로 구성된 리스트
+
+    def _makeDBobj(self) :
+        return DBcontrol()
 
     def _returnWordList(self) : # word 객체 리스트 만드는 함수
         lst = []
         for idx in self._wordIdxList :  
-            word = Word(idx)
+            word = Word(idx, self.db)
             lst.append(word)
         return lst
 
@@ -25,7 +30,7 @@ class WordNote :
         testName = self._testName
         wordObjList = self._wordList
         app = QApplication(sys.argv)
-        self.window = MainWindow(frameCount, noteLabel, testName, wordObjList)
+        self.window = MainWindow(frameCount, noteLabel, testName, wordObjList, self)
         self.window.show()
         sys.exit(app.exec())
                 

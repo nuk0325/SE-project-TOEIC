@@ -1,8 +1,8 @@
-from DB.DBcontrol import DBcontrol
+#from DB.DBcontrol import DBcontrol
 
 class Word :
-    def __init__(self, idx) :
-        self.db = DBcontrol() # db : 데이터베이스를 총괄하는 객체
+    def __init__(self, idx, db) :
+        self.db = db
         self._idx = idx # 해당 단어의 인덱스
         self._wordName = self.db.getWord(idx, "word")
         self._meaning = self.db.getWord(idx, "meaning")
