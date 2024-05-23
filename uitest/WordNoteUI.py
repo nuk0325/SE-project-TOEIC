@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame, QHBo
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtGui import QFont
 from Word import Word
-from WordNote import WordNote
+#from WordNote import WordNote
 
 class MainWindow(QMainWindow):
     def __init__(self, frameCount, noteLabel, testName, wordObjList):
