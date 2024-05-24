@@ -5,27 +5,52 @@ Goto Class
 class Goto():
     def gotoLogIn(self):
         print("go to Log-In Page")
+        from log_in_service import LogIn
+        self.window = LogIn()
+        self.window.show()
 
     def gotoJoinMembership(self):
         print("go to Join Membership Page")
+        from join_membership_service import JoinMembership
+        self.window = JoinMembership()
+        self.window.show()
 
-    def gotoHome(self):
+    def gotoHome(self, user):
         print("go to Home")
+        from home_service import Home
+        self.window = Home(user)
+        self.window.show()
 
     def gotoMyPage(self):
         print("go to My Page")
+        from my_page_service import MyPage
+        self.window = MyPage()
+        self.window.show()
 
-    def gotoUserUnit(self):
-        print("go to LogIn Page")
+    def gotoUserPart(self):
+        print("go to User Part Page")
+        from user_part_service import UserPart
+        self.window = UserPart()
+        self.window.show()
 
-    def gotoUnitWordNote(self):
+    def gotoUserUnit(self, partNum):
+        print("go to User Unit Page")
+        from user_unit_service import UserUnit
+        self.window = UserUnit(partNum)
+        self.window.show()
+
+    def gotoUnitWordNote(self, partNum, unitNum):
         print("go to Unit Word Note Page")
+        from unit_word_note_service import UnitWordNote
+        received_word_list = [1,3,5,7,8]
+        self.window = UnitWordNote(received_word_list)
+        self.window.show()
 
     def gotoPrepareReviewTest(self):
         print("go to Prepare Review Test Page")
 
     def gotoReviewTest(self):
-        from reviewTest import ReviewTest
+        from service.review_test_service import ReviewTest
         self.window = ReviewTest()
         self.window.show()
 
@@ -40,6 +65,7 @@ class Goto():
 
     def gotoPrepareEntireTest(self):
         print("go to Prepare Entire Test Page")
+        from prepare_entire_test_service import 
 
     def gotoEntireTest(self):
         print("go to Entire Test Page")
@@ -54,7 +80,7 @@ class Goto():
         print("go to Entire Test Wrong Note Page")
 
     def gotoMyPage(self):
-        from myPageService import MyPage
+        from my_page_service import MyPage
         self.window = MyPage()
         self.window.show()
 
@@ -102,4 +128,3 @@ class Goto():
 
     def gotoManagerAddWord(self):
         print("go to Manager Add Word Page")
-

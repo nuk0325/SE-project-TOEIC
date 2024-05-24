@@ -39,7 +39,7 @@ class NicknameDialog(QDialog):
             
             msg.exec()
         else :
-            from myPageService import MyPage
+            from service.my_page_service import MyPage
 
             myPage = MyPage()
             myPage.changePassword(newUserNickname)

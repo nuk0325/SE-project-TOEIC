@@ -1,20 +1,19 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QPushButton
-from UI.managerAddWordUI import ManagerAddWordUI
-from Goto import Goto
+from service.UI.manager_add_word_ui import ManagerAddWordUI
+from service.goto_service import Goto
 
-class MyApp(QMainWindow):
-    word = ""
-    meaning = ""
-    exSentence = ""
-    exSentenceMeaning = ""
-
+class ManagerAddWord(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = ManagerAddWordUI()
         self.ui.setupUi(self)
 
         self.goto = Goto()
+        self.word = ""
+        self.meaning = ""
+        self.exSentence = ""
+        self.exSentenceMeaning = ""
         self.redundancyCheck = 0
 
         self.ui.redundancy_check_button.clicked.connect(self.checkRedundancy)

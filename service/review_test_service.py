@@ -1,7 +1,7 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow
 
-from UI.reviewTestUI import ReviewTestUI
+from UI.review_test_ui import ReviewTestUI
 
 class ReviewTest(QMainWindow):
     def __init__(self, wordList, unitNum, partNum):

@@ -2,22 +2,22 @@
 
 import sys
 from PyQt6.QtWidgets import *
-from UI.myPageUI import MyPageUI
-from dialog.passwordDialog import PasswordDialog
-from dialog.nicknameDialog import NicknameDialog
-from dialog.goalDialog import GoalDialog
-from dialog.logOutDialog import LogOutDialog
-from Goto import Goto
+from UI.my_page_ui import MyPageUI
+from dialog.password_dialog import PasswordDialog
+from dialog.nickname_dialog import NicknameDialog
+from dialog.goal_dialog import GoalDialog
+from dialog.log_out_dialog import LogOutDialog
+from goto_service import Goto
 
 class MyPage(QMainWindow):
 
-    userNickname = "userNickname"
-    newUserNickname = "newUserNickname"
+    userNickname = ""
+    newUserNickname = ""
     userGoal = 3
     newUserGoal = 3
-    checkUserPassword = "checkUserPassword"
-    newUserPassword = "newUserPassword"
-    checkNewUserPassword = "checkNewUserPassword"
+    checkUserPassword = ""
+    newUserPassword = ""
+    checkNewUserPassword = ""
 
     def __init__(self):
         super().__init__()
@@ -29,12 +29,15 @@ class MyPage(QMainWindow):
         # self.userNickname = User.getUserNickname()
         # self.userGoal = User.getUserGoal()
 
+        # 버튼 연결
+        self.ui.back_button.clicked.connect(self.backButtonClicked)
+        self.ui.home_button.clicked.connect(self.homeButtonClicked)
         self.ui.change_password_button.clicked.connect(self.showChangePassword)
         self.ui.set_goal_button.clicked.connect(self.showChangeGoal)
         self.ui.logout_button.clicked.connect(self.showLogOut)
         self.ui.wrong_note_button.clicked.connect(self.wrongNoteButtonClicked)
         self.ui.bookmark_note_button.clicked.connect(self.bookmarkNoteButtonClicked)
-        
+    
         self.ui.nickname_label.mousePressEvent = self.showChangeNickname
 
     # 비밀번호 변경 팝업 띄우기
@@ -54,7 +57,6 @@ class MyPage(QMainWindow):
         print("nickname clicked!")
         nicknameDialog = NicknameDialog()
         nicknameDialog.exec()
-
         event.accept()
 
     # 닉네임 변경
@@ -87,11 +89,21 @@ class MyPage(QMainWindow):
         self.close()
 
     def wrongNoteButtonClicked(self):
-        self.goto.gotoWrongNote()
+        self.goto.gotoEntireTest()
         self.close()
+        # self.goto.gotoWrongNote()
+        # self.close()
 
     def bookmarkNoteButtonClicked(self):
         self.goto.gotoBookmarkNote()
+        self.close()
+
+    def backButtonClicked(self):
+        self.goto.gotoHome()
+        self.close()
+
+    def homeButtonClicked(self):
+        self.goto.gotoHome()
         self.close()
 
 if __name__ == "__main__":

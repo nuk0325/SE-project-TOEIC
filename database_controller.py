@@ -20,9 +20,9 @@ def deleteUser(userId):
     print("삭제 결과")
     printAllUserData()
 
-def addTestUser(userId, userPassword, userNickname):
+def addTestUser(userId, userPassword, userNickname, userGoal=None, is_admin=None):
     cur.execute("INSERT INTO user (id, password, nickname, unit_count, is_admin) VALUES (?, ?, ?, ?, ?)",
-                (userId, userPassword, userNickname, 3, 0))
+                (userId, userPassword, userNickname, userGoal, is_admin))
     conn.commit()
 
     print("추가 결과")
@@ -72,6 +72,10 @@ if __name__ == "__main__":
     # 조작 함수 추가
     # printAllUserData()
     # deleteUser("")
-    addTestUser("sunwook", "1234", "nuk")
+
+    cur.execute("PRAGMA table_info(words_db)")
+    columns = cur.fetchall()
+    for column in columns:
+        print(column)
 
     conn.close()

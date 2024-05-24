@@ -22,7 +22,7 @@ class LogOutDialog(QDialog):
         self.setLayout(layout)
 
     def yes(self):
-        from myPageService import MyPage
+        from my_page_service import MyPage
         myPage = MyPage()
         myPage.logOut()
         self.close()

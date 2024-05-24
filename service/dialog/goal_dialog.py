@@ -39,7 +39,7 @@ class GoalDialog(QDialog):
         self.close()
 
     def save(self):
-        from myPageService import MyPage
+        from service.my_page_service import MyPage
 
         newUserGoal = self.input.currentIndex() + 1
         MyPage.changeGoal(self, newUserGoal)
