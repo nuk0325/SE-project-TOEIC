@@ -21,7 +21,7 @@ def deleteUser(userId):
     printAllUserData()
 
 def addTestUser(userId, userPassword, userNickname):
-    cur.execute("INSERT INTO user (userId, userPassword, userNickname, userGoal, is_admin) VALUES (?, ?, ?, ?, ?)",
+    cur.execute("INSERT INTO user (id, password, nickname, unit_count, is_admin) VALUES (?, ?, ?, ?, ?)",
                 (userId, userPassword, userNickname, 3, 0))
     conn.commit()
 
@@ -71,6 +71,7 @@ if __name__ == "__main__":
 
     # 조작 함수 추가
     # printAllUserData()
-    # deleteUser("wook")
+    # deleteUser("")
+    addTestUser("sunwook", "1234", "nuk")
 
     conn.close()
