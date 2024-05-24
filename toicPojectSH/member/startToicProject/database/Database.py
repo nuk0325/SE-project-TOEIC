@@ -12,8 +12,9 @@ cur.execute('''CREATE TABLE IF NOT EXISTS user (
                nickname TEXT DEFAULT '사용자',
                unit_count INTEGER,
                last_date TEXT,
+               is_admin INTEGER CHECK (is_admin IN(0,1)) DEFAULT 0,
                today_learned_unit INTEGER,
-               is_admin INTEGER CHECK (is_admin IN(0,1)) DEFAULT 0)''')
+               total_learned_unit INTEGER,''')
 
 # id : 아이디
 # nickname : 닉네임, 기본값은 '사용자'
@@ -22,6 +23,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS user (
 # unit_count : 사용자가 설정한 하루 학습 유닛 수
 # last_date  : 홈페이지에 방문한 마지막 날짜
 # today_learned_unit  : 오늘 학습한 유닛 수
+# total_learned_unit : 총 학습한 유닛 수
 
 cur.execute('''CREATE TABLE IF NOT EXISTS words_db (
                line_num INTEGER PRIMARY KEY AUTOINCREMENT,

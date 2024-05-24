@@ -10,7 +10,7 @@ class RegisterService:
             return False, "아이디는 4자 이상, 12자 이하로 입력해주세요"
         if self.user_repository.find_by_id(user_id):
             return False, "이미 존재하는 아이디입니다."
-        user = UserEntity(user_id, nickname, password)
+        user = UserEntity(user_id, password, nickname)
         success = self.user_repository.save(user)
         if success:
             return True, "회원가입에 성공했습니다."

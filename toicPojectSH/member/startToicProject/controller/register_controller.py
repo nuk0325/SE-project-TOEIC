@@ -34,7 +34,7 @@ class RegisterController:
         nickname = self.register_ui.nicname.text()
 
         if self.id_check_result and user_id== self.user_id:
-            success, message = self.register_service.register_user(user_id, nickname, password)
+            success, message = self.register_service.register_user(user_id, password, nickname)
             if success:
                 QMessageBox.information(None, "회원가입 결과", message)
                 # 회원가입 성공 시 로그인페이지로 이동
