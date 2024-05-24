@@ -3,7 +3,7 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame, QHBoxLayout, QVBoxLayout, QLabel, QWidget, QScrollArea
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtGui import QFont
-from Word import Word
+from WordNoteFolder.Word import Word
 
 class MainWindow(QMainWindow):
     def __init__(self, frameCount, noteLabel, testName, wordObjList, parent): # parent : WorNote 클래스를 의미
@@ -108,7 +108,7 @@ class MainWindow(QMainWindow):
 
         # 가운데 레이블
         word_label = QLabel(wordObj.getWordName())
-        word_label.setFont(QFont("Arial", 15))  # 글꼴 크기를 15로 설정
+        word_label.setFont(QFont("Arial", 20))  # 글꼴 크기를 20으로 설정
         word_label.setAlignment(Qt.AlignmentFlag.AlignLeft)
         word_label.setFixedSize(QSize(180, 40))  # 레이블 크기 조정
 

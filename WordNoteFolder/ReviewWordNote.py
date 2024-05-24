@@ -9,9 +9,12 @@ class ReviewWordNote(WordNote) : # WordNote를 상속받은 유닛 단어장 클
         self._wordIdxList = recievedWordList # index로 구성된 리스트
         self.db = self._makeDBobj()
         self._wordList = self._returnWordList()
+        self.main()
 
-    def use_goBack() :
+    def use_goBack(self) :
+        self._dbClose()
         Goto.gotoUnit()
     
     def use_gotoSelectTest(self) :
+        self._dbClose()
         Goto.gotoReviewTest(self._wordIdxList, self._testChoice)

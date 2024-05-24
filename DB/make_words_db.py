@@ -19,11 +19,11 @@ cur = conn.cursor()
 
 # 테이블 생성
 cur.execute('''CREATE TABLE IF NOT EXISTS words_db (
-               line_num INTEGER PRIMARY KEY,
-               word TEXT,
-               mean TEXT,
-               sent TEXT,
-               sent_mean TEXT)''')
+            line_num INTEGER PRIMARY KEY,
+            word TEXT,
+            mean TEXT,
+            sent TEXT,
+            sent_mean TEXT)''')
 
 # 데이터프레임을 SQL 테이블로 삽입
 df.to_sql('words_db', conn, if_exists='replace', index=False)

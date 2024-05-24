@@ -1,13 +1,17 @@
 import sqlite3
 
-
 class DBcontrol :    
     def __init__(self) :
         self.conn = sqlite3.connect('word.db')
         self.cur = self.conn.cursor()
+
+    def closeDB(self) :
+        self.conn.commit()
+        self.conn.close()
+        del self
         
     def checkBookmark(self, idx) :
-        user_id = "user 클래스에서 받아오기"
+        user_id = "justID"
         self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
         result = self.cur.fetchone()
         if result and result[0] == 1 :
@@ -28,7 +32,7 @@ class DBcontrol :
             print("올바르지 않은 입력")
         
     def changeBookmark(self, boolean, idx) :
-        user_id = "user 클래스에서 받아오기"
+        user_id = "justID"
         if boolean :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         else :
