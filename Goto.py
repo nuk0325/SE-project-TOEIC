@@ -18,7 +18,7 @@ class Goto :
 
     def gotoReviewTest(wordList, testChoice) :
         from TestFolder.ReviewTest import ReviewTest
-        reviewTest = ReviewTest(wordList, testChoice)
+        ReviewTest(wordList, testChoice)
 
     def gotoUnit() :
         pass

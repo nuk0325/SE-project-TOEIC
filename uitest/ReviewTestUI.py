@@ -176,7 +176,7 @@ class MainWindow(QMainWindow):
         if sender:
             self.word_meaning_label.setVisible(True)
             self.word_sent_label.setVisible(True)
-            self.update_buttons()
+            #self.update_buttons()
             QtCore.QTimer.singleShot(3000, self.hide_labels)
             self.parent.afterQuestion(sender.text())
             self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
@@ -187,64 +187,3 @@ class MainWindow(QMainWindow):
             
     def changeButtonAndLabel(self) :
         pass
-
-
-
-
-if __name__ == "__main__":
-    class Parent:
-        def getTitle(self):
-            return "복습 테스트"
-        
-        def getUnitNum(self):
-            return "unit 1"
-        
-        def getCorrectCount(self):
-            return self.correct_count
-        
-        def getWrongCount(self):
-            return self.wrong_count
-        
-        def getWordCountLabel(self):
-            return self.word_count_label
-        
-        def getWordName(self):
-            return self.word_name
-        
-        def getMeaning(self) :
-            return self.word_meaning
-        
-        def getSentence(self) :
-            return self.word_sentence
-        
-        def getMeaningList(self):
-            return self.meaning_list
-        
-        def afterQuestion(self, text):
-            print(f"Button clicked: {text}")
-            # Update counts and labels based on the clicked button
-            # This is a placeholder logic. You should replace it with actual logic.
-            self.correct_count = "11"
-            self.wrong_count = "6"
-            self.word_count_label = "6번"
-            self.word_name = "Hydrogen"
-            self.meaning_list = ["수소", "산소", "질소", "헬륨"]
-            self.word_meaning = "수소"
-            self.word_sentence = "수소 예문"
-            #time.sleep(3)
-
-        def __init__(self):
-            self.correct_count = "10"
-            self.wrong_count = "6"
-            self.word_count_label = "5번"
-            self.word_name = "Carbon"
-            self.meaning_list = ["석탄", "석유", "탄소", "탄화수소"]
-            self.word_meaning = "탄소"
-            self.word_sentence = "탄소 예문"
-
-
-    parent = Parent()
-    app = QApplication(sys.argv)
-    main_window = MainWindow(parent)
-    main_window.show()
-    sys.exit(app.exec())

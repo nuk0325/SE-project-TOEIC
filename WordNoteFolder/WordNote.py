@@ -1,6 +1,6 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-from PyQt6.QtWidgets import QApplication
+#from PyQt6.QtWidgets import QApplication
 from Goto import Goto
 from Word import Word
 from uitest.WordNoteUI import MainWindow

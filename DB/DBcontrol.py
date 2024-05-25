@@ -18,6 +18,7 @@ class DBcontrol :
     def getWord(self, idx, option) :
         self.cur.execute('''SELECT word, mean, sent FROM words_db WHERE line_num = ?''', (idx,))
         result = self.cur.fetchone()
+        #if result :
         if option == "word" :
             if result[0] : return result[0]
         elif option == "meaning" :
@@ -26,6 +27,8 @@ class DBcontrol :
             if result[2] : return result[2]
         else :
             print("올바르지 않은 입력")
+        #else :
+            return str(idx)
         
     def changeBookmark(self, boolean, idx) :
         user_id = "justID"
