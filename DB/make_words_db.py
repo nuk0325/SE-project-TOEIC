@@ -1,34 +1,27 @@
 import pandas as pd
-import sqlite3
+import os
+import Database as db
 
-# CSV 파일 경로
-file_path = 'toeic_word_file.csv'
+# 현재 작업 디렉토리를 가져옵니다.
+current_directory = os.getcwd()
 
-# CSV 파일 읽기
+# CSV 파일의 경로를 상대 경로로 지정합니다.
+file_path = os.path.join(current_directory, 'toeic_word_file.csv')
+
 df = pd.read_csv(file_path)
 
-# 열 이름 수정
-df.columns = ['line_num', 'word', 'mean', 'line_num2', 'word2', 'sent', 'sent_mean', 'unnamed']
+df.drop(df.columns[3], axis=1, inplace=True)
+df.drop(df.columns[3], axis=1, inplace=True)
+df.drop(df.columns[5], axis=1, inplace=True)
+# 중복되는 행 2개와 마지막 NaN으로 도배된 행 삭제
 
-# 필요한 열만 선택
-df = df[['line_num', 'word', 'mean', 'sent', 'sent_mean']]
+db.conn = db.sqlite3.connect('word.db')
+db.cur = db.conn.cursor()  # 커서 객체 생성
 
-# 데이터베이스 연결
-conn = sqlite3.connect('word.db')
-cur = conn.cursor()
+row_count = len(df)
+column_count = df.shape[1]
 
-# 테이블 생성
-cur.execute('''CREATE TABLE IF NOT EXISTS words_db (
-            line_num INTEGER PRIMARY KEY,
-            word TEXT,
-            mean TEXT,
-            sent TEXT,
-            sent_mean TEXT)''')
+df.to_sql('words_db', db.conn, if_exists='replace', index=False)
 
-# 데이터프레임을 SQL 테이블로 삽입
-df.to_sql('words_db', conn, if_exists='replace', index=False)
-
-# 변경사항 저장 및 연결 종료
-conn.commit()
-conn.close()
-
+db.conn.commit()
+db.conn.close()

@@ -9,6 +9,7 @@ import time
 
 class Test :  
     def __init__(self, recivedWordList, testChoice) :
+        self._titleName = self._setTitle()
         self._correctCount = 0
         self._wrongCount = 0
         self._wordCount = 1
@@ -19,7 +20,7 @@ class Test :
         self._testChoice = testChoice
         self._wrongWordList = self._makeWrongWordList()
         self.db = DBcontrol()
-        self._titleName = self._setTitle()
+        print(self._titleName)
         self.main()
 
     def main(self) :
@@ -29,7 +30,7 @@ class Test :
         sys.exit(app.exec())
         
     def _setTitle(self) : # 상속해서 오버라이딩 될 메서드
-        self._titleName = ""
+        return ""
     
     def _reflectCorrect(self) :
         self._correctCount += 1
@@ -48,6 +49,7 @@ class Test :
         else :
             self._reflectWrong()
         self._wordCount += 1
+        #time.sleep(3)
         if self._wordCount > len(self._wordList) :
             Goto.gotoTestResult(self._correctWordList, self._wrongWordList)
 

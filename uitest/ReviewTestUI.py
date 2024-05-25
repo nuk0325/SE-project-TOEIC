@@ -97,13 +97,13 @@ class MainWindow(QMainWindow):
         self.word_meaning_label = QLabel(parent.getMeaning(), new_frame)
         self.word_meaning_label.setFont(QtGui.QFont("Arial", 12))
         self.word_meaning_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.word_meaning_label.setVisible(True)
+        self.word_meaning_label.setVisible(False)
 
         # word_sent_label 생성
         self.word_sent_label = QLabel(parent.getSentence(), new_frame)
         self.word_sent_label.setFont(QtGui.QFont("Arial", 12))
         self.word_sent_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.word_sent_label.setVisible(True)
+        self.word_sent_label.setVisible(False)
 
         # 라벨들을 수직 레이아웃에 추가
         new_layout.addWidget(self.word_count_label)
@@ -151,7 +151,6 @@ class MainWindow(QMainWindow):
         # 새 버튼 추가
         self.update_buttons()
         
-#########################################
 
 
     def update_buttons(self):
@@ -175,11 +174,19 @@ class MainWindow(QMainWindow):
     def on_button_click(self):
         sender = self.sender()
         if sender:
-            print("11")
             self.word_meaning_label.setVisible(True)
+            self.word_sent_label.setVisible(True)
+            self.update_buttons()
             self.parent.afterQuestion(sender.text())
             self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
+            QtCore.QTimer.singleShot(3000, self.hide_labels)
             
+    def hide_labels(self):
+        self.word_meaning_label.setVisible(False)
+        self.word_sent_label.setVisible(False)
+            
+    def changeButtonAndLabel(self) :
+        pass
 
 
 
@@ -224,7 +231,7 @@ if __name__ == "__main__":
             self.meaning_list = ["수소", "산소", "질소", "헬륨"]
             self.word_meaning = "수소"
             self.word_sentence = "수소 예문"
-            time.sleep(3)
+            #time.sleep(3)
 
         def __init__(self):
             self.correct_count = "10"

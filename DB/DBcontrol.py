@@ -1,14 +1,10 @@
 import sqlite3
 
+
 class DBcontrol :    
     def __init__(self) :
         self.conn = sqlite3.connect('word.db')
         self.cur = self.conn.cursor()
-
-    def closeDB(self) :
-        self.conn.commit()
-        self.conn.close()
-        del self
         
     def checkBookmark(self, idx) :
         user_id = "justID"
@@ -37,3 +33,8 @@ class DBcontrol :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         else :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
+            
+    def getWrongWordList(self) :
+        user_id = "justID"
+        # 대충 wro_is_right == 1인 리스트 뽑는 코드
+        return [1,2,5,6,7,8]

@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
 class ReviewTest(Test) :
     def _setTitle(self) :
-        self._titleName = "복습 테스트"
+        return "복습 테스트"
     
     def getUnitNum(self) :
         max = 1200
