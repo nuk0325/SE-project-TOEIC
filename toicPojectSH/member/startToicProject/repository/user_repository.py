@@ -30,19 +30,21 @@ class UserRepository:
             print("Error:", e)
             return None
 
-    def update(self, user):
-        try:
-            user_id = user.userId
-            user_data = user.toUpdateUserData()
-            self.cur.execute("UPDATE user SET password=?, nickname=?, unit_count=?, is_admin=?, last_date=?, today_learned_unit=?, total_learned_unit=? WHERE id=?", (*user_data, user_id))
-            self.conn.commit()
-            self.cur.execute("SELECT * FROM user WHERE id=?", (user_id))
-            user_data = self.cur.fetchone()
-            user = UserEntity.toUserEntity(user_id,user_data)
-            return True, user
-        except Exception as e:
-            print("Error:", e)
-            return False, "회원 정보 업데이트에 실패했습니다."  # Other errors
+# user_repository.py
+def update(self, user):
+    try:
+        user_id = user.userId
+        user_data = user.toUpdateUserData()
+        # 수정된 부분: 바인딩 값의 수를 수정하여 일치시킴
+        self.cur.execute("UPDATE user SET password=?, nickname=?, unit_count=?, is_admin=?, last_date=?, today_learned_unit=?, total_learned_unit=? WHERE id=?", user_data + (user_id,))
+        self.conn.commit()
+        self.cur.execute("SELECT * FROM user WHERE id=?", (user_id,))
+        user_data = self.cur.fetchone()
+        user = UserEntity.toUserEntity(user_id, user_data)
+        return True, user
+    except Exception as e:
+        print("Error:", e)
+        return False, "회원 정보 업데이트에 실패했습니다."  # Other errors
 
     def delete(self, user_id):
         try:
