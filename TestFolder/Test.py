@@ -5,7 +5,7 @@ from uitest.ReviewTestUI import MainWindow
 from DB.DBcontrol import DBcontrol
 from Goto import Goto
 import random
-import time
+#import time
 
 class Test :  
     def __init__(self, recivedWordList, testChoice) :
@@ -24,10 +24,10 @@ class Test :
         self.main()
 
     def main(self) :
-        app = QApplication(sys.argv)
+        #app = QApplication(sys.argv)
         self.window = MainWindow(self)
         self.window.show()
-        sys.exit(app.exec())
+        #sys.exit(app.exec())
         
     def _setTitle(self) : # 상속해서 오버라이딩 될 메서드
         return ""

@@ -38,3 +38,7 @@ class DBcontrol :
         user_id = "justID"
         # 대충 wro_is_right == 1인 리스트 뽑는 코드
         return [1,2,5,6,7,8]
+    
+    def closeDB(self) :
+        self.conn.commit()
+        self.conn.close()

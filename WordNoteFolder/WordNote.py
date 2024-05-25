@@ -31,10 +31,10 @@ class WordNote :
         noteLabel = self._titleName
         testName = self._testName
         wordObjList = self._wordList
-        app = QApplication(sys.argv)
+        #app = QApplication(sys.argv)
         self.window = MainWindow(frameCount, noteLabel, testName, wordObjList, self)
         self.window.show()
-        sys.exit(app.exec())
+        #sys.exit(app.exec())
 
     def _dbClose(self) :
         self.db.closeDB()
