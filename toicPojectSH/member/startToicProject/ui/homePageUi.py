@@ -129,8 +129,8 @@ class Ui_homePage(object):
         self.studyHelpBtn.setText(_translate("homePage", "도움말"))
         self.totalTestHelpBtn.setText(_translate("homePage", "도움말"))
         self.myPageHelpBtn.setText(_translate("homePage", "도움말"))
-        # Set dog image based on level
-        dog_level = 1  # This should be set dynamically based on some condition or external input
+        
+    def setDogImageBasedOnLevel(self, dog_level):
         base_width = 100
         base_height = 70
         scale_factor = 1 + 0.1 * (dog_level - 1)
@@ -138,7 +138,6 @@ class Ui_homePage(object):
         new_height = int(base_height * scale_factor)
         self.dogImage.setGeometry(QtCore.QRect(180 - new_width // 2, 250 - new_height, new_width, new_height))
         self.dogImage.setPixmap(QtGui.QPixmap(f"image/dog_level{dog_level}.png"))
-
     def updateSpeechBalloonText(self, new_text):
         self.speechBalloonText.setText(new_text)
 

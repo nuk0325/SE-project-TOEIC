@@ -1,3 +1,4 @@
+
 from repository.user_repository import UserRepository
 from entity.user_entity import UserEntity
 import datetime
@@ -20,12 +21,9 @@ class HomeService:
         #오류 검증할 것 (날짜가 변경되었는지 확인)
         last_date = datetime.datetime.strptime(user.last_date, '%Y-%m-%d').date()
         if not last_date == datetime.date.today():
-            self.today_learned_unit = 0
-            self.last_date = datetime.date.today()
+            self.user.today_learned_unit = 0
             self.user.last_date = datetime.date.today()
             self.user = self.user_repository.update(self.user)
-        else:
-            self.today_learned_unit = user.today_learned_unit
             
     
     def printMotivationSentence():
