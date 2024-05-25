@@ -15,7 +15,7 @@ class Home(QMainWindow):
         self.user = user
         # self.today_learned_unit = user.today_learned_unit
         # self.last_date = user.last_date
-        self.reset_today_goal_if_new_day()
+        # self.reset_today_goal_if_new_day()
 
         self.goto = Goto()
         self.dataManager = DBManager()
@@ -26,16 +26,16 @@ class Home(QMainWindow):
         self.ui.toTotalTestBtn.clicked.connect(self.toTotalTestBtnClicked)
         self.ui.toMyPageBtn.clicked.connect(self.toMyPageBtnClicked)
 
-    def reset_today_goal_if_new_day(self):
-        user =self.dataManager.find_by_id(self.user.userId)
-        #오류 검증할 것 (날짜가 변경되었는지 확인)
-        if not datetime.date.today()==user.last_date:
-            self.today_learned_unit = 0
-            self.last_date = datetime.date.today()
-            self.user.last_date = datetime.date.today()
-            self.user = self.user_repository.update(self.user)
-        else:
-            pass
+    # def reset_today_goal_if_new_day(self):
+    #     user =self.dataManager.find_by_id(self.user.userId)
+    #     #오류 검증할 것 (날짜가 변경되었는지 확인)
+    #     if not datetime.date.today()==user.last_date:
+    #         self.today_learned_unit = 0
+    #         self.last_date = datetime.date.today()
+    #         self.user.last_date = datetime.date.today()
+    #         self.user = self.user_repository.update(self.user)
+    #     else:
+    #         pass
             
     def printMotivationSentence():
         pass

@@ -1,5 +1,5 @@
 import sys
-from PyQt6.QtWidgets import *
+from PyQt6.QtWidgets import QMainWindow, QMessageBox, QPushButton
 
 class SelectTestDialog(QMainWindow):
     def __init__(self):
@@ -37,8 +37,3 @@ class SelectTestDialog(QMainWindow):
         elif msg_box.clickedButton() == btn_english:
             print("사용자가 '영어로 답하기'를 선택했습니다.")
         
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = SelectTestDialog()
-    window.show()
-    sys.exit(app.exec())

@@ -4,12 +4,14 @@ from UI.user_unit_ui import UserUnitUI
 from goto_service import Goto
 
 class UserUnit(QMainWindow):
-    def __init__(self, partNum):
+    def __init__(self, partNum, user):
         super().__init__()
         self.ui = UserUnitUI()
         self.ui.setupUi(self)
 
         self.partNum = partNum
+        self.user = user
+
         self.goto = Goto()
 
         self.ui.back_button.clicked.connect(self.back_button_clicked)#뒤로가기
@@ -33,11 +35,11 @@ class UserUnit(QMainWindow):
 
     #버튼 이벤트
     def back_button_clicked(self):
-        self.goto.gotoUserPart()
+        self.goto.gotoUserPart(self.user)
         self.close()
         
     def home_button_clicked(self):
-        self.goto.gotoHome()
+        self.goto.gotoHome(self.user)
         self.close()
     
     def unit1_button_clicked(self):

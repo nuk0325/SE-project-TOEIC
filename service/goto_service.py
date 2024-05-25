@@ -21,37 +21,37 @@ class Goto():
         self.window = Home(user)
         self.window.show()
 
-    def gotoMyPage(self):
+    def gotoMyPage(self, user):
         print("go to My Page")
         from my_page_service import MyPage
-        self.window = MyPage()
+        self.window = MyPage(user)
         self.window.show()
 
-    def gotoUserPart(self):
+    def gotoUserPart(self, user):
         print("go to User Part Page")
         from user_part_service import UserPart
-        self.window = UserPart()
+        self.window = UserPart(user)
         self.window.show()
 
-    def gotoUserUnit(self, partNum):
+    def gotoUserUnit(self, partNum, user):
         print("go to User Unit Page")
         from user_unit_service import UserUnit
-        self.window = UserUnit(partNum)
+        self.window = UserUnit(partNum, user)
         self.window.show()
 
-    def gotoUnitWordNote(self, partNum, unitNum):
+    def gotoUnitWordNote(self, partNum, unitNum, user):
         print("go to Unit Word Note Page")
         from unit_word_note_service import UnitWordNote
-        received_word_list = [1,3,5,7,8]
-        self.window = UnitWordNote(received_word_list)
+        # received_word_list = [1,3,5,7,8] # 일단 리스트를 준 상태로 연결
+        self.window = UnitWordNote(partNum, unitNum, user)
         self.window.show()
 
     def gotoPrepareReviewTest(self):
         print("go to Prepare Review Test Page")
 
-    def gotoReviewTest(self):
+    def gotoReviewTest(self, user):
         from service.review_test_service import ReviewTest
-        self.window = ReviewTest()
+        self.window = ReviewTest(user)
         self.window.show()
 
     def gotoReviewTestResult(self):
@@ -63,9 +63,11 @@ class Goto():
     def gotoReviewTestWrongNote(self):
         print("go to Review Test Wrong Note Page")
 
-    def gotoPrepareEntireTest(self):
+    def gotoPrepareEntireTest(self, user):
         print("go to Prepare Entire Test Page")
-        from prepare_entire_test_service import 
+        from prepare_entire_test_service import PrepareEntireTest
+        self.window = PrepareEntireTest(user)
+        self.window.show()
 
     def gotoEntireTest(self):
         print("go to Entire Test Page")
@@ -79,9 +81,9 @@ class Goto():
     def gotoEntireTestWrongNote(self):
         print("go to Entire Test Wrong Note Page")
 
-    def gotoMyPage(self):
+    def gotoMyPage(self, user):
         from my_page_service import MyPage
-        self.window = MyPage()
+        self.window = MyPage(user)
         self.window.show()
 
     def gotoWrongNote(self):
