@@ -1,4 +1,4 @@
-
+#from TestFolder.ReviewTest import ReviewTest
 
 class Goto :
     def gotoHome() :
@@ -18,6 +18,7 @@ class Goto :
 
     def gotoReviewTest(wordList, testChoice) :
         pass
+        #ReviewTest(wordList, testChoice)
 
     def gotoUnit() :
         pass

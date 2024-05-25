@@ -97,17 +97,17 @@ class MainWindow(QMainWindow):
         self.word_meaning_label = QLabel(parent.getMeaning(), new_frame)
         self.word_meaning_label.setFont(QtGui.QFont("Arial", 12))
         self.word_meaning_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.word_meaning_label.setVisible(False)
+        self.word_meaning_label.setVisible(True)
 
         # word_sent_label 생성
         self.word_sent_label = QLabel(parent.getSentence(), new_frame)
         self.word_sent_label.setFont(QtGui.QFont("Arial", 12))
         self.word_sent_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.word_sent_label.setVisible(False)
+        self.word_sent_label.setVisible(True)
 
         # 라벨들을 수직 레이아웃에 추가
         new_layout.addWidget(self.word_count_label)
-        new_layout.addStretch(1)  # Stretch 추가
+        #new_layout.addStretch(1)  # Stretch 추가
         new_layout.addWidget(self.word_name_label)
         new_layout.addWidget(self.word_meaning_label)
         new_layout.addWidget(self.word_sent_label)
@@ -122,7 +122,7 @@ class MainWindow(QMainWindow):
         self.grid_layout.setSpacing(10)  # 버튼 사이의 간격 설정
         
         # 버튼 생성 및 그리드 레이아웃에 추가
-        self.update_labels_and_buttons()
+        self.update_buttons()
         
         # 전체 레이아웃 설정
         main_layout = QVBoxLayout(central_widget)
@@ -151,8 +151,7 @@ class MainWindow(QMainWindow):
         # 새 버튼 추가
         self.update_buttons()
         
-        self.word_meaning_label.setVisible(False) ###############################
-        self.word_sent_label.setVisible(False)
+#########################################
 
 
     def update_buttons(self):
@@ -171,12 +170,13 @@ class MainWindow(QMainWindow):
         answer_button.setFont(QtGui.QFont("Arial", 15))  # 폰트 크기 설정
         answer_button.clicked.connect(self.on_button_click)
         self.grid_layout.addWidget(answer_button, 3, 1, 1, 2)  # 3행 1열에 추가하고, span 1x2
+        
 
     def on_button_click(self):
         sender = self.sender()
         if sender:
-            self.word_meaning_label.setVisible(True) ############################
-            self.word_sent_label.setVisible(True)
+            print("11")
+            self.word_meaning_label.setVisible(True)
             self.parent.afterQuestion(sender.text())
             self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
             

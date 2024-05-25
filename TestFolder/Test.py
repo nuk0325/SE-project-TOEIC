@@ -65,6 +65,8 @@ class Test :
         return self.db.getWord(self._wordCount, "word")
 
     def getMeaning(self) :
+        meaning = self.db.getWord(self._wordCount, "meaning")
+        print(meaning)
         return self.db.getWord(self._wordCount, "meaning")
 
     def getSentence(self) :
