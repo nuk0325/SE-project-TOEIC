@@ -1,4 +1,27 @@
 import sqlite3
+def reset_database(db_file):
+    conn = sqlite3.connect(db_file)
+    cur = conn.cursor()
+
+    # 테이블 삭제
+    cur.execute("DROP TABLE IF EXISTS user")
+    cur.execute("DROP TABLE IF EXISTS words_db")
+    cur.execute("DROP TABLE IF EXISTS wro_fav")
+    cur.execute("DROP TABLE IF EXISTS unit")
+    cur.execute("DROP TABLE IF EXISTS day_time")
+
+    # 변경 사항 저장
+    conn.commit()
+
+    # 연결 종료
+    conn.close()
+
+# 데이터베이스 파일 경로
+db_file = 'word.db'
+
+# 데이터베이스 리셋 함수 호출
+reset_database(db_file)
+
 
 # SQLite 데이터베이스 파일 생성 또는 연결
 conn = sqlite3.connect('word.db')
@@ -11,10 +34,10 @@ cur.execute('''CREATE TABLE IF NOT EXISTS user (
                password TEXT NOT NULL,
                nickname TEXT DEFAULT '사용자',
                unit_count INTEGER,
-               last_date TEXT,
                is_admin INTEGER CHECK (is_admin IN(0,1)) DEFAULT 0,
+               last_date TEXT,
                today_learned_unit INTEGER,
-               total_learned_unit INTEGER,''')
+               total_learned_unit INTEGER)''')
 
 # id : 아이디
 # nickname : 닉네임, 기본값은 '사용자'
@@ -91,6 +114,26 @@ cur.execute('''CREATE TABLE IF NOT EXISTS day_time(
 
 # 변경 사항 저장
 conn.commit()
+
+# 연결 종료
+conn.close()
+
+# 데이터베이스 연결
+conn = sqlite3.connect('word.db')
+cur = conn.cursor()
+
+# 사용자 정보 삽입
+cur.execute("INSERT INTO user (id, password, nickname, unit_count, is_admin, last_date, today_learned_unit, total_learned_unit) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            ('user123', 'password123', 'John Doe', 10, 1, '2022-10-15', 5, 100))
+conn.commit()
+
+# 사용자 정보 조회
+cur.execute("SELECT * FROM user")
+rows = cur.fetchall()
+
+# 조회 결과 출력
+for row in rows:
+    print(row)
 
 # 연결 종료
 conn.close()
