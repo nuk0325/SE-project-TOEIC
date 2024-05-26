@@ -39,11 +39,11 @@ class Goto():
         self.window = UserUnit(partNum, user)
         self.window.show()
 
-    def gotoUnitWordNote(partNum, unitNum, user):
+    def gotoUnitWordNote(self, partNum, unitNum):
         print("go to Unit Word Note Page")
-        from unit_word_note_service import UnitWordNote
+        # from unit_word_note_service import UnitWordNote
         # received_word_list = [1,3,5,7,8] # 일단 리스트를 준 상태로 연결
-        UnitWordNote(partNum, unitNum, user)
+        # UnitWordNote(partNum, unitNum)
 
     def gotoPrepareReviewTest(self):
         print("go to Prepare Review Test Page")
