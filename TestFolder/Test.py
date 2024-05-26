@@ -65,7 +65,8 @@ class Test :
     def use_gotoHome() :
         Goto.gotoHome()
 
-
+    def use_gotoTestResult(self) :
+        Goto.gotoTestResult(self._correctIdxList, self._wrongIdxList)
 
     def getTitle(self) :
         return self._titleName

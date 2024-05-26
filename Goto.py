@@ -6,6 +6,10 @@ class Goto :
     
     def goMyPage() :
         pass
+
+    def gotoReviewWordNote(part, unit) :
+        from WordNoteFolder.ReviewWordNote import ReviewWordNote
+        ReviewWordNote(part, unit)
     
     def gotoWrongNoteTest(wordlist) :
         pass
@@ -13,7 +17,9 @@ class Goto :
     def gotoBookmarkNoteTest(wordList) :
         pass
 
-    def gotoTestResult() :
+    def gotoTestResult(correctList, wrongList) :
+        #from TestResultFolder.TestResult import TestResult
+        #TestResult(correctList, wrongList)
         pass
 
     def gotoReviewTest(wordList, testChoice) :

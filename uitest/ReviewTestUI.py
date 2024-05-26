@@ -24,10 +24,12 @@ class MainWindow(QMainWindow):
         # 뒤로가기 버튼 생성
         back_button = QPushButton("←", top_frame)
         back_button.setFixedSize(60, 60)
+        back_button.clicked.connect(lambda: self.closeAndOpen("back"))
         
         # 홈 버튼 생성
         home_button = QPushButton("🏠", top_frame)
         home_button.setFixedSize(60, 60)
+        home_button.clicked.connect(lambda: self.closeAndOpen("home"))
         
         # 중앙 라벨 생성
         self.note_label = QLabel(parent.getTitle(), top_frame)
@@ -48,7 +50,7 @@ class MainWindow(QMainWindow):
         bottom_layout = QHBoxLayout(bottom_frame)
         
         # unit_name 라벨 생성
-        self.unit_name_label = QLabel(parent.getUnitNum(), bottom_frame)
+        self.unit_name_label = QLabel(parent.getUnitNum("unitName"), bottom_frame)
         self.unit_name_label.setFont(QtGui.QFont("Arial", 10))  # 폰트 크기 설정
         bottom_layout.addWidget(self.unit_name_label)
         
@@ -137,6 +139,17 @@ class MainWindow(QMainWindow):
         window_geometry = self.frameGeometry()
         window_geometry.moveCenter(screen_geometry.center())
         self.move(window_geometry.topLeft())
+
+    def closeAndOpen(self, option) :
+        self.close()
+        if option == "back" :
+            self.parent.use_goBack()
+        elif option == "home" :
+            self.parent.use_gotoHome()
+        elif option == "test" :
+            self.parent.use_gotoTestResult()
+        else :
+            print("잘못된 입력입니다.")
 
     def update_labels_and_buttons(self):
         self.correct_count_label.setText(self.parent.getCorrectCount())
