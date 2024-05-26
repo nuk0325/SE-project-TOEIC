@@ -1,6 +1,6 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame, QHBoxLayout, QVBoxLayout, QLabel, QWidget, QScrollArea
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame, QHBoxLayout, QVBoxLayout, QLabel, QWidget, QScrollArea, QMessageBox
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtGui import QFont
 from WordNoteFolder.Word import Word
@@ -81,7 +81,7 @@ class MainWindow(QMainWindow):
         test_button.setFixedSize(QSize(340, 60))
         test_button.setStyleSheet("background-color: rgb(255, 230, 130);")
         test_button.setFont(QFont("Arial", 20))
-        test_button.clicked.connect(lambda: self.closeAndOpen("test"))
+        test_button.clicked.connect(self.showPopup)
 
         bottom_layout.addWidget(test_button, alignment=Qt.AlignmentFlag.AlignCenter)
 
@@ -102,6 +102,35 @@ class MainWindow(QMainWindow):
             self.parent.use_gotoSelectTest()
         else :
             print("잘못된 입력입니다.")
+
+    def showPopup(self):
+        # QMessageBox 생성
+        msg_box = QMessageBox()
+        msg_box.setWindowTitle("테스트 방식 선택")
+        msg_box.setText("테스트 방식을 선택해주세요")
+
+            # 사용자 정의 버튼 생성
+        btn_meaning = QPushButton('뜻으로 답하기')
+        btn_english = QPushButton('영어로 답하기')
+
+            # 버튼을 QMessageBox에 추가
+        msg_box.addButton(btn_meaning, QMessageBox.ButtonRole.YesRole)
+        msg_box.addButton(btn_english, QMessageBox.ButtonRole.NoRole)
+
+        msg_box.clickedButton()
+
+            # 팝업창 실행 및 응답 저장
+        response = msg_box.exec()
+
+            # 사용자 응답에 따른 처리
+        if msg_box.clickedButton() == btn_meaning:
+            print("사용자가 '뜻으로 답하기'를 선택했습니다.")
+            self.parent.setTestChoice(False)
+        elif msg_box.clickedButton() == btn_english:
+            print("사용자가 '영어로 답하기'를 선택했습니다.")
+            self.parent.setTestChoice(True)
+        
+        self.closeAndOpen("test")
 
     def createFrame(self, wordObj):
         frame = QFrame()

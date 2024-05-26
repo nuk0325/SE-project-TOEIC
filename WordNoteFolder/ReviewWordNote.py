@@ -34,4 +34,4 @@ class ReviewWordNote(WordNote) : # WordNote를 상속받은 유닛 단어장 클
         return idxList
     
     def use_gotoSelectTest(self) :
-        Goto.gotoReviewTest(self._wordIdxList, False)
+        Goto.gotoReviewTest(self._wordIdxList, self._testChoice)

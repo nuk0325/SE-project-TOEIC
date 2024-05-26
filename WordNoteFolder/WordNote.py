@@ -10,11 +10,19 @@ class WordNote :
     def __init__(self, recievedWordList) :
         self._titleName = "" # 맨 위에 들어가는 문장 (ex. 학습하기)
         self._testName = "" # 맨 아래에 들어가는 문장 (ex. 복습 테스트 시작)
-        self._testChoice = False # 단어 / 뜻 전환 여부 (아직 구현 안 됨)
+        self._testChoice = False # 단어 / 뜻 전환 여부 (아직 구현 안 됨) / False면 뜻으로 답하기
         self._wordIdxList = recievedWordList # 단어들의index로 구성된 리스트
         self.db = self._makeDBobj()
         self._wordList = self._returnWordList() # word 객체로 구성된 리스트
         self.main()
+
+    def setTestChoice(self, boolean) :
+        if boolean == True :
+            self._testChoice = True
+        elif boolean == False :
+            self._testChoice = False
+        else :
+            print("testChoice 값 오류")
 
     def _makeDBobj(self) :
         return DBcontrol()
