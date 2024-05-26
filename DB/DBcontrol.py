@@ -10,10 +10,11 @@ class DBcontrol :
         user_id = "justID"
         self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
         result = self.cur.fetchone()
-        if result and result[0] == 1 :
-            return True
-        else :
-            return False
+        if result :
+            if result[0] == 1 :
+                return True
+            else :
+                return False
         
     def getWord(self, idx, option) :
         self.cur.execute('''SELECT word, mean, sent FROM words_db WHERE line_num = ?''', (idx,))
@@ -36,7 +37,9 @@ class DBcontrol :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         else :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
-            
+        self.conn.commit()
+
+
     def getWrongWordList(self) :
         user_id = "justID"
         # 대충 wro_is_right == 1인 리스트 뽑는 코드

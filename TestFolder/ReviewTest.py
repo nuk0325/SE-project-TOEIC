@@ -10,7 +10,7 @@ class ReviewTest(Test) :
     
     
     def getUnitNum(self) :
-        num = self._wordIdxList[0] % 120
+        num = self._wordIdxList[0] % 150
         unit = 1
         while num > 10 :
             num -= 10

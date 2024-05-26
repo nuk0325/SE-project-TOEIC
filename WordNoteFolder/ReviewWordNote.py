@@ -25,7 +25,7 @@ class ReviewWordNote(WordNote) : # WordNote를 상속받은 유닛 단어장 클
         Goto.gotoReviewTest(self._wordIdxList, self._testChoice)
         
     def _makeWordIdxList(self, part, unit) :
-        idx = (part-1) * 120 + (unit-1) * 10
+        idx = (part-1) * 150 + (unit-1) * 10
         idxList = []
         for i in range(1, 11) :
             idx += 1
