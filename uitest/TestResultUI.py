@@ -14,26 +14,33 @@ class MainWindow(QMainWindow) :
         self.setCentralWidget(mainWidget)
 
         # 상단 프레임 생성
-        topFrame = QFrame()
+        topFrame = QFrame(mainWidget)
         topFrame.setFixedSize(QSize(360, 70))
         topFrame.setStyleSheet("background-color: rgba(253, 213, 51, 0.97);")
 
         # 뒤로가기 버튼 생성
-        backButton = QPushButton("←")
+        backButton = QPushButton("←", topFrame)
         backButton.setFixedSize(QSize(60, 60))
         backButton.clicked.connect(lambda: self.closeAndOpen("back"))
 
         # 홈으로 가기 버튼 생성
-        homeButton = QPushButton("🏠")
+        homeButton = QPushButton("🏠", topFrame)
         homeButton.setFixedSize(QSize(60, 60))
         homeButton.clicked.connect(lambda: self.closeAndOpen("home"))
 
         # Label 추가
-        word_note_label = QLabel(self.parent.getTitle)
-        word_note_label.setFont(QFont("Arial", 20))
-        word_note_label.setFixedSize(QSize(240, 60))
-        word_note_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        word_note_label.setObjectName("wordNoteName")
+        titleLabel = QLabel(self.parent.getTitle, topFrame)
+        titleLabel.setFont(QFont("Arial", 20))
+        titleLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        topLayout = QHBoxLayout(topFrame)
+        topLayout.addWidget(backButton)
+        topLayout.addWidget(titleLabel)
+        topLayout.addWidget(homeButton)
+
+        middleFrame = QFrame(mainWidget)
+        middleFrame.setFixedSize(360, 270)
+
 
 
 
@@ -44,3 +51,14 @@ class MainWindow(QMainWindow) :
         window_geometry = self.frameGeometry()
         window_geometry.moveCenter(screen_geometry.center())
         self.move(window_geometry.topLeft())
+
+    def closeAndOpen(self, option) :
+        self.close()
+        if option == "back" :
+            self.parent.use_goBack()
+        elif option == "home" :
+            self.parent.use_gotoHome()
+        elif option == "wordNote" :
+            self.parent.use_gotoWordNote()
+        else :
+            print("잘못된 입력입니다.")

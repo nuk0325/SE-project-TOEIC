@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
 
         # Label 추가
         word_note_label = QLabel(noteLabel)
-        word_note_label.setFont(QFont("Arial", 20))
+        word_note_label.setFont(QFont("Han Sans", 20))
         word_note_label.setFixedSize(QSize(240, 60))
         word_note_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         word_note_label.setObjectName("wordNoteName")
@@ -57,6 +57,8 @@ class MainWindow(QMainWindow):
         scroll_area = QScrollArea()
         scroll_area.setWidgetResizable(True)
         scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)  # 수평 스크롤바 비활성화
+        scroll_area.setStyleSheet("background-color: white;")
+
 
         central_widget = QWidget()
         scroll_area.setWidget(central_widget)
@@ -82,7 +84,7 @@ class MainWindow(QMainWindow):
         test_button = QPushButton(testName) ############################
         test_button.setFixedSize(QSize(340, 60))
         test_button.setStyleSheet("background-color: rgb(255, 230, 130);")
-        test_button.setFont(QFont("Arial", 20))
+        test_button.setFont(QFont("Han Sans", 20))
         test_button.clicked.connect(self.showPopup)
 
         bottom_layout.addWidget(test_button, alignment=Qt.AlignmentFlag.AlignCenter)
@@ -153,12 +155,12 @@ class MainWindow(QMainWindow):
         self.updateBookmarkButton(bookmark_button, wordObj.getBookmark()) # 객체가 만들어질 떄 즐겨찾기가 되어있으면 바로 on으로 바꾸기
 
         # 우측 버튼 (의미 열기)
-        open_meaning_button = QPushButton("V")
+        open_meaning_button = QPushButton("∨")
         open_meaning_button.setFixedSize(QSize(40, 40))
 
         # 가운데 레이블
         word_label = QLabel(wordObj.getWordName())
-        word_label.setFont(QFont("Arial", 20))  # 글꼴 크기를 20으로 설정
+        word_label.setFont(QFont("Han Sans", 20))  # 글꼴 크기를 20으로 설정
         word_label.setAlignment(Qt.AlignmentFlag.AlignLeft)
         word_label.setFixedSize(QSize(180, 40))  # 레이블 크기 조정
 
@@ -170,12 +172,12 @@ class MainWindow(QMainWindow):
 
         # 확장 영역 (기본적으로 숨김)
         additional_label1 = QLabel(wordObj.getMeaning())
-        additional_label1.setFont(QFont("Arial", 10))
+        additional_label1.setFont(QFont("Han Sans", 10))
         additional_label1.setAlignment(Qt.AlignmentFlag.AlignLeft)
         additional_label1.setVisible(False)
 
         additional_label2 = QLabel(wordObj.getSentence())
-        additional_label2.setFont(QFont("Arial", 10))
+        additional_label2.setFont(QFont("Han Sans", 10))
         additional_label2.setAlignment(Qt.AlignmentFlag.AlignLeft)
         additional_label2.setVisible(False)
 
@@ -188,11 +190,11 @@ class MainWindow(QMainWindow):
         frame.setLayout(outer_layout)
 
         # 버튼 클릭 이벤트 연결
-        open_meaning_button.clicked.connect(lambda: self.toggleFrameExpansion(frame, additional_label1, additional_label2))
+        open_meaning_button.clicked.connect(lambda checked, frame=frame, button=open_meaning_button, label1=additional_label1, label2=additional_label2: self.toggleFrameExpansion(frame, button, label1, label2))
         bookmark_button.clicked.connect(lambda: self.toggleBookmark(wordObj, bookmark_button))  # 북마크 버튼과 Word 객체의 북마크 메서드 연결
 
         return frame
-    
+
     def updateBookmarkButton(self, bookmark_button, is_bookmarked):
         if is_bookmarked:
             bookmark_button.setText("On")  # 북마크 활성화 상태
@@ -203,16 +205,19 @@ class MainWindow(QMainWindow):
         wordObj.Bookmark()
         self.updateBookmarkButton(bookmark_button, wordObj.getBookmark())
 
-    def toggleFrameExpansion(self, frame, additional_label1, additional_label2):
+    def toggleFrameExpansion(self, frame, button, label1, label2):
         if frame.is_expanded:
             frame.setFixedSize(QSize(340, 50))
-            additional_label1.setVisible(False)
-            additional_label2.setVisible(False)
+            label1.setVisible(False)
+            label2.setVisible(False)
+            button.setText("∨")
         else:
             frame.setFixedSize(QSize(340, 100))
-            additional_label1.setVisible(True)
-            additional_label2.setVisible(True)
+            label1.setVisible(True)
+            label2.setVisible(True)
+            button.setText("∧")  # 추가된 부분
         frame.is_expanded = not frame.is_expanded
+
 
 def main(frameCount, noteLabel, testName, wordObjList):
     # 애플리케이션 생성

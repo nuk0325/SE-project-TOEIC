@@ -34,7 +34,7 @@ class MainWindow(QMainWindow):
         # 중앙 라벨 생성
         self.note_label = QLabel(parent.getTitle(), top_frame)
         self.note_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)  # 가운데 정렬
-        self.note_label.setFont(QtGui.QFont("Arial", 20))  # 폰트 크기 설정
+        self.note_label.setFont(QtGui.QFont("Han Sans", 20))  # 폰트 크기 설정
         
         # 레이아웃 설정
         top_layout = QHBoxLayout(top_frame)
@@ -45,13 +45,14 @@ class MainWindow(QMainWindow):
         # 하단 프레임 생성
         bottom_frame = QFrame(central_widget)
         bottom_frame.setFixedSize(360, 30)
+        bottom_frame.setStyleSheet("background-color : white;")
         
         # 하단 프레임 레이아웃
         bottom_layout = QHBoxLayout(bottom_frame)
         
         # unit_name 라벨 생성
         self.unit_name_label = QLabel(parent.getUnitNum(), bottom_frame)
-        self.unit_name_label.setFont(QtGui.QFont("Arial", 10))  # 폰트 크기 설정
+        self.unit_name_label.setFont(QtGui.QFont("Han Sans", 10))  # 폰트 크기 설정
         bottom_layout.addWidget(self.unit_name_label)
         
         # Stretch 추가
@@ -60,50 +61,51 @@ class MainWindow(QMainWindow):
         # Correct Icon 라벨 생성
         correct_icon_label = QLabel("O", bottom_frame)
         correct_icon_label.setStyleSheet("color: blue;")  # 파란색으로 설정
-        correct_icon_label.setFont(QtGui.QFont("Arial", 9))  # 폰트 크기 설정
+        correct_icon_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
         bottom_layout.addWidget(correct_icon_label)
         
         # Correct Count 라벨 생성
         self.correct_count_label = QLabel(parent.getCorrectCount(), bottom_frame)
-        self.correct_count_label.setFont(QtGui.QFont("Arial", 9))  # 폰트 크기 설정
+        self.correct_count_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
         bottom_layout.addWidget(self.correct_count_label)
         
         # Wrong Icon 라벨 생성
         wrong_icon_label = QLabel("X", bottom_frame)
         wrong_icon_label.setStyleSheet("color: red;")  # 빨간색으로 설정
-        wrong_icon_label.setFont(QtGui.QFont("Arial", 9))  # 폰트 크기 설정
+        wrong_icon_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
         bottom_layout.addWidget(wrong_icon_label)
         
         # Wrong Count 라벨 생성
         self.wrong_count_label = QLabel(parent.getWrongCount(), bottom_frame)
-        self.wrong_count_label.setFont(QtGui.QFont("Arial", 9))  # 폰트 크기 설정
+        self.wrong_count_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
         bottom_layout.addWidget(self.wrong_count_label)
         
         # 새로운 프레임 생성
         new_frame = QFrame(central_widget)
         new_frame.setFixedSize(360, 150)
+        new_frame.setStyleSheet("background-color : white ;")
 
         # 수직 레이아웃 생성
         new_layout = QVBoxLayout(new_frame)
 
         # wordCount 라벨 생성
         self.word_count_label = QLabel(parent.getWordCountLabel(), new_frame)
-        self.word_count_label.setFont(QtGui.QFont("Arial", 12))  # 폰트 크기 설정
+        self.word_count_label.setFont(QtGui.QFont("Han Sans", 12))  # 폰트 크기 설정
         
         # wordName 라벨 생성
         self.word_name_label = QLabel(parent.getWordName(), new_frame)
         self.word_name_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)  # 가운데 정렬
-        self.word_name_label.setFont(QtGui.QFont("Arial", 30))  # 폰트 크기 변경
+        self.word_name_label.setFont(QtGui.QFont("Han Sans", 30))  # 폰트 크기 변경
         
         # word_meaning_label 생성
         self.word_meaning_label = QLabel(parent.getMeaning(), new_frame)
-        self.word_meaning_label.setFont(QtGui.QFont("Arial", 12))
+        self.word_meaning_label.setFont(QtGui.QFont("Han Sans", 12))
         self.word_meaning_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.word_meaning_label.setVisible(False)
 
         # word_sent_label 생성
         self.word_sent_label = QLabel(parent.getSentence(), new_frame)
-        self.word_sent_label.setFont(QtGui.QFont("Arial", 12))
+        self.word_sent_label.setFont(QtGui.QFont("Han Sans", 12))
         self.word_sent_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.word_sent_label.setVisible(False)
 
@@ -118,6 +120,7 @@ class MainWindow(QMainWindow):
         # 추가 프레임 생성 (360x360)
         self.bottom_large_frame = QFrame(central_widget)
         self.bottom_large_frame.setFixedSize(360, 360)
+        self.bottom_large_frame.setStyleSheet("background-color : white;")
         
         # 그리드 레이아웃 생성
         self.grid_layout = QGridLayout(self.bottom_large_frame)
@@ -178,7 +181,7 @@ class MainWindow(QMainWindow):
         for text, row, col in buttons_info:
             button = QPushButton(text, self.bottom_large_frame)
             button.setFixedSize(165, 110)
-            button.setFont(QtGui.QFont("Arial", 12))  # 폰트 크기 설정
+            button.setFont(QtGui.QFont("Han Sans", 12))  # 폰트 크기 설정
             button.setStyleSheet("background-color: rgb(255, 230, 130);")
             button.clicked.connect(self.on_button_click)   
             self.grid_layout.addWidget(button, row, col)
@@ -186,7 +189,7 @@ class MainWindow(QMainWindow):
         # "정답보기" 버튼 생성
         answer_button = QPushButton("정답보기", self.bottom_large_frame)
         answer_button.setFixedSize(340, 70)
-        answer_button.setFont(QtGui.QFont("Arial", 15))  # 폰트 크기 설정
+        answer_button.setFont(QtGui.QFont("Han Sans", 15))  # 폰트 크기 설정
         answer_button.setStyleSheet("background-color : rgb(224, 224, 224);")
         answer_button.clicked.connect(self.on_button_click)
         self.grid_layout.addWidget(answer_button, 3, 1, 1, 2)  # 3행 1열에 추가하고, span 1x2
