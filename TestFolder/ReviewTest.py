@@ -9,20 +9,20 @@ class ReviewTest(Test) :
     def _setTitle(self) :
         return "복습 테스트"
     
-    
-    def getUnitNum(self, option) :
+
+    def _calculateUnit(self) :
         num = self._wordIdxList[0]
         part = num // 150 + 1
         unit = (num % 150) // 10 + 1
+        return part, unit
 
-        if option == "partUnit" :
-            return part, unit
-        elif option == "unitName" :
-            unitName = "unit" + str(unit)
-            return unitName
-        else :
-            print("입력 오류")
+    
+    def getUnitNum(self) :
+        unit = self._calculateUnit()[1]
+        unitName = "unit" + str(unit)
+        return unitName
+
     
     def use_goBack(self) :
-        part, unit = self.getUnitNum("partUnit")
+        part, unit = self._calculateUnit()
         Goto.gotoReviewWordNote(part, unit)

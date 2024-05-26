@@ -50,7 +50,7 @@ class MainWindow(QMainWindow):
         bottom_layout = QHBoxLayout(bottom_frame)
         
         # unit_name 라벨 생성
-        self.unit_name_label = QLabel(parent.getUnitNum("unitName"), bottom_frame)
+        self.unit_name_label = QLabel(parent.getUnitNum(), bottom_frame)
         self.unit_name_label.setFont(QtGui.QFont("Arial", 10))  # 폰트 크기 설정
         bottom_layout.addWidget(self.unit_name_label)
         
