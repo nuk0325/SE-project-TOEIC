@@ -30,7 +30,6 @@ class ReviewWordNote(WordNote) : # WordNote를 상속받은 유닛 단어장 클
         for i in range(1, 11) :
             idx += 1
             idxList.append(idx)
-        print(idx)
         return idxList
     
     def use_gotoSelectTest(self) :

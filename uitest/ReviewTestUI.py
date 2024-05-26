@@ -1,7 +1,5 @@
-import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow, QFrame, QPushButton, QHBoxLayout, QVBoxLayout, QLabel, QGridLayout
 from PyQt6 import QtCore, QtGui
-import time
 
 class MainWindow(QMainWindow):
     def __init__(self, parent):
@@ -12,6 +10,7 @@ class MainWindow(QMainWindow):
         # 창 크기 설정
         self.setWindowTitle("PyQt6 Basic Window")
         self.setGeometry(100, 100, 360, 600)  # (x, y, width, height)
+        self.centerWindow()
         
         # 중앙 위젯 설정
         central_widget = QFrame()
@@ -19,7 +18,8 @@ class MainWindow(QMainWindow):
         
         # 상단 프레임 생성
         top_frame = QFrame(central_widget)
-        top_frame.setFixedSize(360, 60)
+        top_frame.setFixedSize(360, 70)
+        top_frame.setStyleSheet("background-color: rgba(253, 213, 51, 0.97);")
         
         # 뒤로가기 버튼 생성
         back_button = QPushButton("←", top_frame)
@@ -132,6 +132,12 @@ class MainWindow(QMainWindow):
         main_layout.addWidget(self.bottom_large_frame)
         main_layout.addStretch(1)  # 중앙, 하단, 새로운 프레임 아래의 공간을 채우기 위해 Stretch 추가
 
+    def centerWindow(self):
+        screen_geometry = QApplication.primaryScreen().availableGeometry()
+        window_geometry = self.frameGeometry()
+        window_geometry.moveCenter(screen_geometry.center())
+        self.move(window_geometry.topLeft())
+
     def update_labels_and_buttons(self):
         self.correct_count_label.setText(self.parent.getCorrectCount())
         self.wrong_count_label.setText(self.parent.getWrongCount())
@@ -159,14 +165,16 @@ class MainWindow(QMainWindow):
         for text, row, col in buttons_info:
             button = QPushButton(text, self.bottom_large_frame)
             button.setFixedSize(165, 110)
-            button.setFont(QtGui.QFont("Arial", 15))  # 폰트 크기 설정
-            button.clicked.connect(self.on_button_click)
+            button.setFont(QtGui.QFont("Arial", 12))  # 폰트 크기 설정
+            button.setStyleSheet("background-color: rgb(255, 230, 130);")
+            button.clicked.connect(self.on_button_click)   
             self.grid_layout.addWidget(button, row, col)
         
         # "정답보기" 버튼 생성
         answer_button = QPushButton("정답보기", self.bottom_large_frame)
         answer_button.setFixedSize(340, 70)
         answer_button.setFont(QtGui.QFont("Arial", 15))  # 폰트 크기 설정
+        answer_button.setStyleSheet("background-color : rgb(224, 224, 224);")
         answer_button.clicked.connect(self.on_button_click)
         self.grid_layout.addWidget(answer_button, 3, 1, 1, 2)  # 3행 1열에 추가하고, span 1x2
         

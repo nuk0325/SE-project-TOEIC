@@ -3,7 +3,6 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame, QHBoxLayout, QVBoxLayout, QLabel, QWidget, QScrollArea, QMessageBox
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtGui import QFont
-from WordNoteFolder.Word import Word
 
 class MainWindow(QMainWindow):
     def __init__(self, frameCount, noteLabel, testName, wordObjList, parent): # parent : WorNote 클래스를 의미
@@ -15,8 +14,10 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         # 윈도우 크기 설정
-        self.setFixedSize(QSize(360, 600))
         self.setWindowTitle("토익멍 키우기")
+        self.setGeometry(0, 0, 360, 600)  # (x, y, width, height)
+        self.centerWindow()
+        
 
         # 메인 위젯 생성
         main_widget = QWidget()
@@ -24,10 +25,11 @@ class MainWindow(QMainWindow):
 
         # 상단 프레임 생성
         top_frame = QFrame()
-        top_frame.setFixedSize(QSize(360, 60))
+        top_frame.setFixedSize(QSize(360, 70))
+        top_frame.setStyleSheet("background-color: rgba(253, 213, 51, 0.97);")
 
         # 뒤로가기 버튼 생성
-        back_button = QPushButton("뒤로가기")
+        back_button = QPushButton("←")
         back_button.setFixedSize(QSize(60, 60))
         back_button.clicked.connect(lambda: self.closeAndOpen("back"))
 
@@ -39,7 +41,7 @@ class MainWindow(QMainWindow):
         word_note_label.setObjectName("wordNoteName")
 
         # 홈으로 가기 버튼 생성
-        home_button = QPushButton("홈")
+        home_button = QPushButton("🏠")
         home_button.setFixedSize(QSize(60, 60))
         home_button.clicked.connect(lambda: self.closeAndOpen("home"))
 
@@ -91,6 +93,12 @@ class MainWindow(QMainWindow):
         main_layout.addWidget(scroll_area)
         main_layout.addWidget(bottom_frame)
         main_widget.setLayout(main_layout)
+
+    def centerWindow(self):
+        screen_geometry = QApplication.primaryScreen().availableGeometry()
+        window_geometry = self.frameGeometry()
+        window_geometry.moveCenter(screen_geometry.center())
+        self.move(window_geometry.topLeft())
         
     def closeAndOpen(self, option) :
         self.close()
@@ -134,7 +142,7 @@ class MainWindow(QMainWindow):
 
     def createFrame(self, wordObj):
         frame = QFrame()
-        frame.setFixedSize(QSize(320, 50))
+        frame.setFixedSize(QSize(340, 50))
 
         # 상태를 저장할 변수
         frame.is_expanded = False
@@ -162,12 +170,12 @@ class MainWindow(QMainWindow):
 
         # 확장 영역 (기본적으로 숨김)
         additional_label1 = QLabel(wordObj.getMeaning())
-        additional_label1.setFont(QFont("Arial", 12))
+        additional_label1.setFont(QFont("Arial", 10))
         additional_label1.setAlignment(Qt.AlignmentFlag.AlignLeft)
         additional_label1.setVisible(False)
 
         additional_label2 = QLabel(wordObj.getSentence())
-        additional_label2.setFont(QFont("Arial", 12))
+        additional_label2.setFont(QFont("Arial", 10))
         additional_label2.setAlignment(Qt.AlignmentFlag.AlignLeft)
         additional_label2.setVisible(False)
 
@@ -197,11 +205,11 @@ class MainWindow(QMainWindow):
 
     def toggleFrameExpansion(self, frame, additional_label1, additional_label2):
         if frame.is_expanded:
-            frame.setFixedSize(QSize(320, 50))
+            frame.setFixedSize(QSize(340, 50))
             additional_label1.setVisible(False)
             additional_label2.setVisible(False)
         else:
-            frame.setFixedSize(QSize(320, 100))
+            frame.setFixedSize(QSize(340, 100))
             additional_label1.setVisible(True)
             additional_label2.setVisible(True)
         frame.is_expanded = not frame.is_expanded
