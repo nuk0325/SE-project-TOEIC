@@ -107,6 +107,7 @@ class Ui_homePage(object):
 
 
 
+
         homePage.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=homePage)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 360, 26))
@@ -129,15 +130,21 @@ class Ui_homePage(object):
         self.studyHelpBtn.setText(_translate("homePage", "도움말"))
         self.totalTestHelpBtn.setText(_translate("homePage", "도움말"))
         self.myPageHelpBtn.setText(_translate("homePage", "도움말"))
-        
+
     def setDogImageBasedOnLevel(self, dog_level):
         base_width = 100
         base_height = 70
         scale_factor = 1 + 0.1 * (dog_level - 1)
         new_width = int(base_width * scale_factor)
         new_height = int(base_height * scale_factor)
+        print(f"Loading image: image/dog_level{dog_level}.png")  # Add this line for debugging
         self.dogImage.setGeometry(QtCore.QRect(180 - new_width // 2, 250 - new_height, new_width, new_height))
-        self.dogImage.setPixmap(QtGui.QPixmap(f"image/dog_level{dog_level}.png"))
+        pixmap = QtGui.QPixmap(f"image/dog_level{dog_level}.png")
+        if not pixmap.isNull():  
+            self.dogImage.setPixmap(pixmap)
+        else:
+            print("Error: Failed to load image")
+
     def updateSpeechBalloonText(self, new_text):
         self.speechBalloonText.setText(new_text)
 
@@ -156,3 +163,4 @@ if __name__ == "__main__":
     ui.setupUi(homePage)
     homePage.show()
     sys.exit(app.exec())
+

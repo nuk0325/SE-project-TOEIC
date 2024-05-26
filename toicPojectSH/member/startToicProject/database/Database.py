@@ -20,7 +20,7 @@ def reset_database(db_file):
 db_file = 'word.db'
 
 # 데이터베이스 리셋 함수 호출
-reset_database(db_file)
+#reset_database(db_file)
 
 
 # SQLite 데이터베이스 파일 생성 또는 연결
@@ -106,25 +106,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS day_time(
 # 하루가 지날 때마다 날짜 테이블의 모든 day 변수를 +1 할 생각
 # 31이 되면 삭제
 
-cur.execute('''CREATE TABLE IF NOT EXISTS day_time(
-               user_id TEXT,
-               day INTEGER CHECK (day >= 0 AND day <= 30),
-               time INTEGER CHECK (time >= 0 AND time <= 86400),
-               FOREIGN KEY (user_id) REFERENCES user(id))''')
-
 # 변경 사항 저장
-conn.commit()
-
-# 연결 종료
-conn.close()
-
-# 데이터베이스 연결
-conn = sqlite3.connect('word.db')
-cur = conn.cursor()
-
-# 사용자 정보 삽입
-cur.execute("INSERT INTO user (id, password, nickname, unit_count, is_admin, last_date, today_learned_unit, total_learned_unit) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-            ('user123', 'password123', 'John Doe', 10, 1, '2022-10-15', 5, 100))
 conn.commit()
 
 # 사용자 정보 조회
@@ -137,3 +119,11 @@ for row in rows:
 
 # 연결 종료
 conn.close()
+
+
+
+
+
+
+
+

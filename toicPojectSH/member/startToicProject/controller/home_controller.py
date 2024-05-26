@@ -11,11 +11,11 @@ class HomeController:
         self.setup_connections()
         
         #전달받은 mainEntity의 userclass으로 변경
-        self.user = UserEntity('hello12', '111111', '조성훈', 0,0,0,0,1)
+        self.user = UserEntity('hello12', '111111', '조성훈', 3,0,"2024-05-05",0,1)
         self.user_repository.save(self.user)
 
         self.checkDayChange()
-        self.printDogImage(self.user.total_learned_unit/24 + 1)
+        self.printDogImage(int(self.user.total_learned_unit/24) + 1)
         self.printDogProgressGage()
         self.printGoalProgressGage()
         self.printMotivationSentence()
@@ -29,12 +29,13 @@ class HomeController:
         self.ui.myPageHelpBtn.clicked.connect(self.show_mypage_help)
 
     def checkDayChange(self):
-        user = self.user_repository.find_by_id(self.user.userId)
-        if user is not None:  # user가 None이 아닌 경우에만 처리
-            last_date = datetime.datetime.strptime(user.last_date, '%Y-%m-%d').date()
+        self.user = self.user_repository.find_by_id(self.user.userId)
+        if self.user is not None:  # user가 None이 아닌 경우에만 처리
+            last_date = datetime.datetime.strptime(self.user.last_date, '%Y-%m-%d').date()
             if not last_date == datetime.date.today():
                 self.user.today_learned_unit = 0
-                self.user.last_date = datetime.date.today()
+                self.user.last_date = str(datetime.date.today().strftime('%Y-%m-%d'))
+                print(self.user.last_date)
                 self.user = self.user_repository.update(self.user)
         else:
             print("User not found or user data is None")
@@ -78,7 +79,8 @@ class HomeController:
         self.ui.updateGoalProgressText(gageText)
     
     def printDogImage(self, userLevel):
-        self.ui.setDogImageBasedOnLevel(userLevel)
+        dog_level = min(userLevel, 5)  # Ensure dog_level does not exceed 4
+        self.ui.setDogImageBasedOnLevel(dog_level)
 
     def printDogProgressGage(self):
         # 개 진행 상황 게이지 출력
