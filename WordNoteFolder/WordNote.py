@@ -46,7 +46,7 @@ class WordNote :
     def use_goBack() : # 뒤로가기 버튼은 자식이 오버라이딩해서 구현하게 할 예정
         pass
     
-    def use_gotoSelectTest() : # 얘도 자식이 오버라이딩
+    def use_gotoSelectTest(self) : # 얘도 자식이 오버라이딩
         pass
 
 #if __name__ == "__main__": # 실제 UI 실행 코드

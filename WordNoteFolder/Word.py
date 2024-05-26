@@ -13,6 +13,9 @@ class Word :
         
     def Bookmark(self) : # 즐겨찾기 등록 / 삭제
         self.db.changeBookmark(self.getBookmark(), self._idx)
+    
+    def getWordIdx(self) :
+        return self._idx
 
     def getWordName(self) :
         return self._wordName
