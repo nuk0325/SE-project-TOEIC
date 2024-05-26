@@ -1,6 +1,6 @@
 from PyQt6 import QtWidgets, QtCore
 
-class Ui_prepareEntreTest(object):
+class PrepareEntireTestUI(object):
     def setupUi(self, MainWindow, correctWordNum, allWordNum):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(359, 600)
@@ -68,36 +68,9 @@ class Ui_prepareEntreTest(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
-        #button 클릭 이벤트
-        self.back_button.clicked.connect(self.back_button_clicked)#뒤로가기
-        self.home_button.clicked.connect(self.home_button_clicked)#홈
-        self.pushButton.clicked.connect(self.pushButton_clicked)#테스트 시작하기
 
         self.retranslateUi(MainWindow, f"{correctWordNum}/{allWordNum}")
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-    
-
-    #button 클릭 이벤트
-    def back_button_clicked(self):
-        msg_box = QtWidgets.QMessageBox()
-        msg_box.setWindowTitle("Notification")
-        msg_box.setText("뒤로가기 버튼을 클릭했습니다.")
-        msg_box.setIcon(QtWidgets.QMessageBox.Icon.Information)
-        msg_box.exec()
-        
-    def home_button_clicked(self):
-        msg_box = QtWidgets.QMessageBox()
-        msg_box.setWindowTitle("Notification")
-        msg_box.setText("홈 버튼을 클릭했습니다.")
-        msg_box.setIcon(QtWidgets.QMessageBox.Icon.Information)
-        msg_box.exec()
-    
-    def pushButton_clicked(self):
-        ex = selectTest()
-        selected_value = self.comboBox.currentText()
-        print(f"선택된 단어 수: {selected_value}")
-
-    
 
 
     #ui 모양 할당
@@ -147,13 +120,3 @@ class Ui_prepareEntreTest(object):
         self.comboBox.setItemText(2, _translate("MainWindow", "30"))
         self.comboBox.setItemText(3, _translate("MainWindow", "40"))
         self.comboBox.setItemText(4, _translate("MainWindow", "50"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_prepareEntreTest()
-    ui.setupUi(MainWindow, 35, 50)
-    MainWindow.show()
-    sys.exit(app.exec())

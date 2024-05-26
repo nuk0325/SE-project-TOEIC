@@ -9,19 +9,35 @@
 ################################################################################
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QMessageBox, QPushButton, QApplication, QWidget
+from PyQt6.QtWidgets import QMessageBox, QPushButton, QApplication, QWidget, QScrollArea
 
 
 class UserUnitUI(object):
-    def setupUi(self, UserUnitUI):
-        if not UserUnitUI.objectName():
-            UserUnitUI.setObjectName(u"UserUnitUI")
-        
-        UserUnitUI.resize(360, 600)
-        UserUnitUI.setMinimumSize(QtCore.QSize(360, 600))
-        UserUnitUI.setStyleSheet(u"background-color: rgb(255, 255, 255)")
-        self.centralwidget = QWidget(UserUnitUI)
+    def setupUi(self, UserUnit):
+        self.parent = UserUnit
+
+        if not UserUnit.objectName():
+            UserUnit.setObjectName(u"UserUnitUI")
+        UserUnit.resize(360, 600)
+        UserUnit.setMinimumSize(QtCore.QSize(360, 600))
+        UserUnit.setStyleSheet(u"background-color: rgb(255, 255, 255)")
+        self.centralwidget = QWidget(UserUnit)
         self.centralwidget.setObjectName(u"centralwidget")
+
+        self.scrollArea = QScrollArea(self.centralwidget)
+        self.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setGeometry(QtCore.QRect(0, 60, 360, 540))
+        self.scrollArea.setWidgetResizable(True)
+
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 360, 1200))
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setGeometry(QtCore.QRect(0, 0, 360, 60))
@@ -60,327 +76,102 @@ class UserUnitUI(object):
 
         self.horizontalLayout.addWidget(self.home_button)
 
-        self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QtCore.QRect(0, 60, 360, 1200))
-        self.frame.setMinimumSize(QtCore.QSize(360, 540))
-        self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.verticalLayoutWidget = QWidget(self.frame)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 361, 1201))
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.frame_50 = QtWidgets.QFrame(self.verticalLayoutWidget)
-        self.frame_50.setObjectName(u"frame_50")
-        self.frame_50.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_50.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.horizontalLayoutWidget_22 = QWidget(self.frame_50)
-        self.horizontalLayoutWidget_22.setObjectName(u"horizontalLayoutWidget_22")
-        self.horizontalLayoutWidget_22.setGeometry(QtCore.QRect(0, 0, 361, 111))
-        self.horizontalLayout_23 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_22)
-        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
-        self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
-        self.frame_51 = QtWidgets.QFrame(self.horizontalLayoutWidget_22)
-        self.frame_51.setObjectName(u"frame_51")
-        self.frame_51.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_51.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.unit1_button = QPushButton(self.frame_51)
-        self.unit1_button.setObjectName(u"unit1_button")
-        self.unit1_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit1_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+        # Add buttons to scroll area
+        for i in range(1, 16, 2):
+            frame = QtWidgets.QFrame(self.scrollAreaWidgetContents)
+            frame.setObjectName(f"frame_{i}")
+            frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+            frame_layout = QtWidgets.QHBoxLayout(frame)
+            frame_layout.setObjectName(f"horizontalLayout_{i}")
 
-        self.horizontalLayout_23.addWidget(self.frame_51)
+            button1 = QPushButton(frame)
+            button1.setObjectName(f"unit{i}_button")
+            button1.setFixedSize(150, 120)  # Set button size
+            button1.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+            button1.setText(f"Unit {i}")
 
-        self.frame_52 = QtWidgets.QFrame(self.horizontalLayoutWidget_22)
-        self.frame_52.setObjectName(u"frame_52")
-        self.frame_52.setMinimumSize(QtCore.QSize(0, 0))
-        self.frame_52.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_52.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.unit2_button = QPushButton(self.frame_52)
-        self.unit2_button.setObjectName(u"unit2_button")
-        self.unit2_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit2_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+            frame_layout.addWidget(button1)
+            button1.clicked.connect(lambda _, b=button1: self.unit_button_clicked(b))
 
-        self.horizontalLayout_23.addWidget(self.frame_52)
+            if i + 1 <= 15:
+                button2 = QPushButton(frame)
+                button2.setObjectName(f"unit{i+1}_button")
+                button2.setFixedSize(150, 120)  # Set button size
+                button2.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+                button2.setText(f"Unit {i+1}")
 
+                frame_layout.addWidget(button2)
+                button2.clicked.connect(lambda _, b=button2: self.unit_button_clicked(b))
 
-        self.verticalLayout.addWidget(self.frame_50)
+            self.verticalLayout.addWidget(frame)
 
-        self.frame_47 = QtWidgets.QFrame(self.verticalLayoutWidget)
-        self.frame_47.setObjectName(u"frame_47")
-        self.frame_47.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_47.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.horizontalLayoutWidget_21 = QWidget(self.frame_47)
-        self.horizontalLayoutWidget_21.setObjectName(u"horizontalLayoutWidget_21")
-        self.horizontalLayoutWidget_21.setGeometry(QtCore.QRect(0, 0, 361, 111))
-        self.horizontalLayout_22 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_21)
-        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
-        self.frame_48 = QtWidgets.QFrame(self.horizontalLayoutWidget_21)
-        self.frame_48.setObjectName(u"frame_48")
-        self.frame_48.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_48.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.unit3_button = QPushButton(self.frame_48)
-        self.unit3_button.setObjectName(u"unit3_button")
-        self.unit3_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit3_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+        UserUnit.setCentralWidget(self.centralwidget)
 
-        self.horizontalLayout_22.addWidget(self.frame_48)
+        self.retranslateUi(UserUnit)
+        QtCore.QMetaObject.connectSlotsByName(UserUnit)
 
-        self.frame_49 = QtWidgets.QFrame(self.horizontalLayoutWidget_21)
-        self.frame_49.setObjectName(u"frame_49")
-        self.frame_49.setMinimumSize(QtCore.QSize(0, 0))
-        self.frame_49.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_49.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.unit4_button = QPushButton(self.frame_49)
-        self.unit4_button.setObjectName(u"unit4_button")
-        self.unit4_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit4_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+        # self.back_button.clicked.connect(self.back_button_clicked) #뒤로가기
+        # self.home_button.clicked.connect(self.home_button_clicked) #홈
 
-        self.horizontalLayout_22.addWidget(self.frame_49)
-
-
-        self.verticalLayout.addWidget(self.frame_47)
-
-        self.frame_42 = QtWidgets.QFrame(self.verticalLayoutWidget)
-        self.frame_42.setObjectName(u"frame_42")
-        self.frame_42.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_42.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.horizontalLayoutWidget_20 = QWidget(self.frame_42)
-        self.horizontalLayoutWidget_20.setObjectName(u"horizontalLayoutWidget_20")
-        self.horizontalLayoutWidget_20.setGeometry(QtCore.QRect(0, 0, 361, 111))
-        self.horizontalLayout_21 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_20)
-        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
-        self.frame_45 = QtWidgets.QFrame(self.horizontalLayoutWidget_20)
-        self.frame_45.setObjectName(u"frame_45")
-        self.frame_45.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_45.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.unit5_button = QPushButton(self.frame_45)
-        self.unit5_button.setObjectName(u"unit5_button")
-        self.unit5_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit5_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-
-        self.horizontalLayout_21.addWidget(self.frame_45)
-
-        self.frame_46 = QtWidgets.QFrame(self.horizontalLayoutWidget_20)
-        self.frame_46.setObjectName(u"frame_46")
-        self.frame_46.setMinimumSize(QtCore.QSize(0, 0))
-        self.frame_46.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_46.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.unit6_button = QPushButton(self.frame_46)
-        self.unit6_button.setObjectName(u"unit6_button")
-        self.unit6_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit6_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-
-        self.horizontalLayout_21.addWidget(self.frame_46)
-
-
-        self.verticalLayout.addWidget(self.frame_42)
-
-        self.frame_15 = QtWidgets.QFrame(self.verticalLayoutWidget)
-        self.frame_15.setObjectName(u"frame_15")
-        self.frame_15.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_15.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.horizontalLayoutWidget_18 = QWidget(self.frame_15)
-        self.horizontalLayoutWidget_18.setObjectName(u"horizontalLayoutWidget_18")
-        self.horizontalLayoutWidget_18.setGeometry(QtCore.QRect(0, 0, 361, 111))
-        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_18)
-        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
-        self.frame_41 = QtWidgets.QFrame(self.horizontalLayoutWidget_18)
-        self.frame_41.setObjectName(u"frame_41")
-        self.frame_41.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_41.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.unit7_button = QPushButton(self.frame_41)
-        self.unit7_button.setObjectName(u"unit7_button")
-        self.unit7_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit7_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-
-        self.horizontalLayout_19.addWidget(self.frame_41)
-
-        self.frame_28 = QtWidgets.QFrame(self.horizontalLayoutWidget_18)
-        self.frame_28.setObjectName(u"frame_28")
-        self.frame_28.setMinimumSize(QtCore.QSize(0, 0))
-        self.frame_28.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        #self.frame_28.setFrameShadow(QtWidgets.QFrame.raise_)
-        self.unit8_button = QPushButton(self.frame_28)
-        self.unit8_button.setObjectName(u"unit8_button")
-        self.unit8_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit8_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-
-        self.horizontalLayout_19.addWidget(self.frame_28)
-
-
-        self.verticalLayout.addWidget(self.frame_15)
-
-        self.frame_3 = QtWidgets.QFrame(self.verticalLayoutWidget)
-        self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.horizontalLayoutWidget_2 = QWidget(self.frame_3)
-        self.horizontalLayoutWidget_2.setObjectName(u"horizontalLayoutWidget_2")
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(0, 0, 361, 111))
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.frame_8 = QtWidgets.QFrame(self.horizontalLayoutWidget_2)
-        self.frame_8.setObjectName(u"frame_8")
-        self.frame_8.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.unit9_button = QPushButton(self.frame_8)
-        self.unit9_button.setObjectName(u"unit9_button")
-        self.unit9_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit9_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-
-        self.horizontalLayout_2.addWidget(self.frame_8)
-
-        self.frame_7 = QtWidgets.QFrame(self.horizontalLayoutWidget_2)
-        self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.unit10_button = QPushButton(self.frame_7)
-        self.unit10_button.setObjectName(u"unit10_button")
-        self.unit10_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit10_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-
-        self.horizontalLayout_2.addWidget(self.frame_7)
-
-
-        self.verticalLayout.addWidget(self.frame_3)
-
-        self.frame_6 = QtWidgets.QFrame(self.verticalLayoutWidget)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.horizontalLayoutWidget_3 = QWidget(self.frame_6)
-        self.horizontalLayoutWidget_3.setObjectName(u"horizontalLayoutWidget_3")
-        self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(0, 0, 361, 111))
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_3)
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.frame_9 = QtWidgets.QFrame(self.horizontalLayoutWidget_3)
-        self.frame_9.setObjectName(u"frame_9")
-        self.frame_9.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.unit11_Button = QPushButton(self.frame_9)
-        self.unit11_Button.setObjectName(u"unit11_Button")
-        self.unit11_Button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit11_Button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-
-        self.horizontalLayout_3.addWidget(self.frame_9)
-
-        self.frame_10 = QtWidgets.QFrame(self.horizontalLayoutWidget_3)
-        self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.unit12_Button = QPushButton(self.frame_10)
-        self.unit12_Button.setObjectName(u"unit12_Button")
-        self.unit12_Button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit12_Button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-
-        self.horizontalLayout_3.addWidget(self.frame_10)
-
-
-        self.verticalLayout.addWidget(self.frame_6)
-
-        self.frame_5 = QtWidgets.QFrame(self.verticalLayoutWidget)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.horizontalLayoutWidget_4 = QWidget(self.frame_5)
-        self.horizontalLayoutWidget_4.setObjectName(u"horizontalLayoutWidget_4")
-        self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(0, 0, 361, 111))
-        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_4)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.frame_11 = QtWidgets.QFrame(self.horizontalLayoutWidget_4)
-        self.frame_11.setObjectName(u"frame_11")
-        self.frame_11.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.unit13_Button = QPushButton(self.frame_11)
-        self.unit13_Button.setObjectName(u"unit13_Button")
-        self.unit13_Button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit13_Button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-
-        self.horizontalLayout_4.addWidget(self.frame_11)
-
-        self.frame_12 = QtWidgets.QFrame(self.horizontalLayoutWidget_4)
-        self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.unit14_Button = QPushButton(self.frame_12)
-        self.unit14_Button.setObjectName(u"unit14_Button")
-        self.unit14_Button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit14_Button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-
-        self.horizontalLayout_4.addWidget(self.frame_12)
-
-
-        self.verticalLayout.addWidget(self.frame_5)
-
-        self.frame_4 = QtWidgets.QFrame(self.verticalLayoutWidget)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.horizontalLayoutWidget_5 = QWidget(self.frame_4)
-        self.horizontalLayoutWidget_5.setObjectName(u"horizontalLayoutWidget_5")
-        self.horizontalLayoutWidget_5.setGeometry(QtCore.QRect(0, 0, 361, 111))
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_5)
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.frame_14 = QtWidgets.QFrame(self.horizontalLayoutWidget_5)
-        self.frame_14.setObjectName(u"frame_14")
-        self.frame_14.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.unit15_Button = QPushButton(self.frame_14)
-        self.unit15_Button.setObjectName(u"unit15_Button")
-        self.unit15_Button.setGeometry(QtCore.QRect(10, 10, 150, 90))
-        self.unit15_Button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-
-        self.horizontalLayout_5.addWidget(self.frame_14)
-
-
-        self.verticalLayout.addWidget(self.frame_4)
-
-        #self.frame_15.raise_()
-        #self.frame_3.raise_()
-        #self.frame_6.raise_()
-        #self.frame_5.raise_()
-        #self.frame_4.raise_()
-        #self.frame_42.raise_()
-        #self.frame_47.raise_()
-        #self.frame_50.raise_()
+    def unit_button_clicked(self, button):
+        # print(f"{button.text()}이 선택되었습니다.")
         
+        if button.text() == "Unit 1":
+            self.parent.unit1_button_clicked()
+        elif button.text() == "Unit 2":
+            self.parent.unit2_button_clicked()
+        elif button.text() == "Unit 3":
+            self.parent.unit3_button_clicked()
+        elif button.text() == "Unit 4":
+            self.parent.unit4_button_clicked()
+        elif button.text() == "Unit 5":
+            self.parent.unit5_button_clicked()
+        elif button.text() == "Unit 6":
+            self.parent.unit6_button_clicked()
+        elif button.text() == "Unit 7":
+            self.parent.unit7_button_clicked()
+        elif button.text() == "Unit 8":
+            self.parent.unit8_button_clicked()
+        elif button.text() == "Unit 9":
+            self.parent.unit9_button_clicked()
+        elif button.text() == "Unit 10":
+            self.parent.unit10_button_clicked()
+        elif button.text() == "Unit 11":
+            self.parent.unit11_button_clicked()
+        elif button.text() == "Unit 12":
+            self.parent.unit12_button_clicked()
+        elif button.text() == "Unit 13":
+            self.parent.unit13_button_clicked()
+        elif button.text() == "Unit 14":
+            self.parent.unit14_button_clicked()
+        elif button.text() == "Unit 15":
+            self.parent.unit15_button_clicked()
+        else:
+            print("잘못된 버튼 클릭")
 
-        UserUnitUI.setCentralWidget(self.centralwidget)
+    def back_button_clicked(self):
+        print(f"뒤로가기를 눌렀습니다.")
+        
+    def home_button_clicked(self):
+        print(f"홈버튼을 눌렀습니다.")
 
-        self.retranslateUi(UserUnitUI)
-
-        QtCore.QMetaObject.connectSlotsByName(UserUnitUI)
-
-    # setupUi
     def retranslateUi(self, UserUnitUI):
         UserUnitUI.setWindowTitle(QtCore.QCoreApplication.translate("UserUnitUI", u"MainWindow", None))
-        self.back_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"\ub4a4\ub85c\uac00\uae30", None))
+        self.back_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"뒤로가기", None))
         self.menu_name.setHtml(QtCore.QCoreApplication.translate("UserUnitUI", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Gulim'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'.AppleSystemUIFont'; font-size:20pt; font-weight:696;\">Part1</span></p></body></html>", None))
-        self.home_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"\ud648", None))
-        self.unit1_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 1", None))
-        self.unit2_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 2", None))
-        self.unit3_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 3", None))
-        self.unit4_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 4", None))
-        self.unit5_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 5", None))
-        self.unit6_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 6", None))
-        self.unit7_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 7", None))
-        self.unit8_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 8", None))
-        self.unit9_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 9", None))
-        self.unit10_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 10", None))
-        self.unit11_Button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 11", None))
-        self.unit12_Button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 12", None))
-        self.unit13_Button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 13", None))
-        self.unit14_Button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 14", None))
-        self.unit15_Button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"Unit 15", None))
-    # retranslateUi
+        self.home_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"홈", None))
+
 
 if __name__ == "__main__":
     import sys
-    app = QtWidgets.QApplication(sys.argv)
-    UserunitUI = QtWidgets.QMainWindow()
+    app = QApplication(sys.argv)
+    UserUnitUI = QtWidgets.QMainWindow()
     ui = UserUnitUI()
-    ui.setupUi(UserunitUI)
-    UserunitUI.show()
+    ui.setupUi(UserUnitUI)
+    UserUnitUI.show()
     sys.exit(app.exec())
+

@@ -1,6 +1,7 @@
-import sys
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from PyQt6.QtWidgets import QApplication
-# from Goto import Goto
+from goto_service import Goto
 from Word import Word
 from WordNoteUI import MainWindow
 from DBcontrol import DBcontrol
@@ -13,6 +14,7 @@ class WordNote :
         self._wordIdxList = recievedWordList # 단어들의index로 구성된 리스트
         self.db = self._makeDBobj()
         self._wordList = self._returnWordList() # word 객체로 구성된 리스트
+        self.main()
 
     def _makeDBobj(self) :
         return DBcontrol()
@@ -20,7 +22,7 @@ class WordNote :
     def _returnWordList(self) : # word 객체 리스트 만드는 함수
         lst = []
         for idx in self._wordIdxList :  
-            word = Word(idx, self.db)
+            word = Word(idx, self.db) 
             lst.append(word)
         return lst
 
@@ -33,10 +35,14 @@ class WordNote :
         self.window = MainWindow(frameCount, noteLabel, testName, wordObjList, self)
         self.window.show()
         sys.exit(app.exec())
-                
-    def use_gotoHome() : # 홈으로 가기 버튼
-        # Goto.gotoHome()
+
+    def _dbClose(self) :
+        # self.db.closeDB()
         pass
+                
+    def use_gotoHome(self) : # 홈으로 가기 버튼
+        self._dbClose() # 다른 페이지로 가기 전에 db.close() 잊지 말기 (여러개가 열려있으면 충돌남)
+        Goto.gotoHome()
         
     def use_goBack() : # 뒤로가기 버튼은 자식이 오버라이딩해서 구현하게 할 예정
         pass

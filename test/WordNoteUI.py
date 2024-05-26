@@ -11,6 +11,7 @@ class MainWindow(QMainWindow):
         self.noteLabel = noteLabel # 맨 위에 들어가는 문장 (ex. 학습하기)
         self.testName = testName # 밑에 들어가는 문장 (ex. 복습 테스트 시작)
         self.wordObjList = wordObjList # word 객체로 구성된 리스트
+        self.parent = parent
         super().__init__()
 
         # 윈도우 크기 설정
@@ -76,10 +77,11 @@ class MainWindow(QMainWindow):
         bottom_frame.setLayout(bottom_layout)
 
         # 하단 프레임에 버튼 추가
-        test_button = QPushButton(testName)
+        test_button = QPushButton(testName) ############################
         test_button.setFixedSize(QSize(340, 60))
         test_button.setStyleSheet("background-color: rgb(255, 230, 130);")
         test_button.setFont(QFont("Arial", 20))
+        test_button.clicked.connect(self.closeAndOpen)
 
         bottom_layout.addWidget(test_button, alignment=Qt.AlignmentFlag.AlignCenter)
 
@@ -89,6 +91,10 @@ class MainWindow(QMainWindow):
         main_layout.addWidget(scroll_area)
         main_layout.addWidget(bottom_frame)
         main_widget.setLayout(main_layout)
+        
+    def closeAndOpen(self) :
+        self.close()
+        self.parent.use_gotoSelectTest()
 
     def createFrame(self, wordObj):
         frame = QFrame()
@@ -108,7 +114,7 @@ class MainWindow(QMainWindow):
 
         # 가운데 레이블
         word_label = QLabel(wordObj.getWordName())
-        word_label.setFont(QFont("Arial", 15))  # 글꼴 크기를 15로 설정
+        word_label.setFont(QFont("Arial", 20))  # 글꼴 크기를 20으로 설정
         word_label.setAlignment(Qt.AlignmentFlag.AlignLeft)
         word_label.setFixedSize(QSize(180, 40))  # 레이블 크기 조정
 

@@ -19,10 +19,12 @@ class MyPage(QMainWindow):
     newUserPassword = ""
     checkNewUserPassword = ""
 
-    def __init__(self):
+    def __init__(self, user):
         super().__init__()
         self.ui = MyPageUI()
         self.ui.setupUi(self)
+
+        self.user = user
 
         self.goto = Goto()
 
@@ -80,7 +82,7 @@ class MyPage(QMainWindow):
     
     # 로그아웃 팝업 띄우기
     def showLogOut(self):
-        logOutDialog = LogOutDialog()
+        logOutDialog = LogOutDialog(self.goto)
         logOutDialog.exec()
 
     # 로그아웃
@@ -99,11 +101,11 @@ class MyPage(QMainWindow):
         self.close()
 
     def backButtonClicked(self):
-        self.goto.gotoHome()
+        self.goto.gotoHome(self.user)
         self.close()
 
     def homeButtonClicked(self):
-        self.goto.gotoHome()
+        self.goto.gotoHome(self.user)
         self.close()
 
 if __name__ == "__main__":

@@ -1,19 +1,39 @@
 from WordNote import WordNote
-# from Goto import Goto
+from goto_service import Goto
 
 class ReviewWordNote(WordNote) : # WordNote를 상속받은 유닛 단어장 클래스(복습 테스트와 이름을 맞췄음)
-    def __init__(self, recievedWordList) :
-        self._titleName = "학습하기"
+    def __init__(self, part, unit) :
+        self._titleName = self._getPartName(part)
         self._testName = "복습 테스트 시작"
         self._testChoice = False
-        self._wordIdxList = recievedWordList # index로 구성된 리스트
+        self._wordIdxList = self._makeWordIdxList(part, unit) # index로 구성된 리스트
         self.db = self._makeDBobj()
         self._wordList = self._returnWordList()
+        self.goto = Goto()
+        self.main()
+        
+    def _getPartName(self, part) :
+        partNum = part
+        partName = "Part" + str(partNum)
+        return partName
 
-    def use_goBack() :
-        # Goto.gotoUnit()
-        pass
+    def use_goBack(self) :
+        self._dbClose()
+        print("go back")
+        self.goto.gotoUnitWordNote(self, 1, 1)
     
     def use_gotoSelectTest(self) :
-        # Goto.gotoReviewTest(self._wordIdxList, self._testChoice)
-        pass
+        self._dbClose()
+        self.goto.gotoReviewTest(self._wordIdxList, self._testChoice)
+        
+    def _makeWordIdxList(self, part, unit) :
+        idx = (part-1) * 120 + (unit-1) * 10
+        idxList = []
+        for i in range(1, 11) :
+            idx += 1
+            idxList.append(idx)
+        print(idx)
+        return idxList
+    
+    def use_gotoSelectTest(self) :
+        Goto.gotoReviewTest(self._wordIdxList, False)

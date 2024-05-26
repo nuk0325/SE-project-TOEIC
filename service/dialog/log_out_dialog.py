@@ -1,9 +1,11 @@
 from PyQt6.QtWidgets import QDialog, QPushButton, QVBoxLayout, QHBoxLayout, QLabel
 
 class LogOutDialog(QDialog):
-    def __init__(self):
+    def __init__(self, goto):
         super().__init__()
         self.setWindowTitle("로그아웃")
+
+        self.goto = goto
 
         layout = QVBoxLayout()
         layout.addWidget(QLabel("정말 로그아웃 하시겠습니까?"))
@@ -23,8 +25,7 @@ class LogOutDialog(QDialog):
 
     def yes(self):
         from my_page_service import MyPage
-        myPage = MyPage()
-        myPage.logOut()
+        MyPage.logOut(self)
         self.close()
         
     def no(self):

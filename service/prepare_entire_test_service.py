@@ -1,46 +1,53 @@
 import sys
-from PyQt6.QtWidgets import *
-# from UI.prepareEntireTestUI import PrepareEntireTestUI  # entireTestUI UI 코드가 있는 파일명
+from PyQt6.QtWidgets import QMainWindow, QMessageBox, QApplication
+from UI.prepare_entire_test_ui import PrepareEntireTestUI
+from dialog.select_test_dialog import SelectTestDialog
+from goto_service import Goto
 
-
-class SelectTest(QMainWindow):
-    def __init__(self):
+class PrepareEntireTest(QMainWindow):
+    def __init__(self, user):
         super().__init__()
-        self.initUI()
+        self.ui = PrepareEntireTestUI()
+        self.ui.setupUi(self, 3, 30)
 
-    def initUI(self):
-        self.setWindowTitle('사용자 정의 팝업창')
-        self.setGeometry(300, 300, 300, 200)
-
-        self.showPopup()
-
-    def showPopup(self):
-        # QMessageBox 생성
-        msg_box = QMessageBox()
-        msg_box.setWindowTitle("테스트 방식 선택")
-        msg_box.setText("테스트 방식을 선택해주세요")
-
-        # 사용자 정의 버튼 생성
-        btn_meaning = QPushButton('뜻으로 답하기')
-        btn_english = QPushButton('영어로 답하기')
-
-        # 버튼을 QMessageBox에 추가
-        msg_box.addButton(btn_meaning, QMessageBox.ButtonRole.YesRole)
-        msg_box.addButton(btn_english, QMessageBox.ButtonRole.NoRole)
-
-        msg_box.clickedButton()
-
-        # 팝업창 실행 및 응답 저장
-        self.response = msg_box.exec()
-
-        # 사용자 응답에 따른 처리
-        if msg_box.clickedButton() == btn_meaning:
-            print("사용자가 '뜻으로 답하기'를 선택했습니다.")
-        elif msg_box.clickedButton() == btn_english:
-            print("사용자가 '영어로 답하기'를 선택했습니다.")
+        self.user = user
         
+        self.goto = Goto()
+
+         #button 클릭 이벤트
+        self.ui.back_button.clicked.connect(self.back_button_clicked)#뒤로가기
+        self.ui.home_button.clicked.connect(self.home_button_clicked)#홈
+        self.ui.pushButton.clicked.connect(self.pushButton_clicked)#테스트 시작하기
+
+    #button 클릭 이벤트
+    def back_button_clicked(self):
+        self.goto.gotoHome(self.user)
+        self.close()
+
+        # msg_box = QMessageBox()
+        # msg_box.setWindowTitle("Notification")
+        # msg_box.setText("뒤로가기 버튼을 클릭했습니다.")
+        # msg_box.setIcon(QMessageBox.Icon.Information)
+        # msg_box.exec()
+        
+    def home_button_clicked(self):
+        self.goto.gotoHome(self.user)
+        self.close()
+
+        # msg_box = QMessageBox()
+        # msg_box.setWindowTitle("Notification")
+        # msg_box.setText("홈 버튼을 클릭했습니다.")
+        # msg_box.setIcon(QMessageBox.Icon.Information)
+        # msg_box.exec()
+    
+    def pushButton_clicked(self):
+        selected_value = self.ui.comboBox.currentText()
+        print(f"선택된 단어 수: {selected_value}")
+
+        SelectTestDialog()
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = SelectTest()
+    window = PrepareEntireTest()
     window.show()
     sys.exit(app.exec())

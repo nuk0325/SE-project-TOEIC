@@ -1,6 +1,6 @@
-#from DB.DBcontrol import DBcontrol
+# from DB_manager import DBManager
 
-class Word:
+class Word :
     def __init__(self, idx, db) :
         self.db = db
         self._idx = idx # 해당 단어의 인덱스

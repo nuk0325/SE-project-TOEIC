@@ -41,6 +41,5 @@ class NicknameDialog(QDialog):
         else :
             from service.my_page_service import MyPage
 
-            myPage = MyPage()
-            myPage.changePassword(newUserNickname)
+            MyPage.changePassword(self, newUserNickname)
             self.close()
