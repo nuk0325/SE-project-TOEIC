@@ -146,7 +146,7 @@ class MainWindow(QMainWindow):
             self.parent.use_goBack()
         elif option == "home" :
             self.parent.use_gotoHome()
-        elif option == "test" :
+        elif option == "result" :
             self.parent.use_gotoTestResult()
         else :
             print("잘못된 입력입니다.")
