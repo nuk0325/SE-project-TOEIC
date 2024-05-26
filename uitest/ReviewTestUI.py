@@ -202,9 +202,11 @@ class MainWindow(QMainWindow):
             self.word_sent_label.setVisible(True)
             #self.update_buttons()
             QtCore.QTimer.singleShot(3000, self.hide_labels)
-            self.parent.afterQuestion(sender.text())
-            self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
-
+            boolean = self.parent.afterQuestion(sender.text())
+            if boolean :
+                self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
+            else :
+                self.closeAndOpen("result")
     def hide_labels(self):
         self.word_meaning_label.setVisible(False)
         self.word_sent_label.setVisible(False)

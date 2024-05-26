@@ -49,8 +49,9 @@ class Test :
             self._reflectWrong()
         self._wordCount += 1
         #time.sleep(3)
-        if self._wordCount > len(self._wordIdxList) :
-            Goto.gotoTestResult(self._correctIdxList, self._wrongIdxList)
+        if self._wordCount == len(self._wordIdxList)-1 :
+            return False
+        return True
 
     def _makeWrongMeaningList(self) :
         num = len(self._wordIdxList) * 3
@@ -66,6 +67,8 @@ class Test :
         Goto.gotoHome()
 
     def use_gotoTestResult(self) :
+        self._dbClose()
+        print("testResult로 이동함")
         Goto.gotoTestResult(self._correctIdxList, self._wrongIdxList)
 
     def getTitle(self) :
