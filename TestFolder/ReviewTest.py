@@ -10,6 +10,10 @@ class ReviewTest(Test) :
     
     
     def getUnitNum(self) :
-        unitInt = 1
-        unitName = "unit" + str(unitInt)
+        num = self._wordIdxList[0] % 120
+        unit = 1
+        while num > 10 :
+            num -= 10
+            unit += 1
+        unitName = "unit" + str(unit)
         return unitName
