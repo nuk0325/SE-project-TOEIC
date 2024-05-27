@@ -1,6 +1,6 @@
 import sqlite3
 
-
+##
 class DBcontrol :    
     def __init__(self) :
         self.conn = sqlite3.connect('word.db')
