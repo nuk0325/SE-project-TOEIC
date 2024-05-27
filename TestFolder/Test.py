@@ -8,7 +8,8 @@ import random
 #import time
 
 class Test :  
-    def __init__(self, recivedWordList, testChoice) :
+    def __init__(self, user, recivedWordList, testChoice) :
+        self.user = user
         self._titleName = self._setTitle()
         self._correctCount = 0
         self._wrongCount = 0
@@ -60,16 +61,14 @@ class Test :
         lst = random.sample([x for x in range(1, 1201) if x not in excluded_numbers], num) # 1201은 나중에 바꿀 것
         return lst
     
-    def use_goBack() :
+    def use_goBack(self) :
         pass
     
-    def use_gotoHome() :
-        Goto.gotoHome()
+    def use_gotoHome(self) :
+        Goto.gotoHome(self.user)
 
-    def use_gotoTestResult(self) :
-        self._dbClose()
-        print("testResult로 이동함")
-        Goto.gotoTestResult(self._correctIdxList, self._wrongIdxList)
+    def use_gotoSelectTestResult(self) :
+        pass
 
     def getTitle(self) :
         return self._titleName

@@ -7,7 +7,8 @@ from uitest.WordNoteUI import MainWindow
 from DB.DBcontrol import DBcontrol
         
 class WordNote :    
-    def __init__(self, recievedWordList) :
+    def __init__(self, user, recievedWordList) :
+        self.user = user
         self._titleName = "" # 맨 위에 들어가는 문장 (ex. 학습하기)
         self._testName = "" # 맨 아래에 들어가는 문장 (ex. 복습 테스트 시작)
         self._testChoice = False # 단어 / 뜻 전환 여부 (아직 구현 안 됨) / False면 뜻으로 답하기
@@ -49,9 +50,9 @@ class WordNote :
                 
     def use_gotoHome(self) : # 홈으로 가기 버튼
         self._dbClose() # 다른 페이지로 가기 전에 db.close() 잊지 말기 (여러개가 열려있으면 충돌남)
-        Goto.gotoHome()
+        Goto.gotoHome(self.user)
         
-    def use_goBack() : # 뒤로가기 버튼은 자식이 오버라이딩해서 구현하게 할 예정
+    def use_goBack(self) : # 뒤로가기 버튼은 자식이 오버라이딩해서 구현하게 할 예정
         pass
     
     def use_gotoSelectTest(self) : # 얘도 자식이 오버라이딩

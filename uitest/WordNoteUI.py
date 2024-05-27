@@ -136,11 +136,12 @@ class MainWindow(QMainWindow):
         if msg_box.clickedButton() == btn_meaning:
             print("사용자가 '뜻으로 답하기'를 선택했습니다.")
             self.parent.setTestChoice(False)
+            self.closeAndOpen("test")
         elif msg_box.clickedButton() == btn_english:
             print("사용자가 '영어로 답하기'를 선택했습니다.")
             self.parent.setTestChoice(True)
+            self.closeAndOpen("test")
         
-        self.closeAndOpen("test")
 
     def createFrame(self, wordObj):
         frame = QFrame()

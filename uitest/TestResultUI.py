@@ -39,7 +39,7 @@ class MainWindow(QMainWindow) :
         topLayout.addWidget(homeButton)
 
         middleFrame = QFrame(mainWidget)
-        middleFrame.setFixedSize(360, 270)
+        middleFrame.setFixedSize(360, 270) # 이미지가 들어갈 프레임
 
 
 
