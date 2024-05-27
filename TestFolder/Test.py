@@ -50,7 +50,7 @@ class Test :
             self._reflectWrong()
         self._wordCount += 1
         #time.sleep(3)
-        if self._wordCount == len(self._wordIdxList)-1 :
+        if self._wordCount == len(self._wordIdxList) :
             return False
         return True
 
