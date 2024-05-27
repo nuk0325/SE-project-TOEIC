@@ -10,7 +10,9 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class MyPageUI(object):
-    def setupUi(self, MyPageUI):
+    def setupUi(self, MyPageUI, user):
+        self.user = user
+
         MyPageUI.setObjectName("MyPageUI")
         MyPageUI.resize(360, 600)
         MyPageUI.setStyleSheet("background-color: rgb(255, 255, 255)")
@@ -112,9 +114,11 @@ class MyPageUI(object):
         self.photo_label.setGeometry(QtCore.QRect(40, 50, 51, 51))
         self.photo_label.setStyleSheet("background-color: rgb(224, 224, 224)")
         self.photo_label.setObjectName("photo_label")
+
         self.nickname_label = QtWidgets.QLabel(parent=self.frame_3)
         self.nickname_label.setGeometry(QtCore.QRect(100, 70, 61, 16))
         self.nickname_label.setObjectName("nickname_label")
+
         self.goal_progress = QtWidgets.QProgressBar(parent=self.frame_3)
         self.goal_progress.setGeometry(QtCore.QRect(40, 120, 281, 23))
         self.goal_progress.setProperty("value", 24)
@@ -156,7 +160,9 @@ class MyPageUI(object):
         self.logout_button.setText(_translate("MyPageUI", "로그아웃"))
         self.change_password_button.setText(_translate("MyPageUI", "비밀번호 변경"))
         self.photo_label.setText(_translate("MyPageUI", "사진"))
-        self.nickname_label.setText(_translate("MyPageUI", "nickname"))
+        self.nickname_label.setText(_translate("MyPageUI", self.user.userNickname))
         self.goal_progress_label.setText(_translate("MyPageUI", "목표 유닛"))
         self.level_progress_label.setText(_translate("MyPageUI", "목표 유닛"))
 
+    def updateUserNickname(self, newUserNickname):
+        self.nickname_label.setText(newUserNickname)

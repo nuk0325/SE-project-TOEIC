@@ -3,9 +3,11 @@
 from PyQt6.QtWidgets import QDialog, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QMessageBox
 
 class NicknameDialog(QDialog):
-    def __init__(self):
+    def __init__(self, parent):
         super().__init__()
         self.setWindowTitle("닉네임 변경")
+
+        self.parent = parent
 
         self.input = QLineEdit()
 
@@ -39,7 +41,5 @@ class NicknameDialog(QDialog):
             
             msg.exec()
         else :
-            from service.my_page_service import MyPage
-
-            MyPage.changePassword(self, newUserNickname)
+            self.parent.changeNickname(newUserNickname)
             self.close()

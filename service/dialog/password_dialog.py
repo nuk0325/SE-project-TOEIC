@@ -1,7 +1,9 @@
 from PyQt6.QtWidgets import QDialog, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QMessageBox
 
 class PasswordDialog(QDialog):
-    def __init__(self):
+    def __init__(self, parent):
+        self.parent = parent
+
         super().__init__()
         self.setWindowTitle("비밀번호 변경")
 
@@ -60,6 +62,5 @@ class PasswordDialog(QDialog):
             
             msg.exec()
         else :
-            from service.my_page_service import MyPage # circular import 방지
-            MyPage.changePassword(self, newUserPassword)
+            self.parent.changePassword(newUserPassword)
             self.close()
