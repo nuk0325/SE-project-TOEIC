@@ -2,8 +2,9 @@ from WordNote import WordNote
 from Goto import Goto
 
 class AfterTestWordNote(WordNote) :
-    def __init__(self, user, wordIdxList, option) :
+    def __init__(self, user, wordIdxList, anotherList, option) :
         self.user = user
+        self._anotherList = anotherList
         self._titleName = self._getTitle(option)
         self._testName = "홈으로 가기"
         self._wordIdxList = wordIdxList
@@ -20,7 +21,7 @@ class AfterTestWordNote(WordNote) :
             print("AfterTestWordNote Option Error")
     
     def use_goBack(self) :
-        pass
+        Goto.goto
 
     def use_gotoSelectTest(self) :
         Goto.gotoHome(self.user)
