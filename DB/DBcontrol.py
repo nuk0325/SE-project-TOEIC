@@ -16,7 +16,18 @@ class DBcontrol :
                 return True
             else :
                 return False
-        
+            
+    def checkWrongWord(self, user, idx) :
+        user_id = "justID"
+        #user_id = user
+        self.cur.execute('''SELECT wro_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
+        result = self.cur.fetchone()
+        if result :
+            if result[0] == 1 :
+                return True
+            else :
+                return False
+                
     def getWord(self, idx, option) :
         self.cur.execute('''SELECT word, mean, sent FROM words_db WHERE line_num = ?''', (idx,))
         result = self.cur.fetchone()
@@ -35,15 +46,37 @@ class DBcontrol :
         #user_id = user
         if boolean :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
+            print(f"database: {idx}: off --> on")
         else :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
+            print(f"database: {idx}: on --> off")
         self.conn.commit()
 
+    def getBookmarkWordList(self) :
+        user_id = "justID"
+        # fav_is_right == 1인 리스트 뽑는 코드
+        #wordIdxList = [120,1,2,5,6,7,8] #모든 단어의 index는 1에서 시작
+        wordIdxList=[]
+        count=1200 #전체 단어 개수
+        i=1
+        for i in range(1, count):
+            if self.checkBookmark(i) == 1:
+                wordIdxList.append(i)
 
+        return wordIdxList
+    
     def getWrongWordList(self) :
         user_id = "justID"
-        # 대충 wro_is_right == 1인 리스트 뽑는 코드
-        return [1,2,5,6,7,8]
+        # wro_is_right == 1인 리스트 뽑는 코드
+        wordIdxList = [121,1,2,5,6,7,8]
+        wordIdxList=[]
+        count=1200 #전체 단어 개수
+        i=1
+        for i in range(1, count):
+            if self.checkWrongWord(i) == 1:
+                wordIdxList.append(i)
+        return wordIdxList   
+
     
     def closeDB(self) :
         self.conn.commit()
