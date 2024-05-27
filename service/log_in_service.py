@@ -23,6 +23,7 @@ class LogIn(QMainWindow):
         user = self.dataManager.find_by_id(self.receivedUserId)
 
         print(user, user.userPassword, self.receivedUserId)
+        
         if user and user.userPassword == self.receivedUserPassword:
             print("로그인 성공")
             self.goto.gotoHome(user)

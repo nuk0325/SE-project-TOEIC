@@ -150,7 +150,7 @@ class ReviewTestUI(QMainWindow):
         elif option == "home" :
             self.parent.use_gotoHome()
         elif option == "result" :
-            self.parent.use_gotoTestResult()
+            self.parent.use_gotoSelectTestResult()
         else :
             print("잘못된 입력입니다.")
 
@@ -207,6 +207,7 @@ class ReviewTestUI(QMainWindow):
                 self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
             else :
                 self.closeAndOpen("result")
+                
     def hide_labels(self):
         self.word_meaning_label.setVisible(False)
         self.word_sent_label.setVisible(False)

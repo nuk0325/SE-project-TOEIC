@@ -82,13 +82,13 @@ class MyPage(QMainWindow):
     
     # 로그아웃 팝업 띄우기
     def showLogOut(self):
-        logOutDialog = LogOutDialog(self.goto)
+        logOutDialog = LogOutDialog(self, self.goto)
         logOutDialog.exec()
 
     # 로그아웃
     def logOut(self):
-        self.goto.gotoLogIn()
         self.close()
+        self.goto.gotoLogIn()
 
     def wrongNoteButtonClicked(self):
         self.goto.gotoEntireTest()
