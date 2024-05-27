@@ -6,7 +6,7 @@ class DBcontrol :
         self.conn = sqlite3.connect('word.db')
         self.cur = self.conn.cursor()
         
-    def checkBookmark(self, user, idx) :
+    def checkBookmark(self, user_id, idx) :
         user_id = "justID"
         #user_id = user
         self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
@@ -17,7 +17,7 @@ class DBcontrol :
             else :
                 return False
             
-    def checkWrongWord(self, user, idx) :
+    def checkWrongWord(self, user_id, idx) :
         user_id = "justID"
         #user_id = user
         self.cur.execute('''SELECT wro_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
@@ -60,7 +60,7 @@ class DBcontrol :
         count=1200 #전체 단어 개수
         i=1
         for i in range(1, count):
-            if self.checkBookmark(i) == 1:
+            if self.checkBookmark(user_id, i) == 1:
                 wordIdxList.append(i)
 
         return wordIdxList
@@ -73,7 +73,7 @@ class DBcontrol :
         count=1200 #전체 단어 개수
         i=1
         for i in range(1, count):
-            if self.checkWrongWord(i) == 1:
+            if self.checkWrongWord(user_id, i) == 1:
                 wordIdxList.append(i)
         return wordIdxList   
 

@@ -183,6 +183,7 @@ class MainWindow(QMainWindow):
     def toggleBookmark(self, wordObj, bookmark_button):
         wordObj.Bookmark()
         self.updateBookmarkButton(bookmark_button, wordObj.getBookmark())
+        print(f"{wordObj.getWordIdx()}: --> {wordObj.getBookmark()}")
 
     def toggleFrameExpansion(self, frame, button, label1, label2):
         if frame.is_expanded:
@@ -196,3 +197,60 @@ class MainWindow(QMainWindow):
             label2.setVisible(True)
             button.setText("∧")  # 추가된 부분
         frame.is_expanded = not frame.is_expanded
+
+
+
+from Goto import Goto
+
+class BookmarkWindow(MainWindow):
+    def toggleBookmark(self, wordObj, bookmark_button):
+        if wordObj.getBookmark():
+            print("즐겨찾기 해제 팝업")
+            self.goto = Goto()
+            bookmarkDialog = BookmarkDialog(self.goto,wordObj, bookmark_button)                
+            
+            bookmarkDialog.exec()
+            
+        
+            
+            
+
+from PyQt6.QtWidgets import QDialog, QPushButton, QVBoxLayout, QHBoxLayout, QLabel
+
+class BookmarkDialog(QDialog):
+    def __init__(self, goto, wordObj, bookmark_button):
+        super().__init__()
+        self.setWindowTitle("즐겨찾기")
+
+        self.goto = goto
+        self.wordObj = wordObj
+        self.bookmark_button = bookmark_button
+
+        layout = QVBoxLayout()
+        layout.addWidget(QLabel("정말 즐겨찾기를 해제 하시겠습니까?"))
+
+        buttonLayout = QHBoxLayout()
+
+        yesBtn = QPushButton("네")
+        yesBtn.clicked.connect(self.yes)
+        noBtn = QPushButton("아니오")
+        noBtn.clicked.connect(self.no)
+
+        buttonLayout.addWidget(yesBtn)
+        buttonLayout.addWidget(noBtn)
+
+        layout.addLayout(buttonLayout)
+        self.setLayout(layout)
+
+    def yes(self): #즐겨찾기 해제 후 즐겨찾기 단어장 전체가 초기화
+        from WordNoteUI import BookmarkWindow
+        print("즐겨찾기 해제")
+        print("해제해제. 단어장 초기화")
+        #즐겨찾기 업데이트
+        self.wordObj.Bookmark()
+        self.updateBookmarkButton(self.bookmark_button, self.wordObj.getBookmark())
+        print(f"{self.wordObj.getWordIdx()}: --> {self.wordObj.getBookmark()}")
+        self.close()
+        
+    def no(self):
+        self.close()
