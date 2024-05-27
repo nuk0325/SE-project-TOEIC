@@ -66,7 +66,8 @@ class JoinMembership(QMainWindow):
         if len(self.newUserId) < 1:
             QMessageBox.information(None, "아이디 중복 검사 결과 : ", "아이디를 입력해주세요")
             return
-        user = self.dataManager.findId(self.newUserId)
+        
+        user = self.dataManager.find_by_id(self.newUserId)
         if user:
             QMessageBox.information(None, "아이디 중복 검사 결과 : ", "이미 존재하는 아이디입니다")
             return

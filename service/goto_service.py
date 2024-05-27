@@ -43,12 +43,13 @@ class Goto():
         print("go to Unit Word Note Page")
         from unit_word_note_service import UnitWordNote
         # received_word_list = [1,3,5,7,8] # 일단 리스트를 준 상태로 연결
-        UnitWordNote(partNum, unitNum, user)
+        UnitWordNote(user, partNum, unitNum)
 
     def gotoPrepareReviewTest(self):
         print("go to Prepare Review Test Page")
 
     def gotoReviewTest(self, user):
+        print("go to Review Test Page")
         from review_test_service import ReviewTest
         ReviewTest(user)
 

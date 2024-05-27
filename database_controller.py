@@ -61,14 +61,14 @@ if __name__ == "__main__":
     # selectAllFromTable("user")
 
     # 유저 데이터 추가
-    # addTestUser('sunwook', '1234', '선욱', 10, 1, '2022-10-15', 5, 100)
-    # addTestUser('taehyen', '1234', '태현', 10, 1, '2022-10-15', 5, 100)
+    addTestUser('sunwook', '1234', '선욱', 10, 1, '2022-10-15', 5, 100)
+    addTestUser('taehyen', '1234', '태현', 10, 1, '2022-10-15', 5, 100)
 
     # 유저 정보 변경
-    cur.execute("UPDATE user SET today_learned_unit = ? WHERE id = ?", (6, 'sunwook'))
-    conn.commit()
-    print("업데이트 결과")
-    selectAllFromTable("user")
+    # cur.execute("UPDATE user SET today_learned_unit = ? WHERE id = ?", (6, 'sunwook'))
+    # conn.commit()
+    # print("업데이트 결과")
+    # selectAllFromTable("user")
 
 
     # 오답노트 및 즐겨찾기 데이터 삽입
@@ -99,6 +99,12 @@ if __name__ == "__main__":
 
     #selectAllFromTable('wro_fav')
     # deleteAllWrongFav
+
+
+    # word 테이블 column 이름 확인
+    # cur.execute("PRAGMA table_info(words_db)")
+    # columns = cur.fetchall()
+    # print(columns)
 
     # 종료
     conn.close()

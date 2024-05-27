@@ -46,21 +46,12 @@ class DBManager:
         except Exception as e:
             print("Error:", e)
             return False, "사용자 삭제에 실패했습니다."  # Other errors
-    
-    def findId(self, userId):
-        try:
-            self.cur.execute("SELECT id FROM user WHERE id=?", (userId,))
-            id = self.cur.fetchone()
-            
-            return id
-        except Exception as e:
-            print("Error:", e)
-            return None
 
     def find_by_id(self, user_id):
         try:
             self.cur.execute("SELECT * FROM user WHERE id=?", (user_id,))
             user_data = self.cur.fetchone()
+
             if user_data:
                 user = User.toUserEntity(user_data)
                 return user
@@ -70,8 +61,9 @@ class DBManager:
             print("Error:", e)
             return None
         
-    def checkBookmark(self, idx) :
-        user_id = "justID"
+    def checkBookmark(self, user, idx) :
+        user_id = user.userId
+
         self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
         result = self.cur.fetchone()
         if result :
@@ -93,8 +85,9 @@ class DBManager:
             else :
                 print("올바르지 않은 입력")
         
-    def changeBookmark(self, boolean, idx) :
-        user_id = "justID"
+    def changeBookmark(self, user, boolean, idx) :
+        user_id = user.userId
+        
         if boolean :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         else :

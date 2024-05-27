@@ -82,13 +82,15 @@ class User:
         self.__total_learned_unit = value
 
     def toUserEntity(user_data):
-        return User(user_data[0], user_data[1], user_data[2], user_data[3], user_data[4], user_data[5], user_data[6], user_data[7])
+        user = User(user_data[0], user_data[1], user_data[2], user_data[3], user_data[4], user_data[5], user_data[6], user_data[7])
+        return user
 
     def toUserData(self):
         return (self.userId, self.userPassword, self.userNickname, self.userGoal, self.is_admin, self.last_date, self.today_learned_unit, self.total_learned_unit)
     
     def toUpdateUserEntity(user_id, user_data):
-        return User(user_id, user_data[0], user_data[1], user_data[2], user_data[3], user_data[4], user_data[5], user_data[6])
+        user = User(user_id, user_data[0], user_data[1], user_data[2], user_data[3], user_data[4], user_data[5], user_data[6])
+        return user
 
     def toUpdateUserData(self):
         return ( self.userPassword, self.userNickname, self.userGoal, self.is_admin, self.last_date, self.today_learned_unit, self.total_learned_unit)
