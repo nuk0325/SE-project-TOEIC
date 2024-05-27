@@ -22,7 +22,15 @@ class ReviewTestResult(TestResult) :
         part = num // 150 + 1
         unit = (num % 150) // 10 + 1
         return part, unit
+    
+    def use_goBack(self) :
+        self.use_goBackSelectWordNote()
 
-    def goBackSelectWordNote(self):
+    def use_goBackSelectWordNote(self):
         part, unit = self._calculateUnit()
+        print(part, unit)
+        print("goback 어쩌고 실행됨")
         Goto.gotoReviewWordNote(self.user, part, unit)
+
+    def getOp2(self) :
+        return "review"
