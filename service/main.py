@@ -7,5 +7,3 @@ if __name__ == "__main__":
     window = LogIn()
     window.show()
     sys.exit(app.exec())
-
-    
