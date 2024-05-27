@@ -41,55 +41,68 @@ class MainWindow(QMainWindow) :
         topLayout.addWidget(homeButton)
 
         middleFrame = QFrame(mainWidget)
-        middleFrame.setFixedSize(QSize(360, 270))  # 이미지가 들어갈 프레임
+        middleFrame.setFixedSize(QSize(360, 260))  # 이미지가 들어갈 프레임
 
-        middleDownFrame = QFrame(mainWidget)
-        middleDownFrame.setFixedSize(QSize(360, 50))
-        
-        middleDownLayout = QHBoxLayout(middleDownFrame)
 
-        correct_icon_label = QLabel("O", middleDownFrame)
+
+
+        correctFrame = QFrame(mainWidget)
+        correctFrame.setFixedSize(QSize(360, 40))
+        correctLayout = QHBoxLayout(correctFrame)
+
+        correct_icon_label = QLabel("O", correctFrame)
         correct_icon_label.setStyleSheet("color: blue;")  # 파란색으로 설정
         correct_icon_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
 
-        correctLabel = QLabel("맞힌 문제 : ", middleDownFrame)
+        correctLabel = QLabel("맞힌 문제 : ", correctFrame)
         correctLabel.setFont(QtGui.QFont("Han Sans", 9))
 
         # Correct Count 라벨 생성
-        self.correct_count_label = QLabel(parent.getCorrectCount(), middleDownFrame)
+        self.correct_count_label = QLabel(parent.getCorrectCount(), correctFrame)
         self.correct_count_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
 
-        wrong_icon_label = QLabel("X", middleDownFrame)
+        self.correctWordButton = QPushButton("단어보기", correctFrame)
+        self.correctWordButton.clicked.connect(lambda: self.closeAndOpen("correct"))
+        self.wrongWordButton = QPushButton("단어보기", correctFrame)
+        self.wrongWordButton.clicked.connect(lambda: self.closeAndOpen("wrong"))
+
+        correctLayout.addWidget(correct_icon_label)
+        correctLayout.addWidget(correctLabel)
+        correctLayout.addWidget(self.correct_count_label)
+        correctLayout.addWidget(self.correctWordButton)
+
+
+
+
+        wrongFrame = QFrame(mainWidget)
+        wrongFrame.setFixedSize(QSize(360, 40))
+        wrongLayout = QHBoxLayout(wrongFrame)
+
+        wrong_icon_label = QLabel("X", wrongFrame)
         wrong_icon_label.setStyleSheet("color: red;")  # 빨간색으로 설정
         wrong_icon_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
 
-        wrongLabel = QLabel("틀린 문제 : ", middleDownFrame)
+        wrongLabel = QLabel("틀린 문제 : ", wrongFrame)
         wrongLabel.setFont(QtGui.QFont("Han Sans", 9))  
 
         # Wrong Count 라벨 생성
-        self.wrong_count_label = QLabel(parent.getWrongCount(), middleDownFrame)
+        self.wrong_count_label = QLabel(parent.getWrongCount(), wrongFrame)
         self.wrong_count_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
 
-        self.correctWordButton = QPushButton("단어보기", middleDownFrame)
-        self.correctWordButton.clicked.connect(lambda: self.closeAndOpen("correct"))
-        self.wrongWordButton = QPushButton("단어보기", middleDownFrame)
-        self.wrongWordButton.clicked.connect(lambda: self.closeAndOpen("wrong"))
+        wrongLayout.addWidget(wrong_icon_label)
+        wrongLayout.addWidget(wrongLabel)
+        wrongLayout.addWidget(self.wrong_count_label)
+        wrongLayout.addWidget(self.wrongWordButton)
 
-        middleDownLayout.addWidget(correct_icon_label)
-        middleDownLayout.addWidget(correctLabel)
-        middleDownLayout.addWidget(self.correct_count_label)
-        middleDownLayout.addWidget(self.correctWordButton)
 
-        middleDownLayout.addWidget(wrong_icon_label)
-        middleDownLayout.addWidget(wrongLabel)
-        middleDownLayout.addWidget(self.wrong_count_label)
-        middleDownLayout.addWidget(self.wrongWordButton)
 
 
         bottomFrame = QFrame(mainWidget)
-        bottomFrame.setFixedSize(QSize(360, 210))
+        bottomFrame.setFixedSize(QSize(360, 200))
 
         self.returnWordNoteButton = QPushButton("단어장으로 돌아가기", bottomFrame) # 나중에 함수로 처리
+        self.returnWordNoteButton.clicked.connect(lambda: self.closeAndOpen("select"))
+        
         self.goBackHomeButton = QPushButton("홈으로 돌아가기", bottomFrame)
 
         bottomLayout = QHBoxLayout(bottomFrame)
@@ -100,8 +113,10 @@ class MainWindow(QMainWindow) :
 
         mainLayout.addWidget(topFrame)
         mainLayout.addWidget(middleFrame)
-        mainLayout.addWidget(middleDownFrame)
+        mainLayout.addWidget(correctFrame)
+        mainLayout.addWidget(wrongFrame)
         mainLayout.addWidget(bottomFrame)
+
 
 
     def centerWindow(self):
@@ -120,5 +135,7 @@ class MainWindow(QMainWindow) :
             self.parent.use_gotoAfterTestWordNote(option)
         elif option == "wrong" :
             self.parent.use_gotoAfterTestWordNote(option)
+        elif option == "select" :
+            self.parent.goBackSelectWordNote()
         else :
             print("error")
