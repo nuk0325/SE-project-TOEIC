@@ -16,8 +16,8 @@ class DBcontrol :
                 return True
             else :
                 return False
-            
-<<<<<<< HEAD
+
+
     def checkWrongWord(self, user_id, idx) :
         user_id = "justID"
         #user_id = user
@@ -28,14 +28,13 @@ class DBcontrol :
                 return True
             else :
                 return False
-                
-=======
+
     def insertWrongWordIdxList(self, user, idx) :
         user_id = "justID"
         # user_id = user.getUser() 대충 가져오는 함수
         self.cur.execute('''UPDATE wro_fav SET wro_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         
->>>>>>> HyeonGyeom
+    
     def getWord(self, idx, option) :
         self.cur.execute('''SELECT word, mean, sent, sent_mean FROM words_db WHERE line_num = ?''', (idx,))
         result = self.cur.fetchone()

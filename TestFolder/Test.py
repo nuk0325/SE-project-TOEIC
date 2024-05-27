@@ -46,10 +46,7 @@ class Test :
         else :
             self._reflectWrong()
         self._wordCount += 1
-<<<<<<< HEAD
-        #time.sleep(3)
-=======
->>>>>>> HyeonGyeom
+        
         if self._wordCount == len(self._wordIdxList) :
             return False
         return True
