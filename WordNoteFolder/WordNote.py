@@ -31,7 +31,7 @@ class WordNote :
     def _returnWordList(self) : # word 객체 리스트 만드는 함수
         lst = []
         for idx in self._wordIdxList :  
-            word = Word(idx, self.db) 
+            word = Word(self.user, idx, self.db) 
             lst.append(word)
         return lst
 

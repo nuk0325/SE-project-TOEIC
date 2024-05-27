@@ -6,8 +6,9 @@ class DBcontrol :
         self.conn = sqlite3.connect('word.db')
         self.cur = self.conn.cursor()
         
-    def checkBookmark(self, idx) :
+    def checkBookmark(self, user, idx) :
         user_id = "justID"
+        #user_id = user
         self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
         result = self.cur.fetchone()
         if result :
@@ -29,8 +30,9 @@ class DBcontrol :
             else :
                 print("올바르지 않은 입력")
         
-    def changeBookmark(self, boolean, idx) :
+    def changeBookmark(self, user, boolean, idx) :
         user_id = "justID"
+        #user_id = user
         if boolean :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         else :
