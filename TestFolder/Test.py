@@ -1,11 +1,9 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-#from PyQt6.QtWidgets import QApplication
 from uitest.ReviewTestUI import MainWindow
 from DB.DBcontrol import DBcontrol
 from Goto import Goto
 import random
-#import time
 
 class Test :  
     def __init__(self, user, recivedWordList, testChoice) :
@@ -24,10 +22,8 @@ class Test :
         self.main()
 
     def main(self) :
-        #app = QApplication(sys.argv)
         self.window = MainWindow(self)
         self.window.show()
-        #sys.exit(app.exec())
         
     def _setTitle(self) : # 상속해서 오버라이딩 될 메서드
         return ""
@@ -39,6 +35,7 @@ class Test :
     def _reflectWrong(self) :
         self._wrongCount += 1
         self._wrongIdxList.append(self._wordIdxList[self._wordCount])
+        self.db.insertWrongWordIdxList(self.user, self._wordIdxList[self._wordCount])
     
     def _dbClose(self) :
         self.db.closeDB()
@@ -49,8 +46,7 @@ class Test :
         else :
             self._reflectWrong()
         self._wordCount += 1
-        #time.sleep(3)
-        if self._wordCount == len(self._wordIdxList)-1 :
+        if self._wordCount == len(self._wordIdxList) :
             return False
         return True
 
