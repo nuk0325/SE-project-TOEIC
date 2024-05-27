@@ -48,10 +48,10 @@ class Goto():
     def gotoPrepareReviewTest(self):
         print("go to Prepare Review Test Page")
 
-    def gotoReviewTest(self, user):
+    def gotoReviewTest(self, user, wordIdxList, testChoice):
         print("go to Review Test Page")
         from review_test_service import ReviewTest
-        ReviewTest(user)
+        ReviewTest(user, wordIdxList, testChoice)
 
     def gotoReviewTestResult(self):
         print("go to Review Test Result Page")
