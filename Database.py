@@ -1,4 +1,27 @@
 import sqlite3
+def reset_database(db_file):
+    conn = sqlite3.connect(db_file)
+    cur = conn.cursor()
+
+    # 테이블 삭제
+    cur.execute("DROP TABLE IF EXISTS user")
+    cur.execute("DROP TABLE IF EXISTS words_db")
+    cur.execute("DROP TABLE IF EXISTS wro_fav")
+    cur.execute("DROP TABLE IF EXISTS unit")
+    cur.execute("DROP TABLE IF EXISTS day_time")
+
+    # 변경 사항 저장
+    conn.commit()
+
+    # 연결 종료
+    conn.close()
+
+# 데이터베이스 파일 경로
+db_file = 'word.db'
+
+# 데이터베이스 리셋 함수 호출
+#reset_database(db_file)
+
 
 # SQLite 데이터베이스 파일 생성 또는 연결
 conn = sqlite3.connect('word.db')
@@ -11,13 +34,19 @@ cur.execute('''CREATE TABLE IF NOT EXISTS user (
                password TEXT NOT NULL,
                nickname TEXT DEFAULT '사용자',
                unit_count INTEGER,
-               is_admin INTEGER CHECK (is_admin IN(0,1)) DEFAULT 0)''')
+               is_admin INTEGER CHECK (is_admin IN(0,1)) DEFAULT 0,
+               last_date TEXT,
+               today_learned_unit INTEGER,
+               total_learned_unit INTEGER)''')
 
 # id : 아이디
 # nickname : 닉네임, 기본값은 '사용자'
 # password : 비밀번호
 # is_admin : 어드민 여부 확인(1이면 어드민)
 # unit_count : 사용자가 설정한 하루 학습 유닛 수
+# last_date  : 홈페이지에 방문한 마지막 날짜
+# today_learned_unit  : 오늘 학습한 유닛 수
+# total_learned_unit : 총 학습한 유닛 수
 
 cur.execute('''CREATE TABLE IF NOT EXISTS words_db (
                line_num INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -77,11 +106,26 @@ cur.execute('''CREATE TABLE IF NOT EXISTS day_time(
 # 하루가 지날 때마다 날짜 테이블의 모든 day 변수를 +1 할 생각
 # 31이 되면 삭제
 
-
+# reset_database('word.db')
 
 # 변경 사항 저장
 conn.commit()
 
+# 사용자 정보 조회
+cur.execute("SELECT * FROM user")
+rows = cur.fetchall()
+
+# 조회 결과 출력
+for row in rows:
+    print(row)
+
 # 연결 종료
 conn.close()
+
+
+
+
+
+
+
 

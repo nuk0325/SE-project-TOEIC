@@ -1,20 +1,28 @@
-import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from test import Test
+from goto_service import Goto
 
-from UI.review_test_ui import ReviewTestUI
 
-class ReviewTest(QMainWindow):
-    def __init__(self, wordList, unitNum, partNum):
-        super().__init__()
-        self.ui = ReviewTestUI()
-        self.ui.setupUi(self)
+class ReviewTest(Test) :        
+    def _setTitle(self) :
+        return "복습 테스트"
+    
 
-        self.wordList = wordList
-        self.unitNum = unitNum
-        self.partNum = partNum
+    def _calculateUnit(self) :
+        num = self._wordIdxList[0]
+        part = num // 150 + 1
+        unit = (num % 150) // 10 + 1
+        return part, unit
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = ReviewTest()
-    window.show()
-    sys.exit(app.exec())
+    
+    def getUnitNum(self) :
+        unit = self._calculateUnit()[1]
+        unitName = "unit" + str(unit)
+        return unitName
+
+    
+    def use_goBack(self) :
+        part, unit = self._calculateUnit()
+        Goto.gotoUnitWordNote(part, unit)
