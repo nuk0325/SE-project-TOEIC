@@ -36,4 +36,4 @@ class UnitWordNote(WordNote, QMainWindow) : # WordNote를 상속받은 유닛 �
     
     def use_gotoSelectTest(self) :
         self._dbClose()
-        Goto.gotoReviewTest(self.user, self._wordIdxList, self._testChoice)
+        self.goto.gotoReviewTest(self.user, self._wordIdxList, self._testChoice)
