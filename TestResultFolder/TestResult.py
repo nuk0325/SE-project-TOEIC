@@ -26,11 +26,13 @@ class TestResult :
     def use_gotoAfterTestWordNote(self, option) :
         if option == "correct" :
             lst = self.correctWordIdxList
+            anotherList = self.wrongWordIdxList
         elif option == "wrong" :
             lst = self.wrongWordIdxList
+            anotherList = self.correctWordIdxList
         else :
             print("error")
-        Goto.gotoAfterTestWordNote(self.user, lst, option)
+        Goto.gotoAfterTestWordNote(self.user, lst, anotherList, option)
 
     def goBackSelectWordNote(self) :
         pass

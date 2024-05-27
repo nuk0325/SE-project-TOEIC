@@ -11,9 +11,9 @@ class Goto :
         from WordNoteFolder.ReviewWordNote import ReviewWordNote
         ReviewWordNote(user, part, unit)
 
-    def gotoAfterTestWordNote(user, lst, option) :
+    def gotoAfterTestWordNote(user, lst, anotherList, option) :
         from WordNoteFolder.AfterTestWordNote import AfterTestWordNote
-        AfterTestWordNote(user, lst, option)
+        AfterTestWordNote(user, lst, anotherList, option)
     
     def gotoWrongNoteTest(wordlist) :
         pass

@@ -207,7 +207,8 @@ class MainWindow(QMainWindow):
         self.word_sent_label.setVisible(False)
             
     def checkBoolean(self, sender) :
-        boolean = self.parent.afterQuestion(sender.text)
+        text = sender.text()
+        boolean = self.parent.afterQuestion(text)
         if boolean :
             self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
         else :
@@ -217,7 +218,6 @@ class MainWindow(QMainWindow):
         self.word_meaning_label.setVisible(True)
         self.word_sent_label.setVisible(True)
         correct_meaning = self.parent.getMeaning()
-        print(correct_meaning)
         for button in self.bottom_large_frame.findChildren(QPushButton):
             if button.text() == correct_meaning:
                 button.setStyleSheet("background-color: green;")
