@@ -34,11 +34,11 @@ class Test :
     
     def _reflectCorrect(self) :
         self._correctCount += 1
-        self._correctIdxList.append(self._wordCount)
+        self._correctIdxList.append(self._wordIdxList[self._wordCount])
     
     def _reflectWrong(self) :
         self._wrongCount += 1
-        self._wrongIdxList.append(self._wordCount)
+        self._wrongIdxList.append(self._wordIdxList[self._wordCount])
     
     def _dbClose(self) :
         self.db.closeDB()

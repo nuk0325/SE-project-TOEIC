@@ -1,8 +1,10 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame, QHBoxLayout, QVBoxLayout, QLabel, QWidget, QScrollArea, QMessageBox
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtGui import QFont
+from PopUpDialog import PopUpDialog
 
 class MainWindow(QMainWindow):
     def __init__(self, frameCount, noteLabel, testName, wordObjList, parent): # parent : WorNote 클래스를 의미
@@ -18,7 +20,6 @@ class MainWindow(QMainWindow):
         self.setGeometry(0, 0, 360, 600)  # (x, y, width, height)
         self.centerWindow()
         
-
         # 메인 위젯 생성
         main_widget = QWidget()
         self.setCentralWidget(main_widget)
@@ -85,7 +86,7 @@ class MainWindow(QMainWindow):
         test_button.setFixedSize(QSize(340, 60))
         test_button.setStyleSheet("background-color: rgb(255, 230, 130);")
         test_button.setFont(QFont("Han Sans", 20))
-        test_button.clicked.connect(self.showPopup)
+        test_button.clicked.connect(self.showPopUp)
 
         bottom_layout.addWidget(test_button, alignment=Qt.AlignmentFlag.AlignCenter)
 
@@ -113,34 +114,10 @@ class MainWindow(QMainWindow):
         else :
             print("잘못된 입력입니다.")
 
-    def showPopup(self):
-        # QMessageBox 생성
-        msg_box = QMessageBox()
-        msg_box.setWindowTitle("테스트 방식 선택")
-        msg_box.setText("테스트 방식을 선택해주세요")
+    def showPopUp(self) :
+        popup = PopUpDialog(self, self.parent)
+        popup.exec()
 
-            # 사용자 정의 버튼 생성
-        btn_meaning = QPushButton('뜻으로 답하기')
-        btn_english = QPushButton('영어로 답하기')
-
-            # 버튼을 QMessageBox에 추가
-        msg_box.addButton(btn_meaning, QMessageBox.ButtonRole.YesRole)
-        msg_box.addButton(btn_english, QMessageBox.ButtonRole.NoRole)
-
-        msg_box.clickedButton()
-
-            # 팝업창 실행 및 응답 저장
-        response = msg_box.exec()
-
-            # 사용자 응답에 따른 처리
-        if msg_box.clickedButton() == btn_meaning:
-            print("사용자가 '뜻으로 답하기'를 선택했습니다.")
-            self.parent.setTestChoice(False)
-            self.closeAndOpen("test")
-        elif msg_box.clickedButton() == btn_english:
-            print("사용자가 '영어로 답하기'를 선택했습니다.")
-            self.parent.setTestChoice(True)
-            self.closeAndOpen("test")
         
 
     def createFrame(self, wordObj):
@@ -218,27 +195,3 @@ class MainWindow(QMainWindow):
             label2.setVisible(True)
             button.setText("∧")  # 추가된 부분
         frame.is_expanded = not frame.is_expanded
-
-
-def main(frameCount, noteLabel, testName, wordObjList):
-    # 애플리케이션 생성
-    app = QApplication(sys.argv)
-
-    frameCount = 10
-    noteLabel = "학습하기"
-    testName = "복습 테스트 시작하기"
-    wordObjList = [] # word 객체라 예시로 실행하기 애매함
-
-    # 메인 윈도우 생성
-    window = MainWindow(frameCount, noteLabel, testName, wordObjList)
-    window.show()
-    
-    # 이벤트 루프 실행
-    sys.exit(app.exec())
-
-# if __name__ == "__main__":
-    frameCount = 10
-    noteLabel = "학습하기"
-    testName = "복습 테스트 시작하기"
-    wordObjList = []
-    main(frameCount, noteLabel, testName, wordObjList)

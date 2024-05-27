@@ -10,6 +10,10 @@ class Goto :
     def gotoReviewWordNote(user, part, unit) :
         from WordNoteFolder.ReviewWordNote import ReviewWordNote
         ReviewWordNote(user, part, unit)
+
+    def gotoAfterTestWordNote(user, lst, option) :
+        from WordNoteFolder.AfterTestWordNote import AfterTestWordNote
+        AfterTestWordNote(user, lst, option)
     
     def gotoWrongNoteTest(wordlist) :
         pass
@@ -18,9 +22,8 @@ class Goto :
         pass
 
     def gotoReviewTestResult(user, correctList, wrongList) :
-        #from TestResultFolder.TestResult import TestResult
-        #TestResult(user, correctList, wrongList)
-        pass
+        from TestResultFolder.ReviewTestResult import ReviewTestResult
+        ReviewTestResult(user, correctList, wrongList)
 
     def gotoReviewTest(self, wordList, testChoice) :
         from TestFolder.ReviewTest import ReviewTest
