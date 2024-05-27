@@ -29,7 +29,7 @@ class WordNoteUI(QMainWindow):
         # 뒤로가기 버튼 생성
         back_button = QPushButton("뒤로가기")
         back_button.setFixedSize(QSize(60, 60))
-        back_button.clicked.connect(parent.use_goBack)
+        back_button.clicked.connect(lambda: self.closeAndOpen("back"))
 
         # Label 추가
         word_note_label = QLabel(noteLabel)
@@ -41,7 +41,7 @@ class WordNoteUI(QMainWindow):
         # 홈으로 가기 버튼 생성
         home_button = QPushButton("홈")
         home_button.setFixedSize(QSize(60, 60))
-        home_button.clicked.connect(parent.use_gotoHome)
+        home_button.clicked.connect(lambda: self.closeAndOpen("home"))
 
         # 상단 프레임 레이아웃 설정
         top_layout = QHBoxLayout()
@@ -81,7 +81,7 @@ class WordNoteUI(QMainWindow):
         test_button.setFixedSize(QSize(340, 60))
         test_button.setStyleSheet("background-color: rgb(255, 230, 130);")
         test_button.setFont(QFont("Arial", 20))
-        test_button.clicked.connect(self.closeAndOpen)
+        test_button.clicked.connect(lambda: self.closeAndOpen("test"))
 
         bottom_layout.addWidget(test_button, alignment=Qt.AlignmentFlag.AlignCenter)
 
@@ -92,9 +92,16 @@ class WordNoteUI(QMainWindow):
         main_layout.addWidget(bottom_frame)
         main_widget.setLayout(main_layout)
         
-    def closeAndOpen(self) :
+    def closeAndOpen(self, option) :
         self.close()
-        self.parent.use_gotoSelectTest()
+        if option == "back" :
+            self.parent.use_goBack()
+        elif option == "home" :
+            self.parent.use_gotoHome()
+        elif option == "test" :
+            self.parent.use_gotoSelectTest()
+        else :
+            print("잘못된 입력입니다.")
 
     def createFrame(self, wordObj):
         frame = QFrame()
@@ -170,25 +177,25 @@ class WordNoteUI(QMainWindow):
             additional_label2.setVisible(True)
         frame.is_expanded = not frame.is_expanded
 
-# def main(frameCount, noteLabel, testName, wordObjList):
-#     # 애플리케이션 생성
-#     app = QApplication(sys.argv)
+def main(frameCount, noteLabel, testName, wordObjList):
+    # 애플리케이션 생성
+    app = QApplication(sys.argv)
 
-#     frameCount = 10
-#     noteLabel = "학습하기"
-#     testName = "복습 테스트 시작하기"
-#     wordObjList = [] # word 객체라 예시로 실행하기 애매함
+    frameCount = 10
+    noteLabel = "학습하기"
+    testName = "복습 테스트 시작하기"
+    wordObjList = [] # word 객체라 예시로 실행하기 애매함
 
-#     # 메인 윈도우 생성
-#     window = MainWindow(frameCount, noteLabel, testName, wordObjList)
-#     window.show()
+    # 메인 윈도우 생성
+    window = MainWindow(frameCount, noteLabel, testName, wordObjList)
+    window.show()
     
-#     # 이벤트 루프 실행
-#     sys.exit(app.exec())
+    # 이벤트 루프 실행
+    sys.exit(app.exec())
 
-# # if __name__ == "__main__":
-#     frameCount = 10
-#     noteLabel = "학습하기"
-#     testName = "복습 테스트 시작하기"
-#     wordObjList = []
-#     main(frameCount, noteLabel, testName, wordObjList)
+# if __name__ == "__main__":
+    frameCount = 10
+    noteLabel = "학습하기"
+    testName = "복습 테스트 시작하기"
+    wordObjList = []
+    main(frameCount, noteLabel, testName, wordObjList)

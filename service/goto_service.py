@@ -49,9 +49,8 @@ class Goto():
         print("go to Prepare Review Test Page")
 
     def gotoReviewTest(self, user):
-        from service.review_test_service import ReviewTest
-        self.window = ReviewTest(user)
-        self.window.show()
+        from review_test_service import ReviewTest
+        ReviewTest(user)
 
     def gotoReviewTestResult(self):
         print("go to Review Test Result Page")
