@@ -22,6 +22,9 @@ class managerSearchPageService:
         self.logoutBtn.clicked.connect(self.logout_btn_clicked)
         self.searchBtn.clicked.connect(self.search_btn_clicked)
 
+    
+
+
     def menu_btn_clicked(self):
         print("menuBtn clicked")
         #self.goto.manager
@@ -29,15 +32,19 @@ class managerSearchPageService:
     def logout_btn_clicked(self):
         print("logoutBtn clicked")
         self.goto.gotoLogIn()
+        self.ui.close()
 
     def search_btn_clicked(self):
         # 검색 버튼 클릭 시 toSearchEdit에 입력된 단어 출력
         search_word = self.toSearchEdit.text()
+        if len(search_word)<1:
+            QMessageBox.information(None, "공백오류", "1글자 이상 입력하세요")
+            return
         word_indices = self.find_word_indices(search_word)
         if len(word_indices)<1:
             QMessageBox.information(None, "단어 검색결과", "일치하는 단어가 없습니다.")
             return
-        
+        self.ui.clearWordButtons()  # 기존 단어 버튼 제거
         self.connect_word_buttons(word_indices)
 
     def add_word_button(self, word_index):
