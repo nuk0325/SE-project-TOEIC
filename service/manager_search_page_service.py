@@ -8,7 +8,7 @@ import csv
 class managerSearchPageService:
     def __init__(self, ui):
         self.ui = ui
-        self.dataManager = DBManager()
+        #self.dataManager = DBManager()
         self.goto = Goto()
 
         # UI의 버튼 객체들을 가져옵니다.
@@ -42,7 +42,7 @@ class managerSearchPageService:
 
     def add_word_button(self, word_index):
         # 단어 버튼을 생성하고 centralwidget에 추가
-        button = self.ui.createWordButton(word_index / 120 + 1, word_index % 120 / 15 + 1, self.dataManager.getWord(word_index))
+        button = self.ui.createWordButton(int(word_index[0]) // 120 + 1, int(word_index[0]) % 120 // 15 + 1, word_index[1])
         button.show()
         # 클릭 이벤트에 연결
         button.clicked.connect(lambda num=word_index: self.show_word_num(num))
@@ -63,7 +63,7 @@ class managerSearchPageService:
             reader = csv.reader(csvfile)
             for row in reader:
                 if word in row[1]:
-                    word_indices.append(int(row[0]))
+                    word_indices.append([int(row[0]),str(row[1])])
 
         return word_indices
 
