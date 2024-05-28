@@ -26,9 +26,9 @@ class AfterTestWordNote(WordNote) :
     def use_goBack(self) :
         lst1 = self._wordIdxList
         lst2 = self._anotherList
-        if self._op1 == "wrong" :
-            lst1, lst2 = self._reverseList(lst1, lst2)
-
+        if self._op1 == "wrong" : # 틀린 단어장이면 wordIdxList와 anotherList의 파라미터 위치 바꾸기
+            lst1, lst2 = self._reverseList(lst1, lst2) # 이유 : 틀린 단어장이면 wordIdxList가 틀린 단어 리스트인데,
+                                                    # 원래대로 넣으면 틀린 단어가 맞은 단어 리스트의 파라미터로서 실행된다
         if self._op2 == "review" :
             Goto.gotoReviewTestResult(self.user, lst1, lst2)
         elif self._op2 == "wrong" :
