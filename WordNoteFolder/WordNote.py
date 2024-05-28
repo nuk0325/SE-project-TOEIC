@@ -11,7 +11,7 @@ class WordNote :
         self.user = user
         self._titleName = "" # 맨 위에 들어가는 문장 (ex. 학습하기)
         self._testName = "" # 맨 아래에 들어가는 문장 (ex. 복습 테스트 시작)
-        self._testChoice = False # 단어 / 뜻 전환 여부 (아직 구현 안 됨) / False면 뜻으로 답하기
+        self._testChoice = False # 단어 / 뜻 전환 여부 / False면 뜻으로 답하기
         self._wordIdxList = recievedWordList # 단어들의index로 구성된 리스트
         self.db = self._makeDBobj()
         self._wordList = self._returnWordList() # word 객체로 구성된 리스트
@@ -30,9 +30,10 @@ class WordNote :
 
     def _returnWordList(self) : # word 객체 리스트 만드는 함수
         lst = []
-        for idx in self._wordIdxList :  
-            word = Word(self.user, idx, self.db) 
-            lst.append(word)
+        for idx in self._wordIdxList :
+            if self.db.getWord(idx, "word") != None : # 영어 값이 비어있다면 pass
+                word = Word(self.user, idx, self.db) 
+                lst.append(word)
         return lst
 
     def main(self) : # UI 실행 함수
@@ -57,10 +58,3 @@ class WordNote :
     
     def use_gotoSelectTest(self) : # 얘도 자식이 오버라이딩
         pass
-
-
-
-#if __name__ == "__main__": # 실제 UI 실행 코드
-#    received_word_list = []  # 받은 단어 목록을 입력하세요.
-#    word_note = WordNote(received_word_list)
-#    word_note.main()

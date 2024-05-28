@@ -76,11 +76,17 @@ class Test :
     
     def getQuestion(self) :
         idx = self._wordIdxList[self._wordCount]
-        return self.db.getWord(idx, "word")
+        if self._testChoice :
+            return self.db.getWord(idx, "meaning")
+        else :
+            return self.db.getWord(idx, "word")
 
-    def getMeaning(self) :
+    def getAnswer(self) :
         idx = self._wordIdxList[self._wordCount]
-        return self.db.getWord(idx, "meaning")
+        if self._testChoice :
+            return self.db.getWord(idx, "word")
+        else :
+            return self.db.getWord(idx, "meaning")
 
     def getSentence(self) :
         idx = self._wordIdxList[self._wordCount]
@@ -98,8 +104,12 @@ class Test :
         for _ in range(3) :
             idxList.append(self._wrongMeaningList.pop()) # 정답 인덱스 하나에 오답 인덱스 3개
         random.shuffle(idxList) # 랜덤으로 섞기
+        if self._testChoice :
+            option = "word"
+        else :
+            option = "meaning"
         for idx in idxList :
-            word = self.db.getWord(idx, "meaning")
+            word = self.db.getWord(idx, option)
             wordList.append(word) # 뜻 str로 이루어진 리스트를 return한다
         return wordList
         

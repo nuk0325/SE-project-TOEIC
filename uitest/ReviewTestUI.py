@@ -92,29 +92,29 @@ class MainWindow(QMainWindow):
         self.word_count_label = QLabel(parent.getWordCountLabel(), new_frame)
         self.word_count_label.setFont(QtGui.QFont("Han Sans", 12))  # 폰트 크기 설정
         
-        # wordName 라벨 생성
-        self.word_name_label = QLabel(parent.getWordName(), new_frame)
-        self.word_name_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)  # 가운데 정렬
-        self.word_name_label.setFont(QtGui.QFont("Han Sans", 30))  # 폰트 크기 변경
+        # question 라벨 생성
+        self.questionLabel = QLabel(parent.getQuestion(), new_frame)
+        self.questionLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)  # 가운데 정렬
+        self.questionLabel.setFont(QtGui.QFont("Han Sans", 30))  # 폰트 크기 변경
         
-        # word_meaning_label 생성
-        self.word_meaning_label = QLabel(parent.getMeaning(), new_frame)
-        self.word_meaning_label.setFont(QtGui.QFont("Han Sans", 12))
-        self.word_meaning_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.word_meaning_label.setVisible(False)
+        # answerLabel 생성
+        self.answerLabel = QLabel(parent.getAnswer(), new_frame)
+        self.answerLabel.setFont(QtGui.QFont("Han Sans", 12))
+        self.answerLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.answerLabel.setVisible(False)
 
-        # word_sent_label 생성
-        self.word_sent_label = QLabel(parent.getSentence(), new_frame)
-        self.word_sent_label.setFont(QtGui.QFont("Han Sans", 12))
-        self.word_sent_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.word_sent_label.setVisible(False)
+        # sentenceLabel 생성
+        self.sentenceLabel = QLabel(parent.getSentence(), new_frame)
+        self.sentenceLabel.setFont(QtGui.QFont("Han Sans", 12))
+        self.sentenceLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.sentenceLabel.setVisible(False)
 
         # 라벨들을 수직 레이아웃에 추가
         new_layout.addWidget(self.word_count_label)
         #new_layout.addStretch(1)  # Stretch 추가
-        new_layout.addWidget(self.word_name_label)
-        new_layout.addWidget(self.word_meaning_label)
-        new_layout.addWidget(self.word_sent_label)
+        new_layout.addWidget(self.questionLabel)
+        new_layout.addWidget(self.answerLabel)
+        new_layout.addWidget(self.sentenceLabel)
         new_layout.addStretch(1)  # Stretch 추가
 
         # 추가 프레임 생성 (360x360)
@@ -158,9 +158,9 @@ class MainWindow(QMainWindow):
         self.correct_count_label.setText(self.parent.getCorrectCount())
         self.wrong_count_label.setText(self.parent.getWrongCount())
         self.word_count_label.setText(self.parent.getWordCountLabel())
-        self.word_name_label.setText(self.parent.getWordName())  # 여기서 word_name_label 업데이트 추가
-        self.word_meaning_label.setText(self.parent.getMeaning())
-        self.word_sent_label.setText(self.parent.getSentence())
+        self.questionLabel.setText(self.parent.getQuestion())  # 여기서 questionLabel 업데이트 추가
+        self.answerLabel.setText(self.parent.getAnswer())
+        self.sentenceLabel.setText(self.parent.getSentence())
         
         # 기존 버튼 제거
         for i in reversed(range(self.grid_layout.count())): 
@@ -203,8 +203,8 @@ class MainWindow(QMainWindow):
             QtCore.QTimer.singleShot(500, lambda: self.checkBoolean(sender))
                 
     def hide_labels(self):
-        self.word_meaning_label.setVisible(False)
-        self.word_sent_label.setVisible(False)
+        self.answerLabel.setVisible(False)
+        self.sentenceLabel.setVisible(False)
             
     def checkBoolean(self, sender) :
         text = sender.text()
@@ -215,9 +215,9 @@ class MainWindow(QMainWindow):
             self.closeAndOpen("result")
     
     def lookAnswer(self, sender) :
-        self.word_meaning_label.setVisible(True)
-        self.word_sent_label.setVisible(True)
-        correct_meaning = self.parent.getMeaning()
+        self.answerLabel.setVisible(True)
+        self.sentenceLabel.setVisible(True)
+        correct_meaning = self.parent.getAnswer()
         for button in self.bottom_large_frame.findChildren(QPushButton):
             if button.text() == correct_meaning:
                 button.setStyleSheet("background-color: green;")
