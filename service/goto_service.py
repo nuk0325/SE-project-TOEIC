@@ -85,8 +85,10 @@ class Goto():
         self.window = MyPage(user)
         self.window.show()
 
-    def gotoWrongNote(self):
+    def gotoWrongNote(self, user):
         print("go to Wrong Note Page")
+        from wrong_note_service import WrongNote
+        WrongNote(user)
 
     def gotoPrepareWrongNoteTest(self):
         print("go to Prepare Wrong Note Test Page")
