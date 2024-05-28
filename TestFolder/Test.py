@@ -16,6 +16,7 @@ class Test :
         self._correctIdxList = []
         self._wrongIdxList = [] # 셋 전부 index의 배열
         self._wordIdxList = recivedWordList
+        self._shuffleWordIdxList()
         self._testChoice = testChoice
         self._wrongMeaningList = self._makeWrongMeaningList()
         self.db = DBcontrol()
@@ -27,6 +28,9 @@ class Test :
         
     def _setTitle(self) : # 상속해서 오버라이딩 될 메서드
         return ""
+    
+    def _shuffleWordIdxList(self) :
+        random.shuffle(self._wordIdxList)
     
     def _reflectCorrect(self) :
         self._correctCount += 1
