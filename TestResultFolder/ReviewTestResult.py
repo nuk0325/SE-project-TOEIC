@@ -11,7 +11,7 @@ class ReviewTestResult(TestResult) :
 
     def _calculateIdx(self) :
         min = 1200
-        lst = self.correctWordIdxList + self.wrongWordIdxList
+        lst = self._correctWordIdxList + self._wrongWordIdxList
         for idx in lst :
             if min > idx :
                 min = idx
@@ -28,8 +28,6 @@ class ReviewTestResult(TestResult) :
 
     def use_goBackSelectWordNote(self):
         part, unit = self._calculateUnit()
-        print(part, unit)
-        print("goback 어쩌고 실행됨")
         Goto.gotoReviewWordNote(self.user, part, unit)
 
     def getOp2(self) :

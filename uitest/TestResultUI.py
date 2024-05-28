@@ -14,6 +14,8 @@ class MainWindow(QMainWindow) :
 
         mainWidget = QWidget()
         self.setCentralWidget(mainWidget)
+        color = self.parent.getColor()
+        mainWidget.setStyleSheet(color)
 
         # 상단 프레임 생성
         topFrame = QFrame(mainWidget)
@@ -32,7 +34,7 @@ class MainWindow(QMainWindow) :
 
         # Label 추가
         titleLabel = QLabel(self.parent.getTitle(), topFrame)
-        titleLabel.setFont(QFont("Arial", 20))
+        titleLabel.setFont(QFont("Han Sans", 20))
         titleLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         topLayout = QHBoxLayout(topFrame)
@@ -40,8 +42,10 @@ class MainWindow(QMainWindow) :
         topLayout.addWidget(titleLabel)
         topLayout.addWidget(homeButton)
 
+
+
         middleFrame = QFrame(mainWidget)
-        middleFrame.setFixedSize(QSize(360, 260))  # 이미지가 들어갈 프레임
+        middleFrame.setFixedSize(QSize(360, 300))  # 이미지가 들어갈 프레임
 
 
 
@@ -52,23 +56,24 @@ class MainWindow(QMainWindow) :
 
         correct_icon_label = QLabel("O", correctFrame)
         correct_icon_label.setStyleSheet("color: blue;")  # 파란색으로 설정
-        correct_icon_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
+        correct_icon_label.setFont(QtGui.QFont("Han Sans", 12))  # 폰트 크기 설정
 
         correctLabel = QLabel("맞힌 문제 : ", correctFrame)
-        correctLabel.setFont(QtGui.QFont("Han Sans", 9))
+        correctLabel.setFont(QtGui.QFont("Han Sans", 12))
 
         # Correct Count 라벨 생성
         self.correct_count_label = QLabel(parent.getCorrectCount(), correctFrame)
-        self.correct_count_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
+        self.correct_count_label.setFont(QtGui.QFont("Han Sans", 12))  # 폰트 크기 설정
 
         self.correctWordButton = QPushButton("단어보기", correctFrame)
         self.correctWordButton.clicked.connect(lambda: self.closeAndOpen("correct"))
-        self.wrongWordButton = QPushButton("단어보기", correctFrame)
-        self.wrongWordButton.clicked.connect(lambda: self.closeAndOpen("wrong"))
+        self.correctWordButton.setFont(QtGui.QFont("Han Sans", 10))
+        self.correctWordButton.setStyleSheet("background-color : rgb(190, 190, 190);")
 
         correctLayout.addWidget(correct_icon_label)
         correctLayout.addWidget(correctLabel)
         correctLayout.addWidget(self.correct_count_label)
+        correctLayout.addStretch(1)
         correctLayout.addWidget(self.correctWordButton)
 
 
@@ -80,32 +85,43 @@ class MainWindow(QMainWindow) :
 
         wrong_icon_label = QLabel("X", wrongFrame)
         wrong_icon_label.setStyleSheet("color: red;")  # 빨간색으로 설정
-        wrong_icon_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
+        wrong_icon_label.setFont(QtGui.QFont("Han Sans", 12))  # 폰트 크기 설정
 
         wrongLabel = QLabel("틀린 문제 : ", wrongFrame)
-        wrongLabel.setFont(QtGui.QFont("Han Sans", 9))  
+        wrongLabel.setFont(QtGui.QFont("Han Sans", 12))  
 
         # Wrong Count 라벨 생성
         self.wrong_count_label = QLabel(parent.getWrongCount(), wrongFrame)
-        self.wrong_count_label.setFont(QtGui.QFont("Han Sans", 9))  # 폰트 크기 설정
+        self.wrong_count_label.setFont(QtGui.QFont("Han Sans", 12))  # 폰트 크기 설정
+    
+        self.wrongWordButton = QPushButton("단어보기", correctFrame)
+        self.wrongWordButton.clicked.connect(lambda: self.closeAndOpen("wrong"))
+        self.wrongWordButton.setFont(QtGui.QFont("Han Sans", 10))
+        self.wrongWordButton.setStyleSheet("background-color : rgb(190, 190, 190);")
+
 
         wrongLayout.addWidget(wrong_icon_label)
         wrongLayout.addWidget(wrongLabel)
         wrongLayout.addWidget(self.wrong_count_label)
+        wrongLayout.addStretch(1)
         wrongLayout.addWidget(self.wrongWordButton)
 
 
 
 
         bottomFrame = QFrame(mainWidget)
-        bottomFrame.setFixedSize(QSize(360, 200))
+        bottomFrame.setFixedSize(QSize(360, 150))
 
-        self.returnWordNoteButton = QPushButton("단어장으로 돌아가기", bottomFrame) # 나중에 함수로 처리
+        self.returnWordNoteButton = QPushButton("단어장으로 돌아가기", bottomFrame) # 나중에 함수로 처리 270 / 50
+        self.returnWordNoteButton.setFixedSize(QSize(340,50))
+        self.returnWordNoteButton.setStyleSheet("background-color : rgb(255, 230, 130);")
         self.returnWordNoteButton.clicked.connect(lambda: self.closeAndOpen("select"))
         
         self.goBackHomeButton = QPushButton("홈으로 돌아가기", bottomFrame)
+        self.goBackHomeButton.setStyleSheet("background-color : rgb(255, 230, 130);")
+        self.goBackHomeButton.setFixedSize(QSize(340,50))
 
-        bottomLayout = QHBoxLayout(bottomFrame)
+        bottomLayout = QVBoxLayout(bottomFrame)
         bottomLayout.addWidget(self.returnWordNoteButton)
         bottomLayout.addWidget(self.goBackHomeButton)
 
