@@ -15,9 +15,9 @@ class Test :
         self._wordIdxList = []
         self._correctIdxList = []
         self._wrongIdxList = [] # 셋 전부 index의 배열
-        self._wordIdxList = recivedWordList
+        self._wordIdxList = recivedWordList 
         self._shuffleWordIdxList()
-        self._testChoice = testChoice
+        self._testChoice = testChoice # True면 영어로 답하기 / False면 뜻으로 답하기
         self._wrongMeaningList = self._makeWrongMeaningList()
         self.db = DBcontrol()
         self.main()
@@ -45,7 +45,7 @@ class Test :
         self.db.closeDB()
 
     def afterQuestion(self, answer) :
-        if answer == self.getMeaning() :
+        if answer == self.getAnswer() :
             self._reflectCorrect()
         else :
             self._reflectWrong()
@@ -74,7 +74,7 @@ class Test :
     def getTitle(self) :
         return self._titleName
     
-    def getWordName(self) :
+    def getQuestion(self) :
         idx = self._wordIdxList[self._wordCount]
         return self.db.getWord(idx, "word")
 
