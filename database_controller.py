@@ -41,10 +41,25 @@ def addTestUser(user_id, password, nickname, unit_count=3, is_admin=None, last_d
 
 
 # 즐겨찾기, 오답노트 정보 추가
-def add_wro_fav(user_id, line_num, wro_is_right, fav_is_right):
-    cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
-                (user_id, line_num, wro_is_right, fav_is_right))
+def add_or_update_wro_fav(user_id, line_num, wro_is_right, fav_is_right):
+    # 중복 확인 쿼리
+    cur.execute('''SELECT COUNT(*) FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, line_num))
+    
+    if cur.fetchone()[0] == 0:
+        # 중복이 없는 경우에만 삽입
+        cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
+                    (user_id, line_num, wro_is_right, fav_is_right))
+    else:
+        # 중복이 있는 경우 업데이트
+        cur.execute('''UPDATE wro_fav SET wro_is_right = ?, fav_is_right = ? WHERE user_id = ? AND line_num = ?''', 
+                    (wro_is_right, fav_is_right, user_id, line_num))
+    
     conn.commit()
+
+# def add_wro_fav(user_id, line_num, wro_is_right, fav_is_right):
+#     cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
+#                 (user_id, line_num, wro_is_right, fav_is_right))
+#     conn.commit()
 
 # 즐겨찾기, 오답노트 테이블 정보 전부 삭제
 def deleteAllWrongFav(user_id):
@@ -68,7 +83,7 @@ if __name__ == "__main__":
     # conn.commit()
     # print("업데이트 결과")
     selectAllFromTable("wro_fav")
-    # deleteAllWrongFav("sunwook")
+    # deleteAllWrongFav("taehyen")
 
 
     # 오답노트 및 즐겨찾기 데이터 삽입
@@ -83,19 +98,19 @@ if __name__ == "__main__":
 
     # taehyen의 오답노트 단어
     wrong_words = [
-        ('taehyen', 6, 1, 0),
-        ('taehyen', 7, 1, 0),
-        ('taehyen', 9, 1, 0),
-        ('taehyen', 400, 1, 0),
-        ('taehyen', 700, 1, 0),
-        ('taehyen', 1000, 1, 0)
+        ('sunwook', 6, 1, 0),
+        ('sunwook', 7, 1, 0),
+        ('sunwook', 9, 1, 0),
+        ('sunwook', 400, 1, 0),
+        ('sunwook', 700, 1, 0),
+        ('sunwook', 1000, 1, 0)
     ]
 
     # for fav in fav_words:
     #     add_wro_fav(*fav)
 
     # for wrong in wrong_words:
-    #     add_wro_fav(*wrong)
+    #     add_or_update_wro_fav(*wrong)
 
     #selectAllFromTable('wro_fav')
     # deleteAllWrongFav

@@ -72,7 +72,9 @@ class DBManager:
             else :
                 return False
             
-    def checkWrongWord(self, user_id, idx) :
+    def checkWrongWord(self, user, idx) :
+        user_id = user.userId
+
         self.cur.execute('''SELECT wro_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
         result = self.cur.fetchone()
         if result :
@@ -103,26 +105,26 @@ class DBManager:
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         self.conn.commit()
 
-    def getBookmarkWordList(self,user_id) :
+    def getBookmarkWordList(self, user) :
         # fav_is_right == 1인 리스트 뽑는 코드
         #wordIdxList = [120,1,2,5,6,7,8] #모든 단어의 index는 1에서 시작
         wordIdxList=[]
         count=1200 #전체 단어 개수
         i=1
         for i in range(1, count):
-            if self.checkBookmark(user_id, i) == 1:
+            if self.checkBookmark(user, i) == 1:
                 wordIdxList.append(i)
 
         return wordIdxList
 
-    def getWrongWordList(self,user_id) :
+    def getWrongWordList(self, user):
         # wro_is_right == 1인 리스트 뽑는 코드
         #wordIdxList = [121,1,2,5,6,7,8]
         wordIdxList=[]
         count=1200 #전체 단어 개수
         i=1
         for i in range(1, count):
-            if self.checkWrongWord(user_id, i) == 1:
+            if self.checkWrongWord(user, i) == 1:
                 wordIdxList.append(i)
         return wordIdxList  
     
