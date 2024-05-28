@@ -144,6 +144,7 @@ class Ui_prepareEntreTest(object):
     
     def pushButton_clicked(self):
         ex = selectTest()
+        ex = SelectTestDialog()
         selected_value = self.comboBox.currentText()
         print(f"선택된 단어 수: {selected_value}")
 

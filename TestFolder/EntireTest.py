@@ -6,10 +6,16 @@ from Test import Test
 from Goto import Goto
 
 
-class BookmarkTest(Test) :        
+class EntireTest(Test) :        
     def main(self) :
         self.window = MainWindow(self)
         self.window.show()    
+    
+    def select_random_n(self, wordIdxList):
+        result = wordIdxList
+        if len(wordIdxList) > 20:
+            result = random.sample(wordIdxList, 20)
+        return result
     
     def _setTitle(self) :
         return "전체 테스트"
