@@ -28,13 +28,17 @@ class DBcontrol :
                 return True
             else :
                 return False
-
-    def insertWrongWordIdxList(self, user, idx) :
+    
+    def DeleteWrongWordIdxList(self, user_id, idx) : #wro_is_right를 0으로
+        user_id = "justID"
+        # user_id = user.getUser() 대충 가져오는 함수
+        self.cur.execute('''UPDATE wro_fav SET wro_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
+    
+    def insertWrongWordIdxList(self, user_id, idx) : #wro_is_right를 0으로
         user_id = "justID"
         # user_id = user.getUser() 대충 가져오는 함수
         self.cur.execute('''UPDATE wro_fav SET wro_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
-        
-    
+
     def getWord(self, idx, option) :
         self.cur.execute('''SELECT word, mean, sent, sent_mean FROM words_db WHERE line_num = ?''', (idx,))
         result = self.cur.fetchone()
@@ -50,7 +54,7 @@ class DBcontrol :
             else :
                 print("올바르지 않은 입력")
         
-    def changeBookmark(self, user, boolean, idx) : 
+    def changeBookmark(self, user_id, boolean, idx) : 
         user_id = "justID"
         #user_id = user
         if boolean :

@@ -16,7 +16,7 @@ class TestResult :
         self.window = MainWindow(self)
         self.window.show()
 
-    def _ifCorrectOver(self) :
+    def _ifCorrectOver(self) : # 맞은 개수가 80%를 넘었으면
         if self._correctCount >= self._wrongCount * 4 :
             return True
         else :

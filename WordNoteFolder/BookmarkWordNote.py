@@ -32,9 +32,9 @@ class BookmarkWordNote(WordNote) :
 
     def use_goBack(self) :
         self._dbClose()
-        Goto.gotoUnit()
+        Goto.gotoMypage()
     
     def use_gotoSelectTest(self) :
         self._dbClose()
-        Goto.gotoReviewTest(self._wordIdxList, self._testChoice)
+        Goto.gotoBookmarkNoteTest(self.user, self._wordIdxList, self._testChoice)
       

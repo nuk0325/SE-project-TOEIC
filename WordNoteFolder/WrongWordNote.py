@@ -1,4 +1,5 @@
 from WordNote import WordNote
+from Goto import Goto
 
 class WrongWordNote(WordNote) :
     def __init__(self,user) :
@@ -10,3 +11,12 @@ class WrongWordNote(WordNote) :
         self._wordIdxList = self.db.getWrongWordList(self.user)
         self._wordList = self._returnWordList()
         self.main()
+
+
+    def use_goBack(self) :
+        self._dbClose()
+        Goto.gotoMypage()
+    
+    def use_gotoSelectTest(self) :
+        self._dbClose()
+        Goto.gotoWrongWordTest(self.user, self._wordIdxList, self._testChoice)

@@ -28,11 +28,11 @@ class Test :
     def _setTitle(self) : # 상속해서 오버라이딩 될 메서드
         return ""
     
-    def _reflectCorrect(self) :
+    def _reflectCorrect(self) : #맞았을 때, 오답노트에서 삭제 
         self._correctCount += 1
         self._correctIdxList.append(self._wordIdxList[self._wordCount])
     
-    def _reflectWrong(self) :
+    def _reflectWrong(self) : #틀렸을 때, 오답노트에 추가
         self._wrongCount += 1
         self._wrongIdxList.append(self._wordIdxList[self._wordCount])
         self.db.insertWrongWordIdxList(self.user, self._wordIdxList[self._wordCount])

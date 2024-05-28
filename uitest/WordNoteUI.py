@@ -265,7 +265,7 @@ class BookmarkDialog(QDialog):
     #     self.close()
 
     def yes(self):
-        print("사용자가 '뜻으로 답하기'를 선택했습니다.")
+        print(f"{self.wordObj.getWordIdx()}: 즐겨찾기 해제")
         self.wordObj.Bookmark() 
         self.parent.updateBookmarkButton(self.bookmark_button, self.wordObj.getBookmark())
         print(f"{self.wordObj.getWordIdx()}: --> {self.wordObj.getBookmark()}")
