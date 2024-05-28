@@ -6,10 +6,10 @@ from uitest.TestResultUI import MainWindow
 class TestResult :
     def __init__(self, user, correctWordIdxList, wrongWordIdxList) :
         self.user = user
-        self.correctWordIdxList = correctWordIdxList
-        self.wrongWordIdxList = wrongWordIdxList
-        self.correctCount = len(correctWordIdxList)
-        self.wrongCount = len(wrongWordIdxList)
+        self._correctWordIdxList = correctWordIdxList
+        self._wrongWordIdxList = wrongWordIdxList
+        self._correctCount = len(correctWordIdxList)
+        self._wrongCount = len(wrongWordIdxList)
         self.main()
 
     def main(self) :
@@ -17,7 +17,7 @@ class TestResult :
         self.window.show()
 
     def _ifCorrectOver(self) :
-        if self.correctCount >= self.wrongCount * 4 :
+        if self._correctCount >= self._wrongCount * 4 :
             return True
         else :
             return False
@@ -38,11 +38,11 @@ class TestResult :
 
     def use_gotoAfterTestWordNote(self, op1) :
         if op1 == "correct" :
-            lst = self.correctWordIdxList
-            anotherList = self.wrongWordIdxList
+            lst = self._correctWordIdxList
+            anotherList = self._wrongWordIdxList
         elif op1 == "wrong" :
-            lst = self.wrongWordIdxList
-            anotherList = self.correctWordIdxList
+            lst = self._wrongWordIdxList
+            anotherList = self._correctWordIdxList
         else :
             print("error")
         Goto.gotoAfterTestWordNote(self.user, lst, anotherList, op1, self.getOp2())
@@ -51,10 +51,10 @@ class TestResult :
         pass
 
     def getCorrectCount(self) :
-        return str(self.correctCount)
+        return str(self._correctCount)
     
     def getWrongCount(self) :
-        return str(self.wrongCount)
+        return str(self._wrongCount)
     
     def getOp2() : # Review인지 wrong인지 bookmark인지에 따라
         pass # 상속받아서 return (ex. return "wrong")

@@ -11,7 +11,7 @@ class ReviewTestResult(TestResult) :
 
     def _calculateIdx(self) :
         min = 1200
-        lst = self.correctWordIdxList + self.wrongWordIdxList
+        lst = self._correctWordIdxList + self._wrongWordIdxList
         for idx in lst :
             if min > idx :
                 min = idx
