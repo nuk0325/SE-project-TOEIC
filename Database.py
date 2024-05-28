@@ -93,7 +93,6 @@ cur.execute('''CREATE TABLE IF NOT EXISTS unit(
 # 기본 키로 (user_id, unit_index)를 사용하는 weak entity
 
 
-
 # 날짜 테이블
 cur.execute('''CREATE TABLE IF NOT EXISTS day_time(
                user_id TEXT,

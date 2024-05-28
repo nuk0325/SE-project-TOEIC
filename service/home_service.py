@@ -40,6 +40,7 @@ class Home(QMainWindow):
 
     def checkDayChange(self):  
         self.user = self.dataManager.find_by_id(self.user.userId)
+        
         if self.user is not None:  # user가 None이 아닌 경우에만 처리
             last_date = datetime.datetime.strptime(self.user.last_date, '%Y-%m-%d').date()
             if not last_date == datetime.date.today():

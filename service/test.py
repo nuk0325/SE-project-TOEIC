@@ -8,7 +8,7 @@ import random
 #import time
 
 class Test :  
-    def __init__(self, recivedWordList, testChoice) :
+    def __init__(self, user, receivedWordList, testChoice) :
         self._titleName = self._setTitle()
         self._correctCount = 0
         self._wrongCount = 0
@@ -16,10 +16,14 @@ class Test :
         self._wordIdxList = []
         self._correctIdxList = []
         self._wrongIdxList = [] # 셋 전부 index의 배열
-        self._wordIdxList = recivedWordList
+        self._wordIdxList = receivedWordList
         self._testChoice = testChoice
         self._wrongMeaningList = self._makeWrongMeaningList()
+        
+        self.user = user
+        self.goto = Goto()
         self.db = DBManager()
+
         self.main()
 
     def main(self) :
@@ -33,15 +37,15 @@ class Test :
     
     def _reflectCorrect(self) :
         self._correctCount += 1
-        self._correctIdxList.append(self._wordCount)
+        self._correctIdxList.append(self._wordIdxList[self._wordCount])
     
     def _reflectWrong(self) :
         self._wrongCount += 1
-        self._wrongIdxList.append(self._wordCount)
+        self._wrongIdxList.append(self._wordIdxList[self._wordCount])
     
     def _dbClose(self) :
         self.db.closeDB()
-
+    
     def afterQuestion(self, answer) :
         if answer == self.getMeaning() :
             self._reflectCorrect()
@@ -60,16 +64,14 @@ class Test :
         lst = random.sample([x for x in range(1, 1201) if x not in excluded_numbers], num) # 1201은 나중에 바꿀 것
         return lst
     
-    def use_goBack() :
+    def use_goBack(self) :
         pass
     
-    def use_gotoHome() :
-        Goto.gotoHome()
+    def use_gotoHome(self) :
+        self.goto.gotoHome(self.user)
 
-    def use_gotoTestResult(self) :
-        self._dbClose()
-        print("testResult로 이동함")
-        Goto.gotoTestResult(self._correctIdxList, self._wrongIdxList)
+    def use_gotoSelectTestResult(self) :
+        pass
 
     def getTitle(self) :
         return self._titleName

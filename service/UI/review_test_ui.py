@@ -150,7 +150,7 @@ class ReviewTestUI(QMainWindow):
         elif option == "home" :
             self.parent.use_gotoHome()
         elif option == "result" :
-            self.parent.use_gotoTestResult()
+            self.parent.use_gotoSelectTestResult()
         else :
             print("잘못된 입력입니다.")
 
@@ -198,18 +198,28 @@ class ReviewTestUI(QMainWindow):
     def on_button_click(self):
         sender = self.sender()
         if sender:
-            self.word_meaning_label.setVisible(True)
-            self.word_sent_label.setVisible(True)
-            #self.update_buttons()
-            QtCore.QTimer.singleShot(3000, self.hide_labels)
-            boolean = self.parent.afterQuestion(sender.text())
-            if boolean :
-                self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
-            else :
-                self.closeAndOpen("result")
+            self.lookAnswer(sender)
+            QtCore.QTimer.singleShot(3000, self.hide_labels) # 3초 뒤에 전체 이벤트가 실행되도록 고쳐보자
+            QtCore.QTimer.singleShot(3000, lambda: self.checkBoolean(sender))
+                
     def hide_labels(self):
         self.word_meaning_label.setVisible(False)
         self.word_sent_label.setVisible(False)
             
-    def changeButtonAndLabel(self) :
-        pass
+    def checkBoolean(self, sender) :
+        boolean = self.parent.afterQuestion(sender.text)
+        if boolean :
+            self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
+        else :
+            self.closeAndOpen("result")
+    
+    def lookAnswer(self, sender) :
+        self.word_meaning_label.setVisible(True)
+        self.word_sent_label.setVisible(True)
+        correct_meaning = self.parent.getMeaning()
+        print(correct_meaning)
+        for button in self.bottom_large_frame.findChildren(QPushButton):
+            if button.text() == correct_meaning:
+                button.setStyleSheet("background-color: green;")
+                if button != sender :
+                    sender.setStyleSheet("background-color: red;")
