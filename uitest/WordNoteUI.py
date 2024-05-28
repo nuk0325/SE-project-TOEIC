@@ -204,6 +204,9 @@ from Goto import Goto
 
 class BookmarkWindow(MainWindow):
     def toggleBookmark(self, wordObj, bookmark_button):
+        wordObj.Bookmark()
+        self.updateBookmarkButton(bookmark_button, wordObj.getBookmark())
+        print(f"{wordObj.getWordIdx()}: --> {wordObj.getBookmark()}")
         if wordObj.getBookmark():
             print("즐겨찾기 해제 팝업")
             self.goto = Goto()
@@ -247,9 +250,9 @@ class BookmarkDialog(QDialog):
         print("즐겨찾기 해제")
         print("해제해제. 단어장 초기화")
         #즐겨찾기 업데이트
-        self.wordObj.Bookmark()
-        self.updateBookmarkButton(self.bookmark_button, self.wordObj.getBookmark())
-        print(f"{self.wordObj.getWordIdx()}: --> {self.wordObj.getBookmark()}")
+        # self.wordObj.Bookmark()
+        # self.updateBookmarkButton(self.bookmark_button, self.wordObj.getBookmark())
+        # print(f"{self.wordObj.getWordIdx()}: --> {self.wordObj.getBookmark()}")
         self.close()
         
     def no(self):
