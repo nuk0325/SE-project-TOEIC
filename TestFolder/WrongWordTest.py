@@ -9,13 +9,14 @@ import random
 
 class WrongWordTest(Test) :        
     def main(self) :
+        self._wordIdxList=self.select_random_20(self._wordIdxList)
         self.window = MainWindow(self)
         self.window.show()
 
-    def select_random_20(numbers):
-        result = numbers
-        if len(numbers) > 20:
-            result = random.sample(numbers, 20)
+    def select_random_20(self, wordIdxList):
+        result = wordIdxList
+        if len(wordIdxList) > 20:
+            result = random.sample(wordIdxList, 20)
         return result
     
     def _reflectCorrect(self) : #맞았을 때, 오답노트에서 삭제 
