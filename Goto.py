@@ -9,20 +9,20 @@ class Goto :
 
 
 
-    def gotoReviewWordNote(user, part, unit) :
+    def gotoReviewWordNote(user, part, unit) : #유닛 단어장으로 가기
         from WordNoteFolder.ReviewWordNote import ReviewWordNote
         ReviewWordNote(user, part, unit)
 
-    def gotoWrongWordNote(user) :
+    def gotoWrongWordNote(user) : #오답노트 단어장으로 가기
         from WordNoteFolder.WrongWordNote import WrongWordNote
         WrongWordNote(user)
 
-    def gotoBookmarkWordNote(user) :
+    def gotoBookmarkWordNote(user) : #즐겨찾기 단어장으로 가기
         from WordNoteFolder.BookmarkWordNote import BookmarkWordNote
         BookmarkWordNote(user)
 
 
-    def gotoAfterTestWordNote(user, lst, anotherList, op1, op2) :
+    def gotoAfterTestWordNote(user, lst, anotherList, op1, op2) : #테스트 결과 단어장으로 가기. 맞춘단어 or 틀린단어
         from WordNoteFolder.AfterTestWordNote import AfterTestWordNote
         AfterTestWordNote(user, lst, anotherList, op1, op2)
     
@@ -59,21 +59,21 @@ class Goto :
 
 
 
-    def gotoReviewTestResult(user, correctList, wrongList) :
+    def gotoReviewTestResult(user, correctList, wrongList) : #오답노트 테스트 결과로 가기
         from TestResultFolder.ReviewTestResult import ReviewTestResult
         ReviewTestResult(user, correctList, wrongList)
 
-    def gotoWrongNoteTestResult(user, correctList, wrongList) :
+    def gotoWrongNoteTestResult(user, correctList, wrongList) : #즐겨찾기 테스트 결과로 가기
         from TestResultFolder.WrongWordTestResult import WrongWordTestResult
         WrongWordTestResult(user, correctList, wrongList)
         pass
 
-    def gotoBookmarkNoteTestResult(user, correctList, wrongList) :
+    def gotoBookmarkNoteTestResult(user, correctList, wrongList) : # 유닛.복습 테스트 결과로 가기
         from TestResultFolder.BookmarkTestResult import BookmarkTestResult
         BookmarkTestResult(user, correctList, wrongList)
         pass
     
-    def gotoEntireTestResult(user, correctList, wrongList) :
+    def gotoEntireTestResult(user, correctList, wrongList) : #전체 테스트 결과로 가기
         from TestResultFolder.EntireTestResult import EntireTestResult
         EntireTestResult(user, correctList, wrongList)
         pass
