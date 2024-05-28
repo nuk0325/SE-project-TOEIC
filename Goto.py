@@ -55,6 +55,11 @@ class Goto :
         from TestFolder.ReviewTest import ReviewTest
         ReviewTest(user, wordList, testChoice)
 
+    def gotoEntireTest(user, wordList, testChoice) : #전체 테스트
+        from TestFolder.EntireTest import EntireTest
+        EntireTest(user, wordList, testChoice)
+        pass
+
 
 
 

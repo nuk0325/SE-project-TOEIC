@@ -91,6 +91,16 @@ class DBcontrol :
                 wordIdxList.append(i)
         return wordIdxList   
 
+    def getEntireTestWordList(self,user_id) :
+        user_id = "justID"
+        # wro_is_right == 1인 리스트 뽑는 코드
+        #wordIdxList = [121,1,2,5,6,7,8]
+        wordIdxList=[]
+        count=1200 #전체 단어 개수
+        i=1
+        for i in range(1, count):
+            wordIdxList.append(i)
+        return wordIdxList   
     
     def closeDB(self) :
         self.conn.commit()
