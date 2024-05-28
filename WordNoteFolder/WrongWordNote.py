@@ -7,6 +7,6 @@ class WrongWordNote(WordNote) :
         self._testName = "오답노트 테스트 시작"
         self._testChoice = False
         self.db = self._makeDBobj()
-        self._wordIdxList = self.db.getWrongWordList()
+        self._wordIdxList = self.db.getWrongWordList(self.user)
         self._wordList = self._returnWordList()
         self.main()

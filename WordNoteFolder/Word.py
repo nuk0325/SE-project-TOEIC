@@ -12,7 +12,7 @@ class Word :
     def getBookmark(self) : # 해당 단어가 즐겨찾기에 해당하는지 아닌지 True or False로 return
         return self.db.checkBookmark(self.user, self._idx)
         
-    def Bookmark(self) : # 즐겨찾기 등록 / 삭제
+    def Bookmark(self) : # 즐겨찾기 등록-->해제 / 삭제-->등록
         self.db.changeBookmark(self.user, self.getBookmark(), self._idx)
     
     def getWordIdx(self) :

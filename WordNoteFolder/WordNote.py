@@ -58,6 +58,8 @@ class WordNote :
     def use_gotoSelectTest(self) : # 얘도 자식이 오버라이딩
         pass
 
+
+
 #if __name__ == "__main__": # 실제 UI 실행 코드
 #    received_word_list = []  # 받은 단어 목록을 입력하세요.
 #    word_note = WordNote(received_word_list)

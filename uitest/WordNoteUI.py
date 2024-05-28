@@ -109,7 +109,7 @@ class MainWindow(QMainWindow):
     def closeAndOpen(self, option) :
         self.close()
         if option == "back" :
-            self.parent.use_goBack()
+            self.parent.use_goBack() 
         elif option == "home" :
             self.parent.use_gotoHome()
         elif option == "test" :
@@ -118,10 +118,8 @@ class MainWindow(QMainWindow):
             print("잘못된 입력입니다.")
 
     def showPopUp(self) :
-        popup = PopUpDialog(self, self.parent)
-        popup.exec()
-
-        
+        popup = PopUpDialog(self, self.parent) #자기자신, 부모 wordNote
+        popup.exec()        
 
     def createFrame(self, wordObj):
         frame = QFrame()
@@ -202,19 +200,28 @@ class MainWindow(QMainWindow):
 
 
 
-from Goto import Goto
 
-class BookmarkWindow(MainWindow):
-    def toggleBookmark(self, wordObj, bookmark_button):
-        wordObj.Bookmark()
-        self.updateBookmarkButton(bookmark_button, wordObj.getBookmark())
-        print(f"{wordObj.getWordIdx()}: --> {wordObj.getBookmark()}")
-        if wordObj.getBookmark():
-            print("즐겨찾기 해제 팝업")
-            self.goto = Goto()
-            bookmarkDialog = BookmarkDialog(self.goto,wordObj, bookmark_button)                
+class BookmarkWindow(MainWindow): # 즐겨찾기단어장 UI. 상속받음.
+    def closeAndOpen(self, option) :
+        self.close()
+        if option == "back" :
+            self.parent.use_goBack() 
+        elif option == "home" :
+            self.parent.use_gotoHome()
+        elif option == "test" :
+            self.parent.use_gotoSelectTest() #test로 이동
+        elif option == "self" :
+            self.parent.wordNoteCloseAndOpen() # 단어장 UI를 닫고 다시 킴
+        else :
+            print("잘못된 입력입니다.")
             
-            bookmarkDialog.exec()
+
+    def toggleBookmark(self, wordObj, bookmark_button): #즐겨찾기를 DB에 반영
+        if bookmark_button.text() == "On":
+            popup = BookmarkDialog(self, wordObj, bookmark_button)
+            popup.exec()
+
+
             
         
             
@@ -223,11 +230,11 @@ class BookmarkWindow(MainWindow):
 from PyQt6.QtWidgets import QDialog, QPushButton, QVBoxLayout, QHBoxLayout, QLabel
 
 class BookmarkDialog(QDialog):
-    def __init__(self, goto, wordObj, bookmark_button):
+    def __init__(self, parent, wordObj, bookmark_button):
         super().__init__()
         self.setWindowTitle("즐겨찾기")
 
-        self.goto = goto
+        self.parent = parent
         self.wordObj = wordObj
         self.bookmark_button = bookmark_button
 
@@ -247,15 +254,24 @@ class BookmarkDialog(QDialog):
         layout.addLayout(buttonLayout)
         self.setLayout(layout)
 
-    def yes(self): #즐겨찾기 해제 후 즐겨찾기 단어장 전체가 초기화
-        from WordNoteUI import BookmarkWindow
-        print("즐겨찾기 해제")
-        print("해제해제. 단어장 초기화")
-        #즐겨찾기 업데이트
-        # self.wordObj.Bookmark()
-        # self.updateBookmarkButton(self.bookmark_button, self.wordObj.getBookmark())
-        # print(f"{self.wordObj.getWordIdx()}: --> {self.wordObj.getBookmark()}")
-        self.close()
-        
+    # def yes(self): #즐겨찾기 해제 후 즐겨찾기 단어장 전체가 초기화
+    #     from WordNoteUI import BookmarkWindow
+    #     print("즐겨찾기 해제")
+    #     print("해제해제. 단어장 초기화")
+    #     #즐겨찾기 업데이트
+    #     # self.wordObj.Bookmark()
+    #     # self.updateBookmarkButton(self.bookmark_button, self.wordObj.getBookmark())
+    #     # print(f"{self.wordObj.getWordIdx()}: --> {self.wordObj.getBookmark()}")
+    #     self.close()
+
+    def yes(self):
+        print("사용자가 '뜻으로 답하기'를 선택했습니다.")
+        self.wordObj.Bookmark() 
+        self.parent.updateBookmarkButton(self.bookmark_button, self.wordObj.getBookmark())
+        print(f"{self.wordObj.getWordIdx()}: --> {self.wordObj.getBookmark()}")
+        self.close() #팝업창 닫기
+        self.parent.closeAndOpen("self") # MainWindow클래스. 단어장화면 닫기
+
     def no(self):
         self.close()
+

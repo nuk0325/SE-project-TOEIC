@@ -50,18 +50,19 @@ class DBcontrol :
             else :
                 print("올바르지 않은 입력")
         
-    def changeBookmark(self, user, boolean, idx) :
+    def changeBookmark(self, user, boolean, idx) : 
         user_id = "justID"
         #user_id = user
         if boolean :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
-            print(f"database: {idx}: off --> on")
+            print(f"database: {idx}: on --> off")
         else :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
-            print(f"database: {idx}: on --> off")
+            print(f"database: {idx}: off --> on")
+
         self.conn.commit()
 
-    def getBookmarkWordList(self) :
+    def getBookmarkWordList(self,user_id) :
         user_id = "justID"
         # fav_is_right == 1인 리스트 뽑는 코드
         #wordIdxList = [120,1,2,5,6,7,8] #모든 단어의 index는 1에서 시작
@@ -74,10 +75,10 @@ class DBcontrol :
 
         return wordIdxList
     
-    def getWrongWordList(self) :
+    def getWrongWordList(self,user_id) :
         user_id = "justID"
         # wro_is_right == 1인 리스트 뽑는 코드
-        wordIdxList = [121,1,2,5,6,7,8]
+        #wordIdxList = [121,1,2,5,6,7,8]
         wordIdxList=[]
         count=1200 #전체 단어 개수
         i=1

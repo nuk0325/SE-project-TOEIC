@@ -25,9 +25,9 @@ class PopUpDialog(QDialog):
 
     def yes(self):
         print("사용자가 '뜻으로 답하기'를 선택했습니다.")
-        self.grand.setTestChoice(False)
+        self.grand.setTestChoice(False) # wordNote클래스 함수
         self.close()
-        self.parent.closeAndOpen("test")
+        self.parent.closeAndOpen("test") # MainWindow클래스
         
     def no(self):
         print("사용자가 '영어로 답하기'를 선택했습니다.")
