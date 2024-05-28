@@ -163,8 +163,6 @@ class MyPageUI(object):
         self.change_password_button.setText(_translate("MyPageUI", "비밀번호 변경"))
         self.photo_label.setText(_translate("MyPageUI", "사진"))
         self.nickname_label.setText(_translate("MyPageUI", self.user.userNickname))
-#        self.goal_progress_label.setText(_translate("MyPageUI", "목표 유닛 수             0/0"))
-#        self.level_progress_label.setText(_translate("MyPageUI", "강아지 성장까지           0/0"))
 
     def updateUserNickname(self, newUserNickname):
         self.nickname_label.setText(newUserNickname)
@@ -172,21 +170,17 @@ class MyPageUI(object):
     def updateGoalProgress(self):
         # 목표 진행 상황 게이지 출력
         progress = int((self.user.today_learned_unit / self.user.userGoal) * 100) if self.user.userGoal != 0 else 0
-        print(self.user.today_learned_unit, progress)
         self.goal_progress.setValue(progress)
         
         # 금일 학습유닛 진행상황 텍스트 출력
         gageText = "금일 학습유닛  "+str(self.user.today_learned_unit) + "/" + str(self.user.userGoal)
-        print(gageText)
         self.goal_progress_label.setText(gageText)
 
     def updateLevelProgress(self):
         # 개 진행 상황 게이지 출력
         progress = int((self.user.total_learned_unit % 24 / 24) * 100)
-        print(self.user.total_learned_unit, progress)
         self.goal_progress.setValue(progress)
 
         # 택스트 : 토익멍 성장까지   1/24
         gageText = "토익멍 성장까지  "+ str(self.user.total_learned_unit % 24) + "/24"
-        print(gageText)
         self.level_progress_label.setText(gageText)

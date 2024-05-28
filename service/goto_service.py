@@ -103,8 +103,10 @@ class Goto():
     def gotoWrongNoteTestWrongNote(self):
         print("go to Wrong Note Test Wrong Note Page")
 
-    def gotoBookmarkNote(self):
+    def gotoBookmarkNote(self, user):
         print("go to Bookmark Note Page")
+        from bookmark_note_service import BookmarkNote
+        BookmarkNote(user)
 
     def gotoPreapareBookmarkNoteTest(self):
         print("go to Prepare Bookmark Note Test Page")
