@@ -49,7 +49,10 @@ class managerSearchPageService:
 
     def add_word_button(self, word_index):
         # 단어 버튼을 생성하고 centralwidget에 추가
-        button = self.ui.createWordButton(int(word_index[0]) // 120 + 1, int(word_index[0]) % 120 // 15 + 1, word_index[1])
+        index =word_index[0]- 1
+        part = index // 150 + 1
+        unit = index % 150 //10 + 1
+        button = self.ui.createWordButton(part, unit, word_index[1])
         button.show()
         # 클릭 이벤트에 연결
         button.clicked.connect(lambda num=word_index: self.show_word_num(num))

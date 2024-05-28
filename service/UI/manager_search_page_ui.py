@@ -70,8 +70,8 @@ class Ui_managerSearchPage(object):
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         # Scroll Area 추가 끝
-        self.verticalLayout.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop)
 
+        self.verticalLayout.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop)
 
         managerSearchPage.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=managerSearchPage)
@@ -112,7 +112,7 @@ class Ui_managerSearchPage(object):
         button.setObjectName(f"toWordBtn_{self.WordButtonNum}")
         button.setText(f"part{partNum} unit{unitNum}\n{word}")
 
-        self.verticalLayout.insertWidget(0, button)  # 버튼을 레이아웃의 맨 위에 추가
+        self.verticalLayout.addWidget(button)  # 버튼을 레이아웃의 맨 위에 추가
         self.WordButtonNum += 1
         self.scrollArea.verticalScrollBar().setValue(0)  # 스크롤 위치를 최상단으로 설정
         return button
