@@ -8,6 +8,7 @@ from dialog.nickname_dialog import NicknameDialog
 from dialog.goal_dialog import GoalDialog
 from dialog.log_out_dialog import LogOutDialog
 from goto_service import Goto
+from DB_manager import DBManager
 
 class MyPage(QMainWindow):
 
@@ -21,11 +22,15 @@ class MyPage(QMainWindow):
 
     def __init__(self, user):
         super().__init__()
-        self.ui = MyPageUI()
-        self.ui.setupUi(self)
 
         self.user = user
 
+        self.ui = MyPageUI()
+        self.ui.setupUi(self, user)
+        # self.ui.updateGoalProgress()
+        # self.ui.updateLevelProgress()
+
+        self.dataManager = DBManager()
         self.goto = Goto()
 
         # self.userNickname = User.getUserNickname()
@@ -44,20 +49,25 @@ class MyPage(QMainWindow):
 
     # 비밀번호 변경 팝업 띄우기
     def showChangePassword(self):
-        passwordDialog = PasswordDialog()
+        passwordDialog = PasswordDialog(self)
         passwordDialog.exec()
 
     # 비밀번호 변경
     def changePassword(self, newUserPassword):
         self.newUserPassword = newUserPassword
         print(self.newUserPassword)
+
         # DB와 User 클래스에 반영
-        # User.setUserPassword(newUserPassword)
+        self.user.userPassword = self.newUserPassword
+        self.user = self.dataManager.update(self.user)
+
+        # 잘 변경됐는지 확인
+        print(self.user.userPassword)
 
     # 닉네임 변경 팝업 띄우기
     def showChangeNickname(self, event):
         print("nickname clicked!")
-        nicknameDialog = NicknameDialog()
+        nicknameDialog = NicknameDialog(self)
         nicknameDialog.exec()
         event.accept()
 
@@ -65,20 +75,34 @@ class MyPage(QMainWindow):
     def changeNickname(self, newUserNickname):
         self.newUserNickname = newUserNickname
         print(self.newUserNickname)
+
         # DB와 User 클래스에 반영
-        # User.setUserNickname(newUserNickname)
+        self.user.userNickname = self.newUserNickname
+        self.user = self.dataManager.update(self.user)
+
+        # 잘 변경됐는지 확인
+        print(self.user.userNickname)
+
+        self.ui.updateUserNickname(self.user.userNickname)
     
     # 목표 변경 팝업 띄우기
     def showChangeGoal(self):
-        goalDialog = GoalDialog()
+        goalDialog = GoalDialog(self)
         goalDialog.exec()
     
     # 목표 변경
     def changeGoal(self, newUserGoal):
         self.newUserGoal = newUserGoal
         print(self.newUserGoal)
+
         # DB와 User 클래스에 반영
-        # User.setUserGoal(newUserGoal)
+        self.user.userGoal = self.newUserGoal
+        self.user = self.dataManager.update(self.user)
+
+        # 잘 변경됐는지 확인
+        print(self.user.userGoal)
+
+        self.ui.updateGoalProgress()
     
     # 로그아웃 팝업 띄우기
     def showLogOut(self):
@@ -91,13 +115,13 @@ class MyPage(QMainWindow):
         self.goto.gotoLogIn()
 
     def wrongNoteButtonClicked(self):
-        self.goto.gotoEntireTest()
+        self.goto.gotoEntireTest(self.user)
         self.close()
         # self.goto.gotoWrongNote()
         # self.close()
 
     def bookmarkNoteButtonClicked(self):
-        self.goto.gotoBookmarkNote()
+        self.goto.gotoBookmarkNote(self.user)
         self.close()
 
     def backButtonClicked(self):

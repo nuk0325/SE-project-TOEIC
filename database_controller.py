@@ -42,10 +42,9 @@ def addTestUser(user_id, password, nickname, unit_count=3, is_admin=None, last_d
 
 # 즐겨찾기, 오답노트 정보 추가
 def add_wro_fav(user_id, line_num, wro_is_right, fav_is_right):
-    cur.execute('''
-        INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right)
-        VALUES (?, ?, ?, ?)
-    ''', (user_id, line_num, wro_is_right, fav_is_right))
+    cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
+                (user_id, line_num, wro_is_right, fav_is_right))
+    conn.commit()
 
 # 즐겨찾기, 오답노트 테이블 정보 전부 삭제
 def deleteAllWrongFav(user_id):
@@ -61,24 +60,25 @@ if __name__ == "__main__":
     # selectAllFromTable("user")
 
     # 유저 데이터 추가
-    addTestUser('sunwook', '1234', '선욱', 10, 1, '2022-10-15', 5, 100)
-    addTestUser('taehyen', '1234', '태현', 10, 1, '2022-10-15', 5, 100)
+    # addTestUser('sunwook', '1234', '선욱', 10, 1, '2022-10-15', 5, 100)
+    # addTestUser('taehyen', '1234', '태현', 10, 1, '2022-10-15', 5, 100)
 
     # 유저 정보 변경
     # cur.execute("UPDATE user SET today_learned_unit = ? WHERE id = ?", (6, 'sunwook'))
     # conn.commit()
     # print("업데이트 결과")
-    # selectAllFromTable("user")
+    selectAllFromTable("wro_fav")
+    # deleteAllWrongFav("sunwook")
 
 
     # 오답노트 및 즐겨찾기 데이터 삽입
     # taehyen의 즐겨찾기 단어
     fav_words = [
-        ('taehyen', 1, 0, 1),
-        ('taehyen', 5, 0, 1),
-        ('taehyen', 151, 0, 1),
-        ('taehyen', 152, 0, 1),
-        ('taehyen', 153, 0, 1)
+        ('sunwook', 1, 0, 1),
+        ('sunwook', 5, 0, 1),
+        ('sunwook', 151, 0, 1),
+        ('sunwook', 152, 0, 1),
+        ('sunwook', 153, 0, 1)
     ]
 
     # taehyen의 오답노트 단어

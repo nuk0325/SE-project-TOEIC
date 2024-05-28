@@ -5,6 +5,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame, QHBo
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtGui import QFont
 from dialog.select_test_dialog import SelectTestDialog
+from dialog.bookmark_dialog import BookmarkDialog
 
 class WordNoteUI(QMainWindow):
     def __init__(self, frameCount, noteLabel, testName, wordObjList, parent): # parent : WorNote 클래스를 의미
@@ -86,7 +87,9 @@ class WordNoteUI(QMainWindow):
         test_button.setFixedSize(QSize(340, 60))
         test_button.setStyleSheet("background-color: rgb(255, 230, 130);")
         test_button.setFont(QFont("Han Sans", 20))
-        if self.testName != "홈으로 가기" :
+        if self.testName == "홈으로 가기" :
+            pass # gotoHome()
+        else :
             test_button.clicked.connect(self.showPopUp)
 
         bottom_layout.addWidget(test_button, alignment=Qt.AlignmentFlag.AlignCenter)
@@ -196,3 +199,24 @@ class WordNoteUI(QMainWindow):
             label2.setVisible(True)
             button.setText("∧")  # 추가된 부분
         frame.is_expanded = not frame.is_expanded
+
+
+class BookmarkUI(WordNoteUI): # 즐겨찾기단어장 UI. 상속받음.
+    def closeAndOpen(self, option) :
+        self.close()
+        if option == "back" :
+            self.parent.use_goBack() 
+        elif option == "home" :
+            self.parent.use_gotoHome()
+        elif option == "test" :
+            self.parent.use_gotoSelectTest() #test로 이동
+        elif option == "self" :
+            self.parent.wordNoteCloseAndOpen() # 단어장 UI를 닫고 다시 킴
+        else :
+            print("잘못된 입력입니다.")
+            
+
+    def toggleBookmark(self, wordObj, bookmark_button): #즐겨찾기를 DB에 반영
+        if bookmark_button.text() == "On":
+            popup = BookmarkDialog(self, wordObj, bookmark_button)
+            popup.exec()
