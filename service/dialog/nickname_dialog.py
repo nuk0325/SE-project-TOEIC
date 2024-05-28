@@ -40,6 +40,17 @@ class NicknameDialog(QDialog):
             msg.addButton(okBtn, QMessageBox.ButtonRole.YesRole)
             
             msg.exec()
-        else :
-            self.parent.changeNickname(newUserNickname)
-            self.close()
+            return
+        
+        if len(newUserNickname) >= 8:
+            msg = QMessageBox()
+            msg.setText("닉네임은 8글자 이하로 설정 가능합니다")
+
+            okBtn = QPushButton("확인")
+            msg.addButton(okBtn, QMessageBox.ButtonRole.YesRole)
+            
+            msg.exec()
+            return
+
+        self.parent.changeNickname(newUserNickname)
+        self.close()

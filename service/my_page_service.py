@@ -27,6 +27,8 @@ class MyPage(QMainWindow):
 
         self.ui = MyPageUI()
         self.ui.setupUi(self, user)
+        # self.ui.updateGoalProgress()
+        # self.ui.updateLevelProgress()
 
         self.dataManager = DBManager()
         self.goto = Goto()
@@ -100,6 +102,7 @@ class MyPage(QMainWindow):
         # 잘 변경됐는지 확인
         print(self.user.userGoal)
 
+        self.ui.updateGoalProgress()
     
     # 로그아웃 팝업 띄우기
     def showLogOut(self):

@@ -33,7 +33,7 @@ class DBManager:
             user_data = self.cur.fetchone()
             #오류확인
             user = User.toUserEntity(user_data)
-            return True, user
+            return user
         except Exception as e:
             print("Error:", e)
             return False, "회원 정보 업데이트에 실패했습니다."  # Other errors
