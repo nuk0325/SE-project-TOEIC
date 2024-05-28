@@ -130,12 +130,12 @@ class MainWindow(QMainWindow) :
         if option == "back" :
             self.parent.use_goBack()
         elif option == "home" :
-            self.parent.use_gotoHome()
+            self.parent.use_gotoHome()  
         elif option == "correct" :
             self.parent.use_gotoAfterTestWordNote(option)
         elif option == "wrong" :
             self.parent.use_gotoAfterTestWordNote(option)
         elif option == "select" :
-            self.parent.goBackSelectWordNote()
+            self.parent.use_goBackSelectWordNote()
         else :
             print("error")
