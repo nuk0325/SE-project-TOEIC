@@ -15,6 +15,20 @@ class TestResult :
     def main(self) :
         self.window = MainWindow(self)
         self.window.show()
+
+    def _ifCorrectOver(self) :
+        if self.correctCount >= self.wrongCount * 4 :
+            return True
+        else :
+            return False
+
+    def getColor(self) :
+        str = "background-color : "
+        if self._ifCorrectOver() :
+            color = "#8bdbad ;"
+        else :
+            color = "#739bc3 ;"
+        return str + color
     
     def use_goBack(self) :
         pass

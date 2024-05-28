@@ -86,7 +86,9 @@ class MainWindow(QMainWindow):
         test_button.setFixedSize(QSize(340, 60))
         test_button.setStyleSheet("background-color: rgb(255, 230, 130);")
         test_button.setFont(QFont("Han Sans", 20))
-        if self.testName != "홈으로 가기" :
+        if self.testName == "홈으로 가기" :
+            pass # gotoHome()
+        else :
             test_button.clicked.connect(self.showPopUp)
 
         bottom_layout.addWidget(test_button, alignment=Qt.AlignmentFlag.AlignCenter)
