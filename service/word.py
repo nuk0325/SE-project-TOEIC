@@ -22,3 +22,29 @@ class Word :
     
     def getSentence(self) :
         return self._sentence
+    
+
+    #추가
+    @property
+    def wordName(self):
+        return self._wordName
+
+    @wordName.setter
+    def wordName(self, value):
+        self._wordName = value
+
+    @property
+    def meaning(self):
+        return self._meaning
+
+    @meaning.setter
+    def meaning(self, value):
+        self._meaning = value
+
+    @property
+    def sentence(self):
+        return self._sentence
+
+    @sentence.setter
+    def sentence(self, value):
+        self._sentence = value
