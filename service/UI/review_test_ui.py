@@ -210,6 +210,7 @@ class ReviewTestUI(QMainWindow):
         text = sender.text()
         boolean = self.parent.afterQuestion(text)
         if boolean :
+            self.hide_labels()
             self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
         else :
             self.closeAndOpen("result")
