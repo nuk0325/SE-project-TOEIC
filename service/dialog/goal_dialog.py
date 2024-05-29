@@ -2,9 +2,11 @@ from PyQt6.QtWidgets import QDialog, QPushButton, QVBoxLayout, QHBoxLayout, QLab
 from PyQt6.QtCore import Qt
 
 class GoalDialog(QDialog):
-    def __init__(self):
+    def __init__(self, parent):
         super().__init__()
         self.setWindowTitle("학습 목표 수정")
+
+        self.parent = parent
 
         self.input = QComboBox()
         self.input.addItem("1")
@@ -39,9 +41,7 @@ class GoalDialog(QDialog):
         self.close()
 
     def save(self):
-        from my_page_service import MyPage
-
         newUserGoal = self.input.currentIndex() + 1
-        MyPage.changeGoal(self, newUserGoal)
+        self.parent.changeGoal( newUserGoal)
         self.close()
 

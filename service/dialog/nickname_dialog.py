@@ -3,9 +3,11 @@
 from PyQt6.QtWidgets import QDialog, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QMessageBox
 
 class NicknameDialog(QDialog):
-    def __init__(self):
+    def __init__(self, parent):
         super().__init__()
         self.setWindowTitle("닉네임 변경")
+
+        self.parent = parent
 
         self.input = QLineEdit()
 
@@ -38,8 +40,17 @@ class NicknameDialog(QDialog):
             msg.addButton(okBtn, QMessageBox.ButtonRole.YesRole)
             
             msg.exec()
-        else :
-            from service.my_page_service import MyPage
+            return
+        
+        if len(newUserNickname) >= 8:
+            msg = QMessageBox()
+            msg.setText("닉네임은 8글자 이하로 설정 가능합니다")
 
-            MyPage.changePassword(self, newUserNickname)
-            self.close()
+            okBtn = QPushButton("확인")
+            msg.addButton(okBtn, QMessageBox.ButtonRole.YesRole)
+            
+            msg.exec()
+            return
+
+        self.parent.changeNickname(newUserNickname)
+        self.close()
