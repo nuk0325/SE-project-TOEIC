@@ -54,15 +54,37 @@ class MainWindow(QMainWindow):
 
         top_frame.setLayout(top_layout)
 
+
+        upperFrame = QFrame()
+        upperFrame.setFixedSize(QSize(360, 40))
+
+        nameLabel = QLabel(self.parent.getLabel(), upperFrame)
+        nameLabel.setFont(QFont("Han Sans", 12))
+        #nameLabel.setFixedSize(360, 40)
+
+        totalOpenButton = QPushButton("뜻 전체 보기", upperFrame)
+        totalOpenButton.setFixedSize(100, 25)
+        totalOpenButton.setStyleSheet("background-color : rgb(224, 224, 224);")
+        totalOpenButton.clicked.connect(self.openAllMeaning)
+
+        upperLayout = QHBoxLayout()
+        upperLayout.addSpacing(10)
+        upperLayout.addWidget(nameLabel)
+        upperLayout.addSpacing(50)
+        upperLayout.addWidget(totalOpenButton)
+
+        upperFrame.setLayout(upperLayout)
+
+
         # 가운데 영역 설정
-        scroll_area = QScrollArea()
-        scroll_area.setWidgetResizable(True)
-        scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)  # 수평 스크롤바 비활성화
-        scroll_area.setStyleSheet("background-color: white;")
+        self.self.scrollArea = QScrollArea()
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)  # 수평 스크롤바 비활성화
+        self.scrollArea.setStyleSheet("background-color: white;")
 
 
         central_widget = QWidget()
-        scroll_area.setWidget(central_widget)
+        self.scrollArea.setWidget(central_widget)
 
         central_layout = QVBoxLayout()
         central_widget.setLayout(central_layout)
@@ -96,7 +118,8 @@ class MainWindow(QMainWindow):
         # 메인 레이아웃 설정
         main_layout = QVBoxLayout()
         main_layout.addWidget(top_frame)
-        main_layout.addWidget(scroll_area)
+        main_layout.addWidget(upperFrame)
+        main_layout.addWidget(self.scrollArea)
         main_layout.addWidget(bottom_frame)
         main_widget.setLayout(main_layout)
 
@@ -120,12 +143,11 @@ class MainWindow(QMainWindow):
     def showPopUp(self) :
         popup = PopUpDialog(self, self.parent)
         popup.exec()
-
         
 
     def createFrame(self, wordObj):
         frame = QFrame()
-        frame.setFixedSize(QSize(340, 50))
+        frame.setFixedSize(QSize(340, 70))
 
         # 상태를 저장할 변수
         frame.is_expanded = False
@@ -159,20 +181,36 @@ class MainWindow(QMainWindow):
 
         additional_label2 = QLabel(wordObj.getSentence())
         additional_label2.setFont(QFont("Han Sans", 10))
+        additional_label2.setWordWrap(True)
+        additional_label2.adjustSize()
         additional_label2.setAlignment(Qt.AlignmentFlag.AlignLeft)
         additional_label2.setVisible(False)
 
         additional_label3 = QLabel(wordObj.getSentMeaning())
         additional_label3.setFont(QFont("Han Sans", 10))
+        additional_label3.setWordWrap(True)
+        additional_label3.adjustSize()
         additional_label3.setAlignment(Qt.AlignmentFlag.AlignLeft)
         additional_label3.setVisible(False)
+
+        tempLayout = QVBoxLayout()
+        tempLayout.addWidget(additional_label1)
+        tempLayout.addWidget(additional_label2)
+        tempLayout.addWidget(additional_label3)
+
+        additionalLayout = QHBoxLayout()
+        additionalLayout.addSpacing(40)
+        additionalLayout.addLayout(tempLayout)
+
+        line = QFrame()
+        line.setFrameShape(QFrame.Shape.HLine)
+        line.setFrameShadow(QFrame.Shadow.Plain)
 
         # 전체 프레임 레이아웃 설정
         outer_layout = QVBoxLayout()
         outer_layout.addLayout(frame_layout)
-        outer_layout.addWidget(additional_label1)
-        outer_layout.addWidget(additional_label2)
-        outer_layout.addWidget(additional_label3)
+        outer_layout.addLayout(additionalLayout)
+        outer_layout.addWidget(line)
 
         frame.setLayout(outer_layout)
 
@@ -181,6 +219,9 @@ class MainWindow(QMainWindow):
         bookmark_button.clicked.connect(lambda: self.toggleBookmark(wordObj, bookmark_button))  # 북마크 버튼과 Word 객체의 북마크 메서드 연결
 
         return frame
+    
+    #def openAllMeaning(self) :
+        #for frame in self.scrollArea
 
     def updateBookmarkButton(self, bookmark_button, is_bookmarked):
         if is_bookmarked:
@@ -194,13 +235,13 @@ class MainWindow(QMainWindow):
 
     def toggleFrameExpansion(self, frame, button, label1, label2, label3):
         if frame.is_expanded:
-            frame.setFixedSize(QSize(340, 50))
+            frame.setFixedSize(QSize(340, 70))
             label1.setVisible(False)
             label2.setVisible(False)
             label3.setVisible(False)
             button.setText("∨")
         else:
-            frame.setFixedSize(QSize(340, 120))
+            frame.setFixedSize(QSize(340, 170))
             label1.setVisible(True)
             label2.setVisible(True)
             label3.setVisible(True)

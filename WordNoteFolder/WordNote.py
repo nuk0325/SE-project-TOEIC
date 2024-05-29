@@ -17,6 +17,9 @@ class WordNote :
         self._wordList = self._returnWordList() # word 객체로 구성된 리스트
         self.main()
 
+    def getLabel(self) :
+        return "Unit 1"
+
     def setTestChoice(self, boolean) :
         if boolean == True :
             self._testChoice = True
