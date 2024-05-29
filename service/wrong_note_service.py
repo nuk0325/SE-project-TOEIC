@@ -2,7 +2,7 @@ from word_note import WordNote
 from goto_service import Goto
 
 class WrongNote(WordNote) :
-    def __init__(self, user) :
+    def __init__(self,user) :
         self.user = user
         self._titleName = "오답노트"
         self._testName = "오답노트 테스트 시작"
@@ -10,6 +10,7 @@ class WrongNote(WordNote) :
         self.db = self._makeDBobj()
         self._wordIdxList = self.db.getWrongWordList(self.user)
         self._wordList = self._returnWordList()
+        
         self.main()
 
         self.goto = Goto()

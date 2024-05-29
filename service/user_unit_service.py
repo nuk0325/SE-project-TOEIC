@@ -10,7 +10,6 @@ class UserUnit(QMainWindow):
         self.user = user
         self.dataManager = DBManager()
         self.unitDoneList = self.dataManager.getUnitDoneList(self.user, ((self.partNum - 1) * 15))
-        print(self.unitDoneList)
 
         super().__init__()
         self.ui = UserUnitUI()
