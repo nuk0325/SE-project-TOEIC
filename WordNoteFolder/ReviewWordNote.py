@@ -7,6 +7,7 @@ class ReviewWordNote(WordNote) : # WordNote를 상속받은 유닛 단어장 클
     def __init__(self, user, part, unit) :
         self.user = user
         self._titleName = self._getPartName(part)
+        self._label = self._makeLabel(unit)
         self._testName = "복습 테스트 시작"
         self._testChoice = False
         self._wordIdxList = self._makeWordIdxList(part, unit) # index로 구성된 리스트
@@ -18,6 +19,13 @@ class ReviewWordNote(WordNote) : # WordNote를 상속받은 유닛 단어장 클
         partNum = part
         partName = "Part" + str(partNum)
         return partName
+    
+    def _makeLabel(self, unit) :
+        unitName = "Unit" + ' ' + str(unit)
+        return unitName
+    
+    def getLabel(self) :
+        return self._label
 
     def _makeWordIdxList(self, part, unit) :
         idx = (part-1) * 150 + (unit-1) * 10

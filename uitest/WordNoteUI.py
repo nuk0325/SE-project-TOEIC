@@ -13,6 +13,7 @@ class MainWindow(QMainWindow):
         self.testName = testName # 밑에 들어가는 문장 (ex. 복습 테스트 시작)
         self.wordObjList = wordObjList # word 객체로 구성된 리스트
         self.parent = parent
+        self.wordFrameList = []
         super().__init__()
 
         # 윈도우 크기 설정
@@ -62,29 +63,32 @@ class MainWindow(QMainWindow):
         nameLabel.setFont(QFont("Han Sans", 12))
         #nameLabel.setFixedSize(360, 40)
 
-        totalOpenButton = QPushButton("뜻 전체 보기", upperFrame)
-        totalOpenButton.setFixedSize(100, 25)
-        totalOpenButton.setStyleSheet("background-color : rgb(224, 224, 224);")
-        totalOpenButton.clicked.connect(self.openAllMeaning)
+        self.opened = "뜻 전체 보기"
+        self.closed = "뜻 전체 가리기"
+
+        self.totalOpenButton = QPushButton(self.opened, upperFrame)
+        self.totalOpenButton.setFixedSize(100, 25)
+        self.totalOpenButton.setStyleSheet("background-color : rgb(224, 224, 224);")
+        self.totalOpenButton.clicked.connect(self.toggleAllMeaningButton)
 
         upperLayout = QHBoxLayout()
         upperLayout.addSpacing(10)
         upperLayout.addWidget(nameLabel)
         upperLayout.addSpacing(50)
-        upperLayout.addWidget(totalOpenButton)
+        upperLayout.addWidget(self.totalOpenButton)
 
         upperFrame.setLayout(upperLayout)
 
 
         # 가운데 영역 설정
-        self.self.scrollArea = QScrollArea()
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)  # 수평 스크롤바 비활성화
-        self.scrollArea.setStyleSheet("background-color: white;")
+        scrollArea = QScrollArea()
+        scrollArea.setWidgetResizable(True)
+        scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)  # 수평 스크롤바 비활성화
+        scrollArea.setStyleSheet("background-color: white;")
 
 
         central_widget = QWidget()
-        self.scrollArea.setWidget(central_widget)
+        scrollArea.setWidget(central_widget)
 
         central_layout = QVBoxLayout()
         central_widget.setLayout(central_layout)
@@ -93,6 +97,7 @@ class MainWindow(QMainWindow):
         for wordObj in wordObjList : # 단어 frame마다 word 객체 할당
             frame = self.createFrame(wordObj)
             central_layout.addWidget(frame)
+
 
         # 하단 프레임 생성
         bottom_frame = QFrame()
@@ -119,7 +124,7 @@ class MainWindow(QMainWindow):
         main_layout = QVBoxLayout()
         main_layout.addWidget(top_frame)
         main_layout.addWidget(upperFrame)
-        main_layout.addWidget(self.scrollArea)
+        main_layout.addWidget(scrollArea)
         main_layout.addWidget(bottom_frame)
         main_widget.setLayout(main_layout)
 
@@ -153,13 +158,13 @@ class MainWindow(QMainWindow):
         frame.is_expanded = False
 
         # 좌측 버튼 (북마크)
-        bookmark_button = QPushButton("*")
-        bookmark_button.setFixedSize(QSize(40, 40))
-        self.updateBookmarkButton(bookmark_button, wordObj.getBookmark()) # 객체가 만들어질 떄 즐겨찾기가 되어있으면 바로 on으로 바꾸기
+        frame.bookmark_button = QPushButton("*")
+        frame.bookmark_button.setFixedSize(QSize(40, 40))
+        self.updateBookmarkButton(frame.bookmark_button, wordObj.getBookmark()) # 객체가 만들어질 떄 즐겨찾기가 되어있으면 바로 on으로 바꾸기
 
         # 우측 버튼 (의미 열기)
-        open_meaning_button = QPushButton("∨")
-        open_meaning_button.setFixedSize(QSize(40, 40))
+        frame.open_meaning_button = QPushButton("∨")
+        frame.open_meaning_button.setFixedSize(QSize(40, 40))
 
         # 가운데 레이블
         word_label = QLabel(wordObj.getWordName())
@@ -169,9 +174,9 @@ class MainWindow(QMainWindow):
 
         # 프레임 레이아웃 설정
         frame_layout = QHBoxLayout()
-        frame_layout.addWidget(bookmark_button)
+        frame_layout.addWidget(frame.bookmark_button)
         frame_layout.addWidget(word_label, alignment=Qt.AlignmentFlag.AlignLeft)
-        frame_layout.addWidget(open_meaning_button)
+        frame_layout.addWidget(frame.open_meaning_button)
 
         # 확장 영역 (기본적으로 숨김)
         additional_label1 = QLabel(wordObj.getMeaning())
@@ -215,13 +220,11 @@ class MainWindow(QMainWindow):
         frame.setLayout(outer_layout)
 
         # 버튼 클릭 이벤트 연결
-        open_meaning_button.clicked.connect(lambda checked, frame=frame, button=open_meaning_button, label1=additional_label1, label2=additional_label2, label3 = additional_label3: self.toggleFrameExpansion(frame, button, label1, label2, label3))
-        bookmark_button.clicked.connect(lambda: self.toggleBookmark(wordObj, bookmark_button))  # 북마크 버튼과 Word 객체의 북마크 메서드 연결
+        frame.open_meaning_button.clicked.connect(lambda checked, frame=frame, button=frame.open_meaning_button, label1=additional_label1, label2=additional_label2, label3 = additional_label3: self.toggleFrameExpansion(frame, button, label1, label2, label3))
+        frame.bookmark_button.clicked.connect(lambda: self.toggleBookmark(wordObj, frame.bookmark_button))  # 북마크 버튼과 Word 객체의 북마크 메서드 연결
 
+        self.wordFrameList.append(frame)
         return frame
-    
-    #def openAllMeaning(self) :
-        #for frame in self.scrollArea
 
     def updateBookmarkButton(self, bookmark_button, is_bookmarked):
         if is_bookmarked:
@@ -232,6 +235,22 @@ class MainWindow(QMainWindow):
     def toggleBookmark(self, wordObj, bookmark_button):
         wordObj.Bookmark()
         self.updateBookmarkButton(bookmark_button, wordObj.getBookmark())
+    
+    def toggleAllMeaningButton(self) :
+        if self.totalOpenButton.text() == self.opened : # 뜻 전체 보기라면
+            self.openOrClose(False)
+            self.totalOpenButton.setText(self.closed) # 뜻 전체 가리기로 바꾸고 리턴
+            return True
+        else :
+            self.openOrClose(True)
+            self.totalOpenButton.setText(self.opened)
+            return True
+        
+    def openOrClose(self, boolean):
+        # scrollArea에 있는 모든 프레임에 접근하여 open_meaning_button을 누름
+        for frame in self.wordFrameList :
+            if frame.is_expanded == boolean : # False면 열기 / True면 닫기
+                frame.open_meaning_button.click()
 
     def toggleFrameExpansion(self, frame, button, label1, label2, label3):
         if frame.is_expanded:
