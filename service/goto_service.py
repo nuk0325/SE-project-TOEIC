@@ -68,8 +68,10 @@ class Goto():
         self.window = PrepareEntireTest(user)
         self.window.show()
 
-    def gotoEntireTest(self):
+    def gotoEntireTest(self, user, wordIdxList, testChoice):
         print("go to Entire Test Page")
+        from entire_test_service import EntireTest
+        EntireTest(user, wordIdxList, testChoice)
 
     def gotoEntireTestResult(self):
         print("go to Entire Test Result Page")
@@ -93,8 +95,10 @@ class Goto():
     def gotoPrepareWrongNoteTest(self):
         print("go to Prepare Wrong Note Test Page")
 
-    def gotoWrongNoteTest(self):
+    def gotoWrongNoteTest(self, user, wordIdxList, testChoice):
         print("go to Wrong Note Test Page")
+        from wrong_note_test import WrongNoteTest
+        WrongNoteTest(user, wordIdxList, testChoice)
 
     def gotoWrongNoteTestResult(self):
         print("go to Wrong Note Test Result Page")
@@ -113,8 +117,13 @@ class Goto():
     def gotoPreapareBookmarkNoteTest(self):
         print("go to Prepare Bookmark Note Test Page")
 
-    def gotoBookmarkNoteTest(self):
+    def gotoBookmarkNoteTest(self, user, wordIdxList, testChoice):
         print("go to Bookmark Note Test Page")
+        from bookmark_note_test_service import BookmarkNoteTest
+        BookmarkNoteTest(user, wordIdxList, testChoice)
+
+    def gotoBookmarkNoteTestResult(self, user, correctIdxList, wrongIdxList):
+        print("go to Bookmark Note Test Result Page")
 
     def gotoBookmarkNoteCorrectNote(self):
         print("go to Bookmark Note Correct Note Page")

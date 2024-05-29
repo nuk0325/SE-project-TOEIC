@@ -16,8 +16,6 @@ def selectAllFromTable(table_name):
     for record in cur.fetchall():
         print(record)
         i += 1
-        if i > 5 :
-            break
     return cur.fetchall()
 
 
@@ -67,6 +65,38 @@ def deleteAllWrongFav(user_id):
     conn.commit()
 
 
+# # 유닛 테이블 정보 추가
+# def insertUnitTable(user_id, unit_index, is_done):
+#     cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', (user_id, unit_index, is_done))
+#     conn.commit()
+
+# 유닛 테이블 정보 수정
+def updateUnitTable(user_id, unit_index, is_done):
+    cur.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
+                (user_id, unit_index, is_done))
+
+    conn.commit()
+
+# 유닛 테이블 정보 모두 지우기
+def deleteAllUnit(user_id):
+    cur.execute("DELETE FROM unit where user_id = ?", (user_id,))
+    conn.commit()
+
+
+# db의 모든 테이블 초기 세팅 -> 추후 DB_manager에도 반영
+def setAllTable(user_id):
+    # wro_fav 테이블 세팅
+    for line_num in range(1, 1201):
+        cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
+                    (user_id, line_num, 0, 0))
+        conn.commit()
+
+    for unit_index in range(120):
+        cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
+                    (user_id, unit_index, 0))
+        conn.commit()
+    
+
 if __name__ == "__main__":
     conn = sqlite3.connect('word.db')
     cur = conn.cursor()
@@ -82,7 +112,7 @@ if __name__ == "__main__":
     # cur.execute("UPDATE user SET today_learned_unit = ? WHERE id = ?", (6, 'sunwook'))
     # conn.commit()
     # print("업데이트 결과")
-    selectAllFromTable("wro_fav")
+    # selectAllFromTable("wro_fav")
     # deleteAllWrongFav("taehyen")
 
 
@@ -112,12 +142,40 @@ if __name__ == "__main__":
     # for wrong in wrong_words:
     #     add_or_update_wro_fav(*wrong)
 
-    #selectAllFromTable('wro_fav')
-    # deleteAllWrongFav
+    # deleteAllWrongFav("sunwook")
+    # deleteAllUnit("sunwook")
+
+    # setAllTable("sunwook")
+
+    # updateUnitTable("sunwook", 0, 1)
+    # updateUnitTable("sunwook", 1, 1)
+    # updateUnitTable("sunwook", 2, 1)
+    # updateUnitTable("sunwook", 3, 1)
+    # updateUnitTable("sunwook", 4, 1)
+    # updateUnitTable("sunwook", 5, 1)
+    # updateUnitTable("sunwook", 6, 1)
+    # updateUnitTable("sunwook", 7, 1)
+    # updateUnitTable("sunwook", 8, 1)
+    # updateUnitTable("sunwook", 9, 1)
+    # updateUnitTable("sunwook", 10, 1)
+    # updateUnitTable("sunwook", 11, 1)
+    # updateUnitTable("sunwook", 12, 1)
+    # updateUnitTable("sunwook", 13, 1)
+    # updateUnitTable("sunwook", 14, 1)
+
+    # updateUnitTable("sunwook", 15, 1)
+    # updateUnitTable("sunwook", 16, 1)
+    # updateUnitTable("sunwook", 17, 1)
+    # updateUnitTable("sunwook", 18, 1)
+    # updateUnitTable("sunwook", 19, 1)
+    
+
+    # selectAllFromTable("wro_fav")
+    selectAllFromTable("unit")
 
 
-    # word 테이블 column 이름 확인
-    # cur.execute("PRAGMA table_info(words_db)")
+    # 테이블 column 이름 확인
+    # cur.execute("PRAGMA table_info(unit)")
     # columns = cur.fetchall()
     # print(columns)
 

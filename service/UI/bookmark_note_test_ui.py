@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QFrame, QPushButton, QHBoxLayout, QVBoxLayout, QLabel, QGridLayout
 from PyQt6 import QtCore, QtGui
 
-class EntireTestUI(QMainWindow):
+class BookmarkNoteTestUI(QMainWindow):
     def __init__(self, parent):
         super().__init__()
         
