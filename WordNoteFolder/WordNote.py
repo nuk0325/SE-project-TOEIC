@@ -31,7 +31,7 @@ class WordNote :
     def _returnWordList(self) : # word 객체 리스트 만드는 함수
         lst = []
         for idx in self._wordIdxList :
-            if self.db.getWord(idx, "word") != None : # 영어 값이 비어있다면 pass
+            if self.db.getWord(idx, "word") != None : # 값이 비어있다면 pass
                 word = Word(self.user, idx, self.db) 
                 lst.append(word)
         return lst
@@ -41,10 +41,8 @@ class WordNote :
         noteLabel = self._titleName
         testName = self._testName
         wordObjList = self._wordList
-        #app = QApplication(sys.argv)
         self.window = MainWindow(frameCount, noteLabel, testName, wordObjList, self)
         self.window.show()
-        #sys.exit(app.exec())
 
     def _dbClose(self) :
         self.db.closeDB()
@@ -58,3 +56,8 @@ class WordNote :
     
     def use_gotoSelectTest(self) : # 얘도 자식이 오버라이딩
         pass
+
+#if __name__ == "__main__": # 실제 UI 실행 코드
+#    received_word_list = []  # 받은 단어 목록을 입력하세요.
+#    word_note = WordNote(received_word_list)
+#    word_note.main()

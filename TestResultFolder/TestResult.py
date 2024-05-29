@@ -16,7 +16,7 @@ class TestResult :
         self.window = MainWindow(self)
         self.window.show()
 
-    def _ifCorrectOver(self) : # 맞은 개수가 80%를 넘었으면
+    def checkCorrectRate(self) :
         if self._correctCount >= self._wrongCount * 4 :
             return True
         else :
@@ -24,11 +24,17 @@ class TestResult :
 
     def getColor(self) :
         str = "background-color : "
-        if self._ifCorrectOver() :
+        if self.checkCorrectRate() :
             color = "#8bdbad ;"
         else :
             color = "#739bc3 ;"
         return str + color
+    
+    def getResultSentence(self) :
+        if self.checkCorrectRate() :
+            return "너무 잘했어요!"
+        else :
+            return "조금 더 노력해봐요!"
     
     def use_goBack(self) :
         pass

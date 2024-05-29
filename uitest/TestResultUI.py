@@ -1,6 +1,8 @@
+import sys, os
+sys.path.append(os.path.dirname(__file__))
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame, QHBoxLayout, QVBoxLayout, QLabel, QWidget, QScrollArea, QMessageBox
 from PyQt6 import QtGui
-from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QFont, QPixmap
 from PyQt6.QtCore import Qt, QSize
 
 class MainWindow(QMainWindow) :
@@ -46,8 +48,37 @@ class MainWindow(QMainWindow) :
 
         middleFrame = QFrame(mainWidget)
         middleFrame.setFixedSize(QSize(360, 300))  # 이미지가 들어갈 프레임
+        middleLayout = QVBoxLayout(middleFrame)
+        middleLayout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
+        imageLabel = QLabel(middleFrame)
+        
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        if  self.parent.checkCorrectRate() :
+            imageName = os.path.join(script_dir, "goodDog.png")
+        else :
+            imageName = os.path.join(script_dir, "badDog.png")
+        pixmap = QPixmap(imageName)
+        if pixmap.isNull():
+            QMessageBox.critical(self, "Image Load Error", "이미지를 로드할 수 없습니다.")
+            sys.exit(1)
+        scaled_pixmap = pixmap.scaled(200, 300, Qt.AspectRatioMode.KeepAspectRatio)
+        imageLabel.setPixmap(scaled_pixmap)
+        imageLabel.resize(scaled_pixmap.width(), scaled_pixmap.height())
 
+        resultSentenceLabel = QLabel(self.parent.getResultSentence(),middleFrame)
+        resultSentenceLabel.setFont(QtGui.QFont("Han Sans", 20))
+        resultSentenceLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        imageLayout = QHBoxLayout()
+        imageLayout.addWidget(imageLabel, alignment=Qt.AlignmentFlag.AlignCenter)
+
+        textLayout = QHBoxLayout()
+        textLayout.addWidget(resultSentenceLabel, alignment=Qt.AlignmentFlag.AlignCenter)
+
+        # QVBoxLayout에 QHBoxLayout 추가
+        middleLayout.addLayout(imageLayout)
+        middleLayout.addLayout(textLayout)
 
 
         correctFrame = QFrame(mainWidget)
