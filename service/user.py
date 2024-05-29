@@ -1,5 +1,5 @@
 class User:
-    def __init__(self, userId, userPassword='', userNickname='사용자', userGoal=3, is_admin=0, last_date=0, today_learned_unit=0, total_learned_unit=0):
+    def __init__(self, userId, userPassword='', userNickname='사용자', userGoal=3, is_admin=0, last_date="2024-05-01", today_learned_unit=0, total_learned_unit=0):
         self.__userId = userId
         self.__userPassword = userPassword
         self.__userNickname = userNickname
