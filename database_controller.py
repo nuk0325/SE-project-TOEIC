@@ -30,7 +30,7 @@ def delete_User(userId):
     selectAllFromTable("user", 20)
 
 # user 정보 추가
-def add_user(user_id, password, nickname, unit_count=3, is_admin=None, last_date=None, today_learned_unit=None, total_learned_unit=None):
+def add_user(cur, user_id, password, nickname, unit_count=3, is_admin=None, last_date=None, today_learned_unit=None, total_learned_unit=None):
     cur.execute("INSERT INTO user (id, password, nickname, unit_count, is_admin, last_date, today_learned_unit, total_learned_unit) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                 (user_id, password, nickname, unit_count, is_admin, last_date, today_learned_unit, total_learned_unit))
     conn.commit()
@@ -52,7 +52,7 @@ def add_or_update_All_wro_fav(cur, user_id):
         add_or_update_wro_fav(cur, user_id, i, 0, 0)
     conn.commit()
 
-# 즐겨찾기, 오답노트 정보 추가,수정
+# 즐겨찾기, 오답노트 정보 추가,수정. 빠르게 추가함
 def add_or_update_wro_fav(cur, user_id, line_num, wro_is_right, fav_is_right):
     cur.execute('''
         SELECT user_id, line_num FROM wro_fav WHERE user_id = ? AND line_num = ?
@@ -69,27 +69,6 @@ def add_or_update_wro_fav(cur, user_id, line_num, wro_is_right, fav_is_right):
             INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right)
             VALUES (?, ?, ?, ?)
         ''', (user_id, line_num, wro_is_right, fav_is_right))
-
-# 즐겨찾기, 오답노트 정보 추가
-def add_or_update_wro_fav(user_id, line_num, wro_is_right, fav_is_right):
-    # 중복 확인 쿼리
-    cur.execute('''SELECT COUNT(*) FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, line_num))
-    
-    if cur.fetchone()[0] == 0:
-        # 중복이 없는 경우에만 삽입
-        cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
-                    (user_id, line_num, wro_is_right, fav_is_right))
-    else:
-        # 중복이 있는 경우 업데이트
-        cur.execute('''UPDATE wro_fav SET wro_is_right = ?, fav_is_right = ? WHERE user_id = ? AND line_num = ?''', 
-                    (wro_is_right, fav_is_right, user_id, line_num))
-    
-    conn.commit()
-
-# def add_wro_fav(user_id, line_num, wro_is_right, fav_is_right):
-#     cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
-#                 (user_id, line_num, wro_is_right, fav_is_right))
-#     conn.commit()
 
 # 즐겨찾기, 오답노트 테이블 정보 전부 삭제
 def deleteAllWrongFav(user_id):
@@ -152,8 +131,8 @@ if __name__ == "__main__":
     add_user(cur, 'taehyen', '1234', '태현', 10, 1, '2024-05-27', 6, 80)
 
     #유저의 오답,즐겨찾기 1200개 단어추가
-    add_or_update_All_wro_fav('sunwook', 1200)
-    add_or_update_All_wro_fav('taehyen', 1200)
+    add_or_update_All_wro_fav(cur, 'sunwook')
+    add_or_update_All_wro_fav(cur, 'taehyen')
 
 
     # 종료
