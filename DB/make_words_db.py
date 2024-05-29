@@ -6,7 +6,7 @@ import Database as db
 current_directory = os.getcwd()
 
 # CSV 파일의 경로를 상대 경로로 지정합니다.
-file_path = os.path.join(current_directory, 'toeic_word_file.csv')
+file_path = os.path.join(current_directory, 'txt', 'toeic_word_file.csv')
 
 df = pd.read_csv(file_path)
 
