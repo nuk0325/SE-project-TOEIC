@@ -10,6 +10,7 @@ class WordNote :
     def __init__(self, user, recievedWordList) :
         self.user = user
         self._titleName = "" # 맨 위에 들어가는 문장 (ex. 학습하기)
+        self._label = self._makeLabel() # 뜻 전체 보기 왼쪽에 있는 label
         self._testName = "" # 맨 아래에 들어가는 문장 (ex. 복습 테스트 시작)
         self._testChoice = False # 단어 / 뜻 전환 여부 / False면 뜻으로 답하기
         self._wordIdxList = recievedWordList # 단어들의index로 구성된 리스트
@@ -17,8 +18,11 @@ class WordNote :
         self._wordList = self._returnWordList() # word 객체로 구성된 리스트
         self.main()
 
-    def getLabel(self) : # 뜻 전체 보기 왼쪽에 있는 label
+    def _makeLabel(self) :
         return ""
+
+    def getLabel(self) :
+        return self._label
 
     def setTestChoice(self, boolean) :
         if boolean == True :

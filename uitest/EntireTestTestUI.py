@@ -1,12 +1,21 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QFrame, QPushButton, QHBoxLayout, QVBoxLayout, QLabel, QGridLayout
 from PyQt6 import QtCore, QtGui
+from PyQt6.QtCore import QTimer
 
 class MainWindow(QMainWindow):
     def __init__(self, parent):
         super().__init__()
         
         self.parent = parent
-        
+        self.answer_button = None
+
+        #타이머 설정
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.updateTimer)
+        self.timer.start(1000)  # 1000 밀리초마다 타이머 작동 (1초)
+        self.timeCount = 2 #타이머. 문제당 주어진 초
+        self.sec = self.timeCount  #문제당 남은 시간. 
+
         # 창 크기 설정
         self.setWindowTitle("PyQt6 Basic Window")
         self.setGeometry(100, 100, 360, 600)  # (x, y, width, height)
@@ -29,7 +38,6 @@ class MainWindow(QMainWindow):
         # 홈 버튼 생성
         home_button = QPushButton("🏠", top_frame)
         home_button.setFixedSize(60, 60)
-        #home_button.setStyleSheet("border-radius: 10px;")
         home_button.clicked.connect(lambda: self.closeAndOpen("home"))
         
         # 중앙 라벨 생성
@@ -51,9 +59,10 @@ class MainWindow(QMainWindow):
         # 하단 프레임 레이아웃
         bottom_layout = QHBoxLayout(bottom_frame)
         
-        # unit_name 라벨 생성
-        self.unit_name_label = QLabel(parent.getUnitNum(), bottom_frame)
+        # 타이머 라벨 생성
+        self.unit_name_label = QLabel(f"{self.sec} sec" , bottom_frame)
         self.unit_name_label.setFont(QtGui.QFont("Han Sans", 10))  # 폰트 크기 설정
+        self.unit_name_label.setStyleSheet("color: red;") #빨간색으로 변경
         bottom_layout.addWidget(self.unit_name_label)
         
         # Stretch 추가
@@ -93,14 +102,10 @@ class MainWindow(QMainWindow):
         self.word_count_label = QLabel(parent.getWordCountLabel(), new_frame)
         self.word_count_label.setFont(QtGui.QFont("Han Sans", 12))  # 폰트 크기 설정
         
-
-
         # question 라벨 생성
         self.questionLabel = QLabel(parent.getQuestion(), new_frame)
         self.questionLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)  # 가운데 정렬
-        self.questionLabel.setFont(QtGui.QFont("Han Sans", 20))  # 폰트 크기 변경
-        self.questionLabel.setWordWrap(True)
-        self.questionLabel.adjustSize()
+        self.questionLabel.setFont(QtGui.QFont("Han Sans", 30))  # 폰트 크기 변경
         
         # answerLabel 생성
         self.answerLabel = QLabel(parent.getAnswer(), new_frame)
@@ -112,8 +117,6 @@ class MainWindow(QMainWindow):
         self.sentenceLabel = QLabel(parent.getSentence(), new_frame)
         self.sentenceLabel.setFont(QtGui.QFont("Han Sans", 12))
         self.sentenceLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.sentenceLabel.setWordWrap(True)
-        self.sentenceLabel.adjustSize()
         self.sentenceLabel.setVisible(False)
 
         # 라벨들을 수직 레이아웃에 추가
@@ -134,7 +137,7 @@ class MainWindow(QMainWindow):
         self.grid_layout.setSpacing(10)  # 버튼 사이의 간격 설정
         
         # 버튼 생성 및 그리드 레이아웃에 추가
-        self.update_buttons()
+        self.update_labels_and_buttons() #버튼이 클릭된다면. 
         
         # 전체 레이아웃 설정
         main_layout = QVBoxLayout(central_widget)
@@ -161,6 +164,24 @@ class MainWindow(QMainWindow):
         else :
             print("잘못된 입력입니다.")
 
+    def updateTimer(self):
+        # sec 값 감소 및 QLabel 업데이트
+        if self.sec > 0:
+            self.sec -= 1
+            self.unit_name_label.setText(f"{self.sec} sec")
+        else:
+            #타이머 멈추기
+            self.timer.stop()
+
+            #정답보기 버튼을 클릭했다 처리
+            self.answer_button.click() 
+
+    def initTimer(self):
+        #타이머 초기화. 재시작
+        self.timer.start(1000)
+        self.sec = self.timeCount
+        self.unit_name_label.setText(f"{self.sec} sec")
+
     def update_labels_and_buttons(self):
         self.correct_count_label.setText(self.parent.getCorrectCount())
         self.wrong_count_label.setText(self.parent.getWrongCount())
@@ -179,8 +200,6 @@ class MainWindow(QMainWindow):
         
         # 새 버튼 추가
         self.update_buttons()
-        
-
 
     def update_buttons(self):
         buttonList = self.parent.getMeaningList()
@@ -194,21 +213,23 @@ class MainWindow(QMainWindow):
             self.grid_layout.addWidget(button, row, col)
         
         # "정답보기" 버튼 생성
-        answer_button = QPushButton("정답보기", self.bottom_large_frame)
-        answer_button.setFixedSize(340, 70)
-        answer_button.setFont(QtGui.QFont("Han Sans", 15))  # 폰트 크기 설정
-        answer_button.setStyleSheet("background-color : rgb(224, 224, 224);")
-        answer_button.clicked.connect(self.on_button_click)
-        self.grid_layout.addWidget(answer_button, 3, 1, 1, 2)  # 3행 1열에 추가하고, span 1x2
+        self.answer_button = QPushButton("정답보기", self.bottom_large_frame)
+        self.answer_button.setFixedSize(340, 70)
+        self.answer_button.setFont(QtGui.QFont("Han Sans", 15))  # 폰트 크기 설정
+        self.answer_button.setStyleSheet("background-color : rgb(224, 224, 224);")
+        self.answer_button.clicked.connect(self.on_button_click)
+        
+        self.grid_layout.addWidget(self.answer_button, 3, 1, 1, 2)  # 3행 1열에 추가하고, span 1x2
         
 
     def on_button_click(self):
+        self.timer.stop() #타이머 멈추기
         sender = self.sender()
         if sender:
             self.lookAnswer(sender)
             QtCore.QTimer.singleShot(500, self.hide_labels) # 3초 뒤에 전체 이벤트가 실행되도록 고쳐보자
             QtCore.QTimer.singleShot(500, lambda: self.checkBoolean(sender))
-                
+            QtCore.QTimer.singleShot(500, self.initTimer) #타이머 초기화
     def hide_labels(self):
         self.answerLabel.setVisible(False)
         self.sentenceLabel.setVisible(False)
@@ -219,6 +240,7 @@ class MainWindow(QMainWindow):
         if boolean :
             self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
         else :
+            self.timer.stop()
             self.closeAndOpen("result")
     
     def lookAnswer(self, sender) :
