@@ -5,10 +5,10 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox, QApplication
 #from goto_service import Goto
 #from Goto import Goto
 
-
 from PyQt6 import QtWidgets, QtCore
 from PyQt6.QtWidgets import QDialog, QVBoxLayout, QLabel, QHBoxLayout, QPushButton
 from EntireTestWordNote import EntireTestWordNote
+import random
 
 class SelectEntireTestDialog(QDialog):
     def __init__(self, user, word_n, parent):
@@ -203,8 +203,10 @@ class PrepareEntireTest(QMainWindow):
         #dialog = SelectEntireTestDialog(self.user, selected_value, self)
         #dialog.exec_()  # QDialog 팝업을 모달로 실행합니다.
 
+        # 전체 테스트 실행. 단어장을 생성하여 단어를 넘겨줌.
         self.close()
-        EntireTestWordNote(self.user, False, selected_value)
+        testChose = bool(random.randint(0, 1)) # 뜻으로답할지, 영어로답할지 랜덤으로 결정
+        EntireTestWordNote(self.user, testChose, selected_value)
 
 
 

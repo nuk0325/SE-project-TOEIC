@@ -51,7 +51,8 @@ class MainWindow(QMainWindow):
         bottom_layout = QHBoxLayout(bottom_frame)
         
         # unit_name 라벨 생성
-        self.unit_name_label = QLabel("", bottom_frame)
+        sec=3 #문제당 남은 시간.
+        self.unit_name_label = QLabel(f"{sec} sec" , bottom_frame)
         self.unit_name_label.setFont(QtGui.QFont("Han Sans", 10))  # 폰트 크기 설정
         bottom_layout.addWidget(self.unit_name_label)
         
