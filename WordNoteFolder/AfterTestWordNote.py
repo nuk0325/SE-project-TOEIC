@@ -7,7 +7,8 @@ class AfterTestWordNote(WordNote) :
         self._wordIdxList = wordIdxList
         self._anotherList = anotherList
         self._op1 = op1
-        self._titleName = self._getTitle()
+        self._titleName = "테스트 결과"
+        self._label = self._makeLabel()
         self._testName = "홈으로 가기"
         self.db = self._makeDBobj()
         self._wordList = self._returnWordList()
@@ -15,13 +16,16 @@ class AfterTestWordNote(WordNote) :
         # review -> 복습 / wrong -> 오답 / fav -> 즐겨찾기
         self.main()
 
-    def _getTitle(self) :
+    def _makeLabel(self) :
         if self._op1 == "correct" :
-            return "맞힌 단어장"
+            return "맞힌 단어"
         elif self._op1 == "wrong" :
-            return "틀린 단어장"
+            return "틀린 단어"
         else :
             print("AfterTestWordNote op1, op2 Error")
+
+    def getLabel(self) :
+        return self._label
     
     def use_goBack(self) :
         lst1 = self._wordIdxList

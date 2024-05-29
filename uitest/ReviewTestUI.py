@@ -93,10 +93,14 @@ class MainWindow(QMainWindow):
         self.word_count_label = QLabel(parent.getWordCountLabel(), new_frame)
         self.word_count_label.setFont(QtGui.QFont("Han Sans", 12))  # 폰트 크기 설정
         
+
+
         # question 라벨 생성
         self.questionLabel = QLabel(parent.getQuestion(), new_frame)
         self.questionLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)  # 가운데 정렬
-        self.questionLabel.setFont(QtGui.QFont("Han Sans", 30))  # 폰트 크기 변경
+        self.questionLabel.setFont(QtGui.QFont("Han Sans", 20))  # 폰트 크기 변경
+        self.questionLabel.setWordWrap(True)
+        self.questionLabel.adjustSize()
         
         # answerLabel 생성
         self.answerLabel = QLabel(parent.getAnswer(), new_frame)
@@ -108,6 +112,8 @@ class MainWindow(QMainWindow):
         self.sentenceLabel = QLabel(parent.getSentence(), new_frame)
         self.sentenceLabel.setFont(QtGui.QFont("Han Sans", 12))
         self.sentenceLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.sentenceLabel.setWordWrap(True)
+        self.sentenceLabel.adjustSize()
         self.sentenceLabel.setVisible(False)
 
         # 라벨들을 수직 레이아웃에 추가
