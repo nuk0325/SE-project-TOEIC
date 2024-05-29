@@ -33,7 +33,7 @@ class DBManager:
             user_data = self.cur.fetchone()
             #오류확인
             user = User.toUserEntity(user_data)
-            return True, user
+            return user
         except Exception as e:
             print("Error:", e)
             return False, "회원 정보 업데이트에 실패했습니다."  # Other errors
@@ -46,21 +46,12 @@ class DBManager:
         except Exception as e:
             print("Error:", e)
             return False, "사용자 삭제에 실패했습니다."  # Other errors
-    
-    def findId(self, userId):
-        try:
-            self.cur.execute("SELECT id FROM user WHERE id=?", (userId,))
-            id = self.cur.fetchone()
-            
-            return id
-        except Exception as e:
-            print("Error:", e)
-            return None
 
     def find_by_id(self, user_id):
         try:
             self.cur.execute("SELECT * FROM user WHERE id=?", (user_id,))
             user_data = self.cur.fetchone()
+
             if user_data:
                 user = User.toUserEntity(user_data)
                 return user
@@ -70,9 +61,21 @@ class DBManager:
             print("Error:", e)
             return None
         
-    def checkBookmark(self, idx) :
-        user_id = "justID"
+    def checkBookmark(self, user, idx) :
+        user_id = user.userId
+
         self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
+        result = self.cur.fetchone()
+        if result :
+            if result[0] == 1 :
+                return True
+            else :
+                return False
+            
+    def checkWrongWord(self, user, idx) :
+        user_id = user.userId
+
+        self.cur.execute('''SELECT wro_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
         result = self.cur.fetchone()
         if result :
             if result[0] == 1 :
@@ -93,18 +96,45 @@ class DBManager:
             else :
                 print("올바르지 않은 입력")
         
-    def changeBookmark(self, boolean, idx) :
-        user_id = "justID"
+    def changeBookmark(self, user, boolean, idx) :
+        user_id = user.userId
+        
         if boolean :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         else :
             self.cur.execute('''UPDATE wro_fav SET fav_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         self.conn.commit()
 
-    def getWrongWordList(self) :
-        user_id = "justID"
-        # 대충 wro_is_right == 1인 리스트 뽑는 코드
-        return [1,2,5,6,7,8]
+    def getBookmarkWordList(self, user) :
+        # fav_is_right == 1인 리스트 뽑는 코드
+        #wordIdxList = [120,1,2,5,6,7,8] #모든 단어의 index는 1에서 시작
+        wordIdxList=[]
+        count=1200 #전체 단어 개수
+        i=1
+        for i in range(1, count):
+            if self.checkBookmark(user, i) == 1:
+                wordIdxList.append(i)
+
+        return wordIdxList
+
+    def getWrongWordList(self, user):
+        # wro_is_right == 1인 리스트 뽑는 코드
+        #wordIdxList = [121,1,2,5,6,7,8]
+        wordIdxList=[]
+        count=1200 #전체 단어 개수
+        i=1
+        for i in range(1, count):
+            if self.checkWrongWord(user, i) == 1:
+                wordIdxList.append(i)
+        return wordIdxList  
+    
+    def getStudiedUnitNum(self, user):
+        user_id = user.userId
+
+        self.cur.execute('''SELECT is_done FROM unit WEHRE user_id = ?''', (user_id,))
+        result = self.cur.fetchall()
+
+        return result
     
     #관리자페이지에서 단어수정 및 삭제하는 함수
     def update_word_and_remove_wro_fav(self, word_obj):
@@ -131,3 +161,5 @@ class DBManager:
     def closeDB(self) :
         self.conn.commit()
         self.conn.close()
+
+

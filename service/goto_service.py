@@ -43,14 +43,15 @@ class Goto():
         print("go to Unit Word Note Page")
         from unit_word_note_service import UnitWordNote
         # received_word_list = [1,3,5,7,8] # 일단 리스트를 준 상태로 연결
-        UnitWordNote(partNum, unitNum, user)
+        UnitWordNote(user, partNum, unitNum)
 
     def gotoPrepareReviewTest(self):
         print("go to Prepare Review Test Page")
 
-    def gotoReviewTest(self, user):
+    def gotoReviewTest(self, user, wordIdxList, testChoice):
+        print("go to Review Test Page")
         from review_test_service import ReviewTest
-        ReviewTest(user)
+        ReviewTest(user, wordIdxList, testChoice)
 
     def gotoReviewTestResult(self):
         print("go to Review Test Result Page")
@@ -84,8 +85,10 @@ class Goto():
         self.window = MyPage(user)
         self.window.show()
 
-    def gotoWrongNote(self):
+    def gotoWrongNote(self, user):
         print("go to Wrong Note Page")
+        from wrong_note_service import WrongNote
+        WrongNote(user)
 
     def gotoPrepareWrongNoteTest(self):
         print("go to Prepare Wrong Note Test Page")
@@ -102,8 +105,10 @@ class Goto():
     def gotoWrongNoteTestWrongNote(self):
         print("go to Wrong Note Test Wrong Note Page")
 
-    def gotoBookmarkNote(self):
+    def gotoBookmarkNote(self, user):
         print("go to Bookmark Note Page")
+        from bookmark_note_service import BookmarkNote
+        BookmarkNote(user)
 
     def gotoPreapareBookmarkNoteTest(self):
         print("go to Prepare Bookmark Note Test Page")
