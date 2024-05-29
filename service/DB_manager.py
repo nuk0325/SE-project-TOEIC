@@ -136,21 +136,26 @@ class DBManager:
 
         return result
     
+
+
+
+    #================================manager=====================================
+
     #관리자페이지에서 단어수정 및 삭제하는 함수
-    def update_word_and_remove_wro_fav(self, word_obj):
+    def update_word_and_remove_wro_fav(self, word, mean, sent, sent_mean, line_num):
         try:
             # words_db 테이블 업데이트
             self.cur.execute('''
                 UPDATE words_db
                 SET word = ?, mean = ?, sent = ?, sent_mean = ?
                 WHERE line_num = ?
-            ''', (word_obj.word, word_obj.mean, word_obj.sent, word_obj.sent_mean, word_obj.line_num))
+            ''', (word, mean, sent, sent_mean, line_num))
 
             # wro_fav 테이블에서 해당 엔티티 삭제
             self.cur.execute('''
                 DELETE FROM wro_fav
                 WHERE line_num = ?
-            ''', (word_obj.line_num,))
+            ''', (line_num,))
 
             self.conn.commit()
             return True
@@ -158,6 +163,21 @@ class DBManager:
             print("Error:", e)
             return False
     
+    def checkEqualWord(self, word):
+        try:
+            self.cur.execute("SELECT * FROM words_db WHERE word=?", (word,))
+            user_data = self.cur.fetchone()
+
+            if user_data:
+                print('중복단어있음')
+                return True
+            else:
+                return None
+        except Exception as e:
+            print("Error:", e)
+            return None
+
+
     def closeDB(self) :
         self.conn.commit()
         self.conn.close()
