@@ -29,7 +29,7 @@ class MainWindow(QMainWindow):
         # 홈 버튼 생성
         home_button = QPushButton("🏠", top_frame)
         home_button.setFixedSize(60, 60)
-        home_button.setStyleSheet("border-radius: 10px;")
+        #home_button.setStyleSheet("border-radius: 10px;")
         home_button.clicked.connect(lambda: self.closeAndOpen("home"))
         
         # 중앙 라벨 생성
