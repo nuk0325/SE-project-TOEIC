@@ -42,19 +42,17 @@ class Goto():
     def gotoUnitWordNote(partNum, unitNum, user):
         print("go to Unit Word Note Page")
         from unit_word_note_service import UnitWordNote
-        # received_word_list = [1,3,5,7,8] # 일단 리스트를 준 상태로 연결
         UnitWordNote(user, partNum, unitNum)
-
-    def gotoPrepareReviewTest(self):
-        print("go to Prepare Review Test Page")
 
     def gotoReviewTest(self, user, wordIdxList, testChoice):
         print("go to Review Test Page")
         from review_test_service import ReviewTest
         ReviewTest(user, wordIdxList, testChoice)
 
-    def gotoReviewTestResult(self):
+    def gotoReviewTestResult(self, user, correctIdxList, wrongIdxList):
         print("go to Review Test Result Page")
+        from review_test_result_service import ReviewTestResult
+        ReviewTestResult(user, correctIdxList, wrongIdxList)
 
     def gotoReviewTestCorrectNote(self):
         print("go to Review Test Correct Note Page")
@@ -73,8 +71,10 @@ class Goto():
         from entire_test_service import EntireTest
         EntireTest(user, wordIdxList, testChoice)
 
-    def gotoEntireTestResult(self):
+    def gotoEntireTestResult(self, user, correctIdxList, wrongIdxList):
         print("go to Entire Test Result Page")
+        from entire_test_result_service import EntireTestResult
+        EntireTestResult(user, correctIdxList, wrongIdxList)
 
     def gotoEntireTestCorrectNote(self):
         print("go to Entire Test Correct Note Page")
@@ -91,9 +91,6 @@ class Goto():
         print("go to Wrong Note Page")
         from wrong_note_service import WrongNote
         WrongNote(user)
-
-    def gotoPrepareWrongNoteTest(self):
-        print("go to Prepare Wrong Note Test Page")
 
     def gotoWrongNoteTest(self, user, wordIdxList, testChoice):
         print("go to Wrong Note Test Page")
@@ -114,9 +111,6 @@ class Goto():
         from bookmark_note_service import BookmarkNote
         BookmarkNote(user)
 
-    def gotoPreapareBookmarkNoteTest(self):
-        print("go to Prepare Bookmark Note Test Page")
-
     def gotoBookmarkNoteTest(self, user, wordIdxList, testChoice):
         print("go to Bookmark Note Test Page")
         from bookmark_note_test_service import BookmarkNoteTest
@@ -124,6 +118,8 @@ class Goto():
 
     def gotoBookmarkNoteTestResult(self, user, correctIdxList, wrongIdxList):
         print("go to Bookmark Note Test Result Page")
+        from bookmark_note_test_result_service import BookmarkTestResult
+        BookmarkTestResult(user, correctIdxList, wrongIdxList)
 
     def gotoBookmarkNoteCorrectNote(self):
         print("go to Bookmark Note Correct Note Page")
