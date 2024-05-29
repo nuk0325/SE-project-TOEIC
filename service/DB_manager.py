@@ -177,7 +177,6 @@ class DBManager:
                 count = count + 1
         
         return count
-
     
     def closeDB(self) :
         self.conn.commit()
