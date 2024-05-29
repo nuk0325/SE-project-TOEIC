@@ -65,7 +65,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS words_db (
 # sent_mean : 예문 뜻
 
 
-# 오답노트 테이블
+# 오답노트 즐겨찾기 테이블
 cur.execute('''CREATE TABLE IF NOT EXISTS wro_fav (
                user_id TEXT,
                line_num INTEGER,

@@ -13,7 +13,7 @@ from PyQt6.QtWidgets import QMessageBox, QPushButton, QApplication, QWidget, QSc
 
 
 class UserUnitUI(object):
-    def setupUi(self, UserUnit):
+    def setupUi(self, UserUnit, unitDoneList):
         self.parent = UserUnit
 
         if not UserUnit.objectName():
@@ -87,7 +87,13 @@ class UserUnitUI(object):
             button1 = QPushButton(frame)
             button1.setObjectName(f"unit{i}_button")
             button1.setFixedSize(150, 120)  # Set button size
-            button1.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+
+            # unit 학습 유무에 따라 unit 버튼 색깔 설정
+            if unitDoneList[i - 1] == 1:
+                button1.setStyleSheet(u"background-color: rgba(36, 174, 95, 0.8)")
+            else :
+                button1.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+            
             button1.setText(f"Unit {i}")
 
             frame_layout.addWidget(button1)
@@ -97,7 +103,13 @@ class UserUnitUI(object):
                 button2 = QPushButton(frame)
                 button2.setObjectName(f"unit{i+1}_button")
                 button2.setFixedSize(150, 120)  # Set button size
-                button2.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+
+                # unit 학습 유무에 따라 unit 버튼 색깔 설정
+                if unitDoneList[i] == 1:
+                    button2.setStyleSheet(u"background-color: rgba(36, 174, 95, 0.8)")
+                else :
+                    button2.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+                
                 button2.setText(f"Unit {i+1}")
 
                 frame_layout.addWidget(button2)

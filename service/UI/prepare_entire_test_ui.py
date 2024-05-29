@@ -1,10 +1,13 @@
 from PyQt6 import QtWidgets, QtCore
+from dialog.select_test_dialog import SelectTestDialog
 
 class PrepareEntireTestUI(object):
-    def setupUi(self, MainWindow, correctWordNum, allWordNum):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(359, 600)
-        self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
+    def setupUi(self, parent, correctWordNum, allWordNum):
+        self.parent = parent
+
+        parent.setObjectName("MainWindow")
+        parent.resize(359, 600)
+        self.centralwidget = QtWidgets.QWidget(parent=parent)
         self.centralwidget.setObjectName("centralwidget")
         self.frame_5 = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_5.setGeometry(QtCore.QRect(0, 1, 360, 60))
@@ -14,9 +17,13 @@ class PrepareEntireTestUI(object):
         self.back_button = QtWidgets.QPushButton(parent=self.frame_5)
         self.back_button.setGeometry(QtCore.QRect(0, 0, 60, 60))
         self.back_button.setObjectName("back_button")
+        self.back_button.clicked.connect(lambda: self.closeAndOpen("back"))
+
         self.home_button = QtWidgets.QPushButton(parent=self.frame_5)
         self.home_button.setGeometry(QtCore.QRect(300, 0, 60, 60))
         self.home_button.setObjectName("home_button")
+        self.home_button.clicked.connect(lambda: self.closeAndOpen("home"))
+
         self.textBrowser = QtWidgets.QTextBrowser(parent=self.frame_5)
         self.textBrowser.setGeometry(QtCore.QRect(60, 0, 240, 60))
         self.textBrowser.setObjectName("textBrowser")
@@ -38,6 +45,8 @@ class PrepareEntireTestUI(object):
         sizePolicy.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
         self.pushButton.setSizePolicy(sizePolicy)
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.showPopUp)
+
         self.verticalLayout.addWidget(self.pushButton)
         self.frame_2 = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(0, 60, 360, 261))
@@ -63,14 +72,13 @@ class PrepareEntireTestUI(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
+        parent.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(parent=parent)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        parent.setStatusBar(self.statusbar)
 
-
-        self.retranslateUi(MainWindow, f"{correctWordNum}/{allWordNum}")
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(parent, f"{correctWordNum}/{allWordNum}")
+        QtCore.QMetaObject.connectSlotsByName(parent)
 
 
     #ui 모양 할당
@@ -120,3 +128,17 @@ class PrepareEntireTestUI(object):
         self.comboBox.setItemText(2, _translate("MainWindow", "30"))
         self.comboBox.setItemText(3, _translate("MainWindow", "40"))
         self.comboBox.setItemText(4, _translate("MainWindow", "50"))
+
+    def showPopUp(self) :
+        popup = SelectTestDialog(self, self.parent)
+        popup.exec()
+
+    def closeAndOpen(self, option) :
+        if option == "back" :
+            self.parent.back_button_clicked()
+        elif option == "home" :
+            self.parent.home_button_clicked()
+        elif option == "test" :
+            self.parent.pushButton_clicked()
+        else :
+            print("잘못된 입력입니다.")

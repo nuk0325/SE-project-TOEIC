@@ -19,7 +19,6 @@ class SelectTestDialog(QDialog):
 
         buttonLayout.addWidget(yesBtn)
         buttonLayout.addWidget(noBtn)
-
         layout.addLayout(buttonLayout)
         self.setLayout(layout)
 

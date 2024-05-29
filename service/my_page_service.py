@@ -115,10 +115,8 @@ class MyPage(QMainWindow):
         self.goto.gotoLogIn()
 
     def wrongNoteButtonClicked(self):
-        self.goto.gotoEntireTest(self.user)
+        self.goto.gotoWrongNote(self.user)
         self.close()
-        # self.goto.gotoWrongNote()
-        # self.close()
 
     def bookmarkNoteButtonClicked(self):
         self.goto.gotoBookmarkNote(self.user)

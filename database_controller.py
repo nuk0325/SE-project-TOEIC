@@ -70,12 +70,64 @@ def add_or_update_wro_fav(cur, user_id, line_num, wro_is_right, fav_is_right):
             VALUES (?, ?, ?, ?)
         ''', (user_id, line_num, wro_is_right, fav_is_right))
 
+# 즐겨찾기, 오답노트 정보 추가
+def add_or_update_wro_fav(user_id, line_num, wro_is_right, fav_is_right):
+    # 중복 확인 쿼리
+    cur.execute('''SELECT COUNT(*) FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, line_num))
+    
+    if cur.fetchone()[0] == 0:
+        # 중복이 없는 경우에만 삽입
+        cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
+                    (user_id, line_num, wro_is_right, fav_is_right))
+    else:
+        # 중복이 있는 경우 업데이트
+        cur.execute('''UPDATE wro_fav SET wro_is_right = ?, fav_is_right = ? WHERE user_id = ? AND line_num = ?''', 
+                    (wro_is_right, fav_is_right, user_id, line_num))
+    
+    conn.commit()
+
+# def add_wro_fav(user_id, line_num, wro_is_right, fav_is_right):
+#     cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
+#                 (user_id, line_num, wro_is_right, fav_is_right))
+#     conn.commit()
 
 # 즐겨찾기, 오답노트 테이블 정보 전부 삭제
 def deleteAllWrongFav(user_id):
     cur.execute("DELETE FROM wro_fav where user_id = ?", (user_id,))
     conn.commit()
 
+
+# # 유닛 테이블 정보 추가
+# def insertUnitTable(user_id, unit_index, is_done):
+#     cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', (user_id, unit_index, is_done))
+#     conn.commit()
+
+# 유닛 테이블 정보 수정
+def updateUnitTable(user_id, unit_index, is_done):
+    cur.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
+                (user_id, unit_index, is_done))
+
+    conn.commit()
+
+# 유닛 테이블 정보 모두 지우기
+def deleteAllUnit(user_id):
+    cur.execute("DELETE FROM unit where user_id = ?", (user_id,))
+    conn.commit()
+
+
+# db의 모든 테이블 초기 세팅 -> 추후 DB_manager에도 반영
+def setAllTable(user_id):
+    # wro_fav 테이블 세팅
+    for line_num in range(1, 1201):
+        cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
+                    (user_id, line_num, 0, 0))
+        conn.commit()
+
+    for unit_index in range(120):
+        cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
+                    (user_id, unit_index, 0))
+        conn.commit()
+    
 
 if __name__ == "__main__":
     conn = sqlite3.connect('word.db')
