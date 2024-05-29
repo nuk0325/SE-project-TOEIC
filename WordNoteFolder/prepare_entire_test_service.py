@@ -11,11 +11,12 @@ from PyQt6.QtWidgets import QDialog, QVBoxLayout, QLabel, QHBoxLayout, QPushButt
 from EntireTestWordNote import EntireTestWordNote
 
 class SelectEntireTestDialog(QDialog):
-    def __init__(self, user, word_n):
+    def __init__(self, user, word_n, parent):
         super().__init__()
         self.user = user
         self.word_n = word_n #전체테스트 단어개수
         self.setWindowTitle("테스트 방식 선택")
+        self.parent=parent
 
         layout = QVBoxLayout()
         layout.addWidget(QLabel("테스트 방식을 선택해주세요"))
@@ -37,13 +38,14 @@ class SelectEntireTestDialog(QDialog):
         print("사용자가 '뜻으로 답하기'를 선택했습니다.")
         #전체테스트 단어장 생성
         EntireTestWordNote(self.user, False, self.word_n)
+        self.parent.close()
         self.close()
         
     def no(self):
         print("사용자가 '영어로 답하기'를 선택했습니다.")
         #전체테스트 단어장 생성
         EntireTestWordNote(self.user, True, self.word_n)
-        
+        self.parent.close()
         self.close()
 
 
@@ -197,9 +199,12 @@ class PrepareEntireTest(QMainWindow):
         selected_value = self.ui.comboBox.currentText()
         print(f"선택된 단어 수: {selected_value}")
 
-        #SelectEntireTestDialog(self.user, selected_value)
-        self.close()
-        EntireTestWordNote(self.user, False, selected_value)
+        #SelectEntireTestDialog(self.user, selected_value, self)
+        #dialog = SelectEntireTestDialog(self.user, selected_value, self)
+        #dialog.exec_()  # QDialog 팝업을 모달로 실행합니다.
+
+        #self.close()
+        #EntireTestWordNote(self.user, False, selected_value)
 
 
 
@@ -208,4 +213,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = PrepareEntireTest("justID")
     window.show()
+    #dialog = SelectEntireTestDialog("justID", 10, sys)
+    #dialog.exec_()
     sys.exit(app.exec())
