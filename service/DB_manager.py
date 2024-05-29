@@ -6,6 +6,21 @@ class DBManager:
         self.conn = sqlite3.connect('word.db')
         self.cur = self.conn.cursor()
 
+    # db의 모든 테이블 초기 세팅 -> 추후 DB_manager에도 반영
+    def setAllTable(self, user):
+        user_id = user.userId
+
+        # wro_fav 테이블 세팅
+        for line_num in range(1, 1201):
+            self.cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
+                        (user_id, line_num, 0, 0))
+            self.conn.commit()
+
+        for unit_index in range(120):
+            self.cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
+                        (user_id, unit_index, 0))
+            self.conn.commit()
+
     def save(self, user):
         try:
             user_data = user.toUserData()
