@@ -16,7 +16,7 @@ class TestResult :
         self.window = MainWindow(self)
         self.window.show()
 
-    def checkCorrectRate(self) :
+    def checkCorrectRate(self) : #80퍼센트 이사 맞추면 1:4 비율 틀린:맞은
         if self._correctCount >= self._wrongCount * 4 :
             return True
         else :

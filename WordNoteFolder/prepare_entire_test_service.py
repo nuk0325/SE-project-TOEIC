@@ -203,8 +203,8 @@ class PrepareEntireTest(QMainWindow):
         #dialog = SelectEntireTestDialog(self.user, selected_value, self)
         #dialog.exec_()  # QDialog 팝업을 모달로 실행합니다.
 
-        #self.close()
-        #EntireTestWordNote(self.user, False, selected_value)
+        self.close()
+        EntireTestWordNote(self.user, False, selected_value)
 
 
 
