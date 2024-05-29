@@ -197,7 +197,10 @@ class PrepareEntireTest(QMainWindow):
         selected_value = self.ui.comboBox.currentText()
         print(f"선택된 단어 수: {selected_value}")
 
-        SelectEntireTestDialog(self.user, selected_value)
+        #SelectEntireTestDialog(self.user, selected_value)
+        self.close()
+        EntireTestWordNote(self.user, False, selected_value)
+
 
 
 
