@@ -30,12 +30,14 @@ class WordForManager(Word) :
         self.db.setSentMeaning(self._idx, "sentMeaning")
 
     def changeWord(self) : # 함수 이름 맞춰서 쓰세요
+        print("단어 수정 페이지로 이동")
         #Goto.gotoUnitChange(self, self.user, self.idx)
         pass
 
     def deleteWord(self) :
-        self._wordName = None
-        self._meaning = None
-        self._sentence = None
-        self._sentMeaning = None
-        self.db.deleteWord(self._idx)
+        print("단어 삭제")
+        #self._wordName = None
+        #self._meaning = None
+        #self._sentence = None
+        #self._sentMeaning = None
+        #self.db.deleteWord(self._idx)

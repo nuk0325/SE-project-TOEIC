@@ -206,7 +206,7 @@ class MainWindow(QMainWindow):
         sender = self.sender()
         if sender:
             self.lookAnswer(sender)
-            QtCore.QTimer.singleShot(500, self.hide_labels) # 3초 뒤에 전체 이벤트가 실행되도록 고쳐보자
+            #QtCore.QTimer.singleShot(500, self.hide_labels) # 3초 뒤에 전체 이벤트가 실행되도록 고쳐보자
             QtCore.QTimer.singleShot(500, lambda: self.checkBoolean(sender))
                 
     def hide_labels(self):
@@ -217,6 +217,7 @@ class MainWindow(QMainWindow):
         text = sender.text()
         boolean = self.parent.afterQuestion(text)
         if boolean :
+            self.hide_labels()
             self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
         else :
             self.closeAndOpen("result")

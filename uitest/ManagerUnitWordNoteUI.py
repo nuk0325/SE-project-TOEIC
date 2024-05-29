@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame, QHBoxLayout, QVBoxLayout, QLabel, QWidget, QScrollArea, QMessageBox
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtGui import QFont
-from PopUpDialog import PopUpDialog
+from PopUpForUnitManage import PopUpForUnitManage
 
 class MainWindow(QMainWindow) :
     def __init__(self, parent) :
@@ -134,7 +134,7 @@ class MainWindow(QMainWindow) :
         wordDeleteButton = QPushButton("삭제")
         wordDeleteButton.setFixedSize(QSize(60,25))
         wordDeleteButton.setStyleSheet("background-color : rgb(224, 224, 224);")
-        wordDeleteButton.clicked.connect(wordObj.deleteWord)
+        wordDeleteButton.clicked.connect(lambda: self.deleteOrNot(wordObj))
 
         buttonLayout = QVBoxLayout()
         buttonLayout.addWidget(wordFixButton)
@@ -159,3 +159,22 @@ class MainWindow(QMainWindow) :
         return frame
     
     def searchAndJudge(self) :
+        if self.parent.searchAndAdd() == 0 :
+            alarm = "유닛이 다 찼습니다"
+            popup = PopUpForUnitManage(self, alarm, False)
+            popup.exec()
+        else :
+            self.closeAndOpen("add")
+
+    def deleteOrNot(self, wordObj) :
+        alarm = "단어를 정말 삭제하시겠습니까?"
+        popup = PopUpForUnitManage(wordObj, alarm, True)
+        popup.exec()
+
+    def closeAndOpen(self, option) :
+        if option == "back" :
+            self.parent.use_goBack()
+        elif option == "home" :
+            self.parent.use_gotoHome()
+        elif option == "add" :
+            self.parent.goAdd(self.parent.searchAndAdd)

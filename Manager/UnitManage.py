@@ -51,6 +51,10 @@ class UnitManage() :
     def searchAndAdd(self) :
         for word in self._wordList :
             if word.getWordName() == None :
-                pass # 대충 idx와 함께 페이지 넘어가는 코드
-                return False
-        return True # 단어가 꽉 찼다는 팝업을 띄우기 위한 리턴값
+                return word.getWordIdx()
+        return 0 # 유닛이 꽉 차 있을 경우
+    
+    def goAdd(self, idx) :
+        print("단어 추가 페이지로 이동")
+        pass
+        # Goto.gotoAddPage(idx)

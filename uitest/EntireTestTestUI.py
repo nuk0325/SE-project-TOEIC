@@ -229,7 +229,7 @@ class MainWindow(QMainWindow):
             self.lookAnswer(sender)
             QtCore.QTimer.singleShot(500, self.hide_labels) # 3초 뒤에 전체 이벤트가 실행되도록 고쳐보자
             QtCore.QTimer.singleShot(500, lambda: self.checkBoolean(sender))
-            QtCore.QTimer.singleShot(500, self.initTimer) #타이머 초기화
+
     def hide_labels(self):
         self.answerLabel.setVisible(False)
         self.sentenceLabel.setVisible(False)
@@ -239,8 +239,9 @@ class MainWindow(QMainWindow):
         boolean = self.parent.afterQuestion(text)
         if boolean :
             self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
+            self.initTimer()
         else :
-            QtCore.QTimer.singleShot(2000, self.timer.stop)
+            self.timer.stop()
             self.closeAndOpen("result")
     
     def lookAnswer(self, sender) :
