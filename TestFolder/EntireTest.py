@@ -15,8 +15,8 @@ class EntireTest(Test) :
         return "전체 테스트"
     
     def use_goBack(self) :
-        Goto.gotoBookmarkWordNote(self.user)
+        Goto.gotoPrepareEntireTest(self.user) #뒤로가기. 테스트준비화면으로
 
-    def use_gotoSelectTestResult(self) :
+    def use_gotoSelectTestResult(self) : # 맞춘,틀린단어장에서 결과화면으로 돌아올 때
         self._dbClose()
-        Goto.gotoEntireTestResult(self.user, self._correctIdxList, self._wrongIdxList)
+        Goto.gotoEntireTestResult(self.user, self._correctIdxList, self._wrongIdxList) 

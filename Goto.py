@@ -1,10 +1,12 @@
 
 
 class Goto :
-    def gotoHome() :# 홈 화면으로 가기
+    def gotoHome(user) :# 홈 화면으로 가기
+        print("홈 화면으로 가기")
         pass
     
-    def goMyPage() :# 마이페이지 화면으로 가기
+    def goMyPage(user) :# 마이페이지 화면으로 가기
+        print("마이페이지로 가기")
         pass
 
 
@@ -26,7 +28,20 @@ class Goto :
         from WordNoteFolder.AfterTestWordNote import AfterTestWordNote
         AfterTestWordNote(user, lst, anotherList, op1, op2)
     
+    def gotoPrepareEntireTest(user): # 전체 테스트 준비화면으로 가기
+        # from PyQt6.QtWidgets import QApplication
+        # import sys
+        # from WordNoteFolder.prepare_entire_test_service import PrepareEntireTest
 
+        # app = QApplication(sys.argv)
+        # window = PrepareEntireTest(user)
+        # window.show()
+        # #dialog = SelectEntireTestDialog("justID", 10, sys)
+        # #dialog.exec_()
+        # sys.exit(app.exec())
+        
+        from WordNoteFolder.prepare_entire_test_service import PrepareEntireTest
+        PrepareEntireTest(user)
 
 
 

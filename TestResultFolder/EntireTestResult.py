@@ -17,7 +17,7 @@ class EntireTestResult(TestResult) :
         self.use_goBackSelectWordNote()
 
     def use_goBackSelectWordNote(self):
-        Goto.gotoReviewWordNote(self.user, 2, 2) ###
+        Goto.gotoPrepareEntireTest(self.user) # 전체 테스트 준비화면으로 가기
 
     def getOp2(self) :
         return "entire"

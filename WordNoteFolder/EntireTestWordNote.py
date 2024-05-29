@@ -17,6 +17,7 @@ class EntireTestWordNote(WordNote) :
     def main(self) : # UI 실행안함. 바로 테스트 시작
         wordIdxList = self.select_random_n(self._wordIdxList, self.word_n)
         Goto.gotoEntireTest(self.user, wordIdxList, self._testChoice)
+        self._dbClose()
 
     def select_random_n(self, wordIdxList, word_n): # 전체 단어 1200개중에 n개의 단어를 뽑음
         result = random.sample(wordIdxList, word_n)

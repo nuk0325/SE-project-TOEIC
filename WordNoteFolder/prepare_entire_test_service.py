@@ -8,6 +8,7 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox, QApplication
 from PyQt6 import QtWidgets, QtCore
 from PyQt6.QtWidgets import QDialog, QVBoxLayout, QLabel, QHBoxLayout, QPushButton
 from EntireTestWordNote import EntireTestWordNote
+from Goto import Goto
 import random
 
 class SelectEntireTestDialog(QDialog):
@@ -51,6 +52,7 @@ class SelectEntireTestDialog(QDialog):
 
 class PrepareEntireTestUI(object):
     def setupUi(self, MainWindow, correctWordNum, allWordNum):
+
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(359, 600)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
@@ -177,6 +179,7 @@ class PrepareEntireTest(QMainWindow):
         self.ui = PrepareEntireTestUI()
         self.ui.setupUi(self, 3, 30)
 
+        self.goto = Goto()
         self.user = user
         
         #self.goto = Goto()
@@ -188,11 +191,11 @@ class PrepareEntireTest(QMainWindow):
 
     #button 클릭 이벤트
     def back_button_clicked(self):
-        #self.goto.gotoHome()
+        self.goto.gotoHome(self.user)
         self.close()
         
     def home_button_clicked(self):
-        #self.goto.gotoHome()
+        self.goto.gotoHome(self.user)
         self.close()
     
     def pushButton_clicked(self):
