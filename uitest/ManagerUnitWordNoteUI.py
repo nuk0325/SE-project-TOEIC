@@ -10,6 +10,7 @@ class MainWindow(QMainWindow) :
     def __init__(self, parent) :
         super().__init__()
         self.parent = parent
+        self.frameList = []
 
         self.setWindowTitle("단어장 관리")
         self.setGeometry(0,0,360,600)
@@ -54,6 +55,7 @@ class MainWindow(QMainWindow) :
         unitNameLabel.setFont(QFont("Han Sans", 10))
         addButton = QPushButton("추가", upperFrame)
         addButton.setStyleSheet("background-color : rgb(224, 224, 224);")
+        addButton.clicked.connect(self.searchAndJudge)
 
         upperLayout = QHBoxLayout()
         upperLayout.addWidget(unitNameLabel)
@@ -127,9 +129,12 @@ class MainWindow(QMainWindow) :
         wordFixButton = QPushButton("수정")
         wordFixButton.setFixedSize(QSize(60,25))
         wordFixButton.setStyleSheet("background-color : rgb(224, 224, 224);")
+        wordFixButton.clicked.connect(wordObj.changeWord)
+
         wordDeleteButton = QPushButton("삭제")
         wordDeleteButton.setFixedSize(QSize(60,25))
         wordDeleteButton.setStyleSheet("background-color : rgb(224, 224, 224);")
+        wordDeleteButton.clicked.connect(wordObj.deleteWord)
 
         buttonLayout = QVBoxLayout()
         buttonLayout.addWidget(wordFixButton)
@@ -150,4 +155,7 @@ class MainWindow(QMainWindow) :
 
         frame.setLayout(mainLayout)
 
+        self.frameList.append(frame)
         return frame
+    
+    def searchAndJudge(self) :

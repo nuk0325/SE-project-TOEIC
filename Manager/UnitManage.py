@@ -47,3 +47,10 @@ class UnitManage() :
     
     def getUnitName(self) :
         return self._unitName
+    
+    def searchAndAdd(self) :
+        for word in self._wordList :
+            if word.getWordName() == None :
+                pass # 대충 idx와 함께 페이지 넘어가는 코드
+                return False
+        return True # 단어가 꽉 찼다는 팝업을 띄우기 위한 리턴값

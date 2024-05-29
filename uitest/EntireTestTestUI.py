@@ -240,7 +240,7 @@ class MainWindow(QMainWindow):
         if boolean :
             self.update_labels_and_buttons()  # 버튼을 클릭했을 때 라벨과 버튼을 업데이트합니다.
         else :
-            self.timer.stop()
+            QtCore.QTimer.singleShot(2000, self.timer.stop)
             self.closeAndOpen("result")
     
     def lookAnswer(self, sender) :
