@@ -100,8 +100,8 @@ if __name__ == "__main__":
     add_user(cur, 'taehyen', '1234', '태현', 10, 1, '2024-05-27', 6, 80)
 
     #유저의 오답,즐겨찾기 1200개 단어추가
-    #add_or_update_All_wro_fav('sunwook', 1200)
-    #add_or_update_All_wro_fav('taehyen', 1200)
+    add_or_update_All_wro_fav('sunwook', 1200)
+    add_or_update_All_wro_fav('taehyen', 1200)
 
 
     # 종료
