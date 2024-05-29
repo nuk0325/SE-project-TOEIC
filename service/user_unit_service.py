@@ -2,21 +2,25 @@ import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow
 from UI.user_unit_ui import UserUnitUI
 from goto_service import Goto
+from DB_manager import DBManager
 
 class UserUnit(QMainWindow):
     def __init__(self, partNum, user):
-        super().__init__()
-        self.ui = UserUnitUI()
-        self.ui.setupUi(self)
-
         self.partNum = partNum
         self.user = user
+        self.dataManager = DBManager()
+        self.unitDoneList = self.dataManager.getUnitDoneList(self.user, ((self.partNum - 1) * 15))
+        print(self.unitDoneList)
+
+        super().__init__()
+        self.ui = UserUnitUI()
+        self.ui.setupUi(self, self.unitDoneList)
 
         self.goto = Goto()
 
         self.ui.back_button.clicked.connect(self.back_button_clicked)#뒤로가기
         self.ui.home_button.clicked.connect(self.home_button_clicked)#홈
-
+    
     #버튼 이벤트
     def back_button_clicked(self):
         self.goto.gotoUserPart(self.user)
