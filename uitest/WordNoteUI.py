@@ -162,16 +162,22 @@ class MainWindow(QMainWindow):
         additional_label2.setAlignment(Qt.AlignmentFlag.AlignLeft)
         additional_label2.setVisible(False)
 
+        additional_label3 = QLabel(wordObj.getSentMeaning())
+        additional_label3.setFont(QFont("Han Sans", 10))
+        additional_label3.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        additional_label3.setVisible(False)
+
         # 전체 프레임 레이아웃 설정
         outer_layout = QVBoxLayout()
         outer_layout.addLayout(frame_layout)
         outer_layout.addWidget(additional_label1)
         outer_layout.addWidget(additional_label2)
+        outer_layout.addWidget(additional_label3)
 
         frame.setLayout(outer_layout)
 
         # 버튼 클릭 이벤트 연결
-        open_meaning_button.clicked.connect(lambda checked, frame=frame, button=open_meaning_button, label1=additional_label1, label2=additional_label2: self.toggleFrameExpansion(frame, button, label1, label2))
+        open_meaning_button.clicked.connect(lambda checked, frame=frame, button=open_meaning_button, label1=additional_label1, label2=additional_label2, label3 = additional_label3: self.toggleFrameExpansion(frame, button, label1, label2, label3))
         bookmark_button.clicked.connect(lambda: self.toggleBookmark(wordObj, bookmark_button))  # 북마크 버튼과 Word 객체의 북마크 메서드 연결
 
         return frame
@@ -186,15 +192,17 @@ class MainWindow(QMainWindow):
         wordObj.Bookmark()
         self.updateBookmarkButton(bookmark_button, wordObj.getBookmark())
 
-    def toggleFrameExpansion(self, frame, button, label1, label2):
+    def toggleFrameExpansion(self, frame, button, label1, label2, label3):
         if frame.is_expanded:
             frame.setFixedSize(QSize(340, 50))
             label1.setVisible(False)
             label2.setVisible(False)
+            label3.setVisible(False)
             button.setText("∨")
         else:
-            frame.setFixedSize(QSize(340, 100))
+            frame.setFixedSize(QSize(340, 120))
             label1.setVisible(True)
             label2.setVisible(True)
+            label3.setVisible(True)
             button.setText("∧")  # 추가된 부분
         frame.is_expanded = not frame.is_expanded

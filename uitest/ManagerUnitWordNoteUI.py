@@ -17,19 +17,20 @@ class MainWindow(QMainWindow) :
         mainWidget = QWidget()
         self.setCentralWidget(mainWidget)
 
+
+
         topFrame = QFrame()
         topFrame.setFixedSize(QSize(360, 70))
         
-
-        backButton = QPushButton("←")
+        backButton = QPushButton("←", topFrame)
         backButton.setFixedSize(QSize(60,60))
         #backButton.clicked.connect(lambda: self.closeAndOpen("back"))
 
-        noteLabel = QLabel("단어 관리")
+        noteLabel = QLabel("단어 관리", topFrame)
         noteLabel.setFont(QFont("Han Sans", 20))
         noteLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        homeButton = QPushButton("🏠")
+        homeButton = QPushButton("메뉴", topFrame)
         homeButton.setFixedSize(QSize(60,60))
         #homeButton.clicked.connect(lambda: self.closeAndOpen("back"))
 
@@ -39,6 +40,36 @@ class MainWindow(QMainWindow) :
         topLayout.addWidget(homeButton, alignment=Qt.AlignmentFlag.AlignRight)
 
         topFrame.setLayout(topLayout)
+
+
+        upperFrame = QFrame()
+        upperFrame.setFixedSize(QSize(360, 40))
+
+        unitNameLabel = QLabel("Unit 1", upperFrame)
+        addButton = QPushButton("추가", upperFrame)
+
+        upperLayout = QHBoxLayout()
+        upperLayout.addWidget(unitNameLabel)
+        upperLayout.addStretch(1)
+        upperLayout.addWidget(addButton)
+
+        upperFrame.setLayout(upperLayout)
+
+
+        scrollArea = QScrollArea()
+        scrollArea.setWidgetResizable(True)
+        scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        
+        scrollWidget = QWidget()
+        scrollArea.setWidget(scrollWidget)
+
+        scrollLayout = QVBoxLayout()
+        scrollWidget.setLayout(scrollLayout)
+
+        for word in self.parent.wordIdxList :
+            frame = self.createFrame(word)
+            scrollLayout.addWidget(frame)
+
 
 
         
