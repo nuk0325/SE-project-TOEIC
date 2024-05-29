@@ -1,13 +1,13 @@
 import sys
 from PyQt6.QtWidgets import QMainWindow, QApplication, QMessageBox
 from DB_manager import DBManager
-from UI.join_membership_ui import JoinMembershipUI
+from UI.update_by_manager_ui import Ui_UpdateByManagerPage
 from goto_service import Goto
 
 class UpdateByManagerService:
     def __init__(self, line_num):
         super().__init__()
-        self.ui = UI()
+        self.ui = Ui_UpdateByManagerPage()
         self.ui.setupUi(self)
 
         self.newWord = ""
@@ -20,14 +20,24 @@ class UpdateByManagerService:
 
         self.goto = Goto()
         self.self.db_manager = DBManager()
+        self.some_method()
 
         #버튼연결
         self.ui.exitBtn.clicked.connect(self.toManagerWordPage())
         self.ui.updateBtn.clicked.connect(self.updateWord)
         self.ui.backBtn.clicked.connect(self.goback)
 
+
+
+        #self.ui = Ui_UpdateByManagerPage()
+        #self.ui.setupUi(MainWindow)
+    
+    def some_method(self):
+        unitNum = self.line_num%150//10
+        self.ui.setUnitName(unitNum)
+        
     def toManagerWordPage(self,unitNum):
-        self.goto.gotoManagerWordNote(self.line_num)
+        #self.goto.gotoManagerWordNote(self.line_num)
         self.close()
 
     def updateWord(self):
@@ -76,3 +86,9 @@ class UpdateByManagerService:
             QMessageBox.information(None, "단어 중복검사 결과", "수정 가능한 단어입니다.")
 
 
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    line_num = 10  # 예시로 사용될 line_num 값
+    mainWindow = UpdateByManagerService(line_num)
+    mainWindow.show()
+    sys.exit(app.exec())
