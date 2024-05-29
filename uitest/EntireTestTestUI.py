@@ -13,7 +13,7 @@ class MainWindow(QMainWindow):
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.updateTimer)
         self.timer.start(1000)  # 1000 밀리초마다 타이머 작동 (1초)
-        self.timeCount = 3 #타이머. 문제당 주어진 시간
+        self.timeCount = 2 #타이머. 문제당 주어진 초
         self.sec = self.timeCount  #문제당 남은 시간. 
 
         # 창 크기 설정
@@ -170,13 +170,18 @@ class MainWindow(QMainWindow):
             self.sec -= 1
             self.unit_name_label.setText(f"{self.sec} sec")
         else:
-            #타이머 초기화
-            self.sec = self.timeCount
-            self.unit_name_label.setText(f"{self.sec} sec") 
+            #타이머 멈추기
+            self.timer.stop()
 
             #정답보기 버튼을 클릭했다 처리
             self.answer_button.click() 
-    
+
+    def initTimer(self):
+        #타이머 초기화. 재시작
+        self.timer.start(1000)
+        self.sec = self.timeCount
+        self.unit_name_label.setText(f"{self.sec} sec")
+
     def update_labels_and_buttons(self):
         self.correct_count_label.setText(self.parent.getCorrectCount())
         self.wrong_count_label.setText(self.parent.getWrongCount())
@@ -218,12 +223,13 @@ class MainWindow(QMainWindow):
         
 
     def on_button_click(self):
+        self.timer.stop() #타이머 멈추기
         sender = self.sender()
         if sender:
             self.lookAnswer(sender)
             QtCore.QTimer.singleShot(500, self.hide_labels) # 3초 뒤에 전체 이벤트가 실행되도록 고쳐보자
             QtCore.QTimer.singleShot(500, lambda: self.checkBoolean(sender))
-                
+            QtCore.QTimer.singleShot(500, self.initTimer) #타이머 초기화
     def hide_labels(self):
         self.answerLabel.setVisible(False)
         self.sentenceLabel.setVisible(False)
