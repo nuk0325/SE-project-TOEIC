@@ -26,4 +26,4 @@ class ReviewTest(Test) :
 
     def use_gotoSelectTestResult(self) :
         self._dbClose()
-        Goto.gotoReviewTestResult(self.user, self._correctIdxList, self._wrongIdxList)
+        self.goto.gotoReviewTestResult(self.user, self._correctIdxList, self._wrongIdxList)

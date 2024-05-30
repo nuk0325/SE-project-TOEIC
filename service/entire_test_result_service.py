@@ -2,7 +2,6 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from test_result import TestResult
-from goto_service import Goto
 from UI.test_result_ui import EntireTestResultUI
 
 class EntireTestResult(TestResult) :
