@@ -56,13 +56,16 @@ class Home(QMainWindow):
         self.ui.updateSpeechBalloonText(text[random.randint(0, len(text)-1)])
 
     def showStudyHelp(self):
-        QMessageBox.information(None, "학습 도움말", "여기에서 학습 관련 도움말을 제공합니다.")
+        message = "학습하기\n\n유닛 안에서 단어를 학습하고\n복습 테스트를 볼 수 있습니다"
+        QMessageBox.information(None, "학습 도움말", message)
 
     def showTestHelp(self):
-        QMessageBox.information(None, "테스트 도움말", "여기에서 테스트 시작하기 전 필요한 정보를 제공합니다.")
+        message = "테스트 시작하기\n\n전체 유닛에서 모의고사를 실시합니다"
+        QMessageBox.information(None, "테스트 도움말", message)
 
     def showMypageHelp(self):
-        QMessageBox.information(None, "마이페이지 도움말", "마이페이지 사용 방법에 대한 도움말을 제공합니다.")
+        message = "마이페이지\n\n목표 학습량을 설정할 수 있습니다\n오답노트와 즐겨찾기 노트를 제공합니다"
+        QMessageBox.information(None, "마이페이지 도움말", message)
 
     def toStudyBtnClicked(self):
         self.goto.gotoUserPart(self.user)
