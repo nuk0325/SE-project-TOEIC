@@ -23,6 +23,9 @@ class BookmarkWordNote(WordNote) :
         self.window.show()
         #sys.exit(app.exec())
     
+    def getLabel(self) :
+        return ""
+
     def wordNoteCloseAndOpen(self): # 단어장 껐다가 키는. 단어 초기화하는 함수. 즐겨찾기에 사용
         #self._dbClose() #db닫기
         self.db = self._makeDBobj() #db열기

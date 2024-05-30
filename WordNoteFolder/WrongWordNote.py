@@ -12,6 +12,10 @@ class WrongWordNote(WordNote) :
         self._wordList = self._returnWordList()
         self.main()
 
+    
+
+    def getLabel(self) :
+        return ""
 
     def use_goBack(self) :
         self._dbClose()
