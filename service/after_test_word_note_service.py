@@ -16,6 +16,8 @@ class AfterTestWordNote(WordNote) :
         # review -> 복습 / wrong -> 오답 / fav -> 즐겨찾기
         self.main()
 
+        self.goto = Goto()
+
     def _makeLabel(self) :
         if self._op1 == "correct" :
             return "맞힌 단어"
@@ -34,13 +36,13 @@ class AfterTestWordNote(WordNote) :
             lst1, lst2 = self._reverseList(lst1, lst2) # 이유 : 틀린 단어장이면 wordIdxList가 틀린 단어 리스트인데,
                                                     # 원래대로 넣으면 틀린 단어가 맞은 단어 리스트의 파라미터로서 실행된다
         if self._op2 == "review" :
-            Goto.gotoReviewTestResult(self.user, lst1, lst2)
+            self.goto.gotoReviewTestResult(self.user, lst1, lst2)
         elif self._op2 == "wrong" :
-            Goto.gotoWrongNoteTestResult(self.user, lst1, lst2)
+            self.goto.gotoWrongNoteTestResult(self.user, lst1, lst2)
         elif self._op2 == "bookmark" :
-            Goto.gotoBookmarkNoteTestResult(self.user, lst1, lst2)
+            self.goto.gotoBookmarkNoteTestResult(self.user, lst1, lst2)
         elif self._op2 == "entire" :
-            Goto.gotoEntireTestResult(self.user, lst1, lst2)
+            self.goto.gotoEntireTestResult(self.user, lst1, lst2)
         else :
             print("op2 error")
 
