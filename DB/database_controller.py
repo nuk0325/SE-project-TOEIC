@@ -134,10 +134,9 @@ if __name__ == "__main__":
     add_user(cur, "justID", "justPassword", "justNickname", 10, 1, '2024-05-27', 6, 80)
     
     #유저의 오답,즐겨찾기 1200개 단어추가
-    add_or_update_All_wro_fav(cur, 'sunwook')
-    add_or_update_All_wro_fav(cur, 'taehyen')
-    add_or_update_All_wro_fav(cur, 'justID')
-
+    setAllTable('sunwook')
+    setAllTable('taehyen')
+    setAllTable('justID')
 
     # 종료
     conn.commit()
