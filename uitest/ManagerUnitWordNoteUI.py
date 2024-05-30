@@ -170,10 +170,10 @@ class MainWindow(QMainWindow) :
         alarm = "단어를 정말 삭제하시겠습니까?"
         popup = PopUpForUnitManage(wordObj, alarm, True)
         popup.exec()
-        frame.wordNameLabel.setText(None)
-        frame.wordMeaningLabel.setText(None)
-        frame.wordSentenceLabel.setText(None)
-        frame.wordSentMeaningLabel.setText(None)
+        frame.wordNameLabel.setText(wordObj.getWordName())
+        frame.wordMeaningLabel.setText(wordObj.getMeaning())
+        frame.wordSentenceLabel.setText(wordObj.getSentence())
+        frame.wordSentMeaningLabel.setText(wordObj.getSentMeaning())
                 
                 
 
