@@ -17,7 +17,7 @@ class Ui_UpdateByManagerPage(object):
         self.centralwidget.setObjectName("centralwidget")
         self.menuBase = QtWidgets.QWidget(parent=self.centralwidget)
         self.menuBase.setGeometry(QtCore.QRect(0, 0, 360, 58))
-        self.menuBase.setStyleSheet("background-color:rgba(50, 50, 50)")
+        self.menuBase.setStyleSheet("background-color:rgb(50, 50, 50)")
         self.menuBase.setObjectName("menuBase")
         self.titleName = QtWidgets.QLabel(parent=self.menuBase)
         self.titleName.setGeometry(QtCore.QRect(120, 10, 151, 41))
@@ -180,10 +180,10 @@ class Ui_UpdateByManagerPage(object):
         self.titleName.setText(_translate("UpdateByManagerPage", "단어 수정"))
         self.menuBtn.setText(_translate("UpdateByManagerPage", "메뉴"))
         self.backBtn.setText(_translate("UpdateByManagerPage", "뒤로"))
-        self.checkWordBtn.setText(_translate("UpdateByManagerPage", "확인"))
+        self.checkWordBtn.setText(_translate("UpdateByManagerPage", "단어\n중복 확인"))
         self.exitBtn.setText(_translate("UpdateByManagerPage", "나가기"))
         self.updateBtn.setText(_translate("UpdateByManagerPage", "수정하기"))
-        self.subTitle.setText(_translate("UpdateByManagerPage", "해당 단어"))
+        self.subTitle.setText(_translate("UpdateByManagerPage", "단어 수정"))
         self.txt1.setText(_translate("UpdateByManagerPage", "단어"))
         self.txt2.setText(_translate("UpdateByManagerPage", "의미"))
         self.txt3.setText(_translate("UpdateByManagerPage", "예문"))
@@ -194,7 +194,12 @@ class Ui_UpdateByManagerPage(object):
         unit_text = f"Unit {unitNum}"
         self.unitName.setText(_translate("UpdateByManagerPage", unit_text))
 
+    def setDefaultInput(self, word, meaning, sentence):
+        self.word.setText(word)
+        self.meaning.setText(meaning)
+        self.sentence.setText(sentence)
 
+        
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

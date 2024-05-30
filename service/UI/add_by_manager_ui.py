@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'C:\Users\CHO\toicProject\hun\SE-project-TOEIC\service\UI\update_by_manager_ui.ui'
+# Form implementation generated from reading ui file 'C:\Users\CHO\toicProject\hun\SE-project-TOEIC\service\UI\add_by_manager_ui.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -17,7 +17,7 @@ class Ui_AddByManagerPage(object):
         self.centralwidget.setObjectName("centralwidget")
         self.menuBase = QtWidgets.QWidget(parent=self.centralwidget)
         self.menuBase.setGeometry(QtCore.QRect(0, 0, 360, 58))
-        self.menuBase.setStyleSheet("background-color:rgba(50, 50, 50)")
+        self.menuBase.setStyleSheet("background-color:rgb(50, 50, 50)")
         self.menuBase.setObjectName("menuBase")
         self.titleName = QtWidgets.QLabel(parent=self.menuBase)
         self.titleName.setGeometry(QtCore.QRect(120, 10, 151, 41))
@@ -75,15 +75,15 @@ class Ui_AddByManagerPage(object):
         self.exitBtn.setDefault(False)
         self.exitBtn.setFlat(False)
         self.exitBtn.setObjectName("exitBtn")
-        self.updateBtn = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.updateBtn.setGeometry(QtCore.QRect(200, 490, 131, 41))
-        self.updateBtn.setStyleSheet("background-color:rgb(70, 70, 70);\n"
+        self.addBtn = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.addBtn.setGeometry(QtCore.QRect(200, 490, 131, 41))
+        self.addBtn.setStyleSheet("background-color:rgb(70, 70, 70);\n"
 "font: 10pt \"맑은 고딕\";\n"
 "color: rgb(255, 255, 255);")
-        self.updateBtn.setAutoDefault(False)
-        self.updateBtn.setDefault(False)
-        self.updateBtn.setFlat(False)
-        self.updateBtn.setObjectName("updateBtn")
+        self.addBtn.setAutoDefault(False)
+        self.addBtn.setDefault(False)
+        self.addBtn.setFlat(False)
+        self.addBtn.setObjectName("addBtn")
         self.subTitle = QtWidgets.QLabel(parent=self.centralwidget)
         self.subTitle.setGeometry(QtCore.QRect(20, 120, 101, 41))
         font = QtGui.QFont()
@@ -177,13 +177,13 @@ class Ui_AddByManagerPage(object):
     def retranslateUi(self, AddByManagerPage):
         _translate = QtCore.QCoreApplication.translate
         AddByManagerPage.setWindowTitle(_translate("AddByManagerPage", "MainWindow"))
-        self.titleName.setText(_translate("AddByManagerPage", "단어 수정"))
+        self.titleName.setText(_translate("AddByManagerPage", "단어 추가"))
         self.menuBtn.setText(_translate("AddByManagerPage", "메뉴"))
         self.backBtn.setText(_translate("AddByManagerPage", "뒤로"))
-        self.checkWordBtn.setText(_translate("AddByManagerPage", "확인"))
+        self.checkWordBtn.setText(_translate("AddByManagerPage", "단어\n중복 확인"))
         self.exitBtn.setText(_translate("AddByManagerPage", "나가기"))
-        self.updateBtn.setText(_translate("AddByManagerPage", "수정하기"))
-        self.subTitle.setText(_translate("AddByManagerPage", "해당 단어"))
+        self.addBtn.setText(_translate("AddByManagerPage", "추가하기"))
+        self.subTitle.setText(_translate("AddByManagerPage", "단어 추가"))
         self.txt1.setText(_translate("AddByManagerPage", "단어"))
         self.txt2.setText(_translate("AddByManagerPage", "의미"))
         self.txt3.setText(_translate("AddByManagerPage", "예문"))

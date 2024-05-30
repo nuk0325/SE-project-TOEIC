@@ -176,6 +176,19 @@ class DBManager:
         except Exception as e:
             print("Error:", e)
             return None
+        
+    def findWordByLine_num(self, line_num):
+        try:
+            self.cur.execute("SELECT * FROM word WHERE line_num=?", (line_num,))
+            word_data = self.cur.fetchone()
+
+            if word_data:
+                return word_data
+            else:
+                return None
+        except Exception as e:
+            print("Error:", e)
+            return None
 
 
     def closeDB(self) :
