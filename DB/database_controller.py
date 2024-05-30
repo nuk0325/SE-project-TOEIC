@@ -114,8 +114,10 @@ if __name__ == "__main__":
     # 유저 삭제
     delete_User("taehyen")
     delete_User("sunwook")
+    delete_User("justID")
     deleteAllWrongFav("taehyen")
     deleteAllWrongFav("sunwook")
+    deleteAllWrongFav("justID")
 
     #모든 테이블 확인
     selectAllFromTable("user", 20)
@@ -129,10 +131,12 @@ if __name__ == "__main__":
     #유저추가
     add_user(cur, 'sunwook', '1234', '선욱', 10, 1, '2024-05-27', 6, 80)
     add_user(cur, 'taehyen', '1234', '태현', 10, 1, '2024-05-27', 6, 80)
-
+    add_user(cur, "justID", "justPassword", "justNickname", 10, 1, '2024-05-27', 6, 80)
+    
     #유저의 오답,즐겨찾기 1200개 단어추가
     add_or_update_All_wro_fav(cur, 'sunwook')
     add_or_update_All_wro_fav(cur, 'taehyen')
+    add_or_update_All_wro_fav(cur, 'justID')
 
 
     # 종료
