@@ -13,12 +13,12 @@ class DBManager:
         # wro_fav 테이블 세팅
         for line_num in range(1, 1201):
             self.cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
-                        (user_id, line_num, 0, 0))
+                        (user_id, line_num, 0, 0,))
             self.conn.commit()
 
         for unit_index in range(120):
             self.cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
-                        (user_id, unit_index, 0))
+                        (user_id, unit_index, 0,))
             self.conn.commit()
 
     def save(self, user):
@@ -79,7 +79,7 @@ class DBManager:
     def checkBookmark(self, user, idx) :
         user_id = user.userId
 
-        self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
+        self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx,))
         result = self.cur.fetchone()
         if result :
             if result[0] == 1 :
@@ -90,7 +90,7 @@ class DBManager:
     def checkWrongWord(self, user, idx) :
         user_id = user.userId
 
-        self.cur.execute('''SELECT wro_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
+        self.cur.execute('''SELECT wro_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx,))
         result = self.cur.fetchone()
         if result :
             if result[0] == 1 :
@@ -157,7 +157,7 @@ class DBManager:
         unitDoneList = []
 
         for i in range(unit_index, unit_index + 15, 1):
-            self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND unit_index = ?''', (user_id, i))
+            self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND unit_index = ?''', (user_id, i,))
             unitDoneList.append(self.cur.fetchone()[0])
 
         return unitDoneList
@@ -169,7 +169,7 @@ class DBManager:
         s = start_idx * 15
         e = s + 15
 
-        self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND (unit_index >= ? AND unit_index < ?)''', (user_id, s, e))
+        self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND (unit_index >= ? AND unit_index < ?)''', (user_id, s, e,))
         results = self.cur.fetchall()
 
         for result in results:
@@ -184,7 +184,7 @@ class DBManager:
 
         # 유닛 테이블 정보 수정
         self.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
-                (user_id, unit_index, 1))
+                (user_id, unit_index, 1,))
 
 
     def closeDB(self) :
