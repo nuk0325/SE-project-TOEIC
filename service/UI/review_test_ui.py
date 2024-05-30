@@ -144,7 +144,6 @@ class ReviewTestUI(QMainWindow):
         self.move(window_geometry.topLeft())
 
     def closeAndOpen(self, option) :
-        self.close()
         if option == "back" :
             self.parent.use_goBack()
         elif option == "home" :
@@ -153,6 +152,8 @@ class ReviewTestUI(QMainWindow):
             self.parent.use_gotoSelectTestResult()
         else :
             print("잘못된 입력입니다.")
+
+        self.close()
 
     def update_labels_and_buttons(self):
         self.correct_count_label.setText(self.parent.getCorrectCount())

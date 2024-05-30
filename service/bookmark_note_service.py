@@ -1,4 +1,4 @@
-from service.word_note import WordNote
+from word_note import WordNote
 from goto_service import Goto
 from UI.word_note_ui import BookmarkUI
 
