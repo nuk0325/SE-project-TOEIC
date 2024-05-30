@@ -179,7 +179,7 @@ class DBManager:
         
     def findWordByLine_num(self, line_num):
         try:
-            self.cur.execute("SELECT * FROM word WHERE line_num=?", (line_num,))
+            self.cur.execute("SELECT * FROM words_db WHERE line_num=?", (line_num,))
             word_data = self.cur.fetchone()
 
             if word_data:
@@ -190,6 +190,18 @@ class DBManager:
             print("Error:", e)
             return None
 
+    def selectNumAndWord(self):
+        try:
+            self.cur.execute("SELECT line_num, word FROM words_db")
+            rows = self.cur.fetchall()
+            return [list(row) for row in rows]  # 2차원 리스트로 변환
+        except sqlite3.Error as e:
+            print(f"Database error: {e}")
+            return []
+        except Exception as e:
+            print(f"Error: {e}")
+            return []
+        
 
     def closeDB(self) :
         self.conn.commit()
