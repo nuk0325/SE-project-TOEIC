@@ -182,7 +182,7 @@ class TestResultUI(QMainWindow) :
             print("error")
 
 
-class EntireTestResultUI(QMainWindow):
+class EntireTestResultUI(TestResultUI):
     def __init__(self, parent) :
         super().__init__(parent)
         self.parent = parent
@@ -230,9 +230,9 @@ class EntireTestResultUI(QMainWindow):
         
         script_dir = os.path.dirname(os.path.abspath(__file__))
         if  self.parent.checkCorrectRate() :
-            imageName = os.path.join(script_dir, "goodDog.png")
+            imageName = os.path.join(script_dir, "image/goodDog.png")
         else :
-            imageName = os.path.join(script_dir, "badDog.png")
+            imageName = os.path.join(script_dir, "image/badDog.png")
         pixmap = QPixmap(imageName)
         if pixmap.isNull():
             QMessageBox.critical(self, "Image Load Error", "이미지를 로드할 수 없습니다.")
