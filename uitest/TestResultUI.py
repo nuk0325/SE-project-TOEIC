@@ -53,15 +53,14 @@ class MainWindow(QMainWindow) :
 
         imageLabel = QLabel(middleFrame)
         
-        script_dir = os.path.dirname(os.path.abspath(__file__))
+
         if  self.parent.checkCorrectRate() :
-            imageName = os.path.join(script_dir, "goodDog.png")
+            imageName = "uitest/goodDog.png"
+            #imageName = "service/UI/image/goodDog.png"
         else :
-            imageName = os.path.join(script_dir, "badDog.png")
+            imageName = "uitest/badDog.png"
+            #imageName = "service/UI/image/badDog.png"
         pixmap = QPixmap(imageName)
-        if pixmap.isNull():
-            QMessageBox.critical(self, "Image Load Error", "이미지를 로드할 수 없습니다.")
-            sys.exit(1)
         scaled_pixmap = pixmap.scaled(200, 300, Qt.AspectRatioMode.KeepAspectRatio)
         imageLabel.setPixmap(scaled_pixmap)
         imageLabel.resize(scaled_pixmap.width(), scaled_pixmap.height())
