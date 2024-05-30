@@ -9,7 +9,7 @@ class PrepareEntireTest(QMainWindow):
     def __init__(self, user):
         super().__init__()
         self.ui = PrepareEntireTestUI()
-        self.ui.setupUi(self, 3, 30)
+        self.ui.setupUi(self)
 
         self.user = user
         
