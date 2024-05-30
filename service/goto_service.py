@@ -49,7 +49,7 @@ class Goto():
         from review_test_service import ReviewTest
         ReviewTest(user, wordIdxList, testChoice)
 
-    def gotoReviewTestResult(user, correctIdxList, wrongIdxList):
+    def gotoReviewTestResult(self, user, correctIdxList, wrongIdxList):
         print("go to Review Test Result Page")
         from review_test_result_service import ReviewTestResult
         ReviewTestResult(user, correctIdxList, wrongIdxList)
