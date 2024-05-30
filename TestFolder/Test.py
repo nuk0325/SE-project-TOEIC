@@ -39,10 +39,14 @@ class Test :
     def _reflectWrong(self) :
         self._wrongCount += 1
         self._wrongIdxList.append(self._wordIdxList[self._wordCount])
-        self.db.insertWrongWordIdxList(self.user, self._wordIdxList[self._wordCount])
+        #self.db.insertWrongWordIdxList(self.user, self._wordIdxList[self._wordCount])
     
     def _dbClose(self) :
         self.db.closeDB()
+
+    def _insertWrongWords(self) :
+        for idx in self._wrongIdxList :
+            self.db.insertWrongWordIdxList(self.user, idx)
 
     def afterQuestion(self, answer) :
         if answer == self.getAnswer() :
@@ -51,6 +55,7 @@ class Test :
             self._reflectWrong()
         self._wordCount += 1
         if self._wordCount == len(self._wordIdxList) :
+            self._insertWrongWords()
             return False
         return True
 
