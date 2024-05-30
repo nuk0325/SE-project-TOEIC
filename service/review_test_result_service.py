@@ -33,6 +33,7 @@ class ReviewTestResult(TestResult) :
         for idx in lst :
             if min > idx :
                 min = idx
+        print(min)
         return min
     
     def _calculateUnit(self) :
@@ -42,7 +43,8 @@ class ReviewTestResult(TestResult) :
         return part, unit
     
     def _calculateUnit_idx(self) : #DB에 저장된 형태. 120개의 유닛인덱스 반환
-        return self._calculateIdx()/15 - 1
+        idx = self._calculateIdx() // 10
+        return idx
     
     def use_goBack(self) :
         self.use_goBackSelectWordNote()

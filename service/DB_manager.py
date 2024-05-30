@@ -180,11 +180,13 @@ class DBManager:
     
     
     def addStudiedUnitCount(self, user, unit_index): #유닛 클리어 적용
-        user_id = user.userId
-
         # 유닛 테이블 정보 수정
+        is_done=1
+        user_id = user.userId
+        print(f"unit_index:{unit_index} 유닛 클리어")
         self.cur.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
-                (user_id, unit_index, 1))
+                (user_id, unit_index, is_done))
+        self.closeDB()
 
 
     def closeDB(self) :
