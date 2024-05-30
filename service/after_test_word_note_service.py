@@ -1,4 +1,4 @@
-from word_note import WordNote
+from service.word_note import WordNote
 from goto_service import Goto
 
 class AfterTestWordNote(WordNote) :

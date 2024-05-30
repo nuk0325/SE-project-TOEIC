@@ -107,7 +107,7 @@ class DBManager:
         self.cur.execute('''UPDATE wro_fav SET wro_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
 
     def getWord(self, idx, option) :
-        self.cur.execute('''SELECT word, mean, sent FROM words_db WHERE line_num = ?''', (idx,))
+        self.cur.execute('''SELECT word, mean, sent, sent_mean FROM words_db WHERE line_num = ?''', (idx,))
         result = self.cur.fetchone()
         if result :
             if option == "word" :
@@ -116,6 +116,8 @@ class DBManager:
                 if result[1] : return result[1]
             elif option == "sentence" :
                 if result[2] : return result[2]
+            elif option == "sentMeaning" :
+                if result[3] : return result[3]
             else :
                 print("올바르지 않은 입력")
         
