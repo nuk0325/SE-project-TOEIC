@@ -51,8 +51,16 @@ class PrepareEntireTestUI(object):
         sizePolicy.setHeightForWidth(self.back_button.sizePolicy().hasHeightForWidth())
         self.back_button.setSizePolicy(sizePolicy)
         self.back_button.setObjectName("back_button")
+<<<<<<< HEAD
         self.back_button.clicked.connect(lambda: self.closeAndOpen("back"))
 
+=======
+<<<<<<< Updated upstream
+        self.back_button.clicked.connect(lambda: self.closeAndOpen("back"))
+
+=======
+>>>>>>> Stashed changes
+>>>>>>> bfb7457 (feat: 전체테스트 준비 UI 버튼 연결)
         self.horizontalLayout.addWidget(self.back_button)
         self.menu_name_label = QtWidgets.QLabel(parent=self.horizontalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Preferred)
@@ -72,8 +80,16 @@ class PrepareEntireTestUI(object):
         sizePolicy.setHeightForWidth(self.home_button.sizePolicy().hasHeightForWidth())
         self.home_button.setSizePolicy(sizePolicy)
         self.home_button.setObjectName("home_button")
+<<<<<<< HEAD
         self.home_button.clicked.connect(lambda: self.closeAndOpen("home"))
 
+=======
+<<<<<<< Updated upstream
+        self.home_button.clicked.connect(lambda: self.closeAndOpen("home"))
+
+=======
+>>>>>>> Stashed changes
+>>>>>>> bfb7457 (feat: 전체테스트 준비 UI 버튼 연결)
         self.horizontalLayout.addWidget(self.home_button)
         self.frame_3 = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_3.setGeometry(QtCore.QRect(0, 280, 361, 201))
