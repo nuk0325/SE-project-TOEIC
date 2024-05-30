@@ -229,6 +229,7 @@ class MainWindow(QMainWindow):
             self.lookAnswer(sender)
             QtCore.QTimer.singleShot(500, self.hide_labels) # 3초 뒤에 전체 이벤트가 실행되도록 고쳐보자
             QtCore.QTimer.singleShot(500, lambda: self.checkBoolean(sender))
+
     def hide_labels(self):
         self.answerLabel.setVisible(False)
         self.sentenceLabel.setVisible(False)

@@ -4,12 +4,13 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame, QHBoxLayout, QVBoxLayout, QLabel, QWidget, QScrollArea, QMessageBox
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtGui import QFont
-from PopUpDialog import PopUpDialog
+from PopUpForUnitManage import PopUpForUnitManage
 
 class MainWindow(QMainWindow) :
     def __init__(self, parent) :
         super().__init__()
         self.parent = parent
+        self.frameList = []
 
         self.setWindowTitle("단어장 관리")
         self.setGeometry(0,0,360,600)
@@ -54,6 +55,7 @@ class MainWindow(QMainWindow) :
         unitNameLabel.setFont(QFont("Han Sans", 10))
         addButton = QPushButton("추가", upperFrame)
         addButton.setStyleSheet("background-color : rgb(224, 224, 224);")
+        addButton.clicked.connect(self.searchAndJudge)
 
         upperLayout = QHBoxLayout()
         upperLayout.addWidget(unitNameLabel)
@@ -97,39 +99,42 @@ class MainWindow(QMainWindow) :
         frame = QFrame()
         frame.setFixedSize(QSize(340, 140))
 
-        wordNameLabel = QLabel(wordObj.getWordName())
-        wordNameLabel.setFont(QFont("Han Sans", 12))
-        wordNameLabel.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        frame.wordNameLabel = QLabel(wordObj.getWordName())
+        frame.wordNameLabel.setFont(QFont("Han Sans", 12))
+        frame.wordNameLabel.setAlignment(Qt.AlignmentFlag.AlignLeft)
         
-        wordMeaningLabel = QLabel(wordObj.getMeaning())
-        wordMeaningLabel.setFont(QFont("Han Sans", 10))
-        wordMeaningLabel.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        frame.wordMeaningLabel = QLabel(wordObj.getMeaning())
+        frame.wordMeaningLabel.setFont(QFont("Han Sans", 10))
+        frame.wordMeaningLabel.setAlignment(Qt.AlignmentFlag.AlignLeft)
 
-        wordSentenceLabel = QLabel(wordObj.getSentence())
-        wordSentenceLabel.setFont(QFont("Han Sans", 9))
-        wordSentenceLabel.setWordWrap(True)
-        wordSentenceLabel.adjustSize()
-        wordSentenceLabel.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        frame.wordSentenceLabel = QLabel(wordObj.getSentence())
+        frame.wordSentenceLabel.setFont(QFont("Han Sans", 9))
+        frame.wordSentenceLabel.setWordWrap(True)
+        frame.wordSentenceLabel.adjustSize()
+        frame.wordSentenceLabel.setAlignment(Qt.AlignmentFlag.AlignLeft)
 
-        wordSentMeaningLabel = QLabel(wordObj.getSentMeaning())
-        wordSentMeaningLabel.setFont(QFont("Han Sans", 9))
-        wordSentMeaningLabel.setWordWrap(True)
-        wordSentMeaningLabel.adjustSize()
-        wordSentMeaningLabel.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        frame.wordSentMeaningLabel = QLabel(wordObj.getSentMeaning())
+        frame.wordSentMeaningLabel.setFont(QFont("Han Sans", 9))
+        frame.wordSentMeaningLabel.setWordWrap(True)
+        frame.wordSentMeaningLabel.adjustSize()
+        frame.wordSentMeaningLabel.setAlignment(Qt.AlignmentFlag.AlignLeft)
 
         wordLayout = QVBoxLayout()
-        wordLayout.addWidget(wordNameLabel)
-        wordLayout.addWidget(wordMeaningLabel)
-        wordLayout.addWidget(wordSentenceLabel)
-        wordLayout.addWidget(wordSentMeaningLabel)
+        wordLayout.addWidget(frame.wordNameLabel)
+        wordLayout.addWidget(frame.wordMeaningLabel)
+        wordLayout.addWidget(frame.wordSentenceLabel)
+        wordLayout.addWidget(frame.wordSentMeaningLabel)
 
 
         wordFixButton = QPushButton("수정")
         wordFixButton.setFixedSize(QSize(60,25))
         wordFixButton.setStyleSheet("background-color : rgb(224, 224, 224);")
+        wordFixButton.clicked.connect(wordObj.changeWord)
+
         wordDeleteButton = QPushButton("삭제")
         wordDeleteButton.setFixedSize(QSize(60,25))
         wordDeleteButton.setStyleSheet("background-color : rgb(224, 224, 224);")
+        wordDeleteButton.clicked.connect(lambda: self.deleteOrNot(frame, wordObj))
 
         buttonLayout = QVBoxLayout()
         buttonLayout.addWidget(wordFixButton)
@@ -150,4 +155,32 @@ class MainWindow(QMainWindow) :
 
         frame.setLayout(mainLayout)
 
+        self.frameList.append(frame)
         return frame
+    
+    def searchAndJudge(self) :
+        if self.parent.searchAndAdd() == 0 :
+            alarm = "유닛이 다 찼습니다"
+            popup = PopUpForUnitManage(self, alarm, False)
+            popup.exec()
+        else :
+            self.closeAndOpen("add")
+
+    def deleteOrNot(self, frame, wordObj) :
+        alarm = "단어를 정말 삭제하시겠습니까?"
+        popup = PopUpForUnitManage(wordObj, alarm, True)
+        popup.exec()
+        frame.wordNameLabel.setText(wordObj.getWordName())
+        frame.wordMeaningLabel.setText(wordObj.getMeaning())
+        frame.wordSentenceLabel.setText(wordObj.getSentence())
+        frame.wordSentMeaningLabel.setText(wordObj.getSentMeaning())
+                
+                
+
+    def closeAndOpen(self, option) :
+        if option == "back" :
+            self.parent.use_goBack()
+        elif option == "home" :
+            self.parent.use_gotoHome()
+        elif option == "add" :
+            self.parent.goAdd(self.parent.searchAndAdd)

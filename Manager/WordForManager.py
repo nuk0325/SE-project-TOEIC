@@ -1,6 +1,7 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from WordNoteFolder.Word import Word
+from Goto import Goto
 
 class WordForManager(Word) :
     def __init__(self, user, idx, db) :
@@ -28,7 +29,13 @@ class WordForManager(Word) :
         self._sentMeaning = sentMeaning
         self.db.setSentMeaning(self._idx, "sentMeaning")
 
+    def changeWord(self) : # 함수 이름 맞춰서 쓰세요
+        print("단어 수정 페이지로 이동")
+        #Goto.gotoUnitChange(self, self.user, self.idx)
+        pass
+
     def deleteWord(self) :
+        print("단어 삭제")
         self._wordName = None
         self._meaning = None
         self._sentence = None

@@ -47,3 +47,14 @@ class UnitManage() :
     
     def getUnitName(self) :
         return self._unitName
+    
+    def searchAndAdd(self) :
+        for word in self._wordList :
+            if word.getWordName() == None :
+                return word.getWordIdx()
+        return 0 # 유닛이 꽉 차 있을 경우
+    
+    def goAdd(self, idx) :
+        print("단어 추가 페이지로 이동")
+        pass
+        # Goto.gotoAddPage(idx)
