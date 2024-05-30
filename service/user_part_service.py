@@ -2,29 +2,32 @@ import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow
 from UI.user_part_ui import UserPartUI
 from goto_service import Goto
+from DB_manager import DBManager
 
 class UserPart(QMainWindow):
     def __init__(self, user):
+        self.user = user
+        self.goto = Goto()
+        self.dataManager = DBManager()
+        self.unitNumberList = self.getUnitNumberList()
+
         super().__init__()
         self.ui = UserPartUI()
-        self.ui.setupUi(self)
-
-        self.user = user
-
-        self.goto = Goto()
+        self.ui.setupUi(self, self.unitNumberList)
 
         # 버튼 연결
         self.ui.back_button.clicked.connect(self.back_button_clicked)#뒤로가기
         self.ui.home_button.clicked.connect(self.home_button_clicked)#홈
-        self.ui.part1_button.clicked.connect(self.part1_button_clicked)#Part1 ~ Part8
-        self.ui.part2_button.clicked.connect(self.part2_button_clicked)
-        self.ui.part3_button.clicked.connect(self.part3_button_clicked)
-        self.ui.part4_button.clicked.connect(self.part4_button_clicked)
-        self.ui.part5_button.clicked.connect(self.part5_button_clicked)
-        self.ui.part6_button.clicked.connect(self.part6_button_clicked)
-        self.ui.part7_button.clicked.connect(self.part7_button_clicked)
-        self.ui.part8_button.clicked.connect(self.part8_button_clicked)
     
+    def getUnitNumberList(self):
+        unitNumberList = []
+
+        for i in range(8):
+            number = self.dataManager.getStudiedUnitCount(self.user, i)
+            unitNumberList.append(number)
+
+        return unitNumberList
+
     #버튼 이벤트
     def back_button_clicked(self):
         self.goto.gotoHome(self.user)

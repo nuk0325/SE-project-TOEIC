@@ -53,6 +53,7 @@ class JoinMembership(QMainWindow):
 
 
         self.dataManager.save(user)
+        self.dataManager.setAllTable(user) # unit, wro_fav 테이블에 레코드 추가
         print("회원가입 완료")
 
         self.goto.gotoLogIn()

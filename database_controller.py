@@ -76,10 +76,17 @@ def deleteAllWrongFav(user_id):
     conn.commit()
 
 
+<<<<<<< HEAD
 # 유닛 테이블 정보 추가
 def insertUnitTable(user_id, unit_index, is_done):
     cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', (user_id, unit_index, is_done))
     conn.commit()
+=======
+# # 유닛 테이블 정보 추가
+# def insertUnitTable(user_id, unit_index, is_done):
+#     cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', (user_id, unit_index, is_done))
+#     conn.commit()
+>>>>>>> 0668f1e0d2634dd46b9acda1f6255f9608d3172b
 
 # 유닛 테이블 정보 수정
 def updateUnitTable(user_id, unit_index, is_done):
@@ -102,7 +109,11 @@ def setAllTable(user_id):
                     (user_id, line_num, 0, 0))
         conn.commit()
 
+<<<<<<< HEAD
     for unit_index in range(1, 121):
+=======
+    for unit_index in range(120):
+>>>>>>> 0668f1e0d2634dd46b9acda1f6255f9608d3172b
         cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
                     (user_id, unit_index, 0))
         conn.commit()
@@ -114,6 +125,7 @@ if __name__ == "__main__":
     # 유저 삭제
     delete_User("taehyen")
     delete_User("sunwook")
+<<<<<<< HEAD
     delete_User("justID")
     deleteAllWrongFav("taehyen")
     deleteAllWrongFav("sunwook")
@@ -121,6 +133,10 @@ if __name__ == "__main__":
     deleteAllUnit("taehyen")
     deleteAllUnit("sunwook")
     deleteAllUnit("justID")
+=======
+    deleteAllWrongFav("taehyen")
+    deleteAllWrongFav("sunwook")
+>>>>>>> 0668f1e0d2634dd46b9acda1f6255f9608d3172b
 
     #모든 테이블 확인
     selectAllFromTable("user", 20)
@@ -134,6 +150,7 @@ if __name__ == "__main__":
     #유저추가
     add_user(cur, 'sunwook', '1234', '선욱', 10, 1, '2024-05-27', 6, 80)
     add_user(cur, 'taehyen', '1234', '태현', 10, 1, '2024-05-27', 6, 80)
+<<<<<<< HEAD
     add_user(cur, "justID", "justPassword", "justNickname", 10, 1, '2024-05-27', 6, 80)
     
     #유저의 오답,즐겨찾기 1200개, 유닛클리어여부 120개 추가.
@@ -144,6 +161,13 @@ if __name__ == "__main__":
     updateUnitTable('sunwook', 1, 1)
     updateUnitTable('sunwook', 4, 1)
     updateUnitTable('sunwook', 10, 1)
+=======
+
+    #유저의 오답,즐겨찾기 1200개 단어추가
+    add_or_update_All_wro_fav(cur, 'sunwook')
+    add_or_update_All_wro_fav(cur, 'taehyen')
+
+>>>>>>> 0668f1e0d2634dd46b9acda1f6255f9608d3172b
 
     # 종료
     conn.commit()

@@ -17,7 +17,7 @@ i = 0
 for record in cur.fetchall():
     print(record)
     i += 1
-    if i > 5 :
+    if i > 20 :
         break
 
 # favorite 테이블의 모든 레코드 출력
@@ -27,7 +27,7 @@ i = 0
 for record in cur.fetchall():
     print(record)
     i += 1
-    if i > 5 :
+    if i > 20 :
         break
 
 # day_time 테이블의 모든 레코드 출력

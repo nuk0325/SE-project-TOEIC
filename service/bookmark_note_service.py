@@ -1,4 +1,4 @@
-from word_note import WordNote
+from service.word_note import WordNote
 from goto_service import Goto
 from UI.word_note_ui import BookmarkUI
 
@@ -12,8 +12,9 @@ class BookmarkNote(WordNote) :
         self._wordIdxList = self.db.getBookmarkWordList(self.user) # 즐겨찾기 단어들의 인덱스리스트 가져오기
         self._wordList = self._returnWordList()
         
-        self.goto = Goto()
         self.main()
+
+        self.goto = Goto()
 
     def main(self) : # UI 실행 함수
         frameCount = len(self._wordIdxList)
