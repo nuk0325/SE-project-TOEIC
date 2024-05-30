@@ -42,7 +42,7 @@ class TestResult :
         pass
 
     def use_gotoHome(self) :
-        self.goto.gotoHome()
+        self.goto.gotoHome(self.user)
 
     def use_gotoAfterTestWordNote(self, op1) :
         if op1 == "correct" :

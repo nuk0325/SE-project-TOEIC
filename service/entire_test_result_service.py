@@ -1,17 +1,18 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from service.test_result import TestResult
-from UI.test_result_ui import TestResultUI
+from test_result import TestResult
+from goto_service import Goto
+from UI.test_result_ui import EntireTestResultUI
 
 class EntireTestResult(TestResult) :
     def main(self) :
-        self.window = TestResultUI(self)
+        self.window = EntireTestResultUI(self)
         self.window.show()
 
     def getTitle(self) :
         return "테스트 결과"
-    
+
     def use_goBack(self) :
         self.use_goBackSelectWordNote()
 

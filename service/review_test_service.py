@@ -22,8 +22,8 @@ class ReviewTest(Test) :
 
     def use_goBack(self) :
         part, unit = self._calculateUnit()
-        self.goto.gotoUnitWordNote(part, unit, self.user)
+        Goto.gotoUnitWordNote(part, unit, self.user)
 
     def use_gotoSelectTestResult(self) :
         self._dbClose()
-        self.goto.gotoReviewTestResult(self.user, self._correctIdxList, self._wrongIdxList)
+        Goto.gotoReviewTestResult(self.user, self._correctIdxList, self._wrongIdxList)

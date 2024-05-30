@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from TestResult import TestResult
 from Goto import Goto
 
-class BookmarkTestResult(TestResult) :
+class WrongWordTestResult(TestResult) :
 
     def getTitle(self) :
         return "테스트 결과"
@@ -13,7 +13,7 @@ class BookmarkTestResult(TestResult) :
         self.use_goBackSelectWordNote()
 
     def use_goBackSelectWordNote(self):
-        Goto.gotoBookmarkWordNote(self.user)
+        Goto.gotoWrongWordNote(self.user)
 
     def getOp2(self) :
-        return "bookmark"
+        return "wrong"

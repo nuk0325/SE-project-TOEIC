@@ -49,16 +49,10 @@ class Goto():
         from review_test_service import ReviewTest
         ReviewTest(user, wordIdxList, testChoice)
 
-    def gotoReviewTestResult(self, user, correctIdxList, wrongIdxList):
+    def gotoReviewTestResult(user, correctIdxList, wrongIdxList):
         print("go to Review Test Result Page")
         from review_test_result_service import ReviewTestResult
         ReviewTestResult(user, correctIdxList, wrongIdxList)
-
-    def gotoReviewTestCorrectNote(self):
-        print("go to Review Test Correct Note Page")
-
-    def gotoReviewTestWrongNote(self):
-        print("go to Review Test Wrong Note Page")
 
     def gotoPrepareEntireTest(self, user):
         print("go to Prepare Entire Test Page")
@@ -75,12 +69,6 @@ class Goto():
         print("go to Entire Test Result Page")
         from entire_test_result_service import EntireTestResult
         EntireTestResult(user, correctIdxList, wrongIdxList)
-
-    def gotoEntireTestCorrectNote(self):
-        print("go to Entire Test Correct Note Page")
-
-    def gotoEntireTestWrongNote(self):
-        print("go to Entire Test Wrong Note Page")
 
     def gotoMyPage(self, user):
         from my_page_service import MyPage
@@ -100,12 +88,6 @@ class Goto():
     def gotoWrongNoteTestResult(self):
         print("go to Wrong Note Test Result Page")
 
-    def gotoWrongNoteTestCorrectNote(self):
-        print("go to Wrong Note Test Correct Note Page")
-
-    def gotoWrongNoteTestWrongNote(self):
-        print("go to Wrong Note Test Wrong Note Page")
-
     def gotoBookmarkNote(self, user):
         print("go to Bookmark Note Page")
         from bookmark_note_service import BookmarkNote
@@ -121,11 +103,10 @@ class Goto():
         from bookmark_note_test_result_service import BookmarkTestResult
         BookmarkTestResult(user, correctIdxList, wrongIdxList)
 
-    def gotoBookmarkNoteCorrectNote(self):
-        print("go to Bookmark Note Correct Note Page")
-
-    def gotoBookmarkNoteWrongNote(self):
-        print("go to Bookmark Note Wrong Note Page")
+    def gotoAfterTestWordNote(self, user, list1, list2, op1, op2):
+        print("go to After Test Word Note")
+        from after_test_word_note_service import AfterTestWordNote
+        AfterTestWordNote(user, list1, list2, op1, op2)
 
     def gotoManagerPart(self):
         print("go to Manager Part Page")

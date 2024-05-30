@@ -1,7 +1,7 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from test_result import TestResult
+from service.test_result import TestResult
 from goto_service import Goto
 
 class ReviewTestResult(TestResult) :
@@ -34,7 +34,7 @@ class ReviewTestResult(TestResult) :
 
     def use_goBackSelectWordNote(self):
         part, unit = self._calculateUnit()
-        self.goto.gotoUnitWordNote(self.user, part, unit)
+        Goto.gotoUnitWordNote(part, unit, self.user)
 
     def getOp2(self) :
         return "review"
