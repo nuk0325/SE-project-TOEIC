@@ -12,19 +12,34 @@ class DBManager:
 
         # wro_fav 테이블 세팅
         for line_num in range(1, 1201):
-            self.cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
-                        (user_id, line_num, 0, 0))
+            # self.cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
+            #             (user_id, line_num, 0, 0))
+            
+            self.cur.execute('''SELECT COUNT(*) FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, line_num,))
+            if self.cur.fetchone()[0] > 0:
+                # Update existing record
+                self.cur.execute('''UPDATE wro_fav SET wro_is_right = ?, fav_is_right = ? WHERE user_id = ? AND line_num = ?''',
+                                (0, 0, user_id, line_num,))
+            else:
+                # Insert new record
+                self.cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''',
+                                (user_id, line_num, 0, 0,))
             self.conn.commit()
 
         for unit_index in range(120):
-            self.cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
-                        (user_id, unit_index, 0))
+            self.cur.execute('''SELECT COUNT(*) FROM unit WHERE user_id = ? AND unit_index = ?''', (user_id, unit_index,))
+            if self.cur.fetchone()[0] > 0:
+                self.cur.execute('''UPDATE unit SET is_done = ? WHERE user_id = ? AND unit_index = ?''',
+                                (0, user_id, unit_index,))
+            else:
+                self.cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''',
+                                (user_id, unit_index, 0,))
             self.conn.commit()
 
     def save(self, user):
         try:
             user_data = user.toUserData()
-            self.cur.execute("INSERT INTO user (id, password, nickname, unit_count, is_admin, last_date, today_learned_unit, total_learned_unit) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",user_data)
+            self.cur.execute("INSERT INTO user (id, password, nickname, unit_count, is_admin, last_date, today_learned_unit, total_learned_unit) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",user_data,)
             self.conn.commit()
             print(user)
             print(self)
