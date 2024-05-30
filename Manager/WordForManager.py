@@ -36,8 +36,8 @@ class WordForManager(Word) :
 
     def deleteWord(self) :
         print("단어 삭제")
-        #self._wordName = None
-        #self._meaning = None
-        #self._sentence = None
-        #self._sentMeaning = None
-        #self.db.deleteWord(self._idx)
+        self._wordName = None
+        self._meaning = None
+        self._sentence = None
+        self._sentMeaning = None
+        self.db.deleteWord(self._idx)

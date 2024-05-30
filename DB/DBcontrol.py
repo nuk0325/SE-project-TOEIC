@@ -102,8 +102,11 @@ class DBcontrol :
             wordIdxList.append(i)
         return wordIdxList 
     
-    def deleteWord(self, idx) :
-        self.cur.execute('''UPDATE words_db word = None, meaning = None, sent = None, sent_mean = None WHERE line_num = ?''', (idx, ))
+
+    def deleteWord(self, idx):
+        self.cur.execute('''UPDATE words_db SET word = NULL, mean = NULL, sent = NULL, sent_mean = NULL WHERE line_num = ?''', (idx,))
+        self.conn.commit()
+
     
     def closeDB(self) :
         self.conn.commit()
