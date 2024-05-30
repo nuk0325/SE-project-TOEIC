@@ -11,11 +11,12 @@ class UnitWordNote(WordNote, QMainWindow) : # WordNote를 상속받은 유닛 �
         self._wordIdxList = self._makeWordIdxList(part, unit) # index로 구성된 리스트
         self.db = self._makeDBobj()
         self._wordList = self._returnWordList()
+        # self._label = self._makeLabel()
+
+        self.main()
 
         self.part = part
         self.goto = Goto()
-
-        self.main()
 
     def _getPartName(self, part) :
         partNum = part

@@ -76,7 +76,7 @@ def deleteAllWrongFav(user_id):
     conn.commit()
 
 
-# # 유닛 테이블 정보 추가
+# # 유닛 테이블 정보 ,수정
 # def insertUnitTable(user_id, unit_index, is_done):
 #     cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', (user_id, unit_index, is_done))
 #     conn.commit()
@@ -102,7 +102,7 @@ def setAllTable(user_id):
                     (user_id, line_num, 0, 0))
         conn.commit()
 
-    for unit_index in range(120):
+    for unit_index in range(0, 120):
         cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
                     (user_id, unit_index, 0))
         conn.commit()
@@ -114,8 +114,13 @@ if __name__ == "__main__":
     # 유저 삭제
     delete_User("taehyen")
     delete_User("sunwook")
+    delete_User("justID")
     deleteAllWrongFav("taehyen")
     deleteAllWrongFav("sunwook")
+    deleteAllWrongFav("justID")
+    deleteAllUnit("taehyen")
+    deleteAllUnit("sunwook")
+    deleteAllUnit("justID")
 
     #모든 테이블 확인
     selectAllFromTable("user", 20)
@@ -129,11 +134,16 @@ if __name__ == "__main__":
     #유저추가
     add_user(cur, 'sunwook', '1234', '선욱', 10, 1, '2024-05-27', 6, 80)
     add_user(cur, 'taehyen', '1234', '태현', 10, 1, '2024-05-27', 6, 80)
+    add_user(cur, "justID", "justPassword", "justNickname", 10, 1, '2024-05-27', 6, 80)
+    
+    #유저의 오답,즐겨찾기 1200개, 유닛클리어여부 120개 추가.
+    setAllTable('sunwook')
+    setAllTable('taehyen')
+    setAllTable('justID')
 
-    #유저의 오답,즐겨찾기 1200개 단어추가
-    add_or_update_All_wro_fav(cur, 'sunwook')
-    add_or_update_All_wro_fav(cur, 'taehyen')
-
+    updateUnitTable('sunwook', 1, 1)
+    updateUnitTable('sunwook', 4, 1)
+    updateUnitTable('sunwook', 10, 1)
 
     # 종료
     conn.commit()

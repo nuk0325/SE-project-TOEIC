@@ -1,7 +1,7 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from test import Test
+from service.test import Test
 from goto_service import Goto
 
 
@@ -26,5 +26,4 @@ class ReviewTest(Test) :
 
     def use_gotoSelectTestResult(self) :
         self._dbClose()
-        print("testResult로 이동함")
-        Goto.gotoReviewTestResult(self.user, self._correctIdxList, self._wrongIdxList)
+        self.goto.gotoReviewTestResult(self.user, self._correctIdxList, self._wrongIdxList)

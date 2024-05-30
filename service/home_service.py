@@ -52,7 +52,7 @@ class Home(QMainWindow):
             print("User not found or user data is None")
             
     def printMotivationSentence(self):
-        text = ("오늘도 화이팅!","시작이 반이다","시작할때의 결심은 끝가지 간다", "엄마가 보고있다")
+        text = ("오늘도 화이팅!","시작이 반이다","시작할때의 결심은 끝까지 간다", "엄마가 보고있다")
         self.ui.updateSpeechBalloonText(text[random.randint(0, len(text)-1)])
 
     def showStudyHelp(self):
