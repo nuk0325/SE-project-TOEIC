@@ -8,7 +8,7 @@ from DB_manager import DBManager #DB 조작 추가
 
 class ReviewTestResult(TestResult) :
     def __init__(self, user, correctWordIdxList, wrongWordIdxList) :
-        super.__init__(user, correctWordIdxList, wrongWordIdxList)
+        super().__init__(user, correctWordIdxList, wrongWordIdxList)
         self.db = self._makeDBobj() #DB 조작 추가. 유닛 클리어에 대해 반영
 
     def main(self) :
