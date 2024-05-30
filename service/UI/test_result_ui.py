@@ -332,12 +332,13 @@ class EntireTestResultUI(TestResultUI):
         mainLayout.addWidget(wrongFrame)
         mainLayout.addWidget(bottomFrame)
 
+from DB_manager import DBManager #DB 조작 추가
 
 class ReviewTestResultUI(TestResultUI):
     def __init__(self, parent) :
         super().__init__(parent)
         self.parent = parent
-        
+        self.db=DBManager()
         self.setWindowTitle("테스트 결과")
         self.setGeometry(0, 0, 360, 600)
         self.centerWindow()
@@ -383,7 +384,7 @@ class ReviewTestResultUI(TestResultUI):
         if  self.parent.checkCorrectRate() :
             imageName = os.path.join(script_dir, "image/goodDog.png")
             #DB에 유닛 단어 반영
-            self.parent.db.addStudiedUnitCount(self, self.parent.user, self.parent._calculateUnit_idx()) #DB에 저장된 형태. 120개의 유닛인덱스 반환
+            self.db.addStudiedUnitCount(self.parent.user, self.parent._calculateUnit_idx()) #DB에 저장된 형태. 120개의 유닛인덱스 반환
         else :
             imageName = os.path.join(script_dir, "image/badDog.png")
         pixmap = QPixmap(imageName)
