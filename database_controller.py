@@ -106,7 +106,26 @@ def setAllTable(user_id):
         cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
                     (user_id, unit_index, 0))
         conn.commit()
-    
+
+#관리자페이지에서 단어수정 및 삭제하는 함수
+def update_word_and_remove_wro_fav(self, word_obj):
+    try:
+        # words_db 테이블 업데이트
+        self.cur.execute('''
+            UPDATE words_db
+            SET word = ?, mean = ?, sent = ?, sent_mean = ?
+            WHERE line_num = ?
+        ''', (word_obj.word, word_obj.mean, word_obj.sent, word_obj.sent_mean, word_obj.line_num))
+        # wro_fav 테이블에서 해당 엔티티 삭제
+        self.cur.execute('''
+            DELETE FROM wro_fav
+            WHERE line_num = ?
+        ''', (word_obj.line_num,))
+        self.conn.commit()
+        return True
+    except Exception as e:
+        print("Error:", e)
+        return False    
 
 if __name__ == "__main__":
     conn = sqlite3.connect('word.db')
