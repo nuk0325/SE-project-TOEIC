@@ -178,6 +178,15 @@ class DBManager:
         
         return count
     
+    
+    def addStudiedUnitCount(self, user, unit_index): #유닛 클리어 적용
+        user_id = user.userId
+
+        # 유닛 테이블 정보 수정
+        self.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
+                (user_id, unit_index, 1))
+
+
     def closeDB(self) :
         self.conn.commit()
         self.conn.close()
