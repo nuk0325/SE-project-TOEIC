@@ -178,6 +178,23 @@ class DBManager:
         
         return count
     
+    def addStudiedUnitCount(self, user, start_idx):
+        user_id = user.userId
+
+        count = 0
+        s = start_idx * 15
+        e = s + 15
+
+        self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND (unit_index >= ? AND unit_index < ?)''', (user_id, s, e))
+        results = self.cur.fetchall()
+
+        for result in results:
+            if result[0] == 1:
+                count = count + 1
+        
+        return count
+    
+
     #관리자페이지에서 단어수정 및 삭제하는 함수
     def update_word_and_remove_wro_fav(self, word_obj):
         try:
