@@ -85,8 +85,10 @@ class Goto():
         from wrong_note_test import WrongNoteTest
         WrongNoteTest(user, wordIdxList, testChoice)
 
-    def gotoWrongNoteTestResult():
+    def gotoWrongNoteTestResult(self, user, correctIdxList, wrongIdxList):
         print("go to Wrong Note Test Result Page")
+        from wrong_note_test_result_service import WrongNoteTestResult
+        WrongNoteTestResult(user, correctIdxList, wrongIdxList)
 
     def gotoBookmarkNote(self, user):
         print("go to Bookmark Note Page")
