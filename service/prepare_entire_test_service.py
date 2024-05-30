@@ -7,14 +7,14 @@ import random
 
 class PrepareEntireTest(QMainWindow):
     def __init__(self, user):
-        super().__init__()
-        self.ui = PrepareEntireTestUI()
-        self.ui.setupUi(self)
-
         self.user = user
         
         self.goto = Goto()
         self.data_manager = DBManager()
+
+        super().__init__()
+        self.ui = PrepareEntireTestUI()
+        self.ui.setupUi(self)
 
     #button 클릭 이벤트
     def back_button_clicked(self):
