@@ -186,6 +186,10 @@ class DBManager:
         print(f"unit_index:{unit_index} 유닛 클리어")
         self.cur.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
                 (user_id, unit_index, is_done))
+        
+        user.today_learned_unit += 1
+        self.update(user)
+
         self.closeDB()
 
 
