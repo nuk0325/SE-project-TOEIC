@@ -7,16 +7,6 @@ import random
 
 class PrepareEntireTest(QMainWindow):
     def __init__(self, user):
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
-        super().__init__()
-        self.ui = PrepareEntireTestUI()
-        self.ui.setupUi(self)
-
->>>>>>> Stashed changes
->>>>>>> bfb7457 (feat: 전체테스트 준비 UI 버튼 연결)
         self.user = user
         
         self.goto = Goto()
