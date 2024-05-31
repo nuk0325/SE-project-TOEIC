@@ -5,10 +5,46 @@ main 문 안에 사용하고 싶은 함수를 추가해서 사용
 '''
 
 import sqlite3
+import pandas as pd
+import os
+import Database as db
+
+# 현재 작업 디렉토리를 가져옵니다.
+current_directory = os.getcwd()
+
+# CSV 파일의 경로를 상대 경로로 지정합니다.
+file_path = os.path.join(current_directory, 'toeic_word_file.csv')
+
+df = pd.read_csv(file_path)
+
+# DataFrame의 열 수를 확인합니다.
+num_columns = len(df.columns)
+
+# 열을 안전하게 삭제합니다.
+if num_columns > 3:
+    df.drop(df.columns[3], axis=1, inplace=True)
+    num_columns -= 1  # 열이 삭제되었으므로 열 수를 갱신합니다.
+if num_columns > 3:
+    df.drop(df.columns[3], axis=1, inplace=True)
+    num_columns -= 1
+if num_columns > 5:
+    df.drop(df.columns[5], axis=1, inplace=True)
+
+# 중복되는 행 2개와 마지막 NaN으로 도배된 행 삭제
+# 예: 마지막 행 삭제 (NaN 행이라고 가정)
+df.dropna(how='all', inplace=True)
+
+db.conn = db.sqlite3.connect('word.db')
+db.cur = db.conn.cursor()  # 커서 객체 생성
+
+row_count = len(df)
+column_count = df.shape[1]
+
+df.to_sql('words_db', db.conn, if_exists='replace', index=False)
 
 
-# 특정 테이블 모든 레코드 출력
-def selectAllFromTable(table_name):
+# 특정 테이블 n개의 레코드 출력
+def selectAllFromTable(table_name, n):
     cur.execute(f'SELECT * FROM {table_name}')
     print(f'{table_name} 테이블')
 
@@ -16,48 +52,57 @@ def selectAllFromTable(table_name):
     for record in cur.fetchall():
         print(record)
         i += 1
+        if i > n-1 :
+            break
     return cur.fetchall()
 
 
 # user 삭제
-def deleteUser(userId):
+def delete_User(userId):
     cur.execute("DELETE FROM user where id = ?", (userId,))
     conn.commit()
 
     print("삭제 결과")
-    selectAllFromTable("user")
+    selectAllFromTable("user", 20)
 
 # user 정보 추가
-def addTestUser(user_id, password, nickname, unit_count=3, is_admin=None, last_date=None, today_learned_unit=None, total_learned_unit=None):
+def add_user(cur, user_id, password, nickname, unit_count=3, is_admin=None, last_date=None, today_learned_unit=None, total_learned_unit=None):
     cur.execute("INSERT INTO user (id, password, nickname, unit_count, is_admin, last_date, today_learned_unit, total_learned_unit) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                 (user_id, password, nickname, unit_count, is_admin, last_date, today_learned_unit, total_learned_unit))
     conn.commit()
 
     print("추가 결과")
-    selectAllFromTable("user")
+    selectAllFromTable("user", 20)
 
 
-
-# 즐겨찾기, 오답노트 정보 추가
-def add_or_update_wro_fav(user_id, line_num, wro_is_right, fav_is_right):
-    # 중복 확인 쿼리
-    cur.execute('''SELECT COUNT(*) FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, line_num))
-    
-    if cur.fetchone()[0] == 0:
-        # 중복이 없는 경우에만 삽입
-        cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
-                    (user_id, line_num, wro_is_right, fav_is_right))
-    else:
-        # 중복이 있는 경우 업데이트
-        cur.execute('''UPDATE wro_fav SET wro_is_right = ?, fav_is_right = ? WHERE user_id = ? AND line_num = ?''', 
-                    (wro_is_right, fav_is_right, user_id, line_num))
-    
+# 즐겨찾기, 오답노트 테이블 정보 전부 삭제
+def deleteAllWrongFav(user_id):
+    cur.execute("DELETE FROM wro_fav where user_id = ?", (user_id,))
     conn.commit()
 
-# def add_wro_fav(user_id, line_num, wro_is_right, fav_is_right):
-#     cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
-#                 (user_id, line_num, wro_is_right, fav_is_right))
-#     conn.commit()
+# 즐겨찾기, 오답노트 테이블 정보 전부 초기화. 생성
+def add_or_update_All_wro_fav(cur, user_id):
+    for i in range(1,1200):
+        add_or_update_wro_fav(cur, user_id, i, 0, 0)
+    conn.commit()
+
+# 즐겨찾기, 오답노트 정보 추가,수정. 빠르게 추가함
+def add_or_update_wro_fav(cur, user_id, line_num, wro_is_right, fav_is_right):
+    cur.execute('''
+        SELECT user_id, line_num FROM wro_fav WHERE user_id = ? AND line_num = ?
+    ''', (user_id, line_num))
+    
+    if cur.fetchone():
+        cur.execute('''
+            UPDATE wro_fav
+            SET wro_is_right = ?, fav_is_right = ?
+            WHERE user_id = ? AND line_num = ?
+        ''', (wro_is_right, fav_is_right, user_id, line_num))
+    else:
+        cur.execute('''
+            INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right)
+            VALUES (?, ?, ?, ?)
+        ''', (user_id, line_num, wro_is_right, fav_is_right))
 
 # 즐겨찾기, 오답노트 테이블 정보 전부 삭제
 def deleteAllWrongFav(user_id):
@@ -96,125 +141,77 @@ def setAllTable(user_id):
                     (user_id, unit_index, 0))
         conn.commit()
     
+def deleteALLTable(cur):
+    # 데이터베이스 내의 모든 테이블 이름을 가져오기
+    cur.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    tables = cur.fetchall()
+
+    # 모든 테이블에서 모든 데이터 삭제
+    for table in tables:
+        cur.execute(f'DELETE FROM {table[0]}')
+        conn.commit()
+
+
+def deleteALLTable(cur):
+    # 모든 테이블에서 모든 데이터 삭제
+    delete_Table(cur, "user")
+    #delete_Table("words_db")
+    delete_Table(cur, "wro_fav")
+    delete_Table(cur, "unit")
+    delete_Table(cur, "day_time")
+
+def delete_Table(cur, table):
+    # 테이블에서 모든 데이터 삭제
+    cur.execute(f'DELETE FROM {table}')
+    conn.commit()
+
+
+def deleteALLTable(cur):
+    # 모든 테이블에서 모든 데이터 삭제
+    delete_Table(cur, "user")
+    #delete_Table("words_db")
+    delete_Table(cur, "wro_fav")
+    delete_Table(cur, "unit")
+    delete_Table(cur, "day_time")
+
+def delete_Table(cur, table):
+    # 테이블에서 모든 데이터 삭제
+    cur.execute(f'DELETE FROM {table}')
+    conn.commit()
+
 
 if __name__ == "__main__":
     conn = sqlite3.connect('word.db')
     cur = conn.cursor()
 
-    # 조작 함수 추가
-    # selectAllFromTable("user")
 
-    # 유저 데이터 추가
-    # addTestUser('sunwook', '1234', '선욱', 10, 1, '2022-10-15', 5, 100)
-    # addTestUser('taehyen', '1234', '태현', 10, 1, '2022-10-15', 5, 100)
-
-    # 유저 정보 변경
-    # cur.execute("UPDATE user SET today_learned_unit = ? WHERE id = ?", (6, 'sunwook'))
-    # conn.commit()
-    # print("업데이트 결과")
-    # selectAllFromTable("wro_fav")
-    # deleteAllWrongFav("taehyen")
+    deleteALLTable(cur)
 
 
-    # 오답노트 및 즐겨찾기 데이터 삽입
-    # taehyen의 즐겨찾기 단어
-    fav_words = [
-        ('sunwook', 1, 0, 1),
-        ('sunwook', 5, 0, 1),
-        ('sunwook', 151, 0, 1),
-        ('sunwook', 152, 0, 1),
-        ('sunwook', 153, 0, 1)
-    ]
+    #모든 테이블 확인
+    selectAllFromTable("user", 20)
+    # selectAllFromTable("words_db", 20)
+    # selectAllFromTable("wro_fav", 20)
+    # selectAllFromTable("unit", 20)
+    # selectAllFromTable("day_time", 20)
 
-    # taehyen의 오답노트 단어
-    wrong_words = [
-        ('sunwook', 6, 1, 0),
-        ('sunwook', 7, 1, 0),
-        ('sunwook', 9, 1, 0),
-        ('sunwook', 400, 1, 0),
-        ('sunwook', 700, 1, 0),
-        ('sunwook', 1000, 1, 0)
-    ]
+    # #유저추가
+    add_user(cur, 'qwer', '1234', '선욱', 3, 0, '2024-05-27', 0, 0)
 
-    # for fav in fav_words:
-    #     add_wro_fav(*fav)
-
-    # for wrong in wrong_words:
-    #     add_or_update_wro_fav(*wrong)
-
-    # deleteAllWrongFav("sunwook")
-    # deleteAllUnit("sunwook")
-
-    # setAllTable("sunwook")
-
-    # updateUnitTable("sunwook", 0, 1)
-    # updateUnitTable("sunwook", 1, 1)
-    # updateUnitTable("sunwook", 2, 1)
-    # updateUnitTable("sunwook", 3, 1)
-    # updateUnitTable("sunwook", 4, 1)
-    # updateUnitTable("sunwook", 5, 1)
-    # updateUnitTable("sunwook", 6, 1)
-    # updateUnitTable("sunwook", 7, 1)
-    # updateUnitTable("sunwook", 8, 1)
-    # updateUnitTable("sunwook", 9, 1)
-    # updateUnitTable("sunwook", 10, 1)
-    # updateUnitTable("sunwook", 11, 1)
-    # updateUnitTable("sunwook", 12, 1)
-    # updateUnitTable("sunwook", 13, 1)
-    # updateUnitTable("sunwook", 14, 1)
-
-    # updateUnitTable("sunwook", 15, 1)
-    # updateUnitTable("sunwook", 16, 1)
-    # updateUnitTable("sunwook", 17, 1)
-    # updateUnitTable("sunwook", 18, 1)
-    # updateUnitTable("sunwook", 19, 1)
+    add_user(cur, "admin", "1234", "관리자", 0, 1, '2024-05-27', 0, 0)
     
+    # #유저의 오답,즐겨찾기 1200개 단어, unit테이블 추가
+    setAllTable('qwer')
+    # setAllTable('taehyen')
+    # setAllTable('justID')
 
-    # selectAllFromTable("wro_fav")
-    selectAllFromTable("unit")
-
-
-    # 테이블 column 이름 확인
-    # cur.execute("PRAGMA table_info(unit)")
-    # columns = cur.fetchall()
-    # print(columns)
+    # #특정 유닛 클리어 할당
+    # updateUnitTable('sunwook', 0, 1)
+    # updateUnitTable('sunwook', 1, 1)
+    # updateUnitTable('sunwook', 4, 1)
+    # updateUnitTable('sunwook', 10, 1)
+    # updateUnitTable('sunwook', 11, 1)
 
     # 종료
+    conn.commit()
     conn.close()
-
-
-
-# def add_word(cur, line_num, word, mean, sent, sent_mean):
-#     cur.execute('''
-#         INSERT INTO words_db (line_num, word, mean, sent, sent_mean)
-#         VALUES (?, ?, ?, ?, ?)
-#     ''', (line_num, word, mean, sent, sent_mean))
-
-# # 단어 데이터 삽입 (1200개 중 일부 예제)
-# words = [
-#     (1, 'resume', '재개하다', 'He will resume his work.', '그는 일을 재개할 것이다.'),
-#     (5, 'qualified', '자격이 있는', 'She is qualified for the job.', '그녀는 그 일에 자격이 있다.'),
-#     (151, 'skillfully', '능숙하게', 'He skillfully navigated the ship.', '그는 능숙하게 배를 운항했다.'),
-#     (152, 'exclusive', '독점적인', 'They have exclusive rights.', '그들은 독점적인 권리를 가지고 있다.'),
-#     (153, 'intention', '의도', 'What is your intention?', '당신의 의도는 무엇입니까?'),
-#     (6, 'error', '오류', 'There was an error in the calculation.', '계산에 오류가 있었다.'),
-#     (7, 'mistake', '실수', 'I made a mistake.', '나는 실수를 했다.'),
-#     (9, 'fault', '잘못', 'It was my fault.', '그것은 내 잘못이었다.'),
-#     (400, 'blunder', '큰 실수', 'He made a blunder.', '그는 큰 실수를 저질렀다.'),
-#     (700, 'oversight', '간과', 'It was an oversight.', '그것은 간과였다.'),
-#     (1000, 'flaw', '결점', 'There is a flaw in the design.', '디자인에 결점이 있다.')
-# ]
-
-# for word in words:
-#     add_word(cur, *word)
-
-# # 모든 테이블에서 데이터 선택 및 출력
-# tables = ['user', 'words_db', 'wro_fav', 'unit', 'day_time']
-# for table in tables:
-#     rows = select_all_from_table(cur, table)
-#     print(f'\nData from {table} table:')
-#     for row in rows:
-#         print(row)
-
-
-#     conn.close()
