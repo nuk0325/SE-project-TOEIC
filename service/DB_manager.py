@@ -254,7 +254,7 @@ class DBManager:
         try:
             self.cur.execute("SELECT * FROM words_db WHERE word=?", (word,))
             user_data = self.cur.fetchone()
-
+            
             if user_data:
                 print('중복단어있음')
                 return True
