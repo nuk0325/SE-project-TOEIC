@@ -22,7 +22,7 @@ class ReviewTestResult(TestResult) :
         return "테스트 결과"
 
     def checkCorrectRate(self) : #100퍼센트 맞추면 1:100 비율 틀린:맞은
-        if self._correctCount >= self._wrongCount * 0 :
+        if self._correctCount >= self._wrongCount * 100 :
             return True
         else :
             return False
