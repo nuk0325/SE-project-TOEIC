@@ -8,8 +8,10 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QMessageBox, QPushButton, QApplication, QWidget, QScrollArea
+from PyQt6 import QtWidgets, QtCore
+from PyQt6.QtCore import QSize, Qt
+from PyQt6.QtGui import QFont
+from PyQt6.QtWidgets import QMessageBox, QPushButton, QApplication, QWidget, QHBoxLayout, QScrollArea
 
 
 class UserUnitUI(object):
@@ -38,49 +40,74 @@ class UserUnitUI(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
-        self.frame_2 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2 = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(0, 0, 360, 60))
-        self.frame_2.setStyleSheet(u"background-color: rgba(253, 213, 51, 0.97)")
-        self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.horizontalLayoutWidget = QWidget(self.frame_2)
-        self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 383, 89))
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.back_button = QPushButton(self.horizontalLayoutWidget)
-        self.back_button.setObjectName(u"back_button")
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.back_button.sizePolicy().hasHeightForWidth())
-        self.back_button.setSizePolicy(sizePolicy)
+        self.frame_2.setStyleSheet("background-color: rgba(253, 213, 51, 0.97);")
 
-        self.horizontalLayout.addWidget(self.back_button)
+        # self.frame_2 = QtWidgets.QFrame(self.centralwidget)
+        # self.frame_2.setObjectName(u"frame_2")
+        # self.frame_2.setGeometry(QtCore.QRect(0, 0, 360, 60))
+        # self.frame_2.setStyleSheet(u"background-color: rgba(253, 213, 51, 0.97)")
+        # self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        
+        self.back_button = QtWidgets.QPushButton("←")
+        self.back_button.setFixedSize(QSize(50, 50))
 
-        self.menu_name = QtWidgets.QTextBrowser(self.horizontalLayoutWidget)
-        self.menu_name.setObjectName(u"menu_name")
-        sizePolicy1 = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.menu_name.sizePolicy().hasHeightForWidth())
-        self.menu_name.setSizePolicy(sizePolicy1)
+        self.menu_name = QtWidgets.QLabel("테스트 시작하기")
+        self.menu_name.setFont(QFont("Han Sans", 20))
+        self.menu_name.setFixedSize(QSize(240, 50))
+        self.menu_name.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.menu_name.setObjectName("menu_name_label")
 
-        self.horizontalLayout.addWidget(self.menu_name)
+        self.home_button = QtWidgets.QPushButton("🏠")
+        self.home_button.setFixedSize(QSize(50, 50))
 
-        self.home_button = QPushButton(self.horizontalLayoutWidget)
-        self.home_button.setObjectName(u"home_button")
-        sizePolicy.setHeightForWidth(self.home_button.sizePolicy().hasHeightForWidth())
-        self.home_button.setSizePolicy(sizePolicy)
+        top_layout = QHBoxLayout()
+        top_layout.addWidget(self.back_button, alignment=Qt.AlignmentFlag.AlignLeft)
+        top_layout.addWidget(self.menu_name)
+        top_layout.addWidget(self.home_button, alignment=Qt.AlignmentFlag.AlignRight)
 
-        self.horizontalLayout.addWidget(self.home_button)
+        self.frame_2.setLayout(top_layout)
+        
+        # self.horizontalLayoutWidget = QWidget(self.frame_2)
+        # self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
+        # self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 383, 89))
+        # self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        # self.horizontalLayout.setObjectName(u"horizontalLayout")
+        # self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        # self.back_button = QPushButton(self.horizontalLayoutWidget)
+        # self.back_button.setObjectName(u"back_button")
+        # sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        # sizePolicy.setHorizontalStretch(0)
+        # sizePolicy.setVerticalStretch(0)
+        # sizePolicy.setHeightForWidth(self.back_button.sizePolicy().hasHeightForWidth())
+        # self.back_button.setSizePolicy(sizePolicy)
+
+        # self.horizontalLayout.addWidget(self.back_button)
+
+        # self.menu_name = QtWidgets.QTextBrowser(self.horizontalLayoutWidget)
+        # self.menu_name.setObjectName(u"menu_name")
+        # sizePolicy1 = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        # sizePolicy1.setHorizontalStretch(0)
+        # sizePolicy1.setVerticalStretch(0)
+        # sizePolicy1.setHeightForWidth(self.menu_name.sizePolicy().hasHeightForWidth())
+        # self.menu_name.setSizePolicy(sizePolicy1)
+
+        # self.horizontalLayout.addWidget(self.menu_name)
+
+        # self.home_button = QPushButton(self.horizontalLayoutWidget)
+        # self.home_button.setObjectName(u"home_button")
+        # sizePolicy.setHeightForWidth(self.home_button.sizePolicy().hasHeightForWidth())
+        # self.home_button.setSizePolicy(sizePolicy)
+
+        # self.horizontalLayout.addWidget(self.home_button)
 
         # Add buttons to scroll area
         for i in range(1, 16, 2):
             frame = QtWidgets.QFrame(self.scrollAreaWidgetContents)
             frame.setObjectName(f"frame_{i}")
             frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+            frame.setStyleSheet("border: 0px")
             frame_layout = QtWidgets.QHBoxLayout(frame)
             frame_layout.setObjectName(f"horizontalLayout_{i}")
 
@@ -169,13 +196,13 @@ class UserUnitUI(object):
 
     def retranslateUi(self, UserUnitUI):
         UserUnitUI.setWindowTitle(QtCore.QCoreApplication.translate("UserUnitUI", u"MainWindow", None))
-        self.back_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"뒤로가기", None))
-        self.menu_name.setHtml(QtCore.QCoreApplication.translate("UserUnitUI", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Gulim'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'.AppleSystemUIFont'; font-size:20pt; font-weight:696;\">Part1</span></p></body></html>", None))
-        self.home_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"홈", None))
+#         self.back_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"뒤로가기", None))
+#         self.menu_name.setHtml(QtCore.QCoreApplication.translate("UserUnitUI", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+# "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+# "p, li { white-space: pre-wrap; }\n"
+# "</style></head><body style=\" font-family:'Gulim'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+# "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'.AppleSystemUIFont'; font-size:20pt; font-weight:696;\">Part1</span></p></body></html>", None))
+#         self.home_button.setText(QtCore.QCoreApplication.translate("UserUnitUI", u"홈", None))
 
 
 if __name__ == "__main__":

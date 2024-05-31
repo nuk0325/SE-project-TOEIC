@@ -1,4 +1,7 @@
 from PyQt6 import QtWidgets, QtCore
+from PyQt6.QtCore import QSize, Qt
+from PyQt6.QtGui import QFont
+from PyQt6.QtWidgets import QHBoxLayout
 from dialog.select_test_dialog import SelectTestDialog
 
 # Form implementation generated from reading ui file 'prepare_entire_test_ui.ui'
@@ -26,65 +29,94 @@ class PrepareEntireTestUI(object):
         self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
+        self.frame.setStyleSheet("border: 0px")
+
         self.start_test_button = QtWidgets.QPushButton(parent=self.frame)
         self.start_test_button.setGeometry(QtCore.QRect(10, 10, 341, 71))
         self.start_test_button.setStyleSheet("background-color: rgb(255, 230, 130)")
         self.start_test_button.setObjectName("start_test_button")
         self.start_test_button.clicked.connect(self.showPopUp)
-        
+
         self.frame_2 = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(0, 0, 360, 60))
         self.frame_2.setStyleSheet("background-color: rgba(253, 213, 51, 0.97)")
-        self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_2.setObjectName("frame_2")
-        self.horizontalLayoutWidget = QtWidgets.QWidget(parent=self.frame_2)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 361, 61))
-        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.back_button = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.back_button.sizePolicy().hasHeightForWidth())
-        self.back_button.setSizePolicy(sizePolicy)
-        self.back_button.setObjectName("back_button")
+        
+        # self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        # self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        # self.frame_2.setObjectName("frame_2")
+        # self.frame_2.setStyleSheet("border: 0px")
+
+        self.back_button = QtWidgets.QPushButton("←")
+        self.back_button.setFixedSize(QSize(50, 50))
         self.back_button.clicked.connect(lambda: self.closeAndOpen("back"))
 
-        self.horizontalLayout.addWidget(self.back_button)
-        self.menu_name_label = QtWidgets.QLabel(parent=self.horizontalLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.menu_name_label.sizePolicy().hasHeightForWidth())
-        self.menu_name_label.setSizePolicy(sizePolicy)
-        self.menu_name_label.setStyleSheet("font: 24px bold;\n"
-"qproperty-alignment: \'AlignCenter\';\n"
-"text-align: center")
+        self.menu_name_label = QtWidgets.QLabel("테스트 시작하기")
+        self.menu_name_label.setFont(QFont("Han Sans", 20))
+        self.menu_name_label.setFixedSize(QSize(240, 50))
+        self.menu_name_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.menu_name_label.setObjectName("menu_name_label")
-        self.horizontalLayout.addWidget(self.menu_name_label)
-        self.home_button = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.home_button.sizePolicy().hasHeightForWidth())
-        self.home_button.setSizePolicy(sizePolicy)
-        self.home_button.setObjectName("home_button")
+
+        self.home_button = QtWidgets.QPushButton("🏠")
+        self.home_button.setFixedSize(QSize(50, 50))
         self.home_button.clicked.connect(lambda: self.closeAndOpen("home"))
 
-        self.horizontalLayout.addWidget(self.home_button)
+        top_layout = QHBoxLayout()
+        top_layout.addWidget(self.back_button, alignment=Qt.AlignmentFlag.AlignLeft)
+        top_layout.addWidget(self.menu_name_label)
+        top_layout.addWidget(self.home_button, alignment=Qt.AlignmentFlag.AlignRight)
+
+        self.frame_2.setLayout(top_layout)
+
+        # self.horizontalLayoutWidget = QtWidgets.QWidget(parent=self.frame_2)
+        # self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 361, 61))
+        # self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
+        # self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        # self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        # self.horizontalLayout.setObjectName("horizontalLayout")
+        # sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        # sizePolicy.setHorizontalStretch(0)
+        # sizePolicy.setVerticalStretch(0)
+        # sizePolicy.setHeightForWidth(self.back_button.sizePolicy().hasHeightForWidth())
+        # self.back_button.setSizePolicy(sizePolicy)
+        # self.back_button.setObjectName("back_button")
+        # self.back_button.clicked.connect(lambda: self.closeAndOpen("back"))
+        # self.horizontalLayout.addWidget(self.back_button)
+        
+#         self.menu_name_label = QtWidgets.QLabel(parent=self.horizontalLayoutWidget)
+#         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Preferred)
+#         sizePolicy.setHorizontalStretch(0)
+#         sizePolicy.setVerticalStretch(0)
+#         sizePolicy.setHeightForWidth(self.menu_name_label.sizePolicy().hasHeightForWidth())
+#         self.menu_name_label.setSizePolicy(sizePolicy)
+#         self.menu_name_label.setStyleSheet("font: 24px bold;\n"
+# "qproperty-alignment: \'AlignCenter\';\n"
+# "text-align: center")
+#         self.menu_name_label.setObjectName("menu_name_label")
+#         self.horizontalLayout.addWidget(self.menu_name_label)
+#         self.home_button = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
+#         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+#         sizePolicy.setHorizontalStretch(0)
+#         sizePolicy.setVerticalStretch(0)
+#         sizePolicy.setHeightForWidth(self.home_button.sizePolicy().hasHeightForWidth())
+#         self.home_button.setSizePolicy(sizePolicy)
+#         self.home_button.setObjectName("home_button")
+#         self.home_button.clicked.connect(lambda: self.closeAndOpen("home"))
+        # self.horizontalLayout.addWidget(self.home_button)
+        
         self.frame_3 = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_3.setGeometry(QtCore.QRect(0, 280, 361, 201))
         self.frame_3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_3.setObjectName("frame_3")
+        self.frame_3.setStyleSheet("border: 0px")
+
         self.frame_4 = QtWidgets.QFrame(parent=self.frame_3)
         self.frame_4.setGeometry(QtCore.QRect(360, 0, 361, 191))
         self.frame_4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_4.setObjectName("frame_4")
+        self.frame_4.setStyleSheet("border: 0px")
+
         self.label = QtWidgets.QLabel(parent=self.frame_3)
         self.label.setGeometry(QtCore.QRect(110, 60, 141, 16))
         self.label.setObjectName("label")
@@ -105,11 +137,15 @@ class PrepareEntireTestUI(object):
         self.frame_5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_5.setObjectName("frame_5")
+        self.frame_5.setStyleSheet("border: 0px")
+
         self.frame_6 = QtWidgets.QFrame(parent=self.frame_5)
         self.frame_6.setGeometry(QtCore.QRect(360, 0, 361, 191))
         self.frame_6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_6.setObjectName("frame_6")
+        self.frame_6.setStyleSheet("border: 0px")
+
         self.frame_7 = QtWidgets.QFrame(parent=self.frame_5)
         self.frame_7.setGeometry(QtCore.QRect(30, 20, 301, 181))
         self.frame_7.setStyleSheet("background-color: rgb(224, 224, 224);\n"
@@ -117,6 +153,7 @@ class PrepareEntireTestUI(object):
         self.frame_7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_7.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_7.setObjectName("frame_7")
+
         self.inform_label = QtWidgets.QTextBrowser(parent=self.frame_7)
         self.inform_label.setGeometry(QtCore.QRect(30, 30, 241, 111))
         self.inform_label.setObjectName("inform_label")
@@ -132,9 +169,9 @@ class PrepareEntireTestUI(object):
         _translate = QtCore.QCoreApplication.translate
         PrepareEntireTestUI.setWindowTitle(_translate("PrepareEntireTestUI", "MainWindow"))
         self.start_test_button.setText(_translate("PrepareEntireTestUI", "테스트 시작하기"))
-        self.back_button.setText(_translate("PrepareEntireTestUI", "뒤로가기"))
+        # self.back_button.setText(_translate("PrepareEntireTestUI", "뒤로가기"))
         self.menu_name_label.setText(_translate("PrepareEntireTestUI", "테스트 시작하기"))
-        self.home_button.setText(_translate("PrepareEntireTestUI", "홈"))
+        # self.home_button.setText(_translate("PrepareEntireTestUI", "홈"))
         self.label.setText(_translate("PrepareEntireTestUI", "모의고사를 실시할 단어 수"))
         self.comboBox.setItemText(0, _translate("PrepareEntireTestUI", "10"))
         self.comboBox.setItemText(1, _translate("PrepareEntireTestUI", "20"))
