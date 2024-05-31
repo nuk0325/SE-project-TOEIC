@@ -26,7 +26,8 @@ class LogIn(QMainWindow):
         
         if user and user.userPassword == self.receivedUserPassword:
             print("로그인 성공")
-            self.goto.gotoHome(user)
+            # self.goto.gotoHome(user)
+            self.goto.gotoManagerPart(user)
             self.close()
         else:
             QMessageBox.information(None, "로그인 실패", "아이디 또는 비밀번호가 올바르지 않습니다")

@@ -1,14 +1,14 @@
-# 파일: Add_by_manager_service.py
+# 파일: update_by_manager_service.py
 
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from DB_manager import DBManager
-from UI.manager_add_word_ui import ManagerAddWordUI
+from UI.manager_update_word_ui import ManagerUpdateWordUI
 from goto_service import Goto
 
-class ManagerAddWord(QMainWindow):
+class ManagerUpdateWord(QMainWindow):
     def __init__(self, line_num, partNum, unitNum, user):
         super().__init__()
-        self.ui = ManagerAddWordUI()
+        self.ui = ManagerUpdateWordUI()
         self.ui.setupUi(self)
 
         self.newWord = ""
@@ -24,48 +24,56 @@ class ManagerAddWord(QMainWindow):
         self.goto = Goto()
         self.db_manager = DBManager()
         self.some_method()
+        self.setDefaultOfBox()
 
         # 버튼 연결
-        self.ui.exitBtn.clicked.connect(self.toManagerUnitWordNotePage)
-        self.ui.addBtn.clicked.connect(self.AddWord)
+        self.ui.exitBtn.clicked.connect(self.toManagerWordPage)
+        self.ui.updateBtn.clicked.connect(self.updateWord)
         self.ui.backBtn.clicked.connect(self.goback)
         self.ui.checkWordBtn.clicked.connect(self.check_word_in_db)
+
+    def setDefaultOfBox(self):
+        word_data = self.db_manager.findWordByLine_num(self.line_num)
+        if word_data and word_data[1]:
+            self.ui.setDefaultInput(word_data[1],word_data[2],word_data[3])
 
     def some_method(self):
         unitNum = self.line_num % 150 // 10
         self.ui.setUnitName(unitNum)
 
-    def toManagerUnitWordNotePage(self):
-        self.goto.gotoManagerUnitWordNote
+    def toManagerWordPage(self):
+        self.goto.gotoManagerUnitWordNote(self.partNum, self.unitNum, self.user)
+        self.close()
 
-    def AddWord(self):
+    def updateWord(self):
         self.newWord = self.ui.word.text()
         self.newMeaning = self.ui.meaning.text()
         self.newSentence = self.ui.sentence.text()
 
         if len(self.newWord) < 1:
             QMessageBox.information(self, "입력오류", "단어를 입력해주세요")
+            return
 
         if len(self.newMeaning) < 1:
             QMessageBox.information(self, "입력오류", "뜻을 입력해주세요")
-            
+            return
         if len(self.newSentence) < 1:
             QMessageBox.information(self, "입력오류", "예문을 입력해주세요")
+            return
 
         if self.checkWord != self.newWord:
             self.checkWord = False
 
         if self.checkWord == False:
             QMessageBox.information(self, "입력오류", "단어 중복 검사를 확인해주세요")
+            return
 
         if self.db_manager.update_word_and_remove_wro_fav(self.newWord, self.newMeaning, self.newSentence, '', self.line_num):
             print("수정 완료")
-            self.toManagerUnitWordNotePage
 
-        # self.toManagerWordPage()
+        self.toManagerWordPage()
 
     def goback(self):
-        self.goto.gotoManagerUnitWordNote(self.partNum, self.unitNum, self.user)
         self.close()
 
     def check_word_in_db(self):

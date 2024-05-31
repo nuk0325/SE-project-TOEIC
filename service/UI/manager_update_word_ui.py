@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'C:\Users\CHO\toicProject\hun\SE-project-TOEIC\service\UI\add_by_manager_ui.ui'
+# Form implementation generated from reading ui file 'C:\Users\CHO\toicProject\hun\SE-project-TOEIC\service\UI\update_by_manager_ui.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -7,13 +7,13 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
-class ManagerAddWordUI(object):
-    def setupUi(self, AddByManagerPage):
-        AddByManagerPage.setObjectName("AddByManagerPage")
-        AddByManagerPage.resize(360, 600)
-        AddByManagerPage.setStyleSheet("background-color:rgb(255, 255, 255)\n"
+class ManagerUpdateWordUI(object):
+    def setupUi(self, UpdateByManagerPage):
+        UpdateByManagerPage.setObjectName("UpdateByManagerPage")
+        UpdateByManagerPage.resize(360, 600)
+        UpdateByManagerPage.setStyleSheet("background-color:rgb(255, 255, 255)\n"
 "")
-        self.centralwidget = QtWidgets.QWidget(parent=AddByManagerPage)
+        self.centralwidget = QtWidgets.QWidget(parent=UpdateByManagerPage)
         self.centralwidget.setObjectName("centralwidget")
         self.menuBase = QtWidgets.QWidget(parent=self.centralwidget)
         self.menuBase.setGeometry(QtCore.QRect(0, 0, 360, 58))
@@ -75,15 +75,15 @@ class ManagerAddWordUI(object):
         self.exitBtn.setDefault(False)
         self.exitBtn.setFlat(False)
         self.exitBtn.setObjectName("exitBtn")
-        self.addBtn = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.addBtn.setGeometry(QtCore.QRect(200, 490, 131, 41))
-        self.addBtn.setStyleSheet("background-color:rgb(70, 70, 70);\n"
+        self.updateBtn = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.updateBtn.setGeometry(QtCore.QRect(200, 490, 131, 41))
+        self.updateBtn.setStyleSheet("background-color:rgb(70, 70, 70);\n"
 "font: 10pt \"맑은 고딕\";\n"
 "color: rgb(255, 255, 255);")
-        self.addBtn.setAutoDefault(False)
-        self.addBtn.setDefault(False)
-        self.addBtn.setFlat(False)
-        self.addBtn.setObjectName("addBtn")
+        self.updateBtn.setAutoDefault(False)
+        self.updateBtn.setDefault(False)
+        self.updateBtn.setFlat(False)
+        self.updateBtn.setObjectName("updateBtn")
         self.subTitle = QtWidgets.QLabel(parent=self.centralwidget)
         self.subTitle.setGeometry(QtCore.QRect(20, 120, 101, 41))
         font = QtGui.QFont()
@@ -169,27 +169,42 @@ class ManagerAddWordUI(object):
 "")
         self.unitName.setObjectName("unitName")
 
-        AddByManagerPage.setCentralWidget(self.centralwidget)
+        UpdateByManagerPage.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(AddByManagerPage)
-        QtCore.QMetaObject.connectSlotsByName(AddByManagerPage)
+        self.retranslateUi(UpdateByManagerPage)
+        QtCore.QMetaObject.connectSlotsByName(UpdateByManagerPage)
 
-    def retranslateUi(self, AddByManagerPage):
+    def retranslateUi(self, UpdateByManagerPage):
         _translate = QtCore.QCoreApplication.translate
-        AddByManagerPage.setWindowTitle(_translate("AddByManagerPage", "MainWindow"))
-        self.titleName.setText(_translate("AddByManagerPage", "단어 추가"))
-        self.menuBtn.setText(_translate("AddByManagerPage", "메뉴"))
-        self.backBtn.setText(_translate("AddByManagerPage", "뒤로"))
-        self.checkWordBtn.setText(_translate("AddByManagerPage", "단어\n중복 확인"))
-        self.exitBtn.setText(_translate("AddByManagerPage", "나가기"))
-        self.addBtn.setText(_translate("AddByManagerPage", "추가하기"))
-        self.subTitle.setText(_translate("AddByManagerPage", "단어 추가"))
-        self.txt1.setText(_translate("AddByManagerPage", "단어"))
-        self.txt2.setText(_translate("AddByManagerPage", "의미"))
-        self.txt3.setText(_translate("AddByManagerPage", "예문"))
-        self.unitName.setText(_translate("AddByManagerPage", ""))
+        UpdateByManagerPage.setWindowTitle(_translate("UpdateByManagerPage", "MainWindow"))
+        self.titleName.setText(_translate("UpdateByManagerPage", "단어 수정"))
+        self.menuBtn.setText(_translate("UpdateByManagerPage", "메뉴"))
+        self.backBtn.setText(_translate("UpdateByManagerPage", "뒤로"))
+        self.checkWordBtn.setText(_translate("UpdateByManagerPage", "단어\n중복 확인"))
+        self.exitBtn.setText(_translate("UpdateByManagerPage", "나가기"))
+        self.updateBtn.setText(_translate("UpdateByManagerPage", "수정하기"))
+        self.subTitle.setText(_translate("UpdateByManagerPage", "단어 수정"))
+        self.txt1.setText(_translate("UpdateByManagerPage", "단어"))
+        self.txt2.setText(_translate("UpdateByManagerPage", "의미"))
+        self.txt3.setText(_translate("UpdateByManagerPage", "예문"))
+        self.unitName.setText(_translate("UpdateByManagerPage", ""))
 
     def setUnitName(self, unitNum):
         _translate = QtCore.QCoreApplication.translate
         unit_text = f"Unit {unitNum}"
-        self.unitName.setText(_translate("AddByManagerPage", unit_text))
+        self.unitName.setText(_translate("UpdateByManagerPage", unit_text))
+
+    def setDefaultInput(self, word, meaning, sentence):
+        self.word.setText(word)
+        self.meaning.setText(meaning)
+        self.sentence.setText(sentence)
+
+        
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    UpdateByManagerPage = QtWidgets.QMainWindow()
+    ui = Ui_UpdateByManagerPage()
+    ui.setupUi(UpdateByManagerPage)
+    UpdateByManagerPage.show()
+    sys.exit(app.exec())
