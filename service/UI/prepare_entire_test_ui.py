@@ -52,7 +52,7 @@ class PrepareEntireTestUI(object):
 
         self.menu_name_label = QtWidgets.QLabel("테스트 시작하기")
         self.menu_name_label.setFont(QFont("Han Sans", 20))
-        self.menu_name_label.setFixedSize(QSize(240, 60))
+        self.menu_name_label.setFixedSize(QSize(240, 50))
         self.menu_name_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.menu_name_label.setObjectName("menu_name_label")
 
