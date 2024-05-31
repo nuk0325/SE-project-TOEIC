@@ -148,13 +148,10 @@ if __name__ == "__main__":
     conn = sqlite3.connect('word.db')
     cur = conn.cursor()
 
-<<<<<<< Updated upstream
 
     deleteALLTable(cur)
    
 
-=======
->>>>>>> Stashed changes
     # 유저 삭제
     # delete_User("taehyen")
     # delete_User("user1")
@@ -176,27 +173,24 @@ if __name__ == "__main__":
 
     # conn.commit()
 
-<<<<<<< Updated upstream
     #유저추가
-    add_user(cur, 'sunwook', '1234', '선욱', 10, 1, '2024-05-27', 6, 80)
-    add_user(cur, 'taehyen', '1234', '태현', 10, 1, '2024-05-27', 6, 80)
-    add_user(cur, "qwer", "qwer", "qwer", 10, 1, '2024-05-27', 6, 80)
+    add_user(cur, 'sunwook', '1234', '선욱', 1, 1, '2024-05-31', 0, 0)
+    add_user(cur, 'taehyun', '1234', '태현', 1, 1, '2024-05-31', 1, 24)
+    add_user(cur, 'HyonGyeom', '1234', '현겸', 1, 1, '2024-05-31', 2, 48)
+    add_user(cur, 'sunghun', '1234', '성훈', 1, 1, '2024-05-31', 3, 72)
+    add_user(cur, "minwoo", "1234", "민우", 1, 1, '2024-05-31', 4, 96)
+    add_user(cur, "qwer", "1234", "사용자", 1, 1, '2024-05-31', 5, 120)
+
+    add_user(cur, "admin", "1234", "관리자", 1, 1, '2024-05-31', 0, 0)
     
     #유저의 오답,즐겨찾기 1200개 단어, unit테이블 추가
     setAllTable('sunwook')
-    setAllTable('taehyen')
+    setAllTable('taehyun')
+    setAllTable('HyonGyeom')
+    setAllTable('sunghun')
+    setAllTable('minwoo')
     setAllTable('qwer')
-=======
-    # #유저추가
-    # add_user(cur, 'sunwook', '1234', '선욱', 10, 1, '2024-05-27', 6, 80)
-    # add_user(cur, 'taehyen', '1234', '태현', 10, 1, '2024-05-27', 6, 80)
-    # add_user(cur, "justID", "justPassword", "justNickname", 10, 1, '2024-05-27', 6, 80)
-    
-    # #유저의 오답,즐겨찾기 1200개 단어, unit테이블 추가
-    # setAllTable('sunwook')
-    # setAllTable('taehyen')
-    # setAllTable('justID')
->>>>>>> Stashed changes
+
 
     # #특정 유닛 클리어 할당
     # updateUnitTable('sunwook', 0, 1)

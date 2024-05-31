@@ -10,37 +10,37 @@ print("user 테이블:")
 for record in cur.fetchall():
     print(record)
 
-# # words_db 테이블의 모든 레코드 출력
-# cur.execute("SELECT * FROM words_db")
-# print("\nwords_db 테이블:")
-# i = 0
-# for record in cur.fetchall():
-#     print(record)
-#     i += 1
-#     if i > 170:
-#         break
+# words_db 테이블의 모든 레코드 출력
+cur.execute("SELECT * FROM words_db")
+print("\nwords_db 테이블:")
+i = 0
+for record in cur.fetchall():
+    print(record)
+    i += 1
+    if i > 100:
+        break
 
-# # favorite 테이블의 모든 레코드 출력
-# cur.execute("SELECT * FROM wro_fav")
-# print("\nwro_fav 테이블:")
-# i = 0
-# for record in cur.fetchall():
-#     print(record)
-#     i += 1
-#     if i > 170 :
-#         break
+# favorite 테이블의 모든 레코드 출력
+cur.execute("SELECT * FROM wro_fav")
+print("\nwro_fav 테이블:")
+i = 0
+for record in cur.fetchall():
+    print(record)
+    i += 1
+    if i > 100 :
+        break
 
-# # day_time 테이블의 모든 레코드 출력
-# cur.execute("SELECT * FROM day_time")
-# print("\nday_time 테이블:")
-# for record in cur.fetchall():
-#     print(record)
+# day_time 테이블의 모든 레코드 출력
+cur.execute("SELECT * FROM day_time")
+print("\nday_time 테이블:")
+for record in cur.fetchall():
+    print(record)
 
-# # day_time 테이블의 모든 레코드 출력
-# cur.execute("SELECT * FROM unit")
-# print("\nunit 테이블:")
-# for record in cur.fetchall():
-#     print(record)
+# day_time 테이블의 모든 레코드 출력
+cur.execute("SELECT * FROM unit")
+print("\nunit 테이블:")
+for record in cur.fetchall():
+    print(record)
 
 # 연결 닫기
 conn.close()
