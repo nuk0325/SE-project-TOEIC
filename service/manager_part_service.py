@@ -4,23 +4,26 @@ from UI.manager_part_ui import ManagerPartUI
 from goto_service import Goto
 from DB_manager import DBManager
 from user import User
-
 class ManagerPart(QMainWindow):
     def __init__(self, user):
         self.goto = Goto()
         self.user = user
-
         super().__init__()
         self.ui = ManagerPartUI()
         self.ui.setupUi(self)
 
         # 버튼 연결
-        self.ui.menu_button.clicked.connect(self.menu_button_clicked)#홈
+        self.ui.back_button.clicked.connect(self.back_button_clicked)#뒤로가기
+        self.ui.home_button.clicked.connect(self.home_button_clicked)#홈
 
 
     #버튼 이벤트
-    def menu_button_clicked(self):
-        self.goto.gotoManagerSearch(user=self.user, option="part")
+    def back_button_clicked(self):
+        self.goto.gotoMangerSearch(self.user)
+        self.close()
+        
+    def home_button_clicked(self):
+        self.goto.gotoMangerSearch(self.user)
         self.close()
     
     def part1_button_clicked(self):

@@ -8,7 +8,7 @@ import csv
 class managerSearchPageService:
     def __init__(self, ui):
         self.ui = ui
-        #self.dataManager = DBManager()
+        self.dataManager = DBManager()
         self.goto = Goto()
 
         # UI의 버튼 객체들을 가져옵니다.
@@ -67,6 +67,12 @@ class managerSearchPageService:
         #self.goto.uinit(unitNum)
 
     def find_word_indices(self, word):
+        reader = self.dataManager.selectNumAndWord()
+        word_indices = []
+        for row in reader:
+            if word in row[1]:
+                word_indices.append([int(row[0]),str(row[1])])
+        '''
         file_path = "toeic_word_file.csv"
         word_indices = []
         with open(file_path, newline='', encoding='utf-8') as csvfile:
@@ -76,6 +82,7 @@ class managerSearchPageService:
                     word_indices.append([int(row[0]),str(row[1])])
 
         return word_indices
+        '''
 
 
 '''
