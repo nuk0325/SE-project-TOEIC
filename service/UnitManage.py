@@ -56,4 +56,4 @@ class UnitManage() :
     
     def goAdd(self, idx) :
         print("단어 추가 페이지로 이동")
-        Goto.gotoManagerAddWord(idx, self.user)
+        Goto.gotoManagerAddWord(idx)

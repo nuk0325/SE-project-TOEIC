@@ -32,6 +32,7 @@ class WordForManager(Word) :
     def changeWord(self):
         print("단어 수정 페이지로 이동")
         Goto().gotoManagerUpdateWord(self._idx, self.user)
+        #self.close()
 
 
     def deleteWord(self) :

@@ -149,17 +149,30 @@ class Goto():
         # received_word_list = [1,3,5,7,8] # 일단 리스트를 준 상태로 연결
         UnitManage(user, partNum, unitNum)
 
-    def gotoManagerAddWord(self, line_num, user):
+    def gotoManagerAddWord(self, line_num):
         print("go to Manager Add Word Page")
         from add_by_manager_service import AddByManagerService
         window = AddByManagerService(line_num)
         window.show()
-
+    
     def gotoManagerUpdateWord(self, line_num, user):
         print("go to Manager Update Word Page")
         from update_by_manager_service import UpdateByManagerService
         window = UpdateByManagerService(line_num)
         window.show()
-
+    '''
+    def gotoManagerUpdateWord(self, idx, user):
+        # UpdateByManagerService 인스턴스 생성
+        from update_by_manager_service import UpdateByManagerService
+        from UI.update_by_manager_ui import Ui_UpdateByManagerPage
+        update_service = UpdateByManagerService(idx)
+        
+        # UpdateByManagerService의 setDefaultOfBox 메서드 호출
+        update_service.setDefaultOfBox()
+        
+        # Ui_UpdateByManagerPage 인스턴스 생성
+        ui = Ui_UpdateByManagerPage()
+        ui.setupUi(update_service)  # UpdateByManagerService 인스턴스를 인자로 전달하여 UI 초기화
+    '''
     def gotoMangerSearch(self, user):
         print("gotoMangerSearch")
