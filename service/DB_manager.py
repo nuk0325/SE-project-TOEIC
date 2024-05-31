@@ -39,7 +39,7 @@ class DBManager:
     def save(self, user):
         try:
             user_data = user.toUserData()
-            self.cur.execute("INSERT INTO user (id, password, nickname, unit_count, is_admin, last_date, today_learned_unit, total_learned_unit) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",user_data,)
+            self.cur.execute("INSERT INTO user (id, password, nickname, unit_count, is_admin, last_date, today_learned_unit, total_learned_unit) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", user_data)
             self.conn.commit()
             print(user)
             print(self)
