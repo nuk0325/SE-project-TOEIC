@@ -208,13 +208,12 @@ class DBManager:
             if is_done == 0:
                 print(False) #해당 유닛이 한번도 클리어 안되었을 때
 
-                if (user.today_learned_unit < user.userGoal):
-                    print(f"unit_index:{unit_index} 유닛 반영")
-                    self.cur.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
-                            (user_id, unit_index, 1, ))
-                    user.today_learned_unit += 1
-                    user.total_learned_unit += 1 #강아지 성장
-                    self.update(user)
+                print(f"unit_index:{unit_index} 유닛 반영")
+                self.cur.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
+                    (user_id, unit_index, 1, ))
+                user.today_learned_unit += 1
+                user.total_learned_unit += 1 #강아지 성장
+                self.update(user)
             else:
                 print(True)
         else:

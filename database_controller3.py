@@ -184,12 +184,12 @@ if __name__ == "__main__":
     # selectAllFromTable("day_time", 20)
 
     # #유저추가
-    add_user(cur, 'sunwook', '1234', '선욱', 3, 0, '2024-05-27', 0, 0)
+    add_user(cur, 'qwer', '1234', '선욱', 3, 0, '2024-05-27', 0, 0)
 
     add_user(cur, "admin", "1234", "관리자", 0, 1, '2024-05-27', 0, 0)
     
     # #유저의 오답,즐겨찾기 1200개 단어, unit테이블 추가
-    setAllTable('sunwook')
+    setAllTable('qwer')
     # setAllTable('taehyen')
     # setAllTable('justID')
 
