@@ -62,7 +62,7 @@ class ManagerUpdateWordUI(object):
         self.checkWordBtn.setDefault(False)
         self.checkWordBtn.setFlat(False)
         self.checkWordBtn.setObjectName("checkWordBtn")
-        self.word = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.word = QtWidgets.QPlainTextEdit(parent=self.centralwidget)
         self.word.setGeometry(QtCore.QRect(70, 180, 181, 41))
         self.word.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.word.setObjectName("word")
@@ -126,7 +126,7 @@ class ManagerUpdateWordUI(object):
 ");\n"
 "")
         self.txt2.setObjectName("txt2")
-        self.meaning = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.meaning = QtWidgets.QPlainTextEdit(parent=self.centralwidget)
         self.meaning.setGeometry(QtCore.QRect(70, 240, 261, 41))
         self.meaning.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.meaning.setObjectName("meaning")
@@ -163,13 +163,13 @@ class ManagerUpdateWordUI(object):
         self.txt4.setObjectName("txt4")
 
 
-        self.sentence = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.sentence = QtWidgets.QPlainTextEdit(parent=self.centralwidget)
         self.sentence.setGeometry(QtCore.QRect(70, 300, 261, 70))
         self.sentence.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.sentence.setObjectName("sentence")
 
         #예문 뜻 추가
-        self.sentenceMean = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.sentenceMean = QtWidgets.QPlainTextEdit(parent=self.centralwidget)
         self.sentenceMean.setGeometry(QtCore.QRect(70, 390, 261, 70))
         self.sentenceMean.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.sentenceMean.setObjectName("sentenceMean")
@@ -199,6 +199,10 @@ class ManagerUpdateWordUI(object):
 
         self.retranslateUi(UpdateByManagerPage)
         QtCore.QMetaObject.connectSlotsByName(UpdateByManagerPage)
+
+        self.meaning.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 뜻 입력 칸 자동 줄바꿈 설정
+        self.sentence.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 예문 입력 칸 자동 줄바꿈 설정
+        self.sentenceMean.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 예문 뜻 입력 칸 자동 줄바꿈 설정
 
     def retranslateUi(self, UpdateByManagerPage):
         _translate = QtCore.QCoreApplication.translate

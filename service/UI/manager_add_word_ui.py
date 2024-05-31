@@ -200,6 +200,10 @@ class ManagerAddWordUI(object):
         self.retranslateUi(AddByManagerPage)
         QtCore.QMetaObject.connectSlotsByName(AddByManagerPage)
 
+        self.meaning.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 뜻 입력 칸 자동 줄바꿈 설정
+        self.sentence.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 예문 입력 칸 자동 줄바꿈 설정
+        self.sentenceMean.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 예문 뜻 입력 칸 자동 줄바꿈 설정
+
     def retranslateUi(self, AddByManagerPage):
         _translate = QtCore.QCoreApplication.translate
         AddByManagerPage.setWindowTitle(_translate("AddByManagerPage", "MainWindow"))

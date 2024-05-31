@@ -10,7 +10,10 @@ class ManagerAddWord(QMainWindow):
         super().__init__()
         self.ui = ManagerAddWordUI()
         self.ui.setupUi(self)
-
+        '''self.ui.meaning.setWordWrap(True)  # 뜻 입력 칸 자동 줄바꿈 설정
+        self.ui.sentence.setWordWrap(True)  # 예문 입력 칸 자동 줄바꿈 설정
+        self.ui.sentenceMean.setWordWrap(True)  # 예문 뜻 입력 칸 자동 줄바꿈 설정
+        '''
         self.newWord = ""
         self.newMeaning = ""
         self.newSentence = ""

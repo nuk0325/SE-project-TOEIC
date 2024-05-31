@@ -22,8 +22,7 @@ class LogIn(QMainWindow):
         
         user = self.dataManager.find_by_id(self.receivedUserId)
 
-        print(user, user.userPassword, self.receivedUserId)
-        
+
         if user and user.userPassword == self.receivedUserPassword:
             if user.is_admin == 1:
                 self.goto.gotoManagerPart(user)
@@ -33,6 +32,7 @@ class LogIn(QMainWindow):
                 self.close()
         else:
             QMessageBox.information(None, "로그인 실패", "아이디 또는 비밀번호가 올바르지 않습니다")
+
 
     def joinMemebershipButtonClicked(self):
         self.goto.gotoJoinMembership()
