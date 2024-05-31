@@ -201,7 +201,7 @@ class DBManager:
         user_id = user.userId
         print(f"unit_index:{unit_index} 유닛 클리어")
 
-        self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND unit_index = ?''', (user_id, unit_index))
+        self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND unit_index = ?''', (user_id, unit_index, ))
         result = self.cur.fetchone()
         if result is not None:
             is_done = result[0]
@@ -246,13 +246,13 @@ class DBManager:
                 UPDATE words_db
                 SET word = ?, mean = ?, sent = ?, sent_mean = ?
                 WHERE line_num = ?
-            ''', (word, mean, sent, sent_mean, line_num))
+            ''', (word, mean, sent, sent_mean, line_num, ))
 
             # wro_fav 테이블에서 해당 엔티티 삭제
             self.cur.execute('''
                 DELETE FROM wro_fav
                 WHERE line_num = ?
-            ''', (line_num,))
+            ''', (line_num, ))
 
             self.conn.commit()
             return True
@@ -262,7 +262,7 @@ class DBManager:
     
     def checkEqualWord(self, word):
         try:
-            self.cur.execute("SELECT * FROM words_db WHERE word=?", (word,))
+            self.cur.execute("SELECT * FROM words_db WHERE word=?", (word, ))
             user_data = self.cur.fetchone()
             
             if user_data:
@@ -276,7 +276,7 @@ class DBManager:
         
     def findWordByLine_num(self, line_num):
         try:
-            self.cur.execute("SELECT * FROM words_db WHERE line_num=?", (line_num,))
+            self.cur.execute("SELECT * FROM words_db WHERE line_num=?", (line_num, ))
             word_data = self.cur.fetchone()
 
             if word_data:
