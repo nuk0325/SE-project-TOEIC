@@ -46,6 +46,7 @@ class HomeUI(object):
         self.dogProgressText.setText("토익멍 성장까지    0/24")  #초기텍스트
         self.dogProgressText.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.dogProgressText.setWordWrap(True)
+        self.dogProgressBar.setTextVisible(False)
 
         self.goalProgressBar = QtWidgets.QProgressBar(parent=self.centralwidget)
         self.goalProgressBar.setGeometry(QtCore.QRect(40, 310, 311, 16))
@@ -58,7 +59,7 @@ class HomeUI(object):
         self.goalProgressText.setText("금일 학습유닛    0/0")  #초기텍스트
         self.goalProgressText.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.goalProgressText.setWordWrap(True)
-
+        self.goalProgressBar.setTextVisible(False)
         self.frame_3 = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_3.setGeometry(QtCore.QRect(0, 350, 361, 251))
         self.frame_3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
