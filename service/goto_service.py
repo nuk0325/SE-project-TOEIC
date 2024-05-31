@@ -149,14 +149,14 @@ class Goto():
         # received_word_list = [1,3,5,7,8] # 일단 리스트를 준 상태로 연결
         UnitManage(user, partNum, unitNum)
 
-    def gotoManagerAddWord(self, line_num):
+    def gotoManagerAddWord(self, line_num, user):
         print("go to Manager Add Word Page")
         from add_by_manager_service import AddByManagerService
         window = AddByManagerService(line_num)
         window.show()
 
-    def gotoManagerUpdateWord(self,line_num):
-        print("go to Manager Add Word Page")
+    def gotoManagerUpdateWord(self, line_num, user):
+        print("go to Manager Update Word Page")
         from update_by_manager_service import UpdateByManagerService
         window = UpdateByManagerService(line_num)
         window.show()

@@ -29,10 +29,10 @@ class WordForManager(Word) :
         self._sentMeaning = sentMeaning
         self.db.setSentMeaning(self._idx, "sentMeaning")
 
-    def changeWord(self) : # 함수 이름 맞춰서 쓰세요
+    def changeWord(self):
         print("단어 수정 페이지로 이동")
-        Goto.gotoUnitChange(self, self.user, self.idx)
-        pass
+        Goto().gotoManagerUpdateWord(self._idx, self.user)
+
 
     def deleteWord(self) :
         print("단어 삭제")

@@ -8,6 +8,7 @@ class Word :
         self._wordName = self.db.getWord(idx, "word")
         self._meaning = self.db.getWord(idx, "meaning")
         self._sentence = self.db.getWord(idx, "sentence")
+        self._sentMeaning = self.db.getWord(idx, "sentMeaning")
         
     def getBookmark(self) : # 해당 단어가 즐겨찾기에 해당하는지 아닌지 True or False로 return
         return self.db.checkBookmark(self.user, self._idx)
@@ -27,28 +28,5 @@ class Word :
     def getSentence(self) :
         return self._sentence
     
-
-    #추가
-    @property
-    def wordName(self):
-        return self._wordName
-
-    @wordName.setter
-    def wordName(self, value):
-        self._wordName = value
-
-    @property
-    def meaning(self):
-        return self._meaning
-
-    @meaning.setter
-    def meaning(self, value):
-        self._meaning = value
-
-    @property
-    def sentence(self):
-        return self._sentence
-
-    @sentence.setter
-    def sentence(self, value):
-        self._sentence = value
+    def getSentMeaning(self) :
+        return self._sentMeaning
