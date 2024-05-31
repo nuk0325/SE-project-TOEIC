@@ -150,18 +150,6 @@ if __name__ == "__main__":
 
 
     deleteALLTable(cur)
-   
-
-    # 유저 삭제
-    # delete_User("taehyen")
-    # delete_User("user1")
-    # delete_User("justID")
-    # deleteAllWrongFav("taehyen")
-    # deleteAllWrongFav("user1")
-    # deleteAllWrongFav("justID")
-    # deleteAllUnit("taehyen")
-    # deleteAllUnit("user1")
-    # deleteAllUnit("justID")
 
 
     #모든 테이블 확인
@@ -171,15 +159,13 @@ if __name__ == "__main__":
     # selectAllFromTable("unit", 20)
     # selectAllFromTable("day_time", 20)
 
-    # conn.commit()
-
     # #유저추가
-    # add_user(cur, 'sunwook', '1234', '선욱', 10, 1, '2024-05-27', 6, 80)
-    # add_user(cur, 'taehyen', '1234', '태현', 10, 1, '2024-05-27', 6, 80)
-    # add_user(cur, "justID", "justPassword", "justNickname", 10, 1, '2024-05-27', 6, 80)
+    add_user(cur, 'sunwook', '1234', '선욱', 3, 0, '2024-05-27', 0, 0)
+
+    add_user(cur, "admin", "1234", "관리자", 0, 1, '2024-05-27', 0, 0)
     
     # #유저의 오답,즐겨찾기 1200개 단어, unit테이블 추가
-    # setAllTable('sunwook')
+    setAllTable('sunwook')
     # setAllTable('taehyen')
     # setAllTable('justID')
 
