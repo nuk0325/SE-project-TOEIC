@@ -36,10 +36,17 @@ class ManagerAddWord(QMainWindow):
         self.ui.addBtn.clicked.connect(self.AddWord)
         self.ui.backBtn.clicked.connect(self.goback)
         self.ui.checkWordBtn.clicked.connect(self.check_word_in_db)
+        self.ui.menuBtn.clicked.connect(self.goManagerSearch)
 
     def some_method(self):
         unitNum = self.line_num % 150 // 10+1
         self.ui.setUnitName(unitNum)
+    
+
+
+    def goManagerSearch(self):
+        self.goto.gotoManagerSearch(self.user, "unit", self.partNum)
+        self.close()
 
     def toManagerUnitWordNotePage(self):
         self.goto.gotoManagerUnitWordNote(self.partNum, self.unitNum, self.user)

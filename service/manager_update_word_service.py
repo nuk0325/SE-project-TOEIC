@@ -37,7 +37,7 @@ class ManagerUpdateWord(QMainWindow):
         self.ui.exitBtn.clicked.connect(self.toManagerWordPage)
         self.ui.updateBtn.clicked.connect(self.updateWord)
         self.ui.backBtn.clicked.connect(self.goback)
-        self.ui.menuBase.clicked.connect(self.)
+        self.ui.menuBtn.clicked.connect(self.goManagerSearch)
         self.ui.checkWordBtn.clicked.connect(self.check_word_in_db)
 
     def setDefaultOfBox(self):
