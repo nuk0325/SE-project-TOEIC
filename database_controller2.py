@@ -107,10 +107,23 @@ def setAllTable(user_id):
                     (user_id, unit_index, 0))
         conn.commit()
     
+def deleteALLTable(cur):
+    # 데이터베이스 내의 모든 테이블 이름을 가져오기
+    cur.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    tables = cur.fetchall()
+
+    # 모든 테이블에서 모든 데이터 삭제
+    for table in tables:
+        cur.execute(f'DELETE FROM {table[0]}')
+        conn.commit()
+
 
 if __name__ == "__main__":
     conn = sqlite3.connect('word.db')
     cur = conn.cursor()
+
+    deleteALLTable(cur)
+    
     # 유저 삭제
     delete_User("taehyen")
     delete_User("sunwook")
