@@ -117,7 +117,7 @@ class DBManager:
         user_id = user.userId
         self.cur.execute('''UPDATE wro_fav SET wro_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
     
-    def insertWrongWordIdxList(self, user, idx) : #wro_is_right를 0으로
+    def insertWrongWordIdxList(self, user, idx) : #wro_is_right를 1으로
         user_id = user.userId
         self.cur.execute('''UPDATE wro_fav SET wro_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
 
@@ -213,7 +213,7 @@ class DBManager:
                     self.cur.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
                             (user_id, unit_index, 1, ))
                     user.today_learned_unit += 1
-                    user.total_learned_unit+= 12 #강아지 성장 치트
+                    user.total_learned_unit += 12 #강아지 성장 치트
                     self.update(user)
             else:
                 print(True)
