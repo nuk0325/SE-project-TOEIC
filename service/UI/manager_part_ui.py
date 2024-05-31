@@ -41,7 +41,8 @@ class ManagerPartUI(object):
 
         self.menu_name = QtWidgets.QLabel("단어 관리")
         self.menu_name.setFont(QFont("Han Sans", 20))
-        self.menu_name.setFixedSize(QSize(240, 50))
+        self.menu_name.setGeometry(100, 0, 240, 50)
+        #self.menu_name.setFixedSize(QSize(240, 50))
         self.menu_name.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.menu_name.setObjectName("menu_name")
         self.menu_name.setStyleSheet("color: rgb(255, 255, 255)")
@@ -176,9 +177,9 @@ class ManagerPartUI(object):
         elif button.text() == "Part 6":
             self.parent.part6_button_clicked()
         elif button.text() == "Part 7":
-            self.parent.Part7_button_clicked()
+            self.parent.part7_button_clicked()
         elif button.text() == "Part 8":
-            self.parent.Part8_button_clicked()
+            self.parent.part8_button_clicked()
         else:
             print("잘못된 버튼 클릭") 
 

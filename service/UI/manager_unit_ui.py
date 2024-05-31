@@ -54,9 +54,10 @@ class ManagerUnitUI(object):
         self.back_button.setFixedSize(QSize(50, 50))
         self.back_button.setStyleSheet("color: rgb(255, 255, 255)")
 
-        self.menu_name = QtWidgets.QLabel("테스트 시작하기")
+        self.menu_name = QtWidgets.QLabel("단어 관리")
+        self.menu_name.setGeometry(100, 0, 240, 50)
         self.menu_name.setFont(QFont("Han Sans", 20))
-        self.menu_name.setFixedSize(QSize(240, 50))
+        #self.menu_name.setFixedSize(QSize(240, 50))
         self.menu_name.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.menu_name.setObjectName("menu_name_label")
         self.menu_name.setStyleSheet("color: rgb(255, 255, 255)")
