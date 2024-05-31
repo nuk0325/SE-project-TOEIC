@@ -6,7 +6,11 @@ class BookmarkNote(WordNote) :
     def __init__(self, user) :
         self.user = user
         self._titleName = "즐겨찾기"
+<<<<<<< Updated upstream
         self._label = self._makeLabel() # 뜻 전체 보기 왼쪽에 있는 label
+=======
+        self._label = self._makeLabel()
+>>>>>>> Stashed changes
         self._testName = "즐겨찾기 테스트 시작"
         self._testChoice = False
         self.db = self._makeDBobj()
