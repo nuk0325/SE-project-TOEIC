@@ -213,5 +213,3 @@ class DBManager:
     def closeDB(self) :
         self.conn.commit()
         self.conn.close()
-
-
