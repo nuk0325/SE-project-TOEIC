@@ -1,0 +1,1279 @@
+﻿line_num,word,mean,idx,,sent,sent_mean
+1,resume,이력서,1,resume,I updated my resume for the job application.,나는 직업 지원을 위해 이력서를 업데이트했다.
+2,applicant,"지원자, 신청자",2,applicant,Each applicant must submit a cover letter.,모든 지원자는 자기소개서를 제출해야 합니다.
+3,requirement,"필요조건, 요건",3,requirement,The job has several specific requirements.,이 직업에는 몇 가지 특정 요건이 있다.
+4,meet,(필요 등을) 만족시키다,4,meet,He meets all our qualifications.,그는 우리의 모든 자격 조건을 만족시킨다.
+5,qualified,"자격있는, 적격의",5,qualified,She is highly qualified for this position.,그녀는 이 직책에 매우 적격이다.
+6,candidate,"후보자, 지원자",6,candidate,We interviewed many candidates for the role.,우리는 그 역할에 많은 후보자들을 면접했다.
+7,confidence,"확신, 자신, 신임",7,confidence,She spoke with great confidence.,그녀는 큰 자신감으로 말했다.
+8,highly,"매우, 대단히",8,highly,He is highly skilled in negotiations.,그는 협상에서 매우 숙련되어 있다.
+9,professional,"전문적인, 전문가",9,professional,It's important to maintain a professional image.,전문적인 이미지를 유지하는 것이 중요하다.
+10,interview,"면접, 면접을 보다",10,interview,She has an interview tomorrow morning.,그녀는 내일 아침에 면접이 있다.
+11,hire,고용하다,11,hire,The company decided to hire three new employees.,회사는 세 명의 새 직원을 고용하기로 결정했다.
+12,training,"교육, 훈련",12,training,He is undergoing training for his new role.,그는 새로운 역할을 위한 훈련을 받고 있다.
+13,reference,"추천서, 참고",13,reference,Can you provide a reference from your last job?,당신의 마지막 직장에서 추천서를 제공할 수 있나요?
+14,position,"일자리, 직책, 두다",14,position,She applied for the manager position.,그녀는 매니저 직책에 지원했다.
+15,achievement,"성취, 달성",15,achievement,Receiving this award is a great achievement.,이 상을 받는 것은 큰 성취이다.
+16,impressed,감명을 받은,16,impressed,They were impressed with his presentation.,그들은 그의 발표에 감명 받았다.
+17,excellent,훌륭한,17,excellent,She has an excellent track record.,그녀는 훌륭한 경력을 가지고 있다.
+18,eligible,"자격이 있는, 적격의",18,eligible,Are you eligible for this scholarship?,당신은 이 장학금을 받을 자격이 있나요?
+19,identify,"알아보다, 확인하다",19,identify,It is hard to identify the problem.,문제를 알아내기 어렵다.
+20,associate,관련시키다,20,associate,People often associate this brand with quality.,사람들은 종종 이 브랜드를 품질과 연관 지어 생각한다.
+21,condition,조건,21,condition,The condition of the house affects its price.,집의 상태는 그 가격에 영향을 미친다.
+22,employment,고용,22,employment,She is looking for full-time employment.,그녀는 전일제 고용을 찾고 있다.
+23,lack,"~이 없다, 부족",23,lack,The team lacks experience.,팀은 경험이 부족하다.
+24,managerial,관리의,24,managerial,His managerial skills are outstanding.,그의 관리 기술은 뛰어나다.
+25,diligent,성실한,25,diligent,He is a diligent student.,그는 성실한 학생이다.
+26,familiar,"익숙한, 친숙한",26,familiar,She is familiar with the regulations.,그녀는 규정에 익숙하다.
+27,proficiency,"숙달, 능숙",27,proficiency,His proficiency in Japanese is amazing.,그의 일본어 숙련도는 놀랍다.
+28,prospective,"장래의, 미래의",28,prospective,They showed the house to prospective buyers.,그들은 잠재적 구매자들에게 집을 보여주었다.
+29,appeal,"관심을 끌다, 매력적이다",29,appeal,The idea did not appeal to everyone.,그 아이디어는 모두에게 매력적이지 않았다.
+30,specialize,"~을 전공하다,",30,specialize,She specializes in medieval history.,그녀는 중세 역사를 전공한다.
+31,apprehensive,"걱정하는, 염려하는",31,apprehensive,He is apprehensive about the new project.,그는 새 프로젝트에 대해 염려하고 있다.
+32,consultant,"고문, 컨설턴트",32,consultant,She works as a marketing consultant.,그녀는 마케팅 컨설턴트로 일한다.
+33,entitle,자격을 주다,33,entitle,This ticket entitles you to a free meal.,이 티켓은 당신에게 무료 식사를 제공할 자격을 준다.
+34,degree,학위,34,degree,He earned his degree in engineering.,그는 공학 학위를 받았다.
+35,payroll,"임금대장, 금료명부",35,payroll,The new employees were added to the payroll.,새 직원들이 급여명부에 추가되었다.
+36,recruit,(신입사원등을)모집하다,36,recruit,The army continues to recruit volunteers.,군대는 계속해서 자원병을 모집한다.
+37,certification,"증명서, 증명",37,certification,She received her certification last week.,그녀는 지난 주에 그녀의 증명서를 받았다.
+38,occupation,직업,38,occupation,His occupation is a web designer.,그의 직업은 웹 디자이너이다.
+39,wage,"임금, 급료",39,wage,They are fighting for better wages.,그들은 더 나은 임금을 위해 싸우고 있다.
+40,attire,"복장, 옷차림새",40,attire,Proper attire is required at the event.,행사에서는 적절한 복장이 요구된다.
+41,code,"규범, 관례;암호",41,code,The company has a strict dress code.,회사에는 엄격한 복장 규정이 있다.
+42,concern,"영향을 미치다, 관련되다.",42,concern,Environmental issues are a major concern nowadays.,환경 문제는 요즘 주요 걱정거리이다.
+43,policy,"규정; 보험, 증권",43,policy,The refund policy has been updated.,환불 정책이 갱신되었다.
+44,comply,"준수하다, 따르다",44,comply,We must comply with the new regulations.,우리는 새로운 규정을 준수해야 한다.
+45,regulation,규정,45,regulation,Safety regulations are important in the workplace.,안전 규정은 직장에서 중요하다.
+46,exception,예외,46,exception,There are no exceptions to this rule.,이 규칙에는 예외가 없다.
+47,adhere,"지키다, 고수하다",47,adhere,It is crucial to adhere to the guidelines.,지침을 준수하는 것이 매우 중요하다.
+48,severely,"엄격하게, 심하게",48,severely,The town was severely affected by the storm.,그 마을은 폭풍으로 심하게 영향을 받았다.
+49,refrain,"자제하다, 삼가다",49,refrain,Please refrain from smoking in this area.,이 지역에서는 흡연을 삼가 해 주세요.
+50,permission,"허락, 허가",50,permission,You need permission to access these files.,이 파일들에 접근하려면 허가가 필요하다.
+51,access,"~에 접근하다, 도달하다",51,access,The system provides easy access to all employees.,시스템은 모든 직원에게 쉬운 접근을 제공한다.
+52,thoroughly,"철저하게, 완전히, 대단히",52,thoroughly,He thoroughly checked the report for errors.,그는 보고서의 오류를 철저히 확인했다.
+53,revise,"(계획을)수정하다, 변경하다",53,revise,The plans were revised after the feedback.,피드백 후에 계획이 수정되었다.
+54,approach,"접근법, 처리방법",54,approach,We need a new approach to solve this issue.,이 문제를 해결하기 위해 새로운 접근법이 필요하다.
+55,approval,"승인, 인가",55,approval,The project is pending approval from the board.,프로젝트는 이사회의 승인을 기다리고 있다.
+56,form,"종류, 유형, 양식",56,form,Please fill out the application form.,신청서를 작성해 주세요.
+57,immediately,"즉시, 곧",57,immediately,The problem needs to be addressed immediately.,문제를 즉시 해결해야 한다.
+58,inspection,"점검, 검사",58,inspection,The building will undergo a safety inspection.,건물은 안전 검사를 받게 될 것이다.
+59,arrangement,"준비, 마련, 주선",59,arrangement,We made special arrangements for the guests.,우리는 손님들을 위해 특별한 준비를 했다.
+60,procedure,절차,60,procedure,Follow the procedure carefully.,절차를 주의 깊게 따르세요.
+61,negative,"부정적인, 비관적인",61,negative,His negative attitude affects the whole team.,그의 부정적인 태도가 전체 팀에 영향을 미친다.
+62,mandate,"명령하다, 지시, 명령",62,mandate,The government mandate requires compliance.,정부의 명령은 준수를 요구한다.
+63,effect,"효과, 결과로서 ~을 가져오다",63,effect,The new law came into effect last month.,새 법이 지난달에 효력을 발휘했다.
+64,drastically,"심하게, 과감하게, 철저하게",64,drastically,Prices have dropped drastically.,가격이 급격히 떨어졌다.
+65,according to,~에 따라,65,according to,"According to the report, sales have increased.","보고서에 따르면, 판매량이 증가했다."
+66,enable,(무엇을)가능하게 하다,66,enable,This feature enables faster processing.,이 기능은 더 빠른 처리를 가능하게 한다.
+67,standard,"기준, 표준",67,standard,We must meet the industry standards.,우리는 업계 표준을 충족해야 한다.
+68,constant,"지속적인, 끊임없이 계속하는",68,constant,He is in constant communication with the team.,그는 팀과 끊임없이 소통하고 있다.
+69,act,"행동, 결정하다, 행동하다",69,act,Congress will act on the proposal.,의회는 제안에 대해 조치를 취할 것이다.
+70,compensation,"보상금, 보상",70,compensation,He received compensation for his injuries.,그는 부상에 대한 보상을 받았다.
+71,ban,"금지, 금지하다",71,ban,The city has placed a ban on smoking in public.,도시는 공공장소에서의 흡연을 금지했다.
+72,obligation,"의무, 책임",72,obligation,You have an obligation to pay your taxes.,당신은 세금을 납부할 의무가 있다.
+73,authorize,권한을 부여하다.,73,authorize,The manager authorized the payment.,관리자가 지불을 승인했다.
+74,prohibit,금지하다,74,prohibit,The law prohibits texting while driving.,법은 운전 중 문자 메시지를 보내는 것을 금지한다.
+75,abolish,"(제도, 법률등을)폐지하다",75,abolish,The practice was abolished years ago.,그 관행은 몇 년 전에 폐지되었다.
+76,enforce,"(법률을)시행하다, 집행하다",76,enforce,The police enforce the law to maintain order.,경찰은 질서 유지를 위해 법을 집행한다.
+77,habit,"습관, 버릇",77,habit,He has a habit of jogging every morning.,그는 매일 아침 조깅하는 습관이 있다.
+78,lagislation,"법률, 법규",78,legislation,New legislation will affect how businesses operate.,새 법규가 기업들의 운영 방식에 영향을 미칠 것이다.
+79,restrict,"한정하다, 제한하다",79,restrict,The new rules restrict smoking in public areas.,새 규칙은 공공 장소에서 흡연을 제한한다.
+80,accustomed,익숙한,80,accustomed,She quickly became accustomed to the new system.,그녀는 빠르게 새 시스템에 익숙해졌다.
+81,corporatiion,"주식회사, 법인",81,corporation,He works for a multinational corporation.,그는 다국적 주식회사에서 일한다.
+82,demanding,"요구가 많은, 힘든",82,demanding,The job is quite demanding.,그 일은 매우 요구가 많다.
+83,colleague,동료,83,colleague,I will consult with my colleague about the project.,나는 그 프로젝트에 대해 동료와 상의할 것이다.
+84,division,부서,84,division,She was promoted to head of the division.,그녀는 부서의 책임자로 승진했다.
+85,request,"요청, 요청하다",85,request,He made a request for additional resources.,그는 추가 자원을 요청했다.
+86,efficiently,효율적으로,86,efficiently,The team works efficiently under pressure.,팀은 압박 속에서도 효율적으로 일한다.
+87,manage,~을 경영하다; 가까스로 하다,87,manage,She manages a team of twenty people.,그녀는 20명의 팀을 경영한다.
+88,submit,제출하다,88,submit,Please submit the report by Friday.,보고서를 금요일까지 제출해 주세요.
+89,directly,곧바로,89,directly,He reported the issue directly to the CEO.,그는 문제를 CEO에게 직접 보고했다.
+90,remind,"~에게 상기시키다, 일깨우다",90,remind,This song reminds me of my childhood.,이 노래는 나에게 어린 시절을 상기시킨다.
+91,instruct,"지시하다, 가르치다",91,instruct,The teacher instructed the students to open their books.,선생님은 학생들에게 책을 펴도록 지시했다.
+92,deadline,"마감일, 마감 시간",92,deadline,The deadline for the submission is next Monday.,제출 마감일은 다음 월요일이다.
+93,sample,"견본, 샘플, 시험하다",93,sample,They offered free samples of the new product.,그들은 새 제품의 무료 샘플을 제공했다.
+94,notify,"~에게 통지하다, 알리다",94,notify,Notify me when you arrive.,도착하면 나에게 알려 주세요.
+95,perform,"행하다, 실행하다",95,perform,The orchestra will perform Beethoven's Symphony No. 5.,오케스트라는 베토벤의 교향곡 5번을 연주할 것이다.
+96,monitor,"감독하다, 감시하다, 실행하다",96,monitor,It's important to monitor the progress of the project.,프로젝트 진행 상황을 모니터하는 것이 중요하다.
+97,deserve,"~할 만하다, ~할 가치가 있다",97,deserve,She deserves recognition for her efforts.,그녀는 그녀의 노력에 대한 인정을 받을 자격이 있다.
+98,assignment,"일, 임무, 과제",98,assignment,He completed his assignment on time.,그는 그의 과제를 시간 내에 완료했다.
+99,entire,전체의,99,entire,The entire team was excited about the success.,전체 팀이 성공에 대해 흥분했다.
+100,release,"발표하다, 공개하다, 출시, 발매",100,release,They plan to release the new software next week.,그들은 다음 주에 새 소프트웨어를 출시할 계획이다.
+101,extension,"연장, 연기; (전화의)내선",101,extension,Can I have an extension on the project deadline?,프로젝트 마감 기한을 연장받을 수 있을까요?
+102,electronically,"컴퓨터 통신망으로, 컴퓨터로",102,electronically,Documents were sent electronically to speed up the process.,문서들이 과정을 가속화하기 위해 전자적으로 보내졌다.
+103,attendance,"출석, 출근",103,attendance,His attendance at the meetings has improved.,그의 회의 참석률이 향상되었다.
+104,absolutely,"절대적으로, 완전히",104,absolutely,I absolutely agree with your plan.,나는 당신의 계획에 완전히 동의한다.
+105,delegate,(권한등을)위임하다. 대표,105,delegate,She delegated the task to her assistant.,그녀는 그 임무를 그녀의 보조에게 위임했다.
+106,attentively,"주의 깊게, 조심스럽게",106,attentively,He listened attentively to the lecture.,그는 강의를 주의 깊게 들었다.
+107,supervision,감독,107,supervision,The work was done under the supervision of an expert.,그 일은 전문가의 감독 하에 이루어졌다.
+108,workshop,"워크숍, 연수",108,workshop,We attended a workshop on digital marketing.,우리는 디지털 마케팅에 대한 워크숍에 참석했다.
+109,draw,"끌다, 끌어당기다",109,draw,The artist will draw a portrait of her.,그 예술가는 그녀의 초상화를 그릴 것이다.
+110,revision,"수정, 개정",110,revision,The document requires further revision.,그 문서는 추가 수정이 필요하다.
+111,reluctantly,"마지못해, 꺼려하여",111,reluctantly,She reluctantly agreed to attend the meeting.,그녀는 마지못해 회의에 참석하기로 동의했다.
+112,acquaint,"~에게 숙지시키다, 잘 알게 하다",112,acquaint,I need to acquaint you with our company's policies.,우리 회사의 정책에 대해 당신을 숙지시켜야 해요.
+113,convey,(용건을)전달하다,113,convey,Can you convey this message to the manager for me?,이 메시지를 매니저에게 전달해 줄 수 있나요?
+114,check,"검사하다, 조사하다, 확인하다",114,check,Please check the accuracy of these figures.,이 숫자들의 정확성을 확인해 주세요.
+115,headquarters,본부,115,headquarters,The company's headquarters is located in New York.,회사의 본부는 뉴욕에 있습니다.
+116,file,"(서류를)정리하다, 제출하다",116,file,He needs to file his taxes by the end of the month.,그는 이번 달 말까지 세금을 신고해야 합니다.
+117,oversee,"감독하다 (foresee예견하다, oversea해외의)",117,oversee,The project manager oversees the progress of the project.,프로젝트 매니저가 프로젝트 진행 상황을 감독합니다.
+118,involved,"관여하는, 관계된, 연루된",118,involved,She is deeply involved in the community activities.,그녀는 지역 사회 활동에 깊게 관여하고 있습니다.
+119,concentrate,"집중하다, 집중시키다",119,concentrate,It's hard to concentrate when there's so much noise.,소음이 많을 때 집중하기 어렵습니다.
+120,lax,"(행동 등이)느슨한, 규율에 못 미치는",120,lax,We cannot afford to be lax about security measures.,우리는 보안 조치에 대해 느슨할 여유가 없습니다.
+121,procrastinate,"미루다, 꾸물거리다",121,procrastinate,"If you procrastinate, you'll never finish your work.",미루다 보면 일을 마치지 못할 거예요.
+122,combined,"결합된, 합동의",122,combined,The two companies have combined their resources for the project.,두 회사는 프로젝트를 위해 자원을 결합했습니다.
+123,accomplish,성취하다,123,accomplish,It took years to accomplish this task.,이 작업을 완료하는 데 몇 년이 걸렸습니다.
+124,voluntarily,자발적으로,124,voluntarily,He volunteered to help with the charity event.,그는 자발적으로 자선 행사를 돕기로 했습니다.
+125,undertake,(일을)떠맡다,125,undertake,The company will undertake the construction of the new building.,회사가 새 건물 건설을 맡을 것입니다.
+126,assume,"(증거는 없으나)사실이라고 생각하다;
+(책임,역할을)맡다",126,assume,Let's not assume anything until we have all the facts.,우리가 모든 사실을 알 때까지는 가정하지 말아요.
+127,occasionally,"가끔, 때때로",127,occasionally,I occasionally meet with my old friends for coffee.,가끔 나는 친구들과 커피를 마시러 만납니다.
+128,employee,"직원, 고용인",128,employee,The company hired a new employee for the marketing department.,회사는 마케팅 부서에 새 직원을 고용했습니다.
+129,assist,"돕다, 조력하다",129,assist,Can you assist me with this project?,이 프로젝트를 도와 줄 수 있나요?
+130,satisfied,"만족하는, 만족스러워하는",130,satisfied,I am satisfied with the outcome of the negotiation.,나는 협상 결과에 만족합니다.
+131,manner,"방식, 태도",131,manner,She spoke to me in a very rude manner.,그녀는 나에게 매우 무례한 태도로 말했습니다.
+132,responsible,"책임이 있는, 책임져야 할",132,responsible,"As the team leader, you are responsible for the project's success.",팀 리더로서 당신은 프로젝트의 성공에 책임이 있습니다.
+133,conduct,(업무 등을)수행하다,133,conduct,The police will conduct an investigation into the matter.,경찰은 그 문제에 대한 조사를 진행할 것입니다.
+134,adjust,적응하다,134,adjust,You need to adjust the settings on your computer.,컴퓨터 설정을 조정해야 합니다.
+135,personnel,"(집합적)직원, 인원; 인사과",135,personnel,The personnel department handles all employee matters.,인사부가 모든 직원 문제를 처리합니다.
+136,agree,동의하다,136,agree,We all agree that the proposal needs further review.,우리는 모두 그 제안이 더 심사가 필요하다고 동의합니다.
+137,supervise,"감독하다, 지도하다",137,supervise,The teacher will supervise the students during the experiment.,선생님은 실험 중에 학생들을 감독할 것입니다.
+138,coworker,"동료, 협력자",138,coworker,My coworker and I are collaborating on a new project.,나와 내 동료는 새로운 프로젝트를 협업하고 있습니다.
+139,direct,"~에게 길을 안내하다, 가르쳐 주다",139,direct,Please direct all inquiries to our customer service department.,모든 문의 사항은 고객 서비스 부서로 연결해 주세요.
+140,confidential,"기밀의, 내밀한",140,confidential,The contents of this file are strictly confidential.,이 파일의 내용은 엄격하게 기밀입니다.
+141,assign,"배정하다, 할당하다",141,assign,I will assign you to a new project starting next week.,다음 주부터 당신을 새 프로젝트에 배정할 것입니다.
+142,leading,"선도적인, 일류의, 가장 중요한, 선두적인",142,leading,Our company is a leading provider of innovative solutions.,우리 회사는 혁신적인 솔루션의 선도 공급자입니다.
+143,formal,격식을 갖춘,143,formal,The event requires formal attire.,이 이벤트는 격식을 갖춘 의복
+144,remove,"해임하다, 제거하다",144,remove,Please remove your shoes before entering the house.,집에 들어가기 전에 신발을 벗어 주세요.
+145,collect,모으다,145,collect,We need to collect data for our research project.,연구 프로젝트를 위해 데이터를 수집해야 합니다.
+146,coordinate,조정하다,146,coordinate,The team needs to coordinate their efforts to meet the deadline.,팀은 마감일을 맞추기 위해 노력을 조율해야 합니다.
+147,hardly,거의~하지않다,147,hardly,I hardly ever go to the gym anymore.,나는 더 이상 거의 체육관에 가지 않는다.
+148,abstract,"추상적인, 막연한",148,abstract,The concept of love is too abstract for some people to grasp.,사랑이라는 개념은 일부 사람들에게는 너무 추상적이어서 이해하기 어렵습니다.
+149,directory,주소록,149,directory,The telephone directory lists all the residents in the area.,전화번호부에는 지역 주민들의 모든 번호가 나와 있습니다.
+150,accountable,책임이 있는,150,accountable,"As the team leader, you are accountable for the project's success.",팀 리더로서 당신은 프로젝트의 성공에 책임이 있습니다.
+151,skillfully,"능숙하게, 솜씨있게",151,skillfully,He skillfully navigated through the crowded streets.,그는 붐비는 거리를 능숙하게 헤쳐 나갔다.
+152,exclusive,"독점적인, 배타적인",152,exclusive,The club is exclusive and only admits members by invitation.,이 클럽은 독점적이며 초대장으로만 회원을 받습니다.
+153,intention,"의지, 의향",153,intention,I have no intention of causing any trouble.,나는 어떤 문제도 일으키려는 의도가 없습니다.
+154,transform,"바꾸다, 변모시키다",154,transform,The caterpillar will transform into a butterfly.,애벌레는 나비로 변할 것입니다.
+155,respectful,"정중한, 존중하는",155,respectful,It's important to be respectful towards your elders.,연장자에게 정중해야 하는 것이 중요합니다.
+156,duplicate,사본,156,duplicate,Please make a duplicate copy of this document.,이 문서의 사본을 만들어 주세요.
+157,contrary,반대,157,contrary,His actions are contrary to his words.,그의 행동은 그의 말과 반대입니다.
+158,disturbing,"충격적인, 불안감을 주는, 방해하는",158,disturbing,The news of the accident was very disturbing.,사고 소식이 매우 불안감을 주었습니다.
+159,engage,"관여하다, 종사하다",159,engage,We need to engage with our customers on social media.,우리는 소셜 미디어에서 고객들과 소통해야 합니다.
+160,foster,"촉진하다, 육성하다",160,foster,The organization aims to foster a sense of community among its members.,그 조직은 회원들 사이에 공동체 의식을 육성하는 것을 목표로 합니다.
+161,neutrality,"중립성, 중립",161,neutrality,The country declared its neutrality in the conflict.,그 나라는 그 분쟁에서의 중립을 선언했습니다.
+162,widely,널리,162,widely,The news of his resignation spread widely.,그의 사임 소식이 널리 퍼졌습니다.
+163,sophisticated,"(기계가)정교한, 복잡한; 세련된",163,sophisticated,The new smartphone has a more sophisticated camera system.,새로운 스마트폰은 더 정교한 카메라 시스템을 갖추고 있습니다.
+164,timely,"시기적절한, 때를 맞춘",164,timely,It's important to provide timely feedback on performance.,성과에 대한 적시적인 피드백을 제공하는 것이 중요합니다.
+165,realistically,현실적으로,165,realistically,We need to assess the situation realistically.,우리는 상황을 현실적으로 평가해야 합니다.
+166,promptly,즉시; 정각에,166,promptly,Please respond to the email promptly.,이메일에 신속하게 회신해 주세요.
+167,accessible,출입할 수 있는; 이용할 수 있는,167,accessible,The website should be accessible to people with disabilities.,웹사이트는 장애인들에게 접근할 수 있어야 합니다.
+168,implement,"실시하다, 실행하다",168,implement,The company plans to implement new safety measures.,회사는 새로운 안전 조치를 시행할 계획입니다.
+169,feedback,"의견, 반응",169,feedback,We value your feedback on our products.,우리는 당신의 제품에 대한 의견을 소중히 여깁니다.
+170,outstanding,우수한; (부채 등이)미지불된,170,outstanding,She received an award for her outstanding performance.,그녀는 탁월한 성과로 상을 받았습니다.
+171,inform,~에게 알리다,171,inform,Please inform me of any changes to the schedule.,일정 변경 사항을 나에게 알려 주세요.
+172,replacement,"교체, 후임자",172,replacement,We need to find a replacement for the broken equipment.,고장 난 장비의 대체품을 찾아야 합니다.
+173,announcement,"공고, 발표",173,announcement,The company made an announcement about the new policy.,회사가 새로운 정책에 관한 공고를 발표했습니다.
+174,department,"(조직, 기구의)부서",174,department,She works in the marketing department.,그녀는 마케팅 부서에서 일합니다.
+175,permanently,"영구적으로, 불변으로",175,permanently,The stain won't come out of the fabric permanently.,그 얼룩은 영구적으로 옷에서 사라지지 않을 것입니다.
+176,fulfill,"(조건을)만족시키다, 이행하다",176,fulfill,The company aims to fulfill its promises to customers.,회사는 고객에게 한 약속을 이행하기 위해 노력합니다.
+177,outline,"개요, 설명하다, 약술하다",177,outline,Let me outline the main points of the presentation.,발표의 주요 내용을 개요로 설명해 드릴게요.
+178,explain,설명하다,178,explain,Can you explain this concept to me in simpler terms?,이 개념을 더 간단한 용어로 설명해 줄 수 있나요?
+179,contain,포함하다,179,contain,The box contains all the necessary parts.,상자 안에는 필요한 모든 부품이 들어 있습니다.
+180,compile,(자료 등을)편집하다; 모으다,180,compile,We need to compile a list of potential candidates.,우리는 잠재적인 후보자 목록을 편성해야 합니다.
+181,subsequent,"차후의, 그 다음의",181,subsequent,The subsequent chapters delve deeper into the topic.,차후 장들에서는 주제를 더 깊이 다룰 것입니다.
+182,overview,"개요, 개관",182,overview,Let me give you an overview of the project.,프로젝트 개요를 설명해 드릴게요.
+183,provider,"공급자, 제공자",183,provider,The company is a leading provider of IT services.,그 회사는 주요 IT 서비스 공급자입니다.
+184,matter,"문제, 일",184,matter,The matter requires immediate attention.,그 문제는 즉각적인 주의를 요합니다.
+185,expertise,"전문지식, 전문기술",185,expertise,He is known for his expertise in financial matters.,그는 재정 문제에 대한 전문 지식으로 유명합니다.
+186,demonstrate,"증명하다; (모형, 실험등으로)설명하다",186,demonstrate,The scientist will demonstrate the experiment to the students.,과학자가 학생들에게 실험을 시연할 것입니다.
+187,remainder,나머지,187,remainder,Please divide the remainder of the cake among yourselves.,케이크의 나머지를 자신들 사이에 나눠 주세요.
+188,essential,"필수적인, 극히 중요한, 본질적인",188,essential,Good communication skills are essential for this job.,좋은 커뮤니케이션 기술은 이 직종에 꼭 필요합니다.
+189,divide,"분배하다, 나누다",189,divide,Let's divide the tasks evenly among the team members.,팀원들 사이에 업무를 골고루 나눠 보자.
+190,major,"주요한, 중대한",190,major,She made a major contribution to the project's success.,그녀는 프로젝트의 성공에 큰 공헌을 했습니다.
+191,compliance,"(명령, 법규에의)준수",191,compliance,The company operates in compliance with all regulations.,회사는 모든 규정을 준수하여 운영됩니다.
+192,clarify,명확하게 하다,192,clarify,Could you clarify your statement for me?,당신의 발언을 명확히 해 줄 수 있나요?
+193,face,"(문제 등에)직면하다; 향하다, 마주보다",193,face,We need to face the challenges head-on.,우리는 도전에 직면해야 합니다.
+194,follow,~을 따라가다; 주시하다; (분명히)이해하다,194,follow,It's important to follow the instructions carefully.,지시 사항을 주의 깊게 따르는 것이 중요합니다.
+195,aspect,"관점, 국면",195,aspect,Let's consider every aspect of the problem before deciding.,결정하기 전에 문제의 모든 측면을 고려해 봅시다.
+196,apparently,"보기에 ~한 듯한, 외관상으로는",196,apparently,"Apparently, there was a misunderstanding.",보아하니 오해가 있었던 것 같습니다.
+197,aware,"알고 있는, 인식하고 있는",197,aware,Are you aware of the risks involved?,당신은 관련된 위험을 알고 있나요?
+198,extended,"(기간 등을)연장한, 장기간에 걸친",198,extended,The extended version of the film includes additional scenes.,영화의 확장판에는 추가적인 장면이 포함되어 있습니다.
+199,accidentally,"뜻하지 않게, 우연히",199,accidentally,She accidentally spilled coffee on her shirt.,그녀는 실수로 커피를 셔츠에 쏟았습니다.
+200,advisable,"바람직한, 합당한",200,advisable,It's advisable to wear a helmet while riding a bike.,자전거를 탈 때 헬멧을 착용하는 것이 좋습니다.
+201,concerned,"염려하는, 걱정하는; 관련된",201,concerned,The company is concerned about its declining sales.,회사는 매출 하락에 대해 걱정하고 있습니다.
+202,speak,이야기 하다,202,speak,I need to speak with the manager about this issue.,이 문제에 대해 매니저와 이야기해야 합니다.
+203,collection,"소장품, 수집물; 징수, 수금",203,collection,The museum has an extensive collection of artwork.,박물관에는 다양한 미술 작품이 소장되어 있습니다.
+204,exhibition,전시회,204,exhibition,The artist's paintings are on display at the art exhibition.,예술가의 그림들이 미술 전시회에서 전시되고 있습니다.
+205,celebrity,"유명인사, 명사",205,celebrity,The celebrity arrived at the event with much fanfare.,그 유명인사가 큰 환호 속에 이벤트에 도착했습니다.
+206,live,"(라디오, TV가)생방송인",206,live,The concert will be broadcast live on television.,콘서트는 텔레비전으로 생중계될 예정입니다.
+207,improvise,"(연주, 연설 등을)즉흥적으로 하다",207,improvise,She had to improvise a speech when the teleprompter failed.,프롬프터가 고장나서 그녀는 연설을 즉흥적으로 해야 했습니다.
+208,popular,인기있는,208,popular,The movie was popular among teenagers.,그 영화는 십대들 사이에서 인기가 있었습니다.
+209,donation,"기증, 기부",209,donation,The charity received a generous donation from a local business.,그 자선 단체는 지역 기업으로부터 풍성한 기부를 받았습니다.
+210,alumni,"동창생들, 졸업생들",210,alumni,The alumni association organizes events for former students.,동문 회는 졸업생들을 위한 행사를 조직합니다.
+211,present,"제시하다, 현재의, 참석한",211,present,Please be present for the meeting tomorrow.,내일 회의에 참석해 주세요.
+212,admission,입장,212,admission,Admission to the museum is free for children under 12.,박물관 입장은 12세 미만 어린이에게 무료입니다.
+213,banquet,"연회, 만찬",213,banquet,The company hosted a banquet to celebrate its anniversary.,회사는 기념일을 축하하기 위해 연회를 열었습니다.
+214,anniversary,기념일,214,anniversary,They celebrated their 25th wedding anniversary last month.,그들은 지난 달에 25주년 결혼 기념일을 축하했습니다.
+215,required,"필수의, 의무적인",215,required,The assignment is required to be completed by Friday.,그 과제는 금요일까지 완료되어야 합니다.
+216,succeed,"성공하다, 뒤를 잇다",216,succeed,She means to succeed.,그녀는 성공할 작정이다.
+217,rest,"쉬다,휴식, 나머지",217,rest,The doctor told me to rest.,의사가 나에게 휴식을 취하라고 했다.
+218,fund-raising,모금,218,fund-raising,The charity is hosting a fund-raising event next week.,그 자선 단체는 다음 주에 모금 행사를 개최합니다.
+219,resume,"재개하다, 다시 시작하다",219,resume,Let's resume the meeting after lunch.,점심 후에 회의를 재개합시다.
+220,issue,"(출판물의)제 ~호; 문제, 쟁점",220,issue,It's important to address this issue.,이 문제를 해결하는 것이 중요하다.
+221,subscription,(정기발행물의) 구독,221,subscription,I have a subscription to the magazine.,나는 그 잡지를 구독하고 있다.
+222,appear,"나타나다, 출현하다",222,appear,The stars appear in the night sky.,별들이 밤하늘에 나타난다.
+223,accompany,"동행하다, 동반하다",223,accompany,He will accompany me to the concert.,그는 내가 콘서트에 가는 동행을 할 것이다.
+224,edition,(간행물의)판,224,edition,This is the latest edition of the book.,이것은 그 책의 최신 판이다.
+225,specifically,"명확하게, 분명히; 특히, 특별히",225,specifically,He specifically asked for your help.,그는 특히 당신의 도움을 요청했다.
+226,anonymous,"익명의, 이름을 모르는",226,anonymous,The letter was sent by an anonymous sender.,그 편지는 익명 발신자가 보냈습니다.
+227,commit,"헌신하다, 전념하다",227,commit,I commit myself fully to this project.,나는 이 프로젝트에 완전히 헌신할 것이다.
+228,information,"유익한, 정보를 주는",228,information,This website provides useful information.,이 웹사이트는 유용한 정보를 제공합니다.
+229,audience,"청중, 관중",229,audience,The audience applauded loudly.,관객들이 크게 박수를 쳤다.
+230,author,"작가, 저자",230,author,The author of this book is well-known.,이 책의 저자는 잘 알려져 있다.
+231,note,주목하다; 특별히 언급하다.,231,note,Please take note of the instructions.,지시사항에 주의하세요.
+232,antique,골동품,232,antique,She collects antique furniture.,그녀는 골동품 가구를 수집합니다.
+233,manuscript,원고,233,manuscript,The manuscript needs to be edited.,그 원고는 편집이 필요합니다.
+234,beneficial,"유익한, 이로운",234,beneficial,Exercise is beneficial for your health.,운동은 당신의 건강에 도움이 됩니다.
+235,upcoming,"곧 있을, 다가오는",235,upcoming,There are many upcoming events.,다가오는 행사가 많이 있습니다.
+236,lend,빌려주다,236,lend,Can you lend me some money?,좀 돈을 빌려줄 수 있나요?
+237,current,"현재의,; 현행의, 통용되는",237,current,The current situation is concerning.,현재 상황이 우려스럽습니다.
+238,local,"지방의, 고장의",238,local,We visited the local market.,우리는 지역 시장을 방문했습니다.
+239,variety,"다양성, 변화",239,variety,There is a wide variety of colors.,다양한 색상이 있습니다.
+240,advocate,옹호자,240,advocate,She is a strong advocate for human rights.,그녀는 인권을 강력하게 옹호합니다.
+241,contributor,"기고가, 공헌자",241,contributor,He is a regular contributor to the magazine.,그는 그 잡지에 규칙적으로 기고하는 사람입니다.
+242,defy,"저항하다; (설명,묘사등이)거의 불가능하다",242,defy,It defies explanation.,그것은 설명하기 어렵습니다.
+243,fascinating,"매혹적인, 황홀한",243,fascinating,The history of the city is fascinating.,그 도시의 역사는 매력적입니다.
+244,showing,"(영화, 연극의)상영; 전시",244,showing,The movie had a good showing at the box office.,그 영화는 박스 오피스에서 잘 나왔습니다.
+245,survey,설문조사,245,survey,They conducted a survey on customer satisfaction.,그들은 고객 만족도에 대한 조사를 실시했습니다.
+246,analysis,분석,246,analysis,The analysis of the data revealed interesting patterns.,데이터의 분석결과 흥미로운 패턴이 드러났습니다.
+247,respondent,응답자,247,respondent,The survey had over 500 respondents.,그 조사에는 500명 이상의 응답자가 있었습니다.
+248,competition,경쟁,248,competition,The competition is fierce in this industry.,이 산업에서는 경쟁이 치열합니다.
+249,consistently,"항상, 일관되게",249,consistently,She consistently delivers high-quality work.,그녀는 항상 고품질의 작업을 제공합니다.
+250,demand,"수요, 요구하다",250,demand,There is a high demand for organic produce.,유기농 제품에 대한 높은 수요가 있습니다.
+251,do one's utmost,전력을 다하다,251,do one's utmost,We must do our utmost to solve this problem.,이 문제를 해결하기 위해 최선을 다해야 합니다.
+252,expand,"확장하다, 확대하다",252,expand,The company plans to expand into new markets.,그 회사는 새로운 시장으로 확장할 계획입니다.
+253,advanced,"고급의; 진보한, 앞선",253,advanced,This is an advanced course in computer programming.,이것은 컴퓨터 프로그래밍의 고급 과정입니다.
+254,postpone,"연기하다, 뒤로 미루다",254,postpone,The meeting has been postponed until next week.,회의가 다음 주까지 연기되었습니다.
+255,additional,"추가의, 부가적인",255,additional,Additional information can be found on our website.,추가 정보는 당사 웹사이트에서 확인하실 수 있습니다.
+256,appreciate,고맙게 생각하다; 높이 평가하다; 감상하다,256,appreciate,We appreciate your understanding in this matter.,이 문제에 대한 여러분의 이해를 감사히 생각합니다.
+257,demonstration,"설명; 드러냄, 시연",257,demonstration,The protesters staged a peaceful demonstration.,시위대는 평화로운 시위를 벌였습니다.
+258,buy,"사다, 구입하다",258,buy,I need to buy some groceries at the store.,저는 가게에서 식료품을 사야 합니다.
+259,examine,조사하다,259,examine,The doctor will examine the patient tomorrow.,의사가 환자를 내일 진찰할 것입니다.
+260,effective,"효과적인; (법률 등이)발표되는, 시행되는",260,effective,Regular exercise is effective for maintaining good health.,규칙적인 운동은 건강을 유지하는 데 효과적입니다.
+261,like,좋아하다,261,like,I like to spend my weekends hiking in the mountains.,주말에는 산에 등반하는 것을 좋아합니다.
+262,especially,특히,262,especially,"I love all kinds of music, especially jazz.","나는 모든 종류의 음악을 좋아하는데, 특히 재즈를 좋아합니다."
+263,closely,"면밀히, 엄밀히",263,closely,The police are closely monitoring the situation.,경찰은 상황을 면밀히 감시하고 있습니다.
+264,reserve,"예약하다, 지정하다; 보존하다",264,reserve,We need to reserve a table at the restaurant.,우리는 식당에 테이블을 예약해야 합니다.
+265,cooperate,"협력하다, 협동하다",265,cooperate,The two companies decided to cooperate on the project.,두 회사는 그 프로젝트에서 협력하기로 결정했습니다.
+266,very,"매우, 대단히, 아주",266,very,She was very excited about her upcoming trip.,그녀는 다가오는 여행에 대해 매우 흥분했습니다.
+267,consecutive,연속적인,267,consecutive,This is the third consecutive day of rain.,이것은 연속적인 세 번째 비가 내리는 날입니다.
+268,expectation,"예상, 기대",268,expectation,The product did not meet our expectations.,그 제품은 우리의 기대에 부응하지 못했습니다.
+269,publicize,"공표하다; 광고하다, 선전하다",269,publicize,The company plans to publicize its new product next month.,그 회사는 다음 달에 새 제품을 홍보할 계획입니다.
+270,raise,"높이다, 올리다; (의문을)제기하다",270,raise,We need to raise awareness about environmental issues.,환경 문제에 대한 인식을 높여야 합니다.
+271,extremely,"극도로, 대단히",271,extremely,The weather was extremely hot during the summer.,여름에 날씨가 극도로 더웠습니다.
+272,affect,"~에 영향을 미치다, 불리하게 작용하다",272,affect,Lack of sleep can affect your ability to concentrate.,수면 부족은 집중력에 영향을 줄 수 있습니다.
+273,target,"목표, 목표로 삼다",273,target,Our company aims to target young professionals as customers.,우리 회사는 젊은 전문가들을 고객으로 겨냥합니다.
+274,campaign,"운동, 캠페인",274,campaign,The charity launched a campaign to raise funds for the homeless.,그 자선 단체는 무주택자를 위한 자금 조달 캠페인을 시작했습니다.
+275,probable,"개연성이 높은, 유망한",275,probable,It's probable that it will rain tomorrow.,내일 비가 올 가능성이 있습니다.
+276,focus,"집중시키다, 집중하다",276,focus,Let's focus on the main issues at hand.,우리는 주요 문제에 초점을 맞추도록 하겠습니다.
+277,seasonal,"계절의, 계절적인",277,seasonal,Seasonal allergies can be quite troublesome.,계절성 알레르기는 상당히 골치 아플 수 있습니다.
+278,impact,"영향, 충격",278,impact,The new regulations will have a significant impact on businesses.,새로운 규정은 기업에 중요한 영향을 미칠 것입니다.
+279,comparison,비교,279,comparison,The comparison between the two products is inevitable.,두 제품 간의 비교는 불가피합니다.
+280,gap,격차,280,gap,There is a significant gap between theory and practice.,이론과 실무 사이에 상당한 격차가 있습니다.
+281,mounting,"증가하는, 오르는",281,mounting,There is mounting evidence to support this theory.,이 이론을 뒷받침하는 증거가 점점 더 많아지고 있습니다.
+282,reflective,반영하는,282,reflective,The report is reflective of the current market trends.,그 보고서는 현재의 시장 트렌드를 반영하고 있습니다.
+283,advertisement,광고,283,advertisement,They placed an advertisement in the local newspaper.,그들은 지역 신문에 광고를 게재했습니다.
+284,marginal,약간의; 주변의,284,marginal,There has been only a marginal improvement in sales.,판매량에는 약간의 개선만 있었습니다.
+285,customer,고객,285,customer,Our company values each and every customer.,우리 회사는 각 고객을 소중히 여깁니다.
+286,influence,"~에 영향을 주다, 영향",286,influence,Social media has a significant influence on consumer behavior.,소셜 미디어는 소비자 행동에 상당한 영향을 미칩니다.
+287,instantly,"즉각적으로, 즉시",287,instantly,The news spread instantly through social media.,그 소식은 소셜 미디어를 통해 즉시 퍼졌습니다.
+288,creative,"창조적인, 독창적인",288,creative,She is known for her creative approach to problem-solving.,그녀는 문제 해결에 대한 창의적인 접근으로 알려져 있습니다.
+289,aggressively,적극적으로,289,aggressively,The company is aggressively expanding into new markets.,그 회사는 적극적으로 새로운 시장으로 진출하고 있습니다.
+290,aim,"~을 겨누다, 목표, 목적",290,aim,Our aim is to become the market leader in renewable energy.,우리의 목표는 재생 에너지 시장 리더가 되는 것입니다.
+291,strategy,전략,291,strategy,The company devised a new marketing strategy.,그 회사는 새로운 마케팅 전략을 고안했습니다.
+292,indicate,"보여주다, 나타내다",292,indicate,Studies indicate a strong correlation between the two factors.,연구들은 두 요인 사이에 강한 상관 관계를 나타냅니다.
+293,attract,"끌다, 유인하다",293,attract,The new store design aims to attract younger customers.,새로운 매장 디자인은 젊은 고객을 유치하기 위해 만들어졌습니다.
+294,experience,"경험, 체험, 체험하다, 경험하다",294,experience,The company has extensive experience in the field of technology.,그 회사는 기술 분야에서 광범위한 경험을 가지고 있습니다.
+295,analyze,"분석하다, 분석적으로 검토하다",295,analyze,Analysts analyze market trends to predict future movements.,분석가들은 시장 동향을 분석하여 미래의 움직임을 예측합니다.
+296,introduce,"(신제품을)발표하다, 소개하다",296,introduce,The company plans to introduce a new product next quarter.,그 회사는 다음 분기에 새 제품을 출시할 계획입니다.
+297,advise,"조언해주다, 충고하다",297,advise,I would advise you to invest in more diversified assets.,나는 당신이 더 다양한 자산에 투자하는 것이 좋을 것이라고 조언할 것이다.
+298,subscribe,구독하다,298,subscribe,Many people subscribe to streaming services for entertainment.,많은 사람들이 엔터테인먼트를 위해 스트리밍 서비스를 구독합니다.
+299,absence,"부재; 결근, 결석",299,absence,Her absence from the meeting was noticeable.,그녀의 회의 결석이 눈에 띄었습니다.
+300,means,"방법, 수단",300,means,Education is often seen as a means to a better life.,교육은 종종 더 나은 삶을 위한 수단으로 여겨집니다.
+301,prefer,"(다른 것보다)~을 더 좋아하다, 선호하다",301,prefer,I prefer tea over coffee in the morning.,나는 아침에 커피 대신에 차를 선호합니다.
+302,advantage,"이점, 강점",302,advantage,One advantage of living in the city is easy access to amenities.,도시에서 살아가는 장점 중 하나는 편리한 시설 이용입니다.
+303,forward,"앞으로, (물건, 정보를)보내다",303,forward,Please forward the document to the appropriate department.,해당 부서로 문서를 전달해주세요.
+304,contemporary,"동시대의; 현대의, 당대의",304,contemporary,The artist's work reflects contemporary social issues.,그 예술가의 작품은 현대 사회 문제를 반영합니다.
+305,discussion,"토론, 토의",305,discussion,The board members engaged in a heated discussion about the proposal.,이사회 구성원들은 제안에 대한 치열한 토론에 참여했습니다.
+306,initial,"처음의, 최초의",306,initial,The initial version of the report needs some revisions.,보고서의 초안은 몇 가지 수정이 필요합니다.
+307,steadily,착실하게; 꾸준히,307,steadily,The company's revenue has been growing steadily over the past year.,그 회사의 수익은 지난 일 년간 꾸준히 성장해 왔습니다.
+308,necessarily,반드시,308,necessarily,Higher price doesn't necessarily mean better quality.,더 비싼 가격이 반드시 더 좋은 품질을 의미하지는 않습니다.
+309,resolve,(문제 등을)해결하다,309,resolve,They resolved the conflict through peaceful negotiation.,그들은 평화로운 협상을 통해 분쟁을 해결했습니다.
+310,detect,"간파하다, 탐지하다",310,detect,The security system can detect any unauthorized access.,보안 시스템은 무단 접근을 감지할 수 있습니다.
+311,intensify,"강화하다, 증대하다, 강렬하게 만들다.",311,intensify,The government plans to intensify efforts to combat climate change.,정부는 기후 변화와의 싸움에 노력을 강화할 계획이다.
+312,favorably,호의적으로; 순조롭게,312,favorably,The project was received favorably by the public.,그 프로젝트는 대중들로부터 호의적으로 받아들여졌다.
+313,cover,포함하다; 지불하다; 덮다,313,cover,The insurance policy covers damage caused by natural disasters.,보험 정책은 자연 재해로 인한 피해를 보호합니다.
+314,less,"보다 적은, 덜한",314,less,She earns less than her colleague who has the same job title.,그녀는 같은 직책을 가진 동료보다 더 적은 금액을 번다.
+315,majority,"대부분, 대다수",315,majority,The majority of voters supported the new legislation.,대다수 유권자가 새로운 입법을 지지했다.
+316,adopt,채택하다,316,adopt,The company decided to adopt a new marketing strategy.,그 회사는 새로운 마케팅 전략을 도입하기로 결정했다.
+317,largely,"주로, 대부분",317,largely,The success of the event was largely due to the efforts of the volunteers.,행사의 성공은 대부분 자원봉사자들의 노력 덕분이었다.
+318,disregard,"소홀히 하다, 무시하다",318,disregard,He disregarded the warning signs and continued driving.,그는 경고 표지를 무시하고 계속 운전했다.
+319,effort,노력,319,effort,Success requires persistent effort and dedication.,성공을 위해서는 지속적인 노력과 헌신이 필요하다.
+320,incentive,"혜택, 장려금",320,incentive,The company offers financial incentives to motivate employees.,그 회사는 직원들을 동기부여하기 위해 금전적 장려금을 제공합니다.
+321,need,"필요, 요구, 욕구, ~할 필요가 있다.",321,need,You need to finish your homework before you go out.,너가 나가기 전에 숙제를 끝내야 해.
+322,mastermind,"(계획 등의)입안자, 지도자",322,mastermind,He was the mastermind behind the entire operation.,그는 전체 작전의 주요 계획자였다.
+323,stagnant,"침체된, 불경기의, ",323,stagnant,Economic growth has been stagnant for the past two years.,경제 성장은 지난 2년간 침체되어 있었다.
+324,dramatically,극적으로,324,dramatically,The company's profits increased dramatically last year.,회사의 이익이 작년에 급격하게 증가했다.
+325,brisk,"활발한, 호황의",325,brisk,Sales have been brisk since we introduced the new product.,우리가 새 제품을 도입한 이후로 매출이 활발해졌다.
+326,unstable,"불안정한, 변하기 쉬운",326,unstable,The political situation in the region remains unstable.,그 지역의 정세는 여전히 불안정하다.
+327,rapidly,"급속히, 빨리",327,rapidly,The population of the city is rapidly increasing.,그 도시의 인구가 급속히 증가하고 있다.
+328,soar,"(물가 등이)폭등하다, 높이 치솟다",328,soar,Housing prices have soared in the last year.,지난 해에 주택 가격이 폭등했다.
+329,assert,"단언하다, 주장하다 ",329,assert,He asserted his innocence despite all the evidence.,그는 모든 증거에도 불구하고 자신의 결백을 주장했다.
+330,boost,"(경기를)부양시키다, 상승시키다",330,boost,The new initiative aims to boost economic growth.,새로운 계획은 경제 성장을 촉진하기 위해 목표를 두고 있다.
+331,analyst,분석가,331,analyst,"As an analyst, she's responsible for studying market trends.",분석가로서 그녀는 시장 동향을 연구하는 것이 책임이다.
+332,potential,잠재적인,332,potential,This project has the potential to revolutionize the industry.,이 프로젝트는 산업을 혁신할 잠재력이 있다.
+333,pleased,"만족해하는, 기쁜",333,pleased,I'm pleased with the results of the experiment.,나는 실험 결과에 만족한다.
+334,remain,계속~한 상태이다; 아직 ~해야한다,334,remain,We remain committed to our goals despite the challenges.,우리는 도전에도 불구하고 목표에 헌신하고 있습니다.
+335,limited,"제한된, 한정된",335,limited,There is only a limited amount of time available.,사용 가능한 시간이 제한되어 있습니다.
+336,costly,"비용이 많이 드는, 손실이 큰",336,costly,Repairing the machine proved to be more costly than expected.,기계 수리가 예상보다 비용이 많이 들었습니다.
+337,particular,"특정한, 독특한, 세심한 (partocularly 특히)",337,particular,She has a particular interest in ancient history.,그녀는 고대 역사에 특별한 관심을 가지고 있습니다.
+338,drastic,"과감한, 급격한",338,drastic,Drastic measures are needed to address the problem.,문제를 해결하기 위해서는 과감한 조치가 필요합니다.
+339,evenly,"고르게, 균등하게",339,evenly,The distribution of resources should be done evenly.,자원의 분배는 고르게 이루어져야 합니다.
+340,evidence,증거,340,evidence,There is strong evidence to support the theory.,그 이론을 지지하는 강력한 증거가 있습니다.
+341,prospect,"전망, 예상 ",341,prospect,The prospect of a promotion motivated him to work harder.,승진의 전망이 그를 더 열심히 일하게 했습니다.
+342,lead,"이글다, 지휘하다; (어떤 결과에)이르다",342,lead,She will lead the project team.,그녀가 프로젝트 팀을 이끌 것입니다.
+343,fall,"(값, 가치가)하락하다",343,fall,The stock prices fell sharply after the earnings report.,수익 보고서 이후 주식 가격이 급락했습니다.
+344,period,"기간, 시기",344,period,The Renaissance was a period of great cultural achievement.,르네상스는 위대한 문화적 성취의 시기였다.
+345,indicator,"지표, 지수",345,indicator,Rising unemployment is often an indicator of economic downturns.,고용 부진은 종종 경기 침체의 지표입니다.
+346,industry,산업,346,industry,The automotive industry is facing new challenges.,자동차 산업은 새로운 도전에 직면하고 있습니다.
+347,likely,~할 것 같은,347,likely,It's likely that she will accept the job offer.,그녀가 그 일자리 제안을 받을 것으로 보입니다.
+348,boom,"붐, 호황",348,boom,The tech industry experienced a boom in the 1990s.,기술 산업은 1990년대에 붐을 경험했습니다.
+349,director,"임원, 책임자",349,director,She is the director of marketing at our company.,그녀는 우리 회사의 마케팅 책임자입니다.
+350,substitute,"대용품, 대신하다(substitution 대용, 대체)",350,substitute,You can use honey as a substitute for sugar.,당신은 설탕 대신 꿀을 사용할 수 있습니다.
+351,consequence,결과,351,consequence,Every action has its consequence.,모든 행동에는 그 결과가 있습니다.
+352,fairly,"상당히, 꽤",352,fairly,She was fairly confident about the outcome.,그녀는 결과에 대해 꽤 자신 있었습니다.
+353,economical,"경제적인, 절약되는",353,economical,Using public transportation is more economical than driving.,대중 교통을 이용하는 것이 운전하는 것보다 경제적입니다.
+354,thrive,"번영하다, 성공하다",354,thrive,Businesses in this area tend to thrive.,이 지역의 기업들은 번창하기 쉽습니다.
+355,implication,"영향, 밀접한 관계",355,implication,What are the implications of this decision?,이 결정의 함의는 무엇인가요?
+356,wane,"감소, 감퇴",356,wane,The influence of the group began to wane over time.,그 집단의 영향력이 시간이 지남에 따라 약해졌다.
+357,prosperity,번영 (prosper 번영하다),357,prosperity,The country enjoyed a period of prosperity after the war.,그 나라는 전쟁 후 번영의 시기를 즐겼습니다.
+358,depression,"불황 (depress 하락시키다, 약하게하다)",358,depression,The Great Depression had a significant impact on the economy.,대공황은 경제에 상당한 영향을 미쳤습니다.
+359,dwindle,"줄어들다, 감소되다",359,dwindle,The water supply is dwindling due to the drought.,가뭄으로 인해 수자원이 점점 줄어들고 있습니다.
+360,impede,"저해하다, 방해하다",360,impede,Bad weather can impede progress on the construction site.,나쁜 날씨는 공사 현장의 진행을 방해할 수 있습니다.
+361,promising,"유망한, 전망이 좋은",361,promising,The new candidate has a promising future in the company.,신입 후보는 회사에서 유망한 미래를 가지고 있습니다.
+362,adversity,"역경, 불운",362,adversity,She faced many adversities in her life but never gave up.,그녀는 삶에서 많은 역경에 직면했지만 결코 포기하지 않았습니다.
+363,purchase,"구매하다, 구매",363,purchase,I made a purchase online and it will be delivered tomorrow.,"나는 온라인으로 구매를 했고, 내일 배달될 것입니다."
+364,installment,할부,364,installment,You can pay for the furniture in monthly installments.,가구를 월 할부로 지불할 수 있습니다.
+365,affordable,"(가격이)알맞은, 감당할 수 있는",365,affordable,The new housing development aims to provide affordable housing.,새로운 주택 개발은 가격이 저렴한 주택을 제공하는 것을 목표로 합니다.
+366,exactly,정확히,366,exactly,I need the report finished by 5 PM exactly.,나는 정확히 오후 5시까지 보고서를 마무리해야 합니다.
+367,auction,경매,367,auction,The rare painting will be sold at an auction next week.,그 희귀한 그림은 다음 주 경매에서 판매될 것입니다.
+368,authentic,"진정한, 진짜의, 진품의",368,authentic,The museum displays many authentic artifacts from ancient times.,박물관에는 고대 시대의 많은 진정한 유물이 전시되어 있습니다.
+369,charge,"요금,~을 청구하다; ",369,charge,What's the charge for fixing the broken window?,깨진 창문 수리 비용이 얼마인가요?
+370,notice,"통지, 공고",370,notice,Please take notice of the new safety regulations.,새로운 안전 규정에 주의하십시오.
+371,experienced,"경험이 있는, 노련한, 능숙한",371,experienced,He is an experienced chef with over 20 years of culinary expertise.,그는 20년 이상의 조리 기술을 갖춘 경험이 풍부한 요리사입니다.
+372,instruction,"설명, 지시 ",372,instruction,Follow the instruction manual to assemble the furniture.,가구를 조립하기 위해 설명서를 따르십시오.
+373,expert,"전문가, 전문가의, 전문적인",373,expert,She's an expert in computer programming.,그녀는 컴퓨터 프로그래밍 전문가입니다.
+374,warranty,"(품질 등의)보증, 보증서",374,warranty,The product comes with a one-year warranty.,해당 제품은 1년 보증 기간이 있습니다.
+375,refund,"환불, 환불금",375,refund,"If you're not satisfied, you can get a full refund.",만족하지 않으면 전액 환불이 가능합니다.
+376,subscriber,"가입자, 구독자",376,subscriber,"As a subscriber, you'll receive exclusive content.","가입자로서, 당신은 독점 콘텐츠를 받게 될 것입니다."
+377,delivery,배달,377,delivery,The delivery of the package is scheduled for tomorrow.,소포의 배달이 내일 예정되어 있습니다.
+378,price,가격,378,price,The price of oil has been steadily increasing.,석유 가격은 꾸준히 상승하고 있습니다.
+379,receipt,영수증,379,receipt,Don't forget to ask for a receipt when you make a purchase.,구매 시 영수증을 요청하는 것을 잊지 마십시오.
+380,offer,"제공하다, 제공,오퍼",380,offer,We have a special offer for new customers.,새로운 고객을 위한 특별한 혜택이 있습니다.
+381,carefully,"주의깊게, 신중히",381,carefully,Please read the instructions carefully before assembly.,조립하기 전에 설명서를 주의 깊게 읽어주세요.
+382,benefit,"혜택, 이익, 혜택을 보다, 이익을 얻다",382,benefit,Regular exercise has many benefits for your health.,규칙적인 운동은 건강에 많은 이점을 제공합니다.
+383,exclusively,"오로지, 독점적으로",383,exclusively,This offer is available exclusively to members.,이 특별 혜택은 회원에게만 제공됩니다.
+384,description,"(제품등의)설명, 해설",384,description,Can you give me a brief description of the product?,제품에 대한 간단한 설명을 해 줄 수 있나요?
+385,relatively,상대적으로,385,relatively,The cost of living here is relatively low.,여기서의 생활비는 비교적 낮습니다.
+386,spare,"아끼다, 할애하다, 예비의, 여분의",386,spare,Do you have any spare change for the parking meter?,주차 요금을 내기 위한 잔돈이 있나요?
+387,preparation,"준비, 대비",387,preparation,Proper preparation is key to success in any endeavor.,적절한 준비는 모든 시도에서 성공의 열쇠입니다.
+388,area,"지역, 구역",388,area,This park covers a vast area of natural beauty.,이 공원은 넓은 자연 경관을 포함합니다.
+389,clearance,"정리, 없애기; 허가",389,clearance,The store is having a clearance sale on winter clothing.,그 가게는 겨울 의류 정리 세일을 진행 중입니다.
+390,alter,"(성질, 형상을)고치다, 바꾸다",390,alter,We need to alter our plans due to the weather forecast.,날씨 예보 때문에 우리의 계획을 변경해야 합니다.
+391,apply,적용하다; 지원하다,391,apply,You should apply sunscreen before going out in the sun.,태양에 나가기 전에 선크림을 바르는 것이 좋습니다.
+392,mutually,"서로, 상호 간에 (mutuality 상호관계, 상호의존)",392,mutually,The two countries agreed to mutually beneficial trade terms.,두 나라는 상호 유익한 무역 조건에 동의했습니다.
+393,method,"방식, 방법",393,method,There are various methods for solving this problem.,이 문제를 해결하기 위한 다양한 방법이 있습니다.
+394,acceptable,"용인되는, 받아들일 수 있는;
+훌륭한, 만족스러운",394,acceptable,Your behavior is not acceptable in this classroom.,네 행동은 이 교실에서 허용되지 않습니다.
+395,desire,"욕구, 갈망, 원하다, 바라다",395,desire,She has a strong desire to travel the world.,그녀는 세계일주를 강하게 바라고 있습니다.
+396,redeemable,"(현금,상품과)교환할 수 있는, ",396,redeemable,The coupon is redeemable for a free meal at the restaurant.,이 쿠폰은 레스토랑에서 무료 식사로 교환할 수 있습니다.
+397,officially,공식적으로,397,officially,The company will officially announce the merger tomorrow.,그 회사는 내일 합병을 공식적으로 발표할 것입니다.
+398,consumption,"소비(량), 소모 (consumptive 소모적인)",398,consumption,Excessive consumption of sugar can lead to health problems.,과도한 설탕 섭취는 건강 문제를 초래할 수 있습니다.
+399,qualify,~의 자격을 얻다,399,qualify,She needs to qualify for the scholarship by submitting an essay.,그녀는 에세이를 제출하여 장학금 자격을 얻어야 합니다.
+400,fabric,"섬유, 천",400,fabric,The dress is made of a soft and comfortable fabric.,그 드레스는 부드럽고 편안한 원단으로 만들어졌습니다.
+401,valid,유효한,401,valid,You need a valid ID to enter the building.,건물에 들어가려면 유효한 신분증이 필요합니다.
+402,vendor,"노점상, 가판대; 판매업체",402,vendor,The street vendor sells delicious hot dogs.,그 길거리 상인은 맛있는 핫도그를 판매합니다.
+403,research,"연구, 조사",403,research,He spent years conducting research on renewable energy.,그는 재생 에너지에 대한 연구를 수년간 진행했습니다.
+404,devise,"고안하다, 발명하다",404,devise,They need to devise a plan to improve efficiency.,그들은 효율성을 향상시키기 위한 계획을 마련해야 합니다.
+405,revolutionary,혁명적인,405,revolutionary,The invention of the internet was revolutionary.,인터넷의 발명은 혁명적이었습니다.
+406,innovative,혁신적인,406,innovative,The company is known for its innovative approach to problem-solving.,그 회사는 문제 해결에 대한 혁신적인 접근 방식으로 유명합니다.
+407,feature,"특징, 특색, 특징으로 삼다, 특별히 포함하다",407,feature,The new smartphone will feature an improved camera.,새로운 스마트폰에는 개선된 카메라 기능이 탑재될 것입니다.
+408,inspiration,영감,408,inspiration,Her trip to the mountains was an inspiration for her paintings.,그녀의 산행은 그녀의 그림에 영감을 주었습니다.
+409,sufficiently,"충분히(sufficient 충분한, 충분)",409,sufficiently,Make sure the information provided is sufficiently detailed.,제공된 정보가 충분히 자세하도록 해야 합니다.
+410,patent,"특허, 특허권, 특허품",410,patent,The company applied for a patent for their new invention.,그 회사는 새로운 발명에 대한 특허를 신청했습니다.
+411,envision,"(장래의 일 등을)계획하다, 상상하다",411,envision,I envision a future where technology improves lives.,나는 기술이 삶을 개선하는 미래를 상상합니다.
+412,extend,"연장하다; (기간을)늘리다;
+(감사의 뜻을)말하다, 베풀다",412,extend,We decided to extend our vacation by another week.,우리는 휴가를 한 주 더 연장하기로 결정했습니다.
+413,following,"~후에, 다음의, 다음에 오는",413,following,The following chapter will discuss the results of the study.,다음 장에서는 연구 결과에 대해 논의할 것입니다.
+414,intend,~할 작정이다; 의도하다,414,intend,I intend to start my own business next year.,내년에 나는 내 비즈니스를 시작할 작정이다.
+415,grant,"(인정하여 정식으로)수여하다, 주다,
+(연구비, 장학금등의)보조금",415,grant,The foundation will grant scholarships to deserving students.,재단은 자격 있는 학생들에게 장학금을 수여할 것입니다.
+416,allow,"~하게 하다, ~을 허락하다",416,allow,Please allow me to finish my explanation.,제 설명을 마치도록 허락해주세요.
+417,inspect,"~을 검사하다, 조사하다",417,inspect,The inspector will inspect the building for safety violations.,검사원은 건물을 안전 위반 사항으로 검사할 것입니다.
+418,improve,"향상시키다, 개선하다",418,improve,We need to improve our customer service.,우리는 고객 서비스를 개선해야 합니다.
+419,increasingly,"점점, 더욱 더",419,increasingly,Technology is becoming increasingly important in our lives.,기술은 우리의 삶에서 점점 더 중요해지고 있습니다.
+420,invest,"투자하다, 운용하다",420,invest,He decided to invest his savings in the stock market.,그는 저축금을 주식 시장에 투자하기로 결정했습니다.
+421,various,"여러 가지의, 가지각색의",421,various,The store offers various products to choose from.,그 가게는 선택할 수 있는 다양한 제품을 제공합니다.
+422,upgrade,"업그레이드, 개량형
+업그레이드하다, 개선하다",422,upgrade,They plan to upgrade their computer systems next year.,그들은 내년에 컴퓨터 시스템을 업그레이드할 계획입니다
+423,manual,"설명서, 안내서",423,manual,The instruction manual provides step-by-step guidance.,사용 설명서는 단계별 안내를 제공합니다.
+424,explore,"조사하다, 탐구하다",424,explore,We decided to explore the possibility of expansion.,우리는 확장 가능성을 탐색하기로 결정했습니다.
+425,response,"응답, 대답",425,response,The survey received a strong response from participants.,설문 조사는 참가자들로부터 강한 반응을 받았습니다.
+426,appearance,"외관, 외모",426,appearance,His appearance at the meeting was unexpected.,그의 회의 참석은 예상치 못했습니다.
+427,successful,"성공적인, 성공한",427,successful,The project was successful due to teamwork.,이 프로젝트는 팀워크 덕분에 성공적이었습니다.
+428,hold,"~을 수용하다, ~을 담다;
+(회의 등을)개최하다, 열다",428,hold,The company will hold a conference next month.,그 회사는 다음 달에 컨퍼런스를 개최할 예정입니다.
+429,advance,"진보, 전진",429,advance,We need to advance our understanding of the problem.,우리는 문제에 대한 이해를 더 발전시켜야 합니다.
+430,reliable,"믿을 만한, 신뢰할 수 있는",430,reliable,The information provided by the website is reliable.,그 웹사이트가 제공하는 정보는 신뢰할 만합니다.
+431,quality,"품질, 질",431,quality,Quality is more important than quantity in this case.,이 경우에는 질이 양보다 더 중요합니다.
+432,domestic,"국내의, 국산의",432,domestic,The company focuses on domestic sales rather than exports.,그 회사는 수출보다 국내 판매에 중점을 둡니다.
+433,development,"개발, 발전",433,development,The city has undergone significant development in recent years.,이 도시는 최근 몇 년간 중요한 발전을 이루었습니다.
+434,availability,"(입수)가능성, 유효성, 유용성",434,availability,The availability of parking spaces is limited in the city.,주차 공간의 이용 가능성이 도시에서는 제한됩니다.
+435,update,"갱신, 개정, 갱신하다,
+최신의 것으로 하다",435,update,Remember to update your software regularly.,소프트웨어를 정기적으로 업데이트하는 것을 기억하세요.
+436,accurate,정확한,436,accurate,Her predictions about the market were surprisingly accurate.,그녀의 시장에 대한 예측은 놀랍도록 정확했습니다.
+437,complicate,복잡한(complicatedly복잡하게),437,complicate,Adding more rules will only complicate the situation.,더 많은 규칙을 추가하면 상황이 더 복잡해질 뿐입니다.
+438,accomplished,"숙련된, 노련한",438,accomplished,He is an accomplished musician and writer.,그는 숙련된 음악가이자 작가입니다.
+439,inquiry,"문의, 질문",439,inquiry,We received an inquiry about our products from a potential customer.,잠재적 고객으로부터 제품에 대한 문의를 받았습니다.
+440,indication,"징후, 조짐",440,indication,There are indications that the economy is improving.,경제가 나아가고 있는 조짐이 있습니다.
+441,manufacturer,"제조회사, 제조업자",441,manufacturer,The car manufacturer is known for its high-quality vehicles.,그 자동차 제조사는 고품질의 차량으로 유명합니다.
+442,compatible,"호환되는, 양립할 수 있는",442,compatible,The software is compatible with most operating systems.,이 소프트웨어는 대부분의 운영 체제와 호환됩니다.
+443,superior,"우수한, 상급의",443,superior,The quality of their products is superior to others.,그들의 제품의 품질은 다른 것들보다 우수합니다.
+444,absolute,"완전한, 완전무결한",444,absolute,The CEO has absolute authority over the company.,CEO는 회사에 대한 절대적인 권한을 갖고 있습니다.
+445,broaden,넓히다,445,broaden,Traveling broadens your perspective on life.,여행은 삶에 대한 여러 관점을 넓혀줍니다.
+446,corrosion,부식,446,corrosion,The metal gate showed signs of corrosion over time.,금속 문은 시간이 지남에 따라 부식의 징후를 보였습니다.
+447,epuipment,"장비, 설비",447,equipment,The laboratory is equipped with state-of-the-art equipment.,연구소는 최신 장비로 설비되어 있습니다.
+448,automate,자동화하다,448,automate,The company plans to automate its manufacturing process.,그 회사는 생산 과정을 자동화할 계획입니다.
+449,specification,"명세서, 설명서, 사양",449,specification,The project requires adherence to strict specifications.,이 프로젝트는 엄격한 명세서를 준수해야 합니다.
+450,properly,"제대로, 정확하게",450,properly,Please dispose of hazardous materials properly.,유해 물질을 적절하게 처리해 주세요.
+451,safety,안전,451,safety,Safety measures should be implemented in the workplace.,작업장에는 안전 조치가 시행되어야 합니다.
+452,precaution,"예방조치, 예방책",452,precaution,Taking precautions can prevent accidents.,예방 조치를 취하면 사고를 예방할 수 있습니다.
+453,operate,"(기계 등이)작동하다, 움직이다",453,operate,The machine is easy to operate with minimal training.,그 기계는 최소한의 훈련으로 운영하기 쉽습니다.
+454,processing,"가공, 처리(process 과정, 진행, 처리하다)",454,processing,The processing of raw materials is done efficiently.,원료 처리는 효율적으로 이루어집니다.
+455,capacity,"용량, 수용력; 역할",455,capacity,"The stadium has a seating capacity of 50,000.",그 경기장은 5만 명의 수용 인원이 있습니다.
+456,assemble,"(부품,기계 등을)조립하다;
+(사람을)모으다",456,assemble,It took them hours to assemble the furniture.,그들은 가구를 조립하는 데 몇 시간이 걸렸습니다.
+457,utilize,"이용하다, 활용하다",457,utilize,We need to utilize our resources more effectively.,우리는 자원을 더 효과적으로 활용해야 합니다.
+458,place,"~을-한 상태에 두다;
+(지시,주문,신청등을)하다",458,place,Please place the documents in the designated folder.,문서를 지정된 폴더에 놓아 주세요.
+459,fill,~을 채우다; (주문대로)이행하다,459,fill,Please fill out the form with your personal information.,개인 정보를 기입하여 양식을 채워 주세요.
+460,manufacturing,제조(업)의,460,manufacturing,The city's economy relies heavily on manufacturing.,이 도시의 경제는 제조업에 크게 의존합니다.
+461,renovate,"(낡은 건물, 가구등을)개조하다,
+수리하다, 보수하다",461,renovate,They plan to renovate the old building into a hotel.,그들은 오래된 건물을 호텔로 개축할 계획입니다.
+462,decision,"결정, 판단",462,decision,Making a decision requires careful consideration.,결정을 내리려면 신중한 고려가 필요합니다.
+463,material,"재료, 물질",463,material,The factory produces raw materials for construction.,공장은 건설용 원자재를 생산합니다.
+464,success,"성과, 성공",464,success,Hard work and determination are keys to success.,노력과 결연함이 성공의 열쇠입니다.
+465,attribute,(원인을)~의 덕분으로 돌리다,465,attribute,She attributes her success to hard work and perseverance.,그녀는 성공을 노력과 인내심 덕분으로 설명합니다.
+466,efficiency,"효율, 능률",466,efficiency,The new system improved efficiency in the workplace.,새로운 시스템은 직장에서의 효율성을 향상시켰습니다.
+467,limit,"한계, 제한",467,limit,There is a limit to how much we can accomplish in a day.,하루에 우리가 달성할 수 있는 한계가 있습니다.
+468,tailored,"맞춤의, 주문에 따라 맞춘",468,tailored,The program offers tailored solutions for each client.,이 프로그램은 각 클라이언트에게 맞춤형 솔루션을 제공합니다.
+469,component,"부품, (구성)요소",469,component,Each component of the machine must be carefully inspected.,기계의 각 구성 요소는 신중하게 검사되어야 합니다.
+470,capable,"~을 할 수 있는, ~할 능력이 있는",470,capable,He is capable of handling challenging situations.,그는 어려운 상황을 다룰 능력이 있습니다.
+471,economize,"절약하다, 아끼다",471,economize,We need to economize on our expenses this month.,이번 달에는 비용을 절약해야 합니다.
+472,flexible,"융통성 있는; 유연한, 잘 구부러지는",472,flexible,Being flexible is essential in today's fast-paced world.,유연성은 오늘날 빠르게 변화하는 세상에서 필수적입니다.
+473,comparable,"필적하는, 비교되는",473,comparable,Their prices are comparable to those of other stores.,그들의 가격은 다른 상점들과 비교해 볼 만합니다.
+474,produce,생산하다,474,produce,The farm produces fresh vegetables for local markets.,그 농장은 지역 시장을 위해 신선한 채소를 생산합니다.
+475,respectively,"각각, 따로(respective 각각의)",475,respectively,"The winners of first, second, and third place are John, Alice, and Tom, respectively.","1, 2, 3등은 각각 존, 앨리스, 톰입니다."
+476,device,장치,476,device,The new device simplifies the process of data entry.,새로운 장치는 데이터 입력 과정을 간단화합니다.
+477,trim,"(깍아)다듬다, 없애다; 삭감하다",477,trim,She trimmed the bushes to make the garden look neat.,그녀는 정원을 깔끔하게 만들기 위해 수북을 다듬었습니다.
+478,launch,(신제품을)출시하다,478,launch,The company plans to launch its new product next month.,그 회사는 다음 달에 새 제품을 출시할 계획입니다.
+479,separately,"개별적으로, 따로따로",479,separately,Please pay for the items separately at the counter.,계산대에서 물건을 따로따로 지불해 주세요.
+480,expiration,"(기간,임기 등의)만료, 만기",480,expiration,The expiration date of the milk is printed on the carton.,우유의 유통 기한은 용기에 인쇄되어 있습니다.
+481,maneuver,"이동시키다, 움직이다",481,maneuver,The ship made a sharp maneuver to avoid the iceberg.,배는 빙산을 피하기 위해 급한 기동을 했습니다.
+482,coming,다가오는,482,coming,We look forward to the coming year with optimism.,우리는 차세대의 도래를 긍정적으로 기대합니다.
+483,damaged,"손상된, 손해를 입은",483,damaged,The storm damaged several houses in the neighborhood.,폭풍이 동네의 몇 채의 집을 손상시켰습니다.
+484,prevent,"~을 막다, ~을 예방하다",484,prevent,Regular maintenance can help prevent costly repairs.,정기적인 유지보수는 비용이 많이 드는 수리를 예방할 수 있습니다.
+485,power,"전력, 전기",485,power,The generator provides power during blackouts.,발전기는 정전 시 전기를 공급합니다.
+486,chemical,화학제품,486,chemical,The laboratory studies the effects of various chemicals.,연구소는 다양한 화학 물질의 영향을 연구합니다.
+487,complaint,불평,487,complaint,He lodged a complaint with the customer service department.,그는 고객 서비스 부서에 불만을 제기했습니다.
+488,deal,처리하다; 거래하다; 분배하다,488,deal,Let's make a deal that benefits both parties.,양측에 이로운 거래를 해 보겠습니다.
+489,argumentative,"논쟁적인, 논쟁을 좋아하는",489,argumentative,He enjoys debating and is quite argumentative.,그는 토론을 즐기며 꽤 논쟁적입니다.
+490,appropriately,적절하게(appropriate 적합한),490,appropriately,Please dress appropriately for the formal event.,공식 행사에 적절한 복장으로 참석해 주세요.
+491,respond,응답하다,491,respond,The company will respond to your inquiry within 24 hours.,그 회사는 24시간 이내에 귀하의 문의에 응답할 것입니다.
+492,infuriate,"화나게하다, 격분시키다",492,infuriate,His behavior can sometimes infuriate his colleagues.,그의 행동은 가끔 동료들을 격분시킬 수 있습니다.
+493,curteous,예의바른,493,courteous,He was always courteous and polite to everyone.,그는 항상 모든 사람에게 예의 바르고 정중했습니다.
+494,satisfaction,만족,494,satisfaction,Customer satisfaction is our top priority.,고객 만족은 우리의 최우선 사항입니다.
+495,inconvenience,"불편, ~에게 불편을 느끼게 하다",495,inconvenience,We apologize for any inconvenience this may cause.,이로 인해 발생하는 불편을 사과드립니다.
+496,complete,"완료하다, 완성하다, 완료된, 완성된",496,complete,Please complete the form and return it to us.,양식을 작성하여 저희에게 돌려주세요.
+497,specific,"구체적인, 명확한",497,specific,Can you be more specific about what you need?,당신이 필요한 것을 좀 더 구체적으로 설명할 수 있나요?
+498,return,"반환하다, 반송하다",498,return,The customer wants to return the product for a refund.,고객이 제품을 반품하여 환불을 요청했습니다.
+499,replace,"~을 교체하다, 대체하다",499,replace,We'll replace the defective item free of charge.,결함이 있는 제품은 무상으로 교체해 드리겠습니다.
+500,presentation,발표,500,presentation,His presentation was informative and engaging.,그의 발표는 정보가 풍부하고 매력적이었습니다.
+501,evaluation,평가,501,evaluation,The evaluation of the project will be done next week.,프로젝트의 평가는 다음 주에 진행될 예정입니다.
+502,confident,자신 있는,502,confident,She feels confident about her chances of success.,그녀는 성공할 가능성에 대해 자신감을 갖고 있습니다.
+503,cause,"~을 야기하다, ~의 원인이 되다
+원인",503,cause,Smoking can cause serious health problems.,흡연은 심각한 건강 문제를 일으킬 수 있습니다.
+504,commentary,"해설, 설명(comment 해설하다,논평, 주석을달다)",504,commentary,The commentator provided insightful commentary on the game.,해설자는 경기에 대해 내용이 풍부한 해설을 제공했습니다.
+505,notification,통지,505,notification,You will receive a notification when your package ships.,귀하의 소포가 발송되면 통지를 받게 될 것입니다.
+506,apologize,사과하다,506,apologize,He apologized profusely for his mistake.,그는 자신의 실수에 대해 진심으로 사과했습니다.
+507,interact,"소통하다, 교류하다; 상호작용을 하다",507,interact,It's important for team members to interact effectively.,팀원들이 효과적으로 소통하는 것이 중요합니다.
+508,certain,"확신하는, 확실한; 특정한",508,certain,I'm not certain about the details of the plan.,그 계획의 세부 사항에 대해서는 확신이 없습니다.
+509,commitment,"헌신, 전념",509,commitment,His commitment to the project is commendable.,그의 프로젝트에 대한 헌신은 칭찬할 만합니다.
+510,applaud,~에게 박수를 보내다; 칭찬하다,510,applaud,The audience rose to applaud the performers.,관객들이 연주자들을 칭찬하기 위해 일어섰습니다.
+511,biography,"약력, 전기",511,biography,Her biography of the famous scientist is very detailed.,그 유명한 과학자의 전기는 매우 상세합니다.
+512,critical,비판적인; 중요한; 위기의,512,critical,Timely intervention is critical in such cases.,시기적절한 개입이 그런 경우에는 중요합니다.
+513,depend on,"~에 달려 있다, ~에게 의존하다",513,depend on,Success often depends on perseverance and hard work.,성공은 종종 인내와 노력에 달려 있습니다.
+514,combine,결합시키다,514,combine,Let's combine our efforts to finish the project on time.,우리의 노력을 결합하여 프로젝트를 제 시간에 완료합시다.
+515,priority,"우선권, 우선사항",515,priority,Safety is our number one priority.,안전이 우리의 최우선 사항입니다.
+516,observe,"관찰하다, 주시하다;
+(규칙 등을)준수하다, 지키다",516,observe,It's important to observe safety regulations at all times.,언제나 안전 규정을 준수하는 것이 중요합니다.
+517,defective,결함이 있는,517,defective,The manufacturer recalled the product due to defective parts.,제조업체가 결함이 있는 부품으로 제품을 리콜했습니다.
+518,reflect,"반영하다, 나타내다",518,reflect,His actions reflect his true character.,그의 행동은 그의 진짜 성격을 반영합니다.
+519,attitude,"태도, 마음가짐",519,attitude,A positive attitude can make a big difference.,긍정적인 태도는 큰 차이를 만들 수 있습니다.
+520,disappoint,실망시키다,520,disappoint,"I'm sorry to disappoint you, but we're out of stock.",죄송하지만 재고가 없어서 실망시켜 드리게 됐습니다.
+521,inquire,"문의하다, 질문하다",521,inquire,Feel free to inquire if you have any questions.,궁금한 사항이 있으시면 언제든지 문의해 주세요.
+522,insert,삽입하다,522,insert,Please insert your card into the card reader.,카드를 카드 리더기에 넣어 주세요.
+523,disclose,"공개하다, 드러내다",523,disclose,He refused to disclose the details of the agreement.,그는 협정의 세부 사항을 공개하지 않기로 거부했습니다.
+524,guarantee,"보장하다, 보장",524,guarantee,We guarantee the quality of our products.,우리는 제품의 품질을 보장합니다.
+525,politely,"공손하게, 예의바르게",525,politely,Please ask the customer politely to wait a moment.,고객에게 예의 바르게 잠시 기다리라고 부탁하세요.
+526,seriously,진지하게,526,seriously,The company takes safety issues very seriously.,그 회사는 안전 문제를 매우 심각하게 다룹니다.
+527,international,국제적인,527,international,English is an international language.,영어는 국제적인 언어입니다.
+528,attraction,관광 명소,528,attraction,The Eiffel Tower is a popular tourist attraction.,에펠탑은 인기 있는 관광 명소입니다.
+529,itinerary,여행 일정,529,itinerary,We need to finalize the itinerary for the trip.,여행 일정을 최종 확정해야 합니다.
+530,exotic,"이국적인, 매혹적인",530,exotic,She loves to travel to exotic destinations.,그녀는 이국적인 목적지로 여행하는 것을 좋아합니다.
+531,diverse,다양한,531,diverse,The city boasts a diverse cultural heritage.,이 도시는 다양한 문화 유산을 자랑합니다.
+532,superb,"최고의, 뛰어난",532,superb,"The performance was superb, with flawless execution.",공연은 훌륭했고 흠잡을 데 없는 실행이었습니다.
+533,baggage,수화물,533,baggage,Please make sure to collect all your baggage.,모든 수화물을 수령하는 것을 잊지 마세요.
+534,destination,목적지,534,destination,Paris is a popular tourist destination.,파리는 인기 있는 관광 목적지입니다.
+535,missing,"분실된, 없어진",535,missing,We apologize for the inconvenience of the missing item.,누락된 물품으로 인한 불편을 사과드립니다.
+536,locate,"(~의 위치를)찾아내다;
+~을 위치시키다",536,locate,The GPS can help you locate the nearest gas station.,GPS가 가장 가까운 주유소를 찾는 데 도움이 될 수 있습니다.
+537,approximately,대략,537,approximately,The journey will take approximately two hours.,여행은 대략 두 시간이 소요될 것입니다.
+538,duty,"관세,세금; 직무,의무",538,duty,It is the duty of parents to take care of their children.,부모의 의무는 자녀를 돌보는 것입니다.
+539,process,"과정, 처리하다",539,process,We need to streamline the process to improve efficiency.,효율성을 높이기 위해 프로세스를 개선해야 합니다.
+540,board,"탑승하다, 이사회",540,board,Passengers are requested to board the aircraft.,승객들은 비행기에 탑승하기를 요청합니다.
+541,comfortable,편안한,541,comfortable,The seats are designed to be comfortable for long flights.,이 좌석은 장거리 비행에 편안하도록 설계되었습니다.
+542,declare,(세관에서)신고하다,542,declare,You must declare any goods exceeding the duty-free allowance.,면세 한도를 초과하는 모든 물품은 신고해야 합니다.
+543,specify,"명시하다 (specification 열거, 명시, 명세서)",543,specify,Can you specify which color you prefer?,어떤 색상을 선호하는지 구체적으로 말해 줄 수 있나요?
+544,depart,출발하다,544,depart,The train is scheduled to depart at 9:30 AM.,기차는 오전 9시 30분에 출발 예정입니다.
+545,emergency,"비상시, 비상 사태",545,emergency,"In case of emergency, please use the emergency exit.",비상 시에는 비상 출구를 이용해 주세요.
+546,passenger,승객,546,passenger,Passengers are required to fasten their seat belts.,승객들은 안전벨트를 매는 것이 필요합니다.
+547,outgoing,"(장소를)출발하는, 떠나는;
+(지위를)떠나는",547,outgoing,He's a very outgoing person who enjoys meeting new people.,그는 새로운 사람들을 만나는 것을 즐기는 매우 개방적인 사람입니다.
+548,tighly,"단단히, 꽉",548,tightly,Please close the lid tightly to prevent spills.,새어 나오는 것을 방지하기 위해 뚜껑을 꽉 닫아주세요.
+549,tour,"(공장,시설 등의)견학, 짧은 여행",549,tour,The guided tour of the museum lasts about an hour.,박물관의 유도 투어는 약 한 시간 정도 소요됩니다.
+550,carrier,"항공사, 수송기, 수송 회사",550,carrier,The airline is a leading carrier in the region.,그 항공사는 그 지역에서 선두 주자입니다.
+551,customarily,"관례상, 습관적으로",551,customarily,Tipping is customarily expected in this country.,이 나라에서는 팁이 관례적으로 기대됩니다.
+552,confuse,"혼란시키다 (refuse 거절하다, 거부하다)",552,confuse,The instructions were poorly written and confused many people.,지시사항이 잘못 작성되어 많은 사람들을 혼란스럽게 했습니다.
+553,arrive,도착하다,553,arrive,The train is due to arrive at platform 3.,기차는 3번 승강장에 도착할 예정입니다.
+554,brochure,"(홍보용)소책자, 브로셔",554,brochure,Please take a brochure for more information.,자세한 정보는 브로셔를 참고하세요.
+555,involve,"수반하다, 포함하다; 참여시키다",555,involve,The project will involve significant changes to our workflow.,이 프로젝트는 우리의 업무 프로세스에 상당한 변화를 초래할 것입니다.
+556,ship,"운송하다, 수송하다, 선박, 배",556,ship,We ship orders worldwide.,우리는 주문을 전 세계로 발송합니다.
+557,suitcase,여행가방,557,suitcase,Please make sure to label your suitcase with your name.,여행 가방에 이름표를 붙이는 것을 잊지 마세요.
+558,unavailable,"이용할 수 없는, 구할 수 없는",558,unavailable,"I'm sorry, but that item is currently unavailable.",죄송하지만 해당 제품은 현재 구할 수 없습니다.
+559,fill out/in,"(서류에)기입하다, 적어 넣다",559,fill out/in,Please fill out the form and submit it by Friday.,양식을 작성하여 금요일까지 제출해 주세요.
+560,customs,세관,560,customs,Your baggage will be inspected by customs.,짐은 세관에서 검사될 것입니다.
+561,away,떨어져서,561,away,The factory is located about 50 kilometers away from here.,공장은 여기에서 약 50 킬로미터 떨어진 곳에 있습니다.
+562,dramatic,"멋진, 극적인; 급격한",562,dramatic,There was a dramatic increase in sales last month.,지난 달 판매량이 급격히 증가했습니다.
+563,hospitality,"환대, 친절",563,hospitality,The hotel is known for its warm hospitality.,그 호텔은 따뜻한 환대로 유명합니다.
+564,indulge,"빠지다, 탐닉하다",564,indulge,I like to indulge in a little chocolate now and then.,나는 가끔씩 조금의 초콜릿을 즐기는 것을 좋아합니다.
+565,proximity,"가까움, 근접함",565,proximity,The hotel's proximity to the beach is a big selling point.,호텔이 해변과 가까운 위치에 있어 큰 장점입니다.
+566,seating,(집합적)좌석 설비; 좌석 배열,566,seating,"The seating capacity of the stadium is 50,000.",이 스타디움의 좌석 수용 인원은 5만 명입니다.
+567,unlimited,무제한의,567,unlimited,The internet package comes with unlimited data.,이 인터넷 패키지는 무제한 데이터를 제공합니다.
+568,proposal,"제안, 계획",568,proposal,She accepted his marriage proposal without hesitation.,그녀는 망설임 없이 그의 결혼 제안을 수락했습니다.
+569,alliance,"동맹, 제휴",569,alliance,The two companies formed an alliance to compete globally.,두 회사는 글로벌 경쟁을 위해 동맹을 결성했습니다.
+570,stipulation,계약 조건,570,stipulation,The contract contains several stipulations regarding payment.,계약에는 지불에 관한 여러 조항이 포함되어 있습니다.
+571,term,"조건; 임기, 기한",571,term,The lease agreement has a term of one year.,임대 계약은 1년의 기간을 갖고 있습니다.
+572,compromise,"타협, 화해",572,compromise,Both parties reached a compromise after lengthy negotiations.,양측은 긴 협상 끝에 타협안에 도달했습니다.
+573,negotiation,"협상, 교섭",573,negotiation,The negotiation process was long and difficult.,협상 과정은 길고 어려웠습니다.
+574,agreement,"계약, 협정; 합의",574,agreement,We finally reached an agreement on the terms of the contract.,우리는 드디어 계약 조건에 대한 합의에 도달했습니다.
+575,deadlock,교착 상태,575,deadlock,The negotiations reached a deadlock and were suspended.,협상은 교착 상태에 이르고 중단되었습니다.
+576,review,"검토하다, 재조사하다",576,review,We need to review the terms of the contract.,우리는 계약 조건을 재검토해야 합니다.
+577,contract,"계약(서),계약하다, 수축하다",577,contract,She signed a contract with the publishing company.,그녀는 출판사와 계약을 체결했습니다.
+578,signature,서명,578,signature,Please sign on the dotted line at the bottom of the page.,페이지 아래 점선 위에 서명해 주세요.
+579,originally,"원래, 처음에는",579,originally,The book was originally published in 1995.,이 책은 원래 1995년에 출판되었습니다.
+580,direction,"방향, 지시, 감독",580,direction,The sign pointed in the direction of the nearest town.,표지판은 가장 가까운 마을 쪽을 가리켰습니다.
+581,initially,"처음에, 초기에",581,initially,"Initially, I was hesitant to accept the offer.",처음에는 그 제안을 받아들이기를 망설였습니다.
+582,expire,(계약등이)만료되다,582,expire,The coupon will expire at the end of the month.,쿠폰은 이번 달 말에 만료됩니다.
+583,collaborate,"협력하다, 공동으로 일하다",583,collaborate,The two companies decided to collaborate on a new project.,두 회사는 새로운 프로젝트에 협력하기로 결정했습니다.
+584,dedicate,"전념하다, 헌신하다, 바치다",584,dedicate,He decided to dedicate his life to helping others.,그는 자신의 삶을 다른 사람들을 돕는 데 헌신하기로 결정했습니다.
+585,revised,"수정된, 변경된",585,revised,The revised edition of the book includes additional content.,책의 개정판에는 추가 내용이 포함되어 있습니다.
+586,imperative,"반드시 해야 하는, 필수적인",586,imperative,It is imperative that we take action immediately.,우리가 즉시 행동을 취해야 할 필요가 있습니다.
+587,cooperatively,"협력하여, 협조적으로",587,cooperatively,The two teams worked cooperatively to achieve their goal.,두 팀은 목표를 달성하기 위해 협력하여 일했습니다.
+588,commission,"수수료, 커미션; 위원회
+(일 등을)의뢰하다, 주문하다",588,commission,She earns a commission for every sale she makes.,그녀는 자신이 한 판매마다 커미션을 얻습니다.
+589,omit,"빠뜨리다, 생략하다",589,omit,Please do not omit any important details from your report.,보고서에서 중요한 세부 사항을 생략하지 마세요.
+590,conflict,"대립, 충돌, 갈등",590,conflict,"Their schedules conflict, so they can't meet today.",그들의 일정이 겹쳐서 오늘 만날 수 없습니다.
+591,renew,(계약 등을)갱신하다,591,renew,Don't forget to renew your driver's license.,운전 면허를 갱신하는 것을 잊지 마세요.
+592,proficient,"능숙한, 능한",592,proficient,She's proficient in three languages.,그녀는 세 가지 언어에 능숙합니다.
+593,confidentiality,"기밀, 비밀",593,confidentiality,We guarantee the confidentiality of your personal information.,우리는 귀하의 개인 정보의 기밀을 보장합니다.
+594,dispute,"분쟁, 논쟁",594,dispute,They are in a legal dispute over the property.,그들은 그 부동산에 대한 법적 분쟁 중에 있습니다.
+595,objection,"반대, 이익",595,objection,I have no objection to your proposal.,나는 당신의 제안에 이의가 없습니다.
+596,define,"규정하다, 정의하다",596,define,The term is difficult to define precisely.,그 용어를 정확하게 정의하기가 어렵습니다.
+597,impression,인상,597,impression,Her first impression of the city was very positive.,그녀의 이 도시에 대한 첫인상은 매우 긍정적이었습니다.
+598,security,"보안, 안전, 보호",598,security,The building has tight security measures in place.,건물에는 엄격한 보안 조치가 시행 중입니다.
+599,option,선택권,599,option,You have the option to upgrade to a premium membership.,프리미엄 회원으로 업그레이드할 수 있는 옵션이 있습니다.
+600,proceed,"(일을)진행하다, 진척되다",600,assistance,"If you need assistance, please don't hesitate to ask.",도움이 필요하시면 망설이지 마시고 질문해 주세요.
+601,modify,"수정하다, 일부 변경하다",601,session,The training session will last for two hours.,훈련 세션은 두 시간 동안 진행됩니다.
+602,narrow,(범위 등을)좁히다,602,troubleshoot,They were able to troubleshoot the problem quickly.,그들은 문제를 신속하게 해결할 수 있었습니다.
+603,bid,입찰,603,warranty,The product comes with a one-year warranty.,이 제품은 1년 보증이 함께 제공됩니다.
+604,settle,"해결하다, 처리하다",604,demonstrate,He will demonstrate the new software at the conference.,그는 회의에서 새 소프트웨어를 시연할 것입니다.
+605,terminate,"끝내다, 종결시키다",605,comprehensive,The report provides a comprehensive analysis of the situation.,보고서는 상황에 대한 포괄적인 분석을 제공합니다.
+606,challenging,"도전적인, 힘든",606,navigate,The app makes it easy to navigate through the city.,이 앱을 사용하면 도시를 쉽게 이동할 수 있습니다.
+607,foundation,"토대, 기초",607,maintenance,Regular maintenance is essential to keep the equipment running smoothly.,정기적인 유지 보수는 장비를 원할하게 작동시키는 데 필수적입니다.
+608,completely,"전적으로, 완전히",608,capacity,"The stadium has a seating capacity of 50,000.",이 스타디움은 5만 명의 좌석 수용 능력을 갖고 있습니다.
+609,refuse,거절하다,609,submission,The deadline for submission of proposals is Friday.,제안서 제출 마감일은 금요일입니다.
+610,temporarily,일시적으로,610,precisely,It is difficult to predict precisely what will happen.,무엇이 정확히 일어날지 예측하기 어렵습니다.
+611,dealer,"판매업자, 상인",611,dealer,The car dealer offered us a good price for the vehicle.,그 자동차 판매업자는 차량에 대해 우리에게 좋은 가격을 제시했습니다.
+612,bulk,대량의,612,bulk,We buy our office supplies in bulk to save money.,우리는 돈을 절약하기 위해 사무용품을 대량으로 구입합니다.
+613,inventory,"재고품, 재고목록",613,inventory,The company needs to update its inventory regularly.,회사는 재고 목록을 정기적으로 업데이트해야 합니다.
+614,short,부족한,614,short,We're short on staff this week due to illness.,이번 주에는 직원이 병으로 부족합니다.
+615,cost,비용,615,cost,The cost of living in this city is quite high.,이 도시의 생활 비용은 상당히 높습니다.
+616,selection,"선택된 것, 정선품",616,selection,The store offers a wide selection of products.,그 가게는 다양한 제품을 제공합니다.
+617,commercial,"상업의, 상업적인, 광고",617,commercial,The commercial aired during the Super Bowl was very popular.,슈퍼볼 중계 중에 방영된 상업은 매우 인기가 있었습니다.
+618,order,"주문하다, 주문, 주문품",618,order,Please place your order before 5 p.m. for same-day delivery.,당일 배송을 위해 오후 5시 전에 주문을 해 주세요.
+619,provide,"공급하다, 제공하다",619,provide,The hotel will provide towels and toiletries for guests.,호텔은 손님들을 위해 수건과 세면도구를 제공할 것입니다.
+620,contact,"~와 연락하다,
+(상업적 목적으로)교섭하고 있는 사람",620,contact,I'll contact the supplier to inquire about the shipment.,나는 선적에 대해 문의하기 위해 공급업체에 연락할 것이다.
+621,invoice,송장,621,invoice,Please send us an invoice for the recent order.,최근 주문에 대한 송장을 보내주세요.
+622,move,"옮기다, 움직이다, 조치, 수단;
+이동, 이사",622,move,The company decided to move its headquarters to a new location.,회사는 본사를 새로운 위치로 이전하기로 결정했습니다.
+623,supply,"공급하다, 공급; (-s)비품, 소모품",623,supply,We need to ensure a stable supply of raw materials.,우리는 원자재의 안정적인 공급을 보장해야 합니다.
+624,discount,할인,624,discount,Students get a discount on movie tickets with their ID.,학생들은 신분증을 제시하면 영화 티켓을 할인받을 수 있습니다.
+625,distribute,"배포하다, 배급하다",625,distribute,The charity organization distributed food to the homeless.,자선 단체가 무주택자들에게 음식을 분배했습니다.
+626,acquisition,인수; 구입한 것,626,acquisition,The acquisition of the smaller company was completed smoothly.,작은 회사의 인수가 원활하게 완료되었습니다.
+627,assure,"~에게 보장하다, ~을 안심시키다",627,assure,We assure our customers of the quality of our products.,우리는 제품의 품질에 대해 고객들에게 보장합니다.
+628,subject,"~의 영향을 받기 쉬운;
+(동의 등을)조건으로 하는,
+~에게(~을) 받게 하다",628,subject,The project timeline is subject to change depending on circumstances.,프로젝트 일정은 상황에 따라 변경될 수 있습니다.
+629,seek,"구하다, 찾다",629,seek,We are seeking new opportunities for growth.,우리는 성장을 위한 새로운 기회를 찾고 있습니다.
+630,satisfactory,만족스러운,630,satisfactory,The results of the survey were not satisfactory.,설문 조사 결과가 만족스럽지 않았습니다.
+631,confirmation,"확인, 확증",631,confirmation,We await confirmation of your attendance at the event.,행사 참석에 대한 확인을 기다리고 있습니다.
+632,unable,~할 수 없는,632,unable,I'm unable to attend the meeting due to a prior commitment.,이전 약속 때문에 회의에 참석할 수 없습니다.
+633,payment,"지불(금액),납입(금액)",633,payment,Please make the payment by the end of the month.,이번 달 말까지 결제해 주세요.
+634,measure,"대책, 조치, 수단
+측정하다",634,measure,The government is taking measures to control inflation.,정부는 인플레이션을 통제하기 위한 조치를 취하고 있습니다.
+635,bargain,"특가품, 흥정",635,bargain,She loves to hunt for bargains at the thrift store.,그녀는 중고 상점에서 싸게 구매하는 것을 좋아합니다.
+636,stock,재고; 주식,636,stock,The store has run out of stock of the popular item.,그 가게는 인기 상품의 재고가 소진되었습니다.
+637,affordability,감당할 수 있는 비용,637,affordability,The affordability of housing in this area is a concern.,이 지역의 주택 가격이 감당하기 힘든 문제입니다.
+638,clientele,"(집합적)고객들,
+(변호사,건축가 등의)모든 의뢰인",638,clientele,The restaurant has a diverse clientele from all walks of life.,그 음식점은 다양한 분야의 고객층을 가지고 있습니다.
+639,acclaim,"호평, 찬사",639,acclaim,The artist's work received critical acclaim from art critics.,그 예술가의 작품은 예술 비평가들로부터 칭찬을 받았습니다.
+640,represent,~을 대표하다,640,represent,The lawyer will represent us in court.,그 변호사가 우리를 법정에서 대표할 것입니다.
+641,rating,"등급, 평가",641,rating,The movie received a low rating from critics.,그 영화는 비평가들로부터 낮은 평가를 받았습니다.
+642,encompass,"포함하다, 둘러싸다",642,encompass,The study will encompass various aspects of the problem.,이 연구는 문제의 다양한 측면을 포함할 것입니다.
+643,finalize,"마무리 짓다, 완결하다",643,finalize,We need to finalize the details of the contract.,계약의 세부 사항을 최종 확정해야 합니다.
+644,market,시장,644,market,The company plans to launch a new product into the market.,회사는 시장에 새 제품을 출시할 계획입니다.
+645,retail,소매,645,retail,The store specializes in retailing luxury goods.,그 가게는 고급 상품을 소매하는 전문점입니다.
+646,commodity,"상품, 산물",646,commodity,Oil is a valuable commodity in the global market.,석유는 세계 시장에서 가치 있는 상품입니다.
+647,quote,"견적(액), 견적을 내다",647,quote,Can you provide me with a quote for the project?,프로젝트에 대한 견적을 제공해 주실 수 있나요?
+648,consignment,위탁 판매(consign위탁하다),648,consignment,The artist sent a consignment of paintings to the gallery.,그 예술가는 그림의 위탁을 갤러리에 보냈습니다.
+649,fragile,깨지기 쉬운,649,fragile,Please handle the package with care as it contains fragile items.,상자 안에 부서지기 쉬운 물건이 들어있으니 조심해서 다뤄주세요.
+650,perishable,부패하기 쉬운,650,perishable,Perishable goods should be stored in a cool environment.,상품은 서늘한 환경에 보관되어야 합니다.
+651,deliver,배달하다; (연설을)하다,651,deliver,The courier promised to deliver the package by noon.,택배 회사는 오후까지 소포를 배달할 것이라고 약속했습니다.
+652,ensure,"확실하게 하다, 보장하다",652,ensure,Please ensure that all doors are locked before leaving.,나가기 전에 모든 문이 잠겨 있는지 확인해 주세요.
+653,courier,"급송 택배, 운반인",653,courier,The courier service delivers packages to our office daily.,택배 서비스는 매일 우리 사무실로 소포를 배달합니다.
+654,carton,(큰)판지상자,654,carton,Please recycle the cardboard carton after use.,사용 후에 판지 상자를 재활용해 주세요.
+655,address,"주소,
+(어려운 문제 등을)처리하다,다루다",655,address,I'll address the issue with the team during the meeting.,회의 중에 팀과 문제를 다룰 것입니다.
+656,shipment,"선적, (화물의)발송;
+수송품, 적하물",656,shipment,The shipment of goods arrived at the port on schedule.,상품의 선적이 계획에 맞게 항구에 도착했습니다.
+657,particularly,특히,657,particularly,This area is particularly beautiful in the spring.,이 지역은 특히 봄에 아름답습니다.
+658,adequately,적절히,658,adequately,The company needs to staff the project adequately.,회사는 프로젝트에 적절한 인력을 배치해야 합니다.
+659,article,"물품, 물건; 기사, 논설",659,article,The newspaper published an article about the new law.,신문은 새로운 법에 관한 기사를 게재했습니다.
+660,efficient,"(기계, 방법 등이)효과적인,능률적인",660,efficient,The new system is much more efficient than the old one.,새로운 시스템은 예전 것보다 훨씬 효율적입니다.
+661,agency,"대행 회사, 대리점",661,agency,We hired a marketing agency to promote our product.,우리는 제품을 홍보하기 위해 마케팅 대행사를 고용했습니다.
+662,enclose,"~을 동봉하다; ~을 둘러싸다, 애워싸다",662,enclose,Please enclose your resume with your job application.,구직 신청서와 함께 이력서를 첨부해 주세요.
+663,careful,"조심스러운, 주의 깊은",663,careful,Be careful not to spill the coffee on the keyboard.,키보드에 커피를 쏟지 않도록 조심하세요.
+664,pick up,"~을 찾다; (사람,물건 등을) 도중에 태우다",664,pick up,Can you pick up some groceries on your way home?,집에 가는 길에 장을 좀 사다 주실 수 있나요?
+665,carry,"지니다; (물건을)팔다, 가게에 놓다",665,carry,The store carries a wide range of electronic products.,그 가게는 다양한 전자제품을 취급합니다.
+666,attach,"붙이다, 접착하다, 첨부하다",666,attach,Please attach the file to your email before sending it.,이메일을 보내기 전에 파일을 첨부해 주세요.
+667,formerly,이전에,667,formerly,The company was formerly known as Smith & Co.,그 회사는 이전에 스미스 & 코로 알려졌습니다.
+668,package,"소포, 꾸러미",668,package,Please handle the package with care as it contains fragile items.,상자 안에 부서지기 쉬운 물건이 들어있으니 조심해서 다뤄주세요.
+669,react,"반응하다, 대응하다",669,react,How did she react when you told her the news?,너가 그녀에게 그 소식을 전했을 때 그녀는 어떻게 반응했니?
+670,content,내용물,670,content,The content of the article was quite informative.,그 기사의 내용은 매우 유익했습니다.
+671,convenience,"편의, 편리",671,convenience,The hotel's location offers great convenience for travelers.,그 호텔의 위치는 여행자들에게 큰 편의를 제공합니다.
+672,acknowledge,"인정하다; (편지 등의)수령을 알리다, 감사하다",672,acknowledge,Please acknowledge receipt of this letter.,이 편지의 수령을 인정해 주세요.
+673,caution,"주의, 조심",673,caution,Please exercise caution when handling hazardous materials.,유해 물질을 다룰 때 주의를 기울여 주세요.
+674,correspondence,"편지, 통신문",674,correspondence,He has been in correspondence with the supplier for weeks.,그는 몇 주 동안 공급업체와 통신을 하고 있습니다.
+675,separate,분리하다; 분류하다,675,separate,Please keep the chemicals separate from the food items.,화학물질을 음식물과 분리해서 보관해 주세요.
+676,remarkable,"현저한, 두드러진(markedly 현저하게 눈에 띄게)",676,remarkable,The progress they've made in such a short time is remarkable.,그들이 짧은 시간에 이룩한 진전은 놀라운 것입니다.
+677,handle,"취급하다, 다루다",677,handle,He knows how to handle difficult situations with ease.,그는 어려운 상황을 쉽게 다루는 법을 알고 있습니다.
+678,warehouse,"창고, 저장소",678,warehouse,The company stores its inventory in a large warehouse.,그 회사는 재고를 큰 창고에 저장합니다.
+679,impose,(세금 등을)부과하다,679,impose,The government decided to impose a new tax on luxury goods.,정부는 고급 상품에 새로운 세금을 부과하기로 결정했습니다.
+680,storage,"보관소, 저장소",680,storage,We need to find additional storage space for these files.,이 파일들을 위한 추가 저장 공간을 찾아야 합니다.
+681,detach,"분리하다, 떼다, (attach 붙이다)",681,detach,Please detach the form and return it to us by mail.,양식을 분리하여 우편으로 다시 보내주세요.
+682,envelope,봉투,682,envelope,The letter was sealed in a plain white envelope.,그 편지는 평범한 흰색 봉투에 봉인되어 있었습니다.
+683,exclusion,"제외, 배제",683,exclusion,The exclusion of certain items from the sale was surprising.,판매에서 특정 항목을 제외하는 것은 놀라웠습니다.
+684,recipient,수신자,684,recipient,The recipient of the award will be announced next week.,상을 수상할 사람은 다음 주에 발표될 것입니다.
+685,affix,(우표 등을)붙이다,685,affix,Please affix your signature at the bottom of the page.,페이지 아래에 서명해 주세요.
+686,incorrect,부정확한,686,incorrect,His answer to the question was marked as incorrect.,그의 질문에 대한 답변은 틀렸다고 표시되었습니다.
+687,oblige,"어쩔 수 없이 ~하게 하다,
+~에게 강요하다",687,oblige,I feel obliged to help my neighbors during difficult times.,어려운 시기에 이웃을 돕는 것이 나의 의무라고 느낍니다.
+688,step,"단계; 조치, 수단",688,step,The first step in solving a problem is identifying its cause.,문제 해결의 첫 번째 단계는 그 원인을 찾는 것입니다.
+689,check in,"체크인하다, 숙박 수속을 하다",689,check in,Guests are required to check in at the front desk upon arrival.,손님들은 도착 시 프론트 데스크에서 체크인을 해야 합니다.
+690,compensate,"보상하다
+(compensation 보상)",690,compensate,The company compensated the customers for the inconvenience.,그 회사는 불편에 대한 보상으로 고객들에게 보상을 하였다.
+691,complimentary,"무료의, 우대의",691,complimentary,The hotel offers complimentary breakfast to its guests.,그 호텔은 손님들에게 무료 아침식사를 제공합니다.
+692,chef,주방장,692,chef,The chef prepared a delicious meal for the guests.,주방장이 손님들을 위해 맛있는 음식을 준비했습니다.
+693,container,"용기, 그릇",693,container,The cookies were stored in an airtight container.,쿠키는 밀폐용기에 보관되었습니다.
+694,elegant,"우아한, 고상한",694,elegant,The ballroom was decorated in an elegant style for the event.,이벤트를 위해 홀은 우아한 스타일로 장식되었습니다.
+695,flavor,"맛, 풍미",695,flavor,The soup had a rich and savory flavor.,그 스프는 풍부하고 맛있는 풍미가 있었습니다.
+696,accommodate,"(건물 등이)~을 수용하다, 만족시키다",696,accommodate,The hotel can accommodate up to 200 guests.,그 호텔은 최대 200명의 손님을 수용할 수 있습니다.
+697,available,(사물이)이용 가능한;,697,available,Is this product available in other colors?,이 제품은 다른 색상으로도 구매할 수 있나요?
+698,reception,"환영회; (호텔, 회사, 병원 등의)접수처",698,reception,The newlyweds greeted their guests in the reception hall.,신혼부부는 환영 회에서 손님들을 맞이했습니다.
+699,in advance,"미리, 사전에",699,in advance,Tickets for the concert must be purchased in advance.,콘서트 티켓은 미리 구매해야 합니다.
+700,refreshments,"다과, 가벼운 음식물",700,refreshments,Refreshments will be served after the meeting.,회의 후에 다과가 제공될 것입니다.
+701,make,"~을 하다, ~을 만들다",701,make,You need to make a reservation in advance to secure your spot.,자리를 확보하려면 미리 예약해야 합니다.
+702,cater,(연회 등의)음식물을 공급하다,702,cater,The catering company will cater the event with delicious food.,케이터링 업체가 맛있는 음식으로 행사를 책임지게 될 것입니다.
+703,reservation,"예약, 지정; 보호구역",703,reservation,We have a reservation for two at 7:00 PM tonight.,오늘 저녁 7시에 두 명 예약이 있습니다.
+704,beverage,음료,704,beverage,The menu includes a variety of alcoholic and non-alcoholic beverages.,메뉴에는 다양한 주류와 무알콜 음료가 포함되어 있습니다.
+705,confirm,확인하다,705,confirm,Please confirm your attendance by replying to this email.,이 이메일에 회신하여 참석 여부를 확인해 주세요.
+706,cancel,취소하다,706,cancel,We regret to inform you that the event has been canceled.,행사가 취소되었음을 알려드리게 되어 유감입니다.
+707,rate,요금,707,rate,The hotel offers competitive rates for long-term stays.,그 호텔은 장기 투숙객을 위한 경쟁력 있는 요금을 제공합니다.
+708,conviniently,편리하게,708,conveniently,The hotel is conveniently located near the city center.,그 호텔은 도심에서 편리하게 위치하고 있습니다.
+709,decorate,장식하다,709,decorate,She likes to decorate her house with vintage furniture.,그녀는 자신의 집을 빈티지 가구로 장식하는 것을 좋아합니다.
+710,information,"정보, 자료",710,information,"If you need any further information, feel free to contact us.",추가 정보가 필요하시면 언제든지 연락 주시기 바랍니다.
+711,retain,"유지하다, 보유하다",711,retain,The company aims to retain its employees through various benefits.,그 회사는 다양한 혜택을 통해 직원을 유지하려고 합니다.
+712,atmosphere,"분위기, 환경",712,atmosphere,The cozy atmosphere of the cafe attracts many customers.,카페의 아늑한 분위기가 많은 손님들을 끌어들입니다.
+713,cuisine,(독특한)요리,713,cuisine,The restaurant specializes in French cuisine.,그 식당은 프랑스 요리에 특화되어 있습니다.
+714,sequence,"순서, 차례",714,sequence,The steps must be followed in sequence for the experiment.,실험을 위해 단계들은 순서대로 따라야 합니다.
+715,extensive,"광범위한, 넓은",715,extensive,The company conducted an extensive market research.,그 회사는 광범위한 시장 조사를 실시했습니다.
+716,prior,"전의, 먼저의",716,prior,Prior experience in a similar role is preferred.,유사한 역할에서의 사전 경험이 우대됩니다.
+717,book,예약하다,717,book,You should book your flight tickets early to get a better price.,더 좋은 가격을 얻으려면 비행기 표를 미리 예약해야 합니다.
+718,amenity,편의 시설,718,amenity,The hotel offers various amenities such as a gym and spa.,그 호텔은 체육관과 스파와 같은 다양한 시설을 제공합니다.
+719,belongings,"소지품, 소유물",719,belongings,Please make sure you have all your belongings before leaving the hotel.,호텔을 떠나기 전에 소지품이 모두 있는지 확인해 주세요.
+720,entirely,완전히,720,entirely,The project was entirely completed ahead of schedule.,그 프로젝트는 일정보다 훨씬 빨리 완료되었습니다.
+721,ease,"완화시키다, 쉬움, 용이함",721,ease,The new software is designed to ease the process of data analysis.,새로운 소프트웨어는 데이터 분석 과정을 용이하게 만들기 위해 설계되었습니다.
+722,ingredient,"재료, 성분",722,ingredient,Fresh vegetables are the main ingredient in this soup.,신선한 채소가 이 수프의 주 재료입니다.
+723,sip,"음미하며 마시다, 홀짝거리다",723,sip,She took a sip of her coffee before starting the meeting.,그녀는 회의를 시작하기 전에 커피를 홀짝였다.
+724,stir,"휘젓다, 뒤섞다",724,stir,Add the spices and stir the sauce gently.,향신료를 넣고 소스를 부드럽게 저어주세요.
+725,choice,"선택물, 선택 사항, 선택",725,choice,You have the freedom to make your own choice.,당신은 자유롭게 자신만의 선택을 할 수 있습니다.
+726,complication,복잡한 문제,726,complication,The unexpected complication delayed the project.,예상치 못한 복잡성으로 인해 프로젝트가 지연되었습니다.
+727,freshness,신선함,727,freshness,The freshness of the ingredients is crucial for this recipe.,식재료의 신선함은 이 레시피에 매우 중요합니다.
+728,occupancy,(호텔등의)이용률,728,occupancy,The hotel's occupancy rate is highest during the summer season.,호텔의 이용률은 여름철에 가장 높습니다.
+729,decline,"감소, 하락,(초대,신청을)거절하다",729,decline,The company saw a decline in sales during the economic downturn.,그 회사는 경제적 어려움 기간 동안 매출이 감소했습니다.
+730,markedly,"현저하게, 눈에 띄게",730,markedly,The quality of service has improved markedly since last year.,작년 대비 서비스 품질이 현저하게 향상되었습니다.
+731,increase,"인상, 증가, 증가하다",731,increase,There has been a significant increase in demand for organic products.,유기농 제품에 대한 수요가 상당히 증가했습니다.
+732,revenue,수입,732,revenue,The company's revenue exceeded expectations this quarter.,그 회사의 수익은 이 분기 기대를 초과했습니다.
+733,projection,예상(치),733,projection,The financial projection for the next year looks promising.,내년을 위한 재정 예측은 희망적으로 보입니다.
+734,substantial,상당한,734,substantial,The company made a substantial profit last year.,그 회사는 작년에 상당한 이익을 올렸습니다.
+735,anticipate,"예상하다, 기대하다",735,anticipate,Investors anticipate a rise in stock prices next month.,투자자들은 다음 달 주가 상승을 예상하고 있습니다.
+736,significantly,"상당히, 두드러지게",736,significantly,The company's profits have increased significantly over the past year.,지난 일 년 동안 그 회사의 이익은 상당히 증가했습니다.
+737,estimate,"추정하다, 추산하다, 추정(치), 추산",737,estimate,Experts estimate that the project will be completed by the end of the month.,전문가들은 그 프로젝트가 이 달 말까지 완료될 것으로 추정합니다.
+738,shift,"옮기다, 이동하다, 변화, 교대근무",738,shift,There has been a shift in consumer preferences towards eco-friendly products.,소비자 선호도가 친환경 제품으로의 변화가 있었습니다.
+739,fee,"요금, 수수료",739,fee,The registration fee for the conference is $200.,학회 등록 비용은 200달러입니다.
+740,production,"생산량, 생산",740,production,The factory has increased its production to meet the growing demand.,공장은 증가하는 수요를 충족시키기 위해 생산량을 늘렸습니다.
+741,sale,"(-s)매출액, 매상고; (할인)판매",741,sale,There is a sale on designer clothing at the department store.,백화점에서 디자이너 의류가 할인 판매 중입니다.
+742,impressive,"굉장한, 인상적인",742,impressive,The presentation was impressive and received positive feedback.,발표는 인상적이었고 긍정적인 피드백을 받았습니다.
+743,representative,"직원, 외판원; 대표자",743,representative,The company appointed a new sales representative for the region.,회사는 그 지역을 위해 새로운 영업 대표를 지명했습니다.
+744,recent,최근의,744,recent,The company introduced new policies in response to recent market trends.,그 회사는 최근 시장 동향에 대응하여 새로운 정책을 도입했습니다.
+745,exceed,~을 초과하다,745,exceed,The actual costs exceeded our initial estimates.,실제 비용이 우리의 초기 추정을 초과했습니다.
+746,improvement,향상,746,improvement,The recent improvement in customer service has been noticeable.,최근의 고객 서비스 개선이 뚜렷하게 느껴졌습니다.
+747,employer,고용주,747,employer,The employer provides health insurance benefits to all employees.,고용주는 모든 직원에게 건강 보험 혜택을 제공합니다.
+748,regular,정기적인; 단골의,748,regular,He visits the gym on a regular basis to stay fit.,그는 건강을 유지하기 위해 정기적으로 체육관을 방문합니다.
+749,summarize,요약하다,749,summarize,Can you summarize the main points of the meeting for me?,회의의 주요 내용을 간단히 요약해 줄 수 있나요?
+750,typically,"보통, 일반적으로",750,typically,"Typically, the store is busiest on weekends.","일반적으로, 그 가게는 주말에 가장 붐빕니다."
+751,whole,"전체의, 온전한",751,whole,She ate the whole pizza by herself.,그녀는 피자를 전부 혼자 다 먹었습니다.
+752,growth,"성장, 발전",752,growth,The company's rapid growth has attracted investors' attention.,그 회사의 신속한 성장이 투자자들의 관심을 끌었습니다.
+753,figure,"총액, 합계 수",753,figure,The financial figure for the quarter was lower than expected.,이 분기의 재정 숫자는 예상보다 낮았습니다.
+754,steady,꾸준한; 안정된,754,steady,The company has maintained steady growth over the past five years.,그 회사는 지난 다섯 년간 꾸준한 성장을 유지했습니다.
+755,frequent,"빈번한, 잦은",755,frequent,The bus makes frequent stops along this route.,이 노선은 버스가 빈번하게 정거하는 곳들이 있습니다.
+756,achieve,"달성하다, 성취하다",756,achieve,"With hard work and dedication, you can achieve your goals.",열심히 노력하고 헌신한다면 당신은 목표를 달성할 수 있습니다.
+757,assumption,"추정, 산정, 가정",757,assumption,Our business strategy is based on the assumption that demand will continue to grow.,우리의 사업 전략은 수요가 계속 성장할 것이라는 가정에 근거합니다.
+758,share,"공유하다, 함께쓰다;",758,share,We should share our ideas with each other to find the best solution.,우리는 서로 아이디어를 공유하여 최상의 해결책을 찾아야 합니다.
+759,incur,"(손실을)입다, (빚을)지다",759,incur,"If you cancel your reservation, you may incur a cancellation fee.",예약을 취소하면 취소 수수료가 부과될 수 있습니다.
+760,slightly,약간,760,slightly,The temperature dropped slightly overnight.,온도가 하룻밤 사이에 약간 낮아졌습니다.
+761,profit,"수익, 이익",761,profit,The company reported a significant profit in the last fiscal year.,그 회사는 지난 회계 연도에 상당한 이익을 보고했습니다.
+762,reliant,"의존하는, 의지하는
+(reliantly 의지하여)",762,reliant,He is heavily reliant on his assistant for day-to-day tasks.,그는 일상적인 일들에 대해 그의 보조에 많이 의존하고 있습니다.
+763,illustrate,"분명히 보여주다, 설명하다
+(illustrate 설명,해설,삽화)",763,illustrate,Let me illustrate my point with a practical example.,실제 예를 들어 내 의견을 설명하겠습니다.
+764,inaccurate,부정확한,764,inaccurate,The information provided in the report was inaccurate.,보고서에 제공된 정보는 부정확했습니다.
+765,percentage,"비율, 백분율",765,percentage,A large percentage of the population uses social media daily.,인구의 대다수가 매일 소셜 미디어를 사용합니다.
+766,reduce,"줄이다, 감소시키다",766,reduce,Cutting unnecessary expenses can help reduce overall costs.,불필요한 비용을 줄이는 것은 총 비용을 줄이는 데 도움이 될 수 있습니다.
+767,tend,"~하는 경향이 있다, ~하기 쉽다",767,tend,Prices tend to rise during the holiday season.,가격은 휴일 시즌에 오르는 경향이 있습니다.
+768,audit,"회계 감사, 심사",768,audit,The company underwent a financial audit to ensure compliance.,그 회사는 준수를 보장하기 위해 재무 감사를 받았습니다.
+769,accounting,회계,769,accounting,She has a degree in accounting and works as an auditor.,그녀는 회계학 학위를 가지고 감사인으로 일합니다.
+770,budget,예산,770,budget,We need to create a budget for the upcoming project.,우리는 다가오는 프로젝트를 위한 예산을 마련해야 합니다.
+771,financial,"재정의, 금전상의",771,financial,The company is facing financial difficulties due to low revenue.,그 회사는 수익이 적어 재정적으로 어려움을 겪고 있습니다.
+772,curtail,"~을 줄이다, 삭감하다
+(curtailment 단축)",772,curtail,The government plans to curtail spending in certain areas.,정부는 특정 분야에서 지출을 줄이기로 계획하고 있습니다.
+773,deficit,"적자, 부족액",773,deficit,The country is struggling with a growing budget deficit.,그 나라는 증가하는 예산 적자와 싸우고 있습니다.
+774,recently,최근에,774,recently,I read an interesting article about the topic recently.,최근에 그 주제에 관한 흥미로운 기사를 읽었습니다.
+775,substantially,"크게, 상당히
+(substantial 상당한, 재력이 있는)",775,substantially,The company has grown substantially since its inception.,그 회사는 창립 이후 상당히 성장했습니다.
+776,committee,위원회,776,committee,The committee will meet next week to discuss the proposal.,위원회는 다음 주에 그 제안을 논의하기 위해 모입니다.
+777,frequently,"자주, 흔히",777,frequently,She frequently travels abroad for business meetings.,그녀는 업무 회의를 위해 자주 해외로 여행합니다.
+778,capability,"능력, 역량",778,capability,The new software has enhanced the company's capability to analyze data.,새로운 소프트웨어는 회사의 데이터 분석 능력을 향상시켰습니다.
+779,proceeds,수익금,779,proceeds,The proceeds from the charity event will go towards helping homeless shelters.,자선 행사로 얻은 수익금은 노숙자 숙소를 돕는 데 사용될 것입니다.
+780,reimburse,"변제하다, 상환하다",780,reimburse,The company will reimburse you for any travel expenses incurred during the trip.,회사는 여행 중 발생한 모든 비용을 상환해 드릴 것입니다.
+781,considerably,"상당히, 많이",781,considerably,The company has grown considerably in the past few years.,그 회사는 지난 몇 년 동안 상당히 성장했습니다.
+782,adequate,"충분한, 적절한
+(adequately 적절히, 충분히)",782,adequate,The facilities provided were not adequate for the event.,제공된 시설은 행사에 적절하지 않았습니다.
+783,total,"총계의, 전부의",783,total,The total cost of the project was higher than expected.,프로젝트의 총 비용이 예상보다 높았습니다.
+784,allocate,"할당하다, 배분하다
+(allocation 할당)",784,allocate,The company plans to allocate more resources to marketing next quarter.,그 회사는 다음 분기에 마케팅에 더 많은 자원을 할당할 계획입니다.
+785,inspector,"조사관, 감독관
+(inspect 검사하다)",785,inspector,The safety inspector conducted an inspection of the building.,안전 감사관이 건물을 검사했습니다.
+786,preferred,"선호되는, 우선의",786,preferred,The preferred method of payment is credit card.,선호되는 결제 방법은 신용카드입니다.
+787,quarter,사분기; 4분의1,787,quarter,The company will announce its earnings for the third quarter next week.,그 회사는 다음 주에 3분기 수익을 발표할 예정입니다.
+788,interrupt,"중단시키다, 방해하다
+(interruption 방해, 중지, 중단)",788,interrupt,Please do not interrupt the speaker while they are talking.,말하는 동안 발언자를 방해하지 마십시오.
+789,browse,"흝어보다, 둘러보다",789,browse,She likes to browse the internet for new recipes.,그녀는 새로운 요리법을 위해 인터넷을 훑어보는 것을 좋아합니다.
+790,prompt,"즉각적인; 신속한, 촉발하다, 유도하다",790,prompt,The teacher's question prompted a lively discussion in the classroom.,선생님의 질문으로 교실에서 활발한 토론이 일어났습니다.
+791,deduct,"공제하다, 빼다
+(deduction 공제)",791,deduct,The cost of the damaged item will be deducted from your deposit.,손상된 물품의 비용은 보증금에서 차감될 것입니다.
+792,measurement,"측정, 측량; 치수",792,measurement,Accurate measurement is essential for the success of the experiment.,정확한 측정은 실험의 성공에 중요합니다.
+793,shorten,"단축하다, 짧게하다",793,shorten,We need to shorten the length of the presentation to fit within the time limit.,우리는 발표 시간 제한 내에 맞추기 위해 발표 시간을 줄여야 합니다.
+794,amend,"수정하다
+(amendable 개정할 수 있는)",794,amend,The contract will need to be amended to include the new terms.,새로운 조건을 포함하려면 계약을 수정해야 합니다.
+795,calculate,"계산하다, 산출하다",795,calculate,Can you help me calculate the total cost of the project?,프로젝트의 총 비용을 계산하는 데 도와줄 수 있나요?
+796,exempt,"면제된, ~이 없는
+(exemption 면제)",796,exempt,Students are exempt from paying the entrance fee.,학생들은 입장료를 면제받습니다.
+797,deficient,"부족한, 불충분한",797,deficient,The report highlighted areas where the company was deficient in meeting safety standards.,보고서는 회사가 안전 기준을 충족하지 못한 부분을 강조했습니다.
+798,compare,비교하다,798,compare,Let's compare the prices of these two products before making a decision.,결정을 내리기 전에 이 두 제품의 가격을 비교해 봅시다.
+799,fortunate,운 좋은,799,fortunate,We were fortunate to find a parking spot right in front of the restaurant.,우리는 레스토랑 바로 앞에 주차할 곳을 발견해서 운이 좋았습니다.
+800,expenditure,"지출, 비용",800,expenditure,The company needs to reduce its expenditure to improve profitability.,수익성을 높이기 위해 회사는 지출을 줄여야 합니다.
+801,accurately,정확하게,801,accurately,The scientist accurately measured the temperature of the sample.,과학자는 샘플의 온도를 정확하게 측정했습니다.
+802,worth,"~의 가치가 있는, (얼마)어치, 가치",802,worth,The antique vase was worth much more than they initially thought.,그 고미술 도자기는 처음에 생각했던 것보다 훨씬 값이 있었습니다.
+803,excess,"초과, 초과량",803,excess,The excess inventory was sold at a discounted price.,과다한 재고는 할인된 가격에 판매되었습니다.
+804,fiscal,"회계의, 재정상의",804,fiscal,The company's fiscal year ends in December.,그 회사의 회계 연도는 12월에 끝납니다.
+805,incidental,부수적인,805,incidental,The hotel offers complimentary breakfast and other incidental services.,그 호텔은 무료 조식 및 기타 부수적인 서비스를 제공합니다.
+806,inflation,"물가상승, 인플레이션, 통화팽창",806,inflation,High inflation rates can negatively impact the economy.,고 물가 상승률은 경제에 부정적인 영향을 미칠 수 있습니다.
+807,liable,책임져야 할; ~하기 쉬운,807,liable,You are liable for any damages caused by your negligence.,당신은 부주의로 인한 모든 손해에 대해 책임이 있습니다.
+808,spend,"~을 쓰다, 소비하다",808,spend,He tends to spend more money when he's feeling stressed.,그는 스트레스를 받을 때 더 많은 돈을 쓰는 경향이 있습니다.
+809,turnover,"총 매상고, 거래액; 이직률",809,turnover,The high turnover rate in the company is a concern for management.,회사의 높은 이직률은 경영진에게 우려됩니다.
+810,announce,발표하다,810,announce,The company will announce its new product lineup next month.,그 회사는 다음 달 새 제품 라인업을 발표할 예정입니다.
+811,interested,관련 있는; 관심이 있는,811,interested,I am interested in learning more about your company's services.,귀하의 회사 서비스에 대해 더 많이 알고 싶습니다.
+812,active,"적극적인, 활발한",812,active,"He leads an active lifestyle, always participating in outdoor activities.",그는 늘 야외 활동에 참여하는 활기찬 삶을 삽니다.
+813,accept,"수락하다, 승낙하다",813,accept,They were willing to accept the terms of the contract.,그들은 계약 조건을 수락하기를 기꺼이 했습니다.
+814,foresee,"예견하다, 예감하다",814,foresee,The management team failed to foresee the impact of the new regulations.,경영진은 새로운 규제의 영향을 예견하지 못했습니다.
+815,expansion,"확장, 팽창",815,expansion,The company is planning an expansion into international markets.,그 회사는 국제 시장으로의 확장을 계획하고 있습니다.
+816,relocate,(공장 등을)이전하다,816,relocate,The company will relocate its headquarters to a larger city.,그 회사는 본사를 더 큰 도시로 이전할 예정입니다.
+817,competitor,"경쟁업체, 경쟁자",817,competitor,The new product faces stiff competition from existing competitors.,새 제품은 기존의 경쟁사로부터 치열한 경쟁을 받고 있습니다.
+818,asset,자산,818,asset,Good communication skills are an asset in any profession.,좋은 커뮤니케이션 기술은 모든 직업에서 유리한 장점입니다.
+819,contribute,"기여하다, 공헌하다",819,contribute,Employees are encouraged to contribute ideas for process improvement.,직원들은 프로세스 개선을 위한 아이디어를 기여하도록 장려됩니다.
+820,dedicated,"(목표 등에)전념하는, 헌신적인",820,dedicated,She is dedicated to her job and always goes the extra mile.,그녀는 직업에 헌신적이며 항상 추가적인 노력을 합니다.
+821,misplace,"잃어버리다, 위치를 잘못 잡다",821,misplace,I seem to misplace my keys every other day.,나는 열쇠를 매일 갈아끼우는 것 같습니다.
+822,considerable,(정도나 양이)상당한,822,considerable,The project required a considerable amount of time and resources.,그 프로젝트는 상당한 시간과 자원이 필요했습니다.
+823,last,지속되다,823,last,The effects of the medication should last for about six hours.,약의 효과는 약 6시간 정도 지속되어야 합니다.
+824,emerge,"부상하다, 나타나다
+(merge 합병하다)",824,emerge,New trends often emerge from unexpected places.,새로운 트렌드는 종종 예상치 못한 곳에서 나타납니다.
+825,grow,"성장하다, 성장시키다, 증가시키다",825,grow,The company aims to grow its market share by expanding into new territories.,그 회사는 새로운 영토로 확장하여 시장 점유율을 늘리고자 합니다.
+826,select,"선발하다, 선택하다",826,select,Customers can select their preferred payment method at checkout.,고객은 체크아웃 시 선호하는 결제 방법을 선택할 수 있습니다.
+827,merge,"합병하다, 병합하다",827,merge,The two companies decided to merge to increase their market competitiveness.,두 회사는 시장 경쟁력을 높이기 위해 합병하기로 결정했습니다.
+828,imply,"암시하다, 넌지시 나타내다, 의미하다",828,imply,His silence seemed to imply agreement with the proposal.,그의 침묵은 제안에 동의하는 것으로 보였습니다.
+829,vital,필수적인,829,vital,Good communication is vital for building strong relationships.,좋은 커뮤니케이션은 강한 관계를 구축하는 데 중요합니다.
+830,persist,"(집요하게)계속하다, 계속되다, 지속되다
+(continue 계속되다, 계속하다)",830,persist,"Despite setbacks, he continued to persist in his efforts.","좌절에도 불구하고, 그는 노력을 계속했습니다."
+831,independent,"독립적인, 독자적인",831,independent,The research findings were verified by an independent third party.,연구 결과는 독립적인 제3자에 의해 검증되었습니다.
+832,force,세력,832,force,She was a force to be reckoned with in the business world.,그녀는 비즈니스 세계에서 고려해야 할 힘이었습니다.
+833,establish,설립하다,833,establish,The company plans to establish a new branch in the city.,회사는 도시에 새 지점을 설립할 계획입니다.
+834,initiate,"(사업 등을) 착수하다, 시작하다",834,initiate,The project team will initiate the development phase next week.,프로젝트 팀은 다음 주에 개발 단계를 시작할 것입니다.
+835,enhance,"(질 등을) 향상시키다, 높이다, 강화하다",835,enhance,The new software update will enhance the user experience.,새 소프트웨어 업데이트가 사용자 경험을 향상시킬 것입니다.
+836,renowned,"저명한, 유명한, 명성이 있는",836,renowned,The chef is renowned for his exquisite culinary skills.,그 요리사는 절묘한 조리 기술로 유명합니다.
+837,informed,"정보에 근거한
+(inform 알리다, 통지하다)",837,informed,Informed decisions are crucial for the success of the project.,정보에 기반한 결정은 프로젝트의 성공에 중요합니다.
+838,minutes,회의록,838,minutes,The secretary will prepare the meeting minutes.,비서가 회의록을 준비할 것입니다.
+839,waive,"(규칙 등을)적용하지 않다,
+(권리,청구등을)포기하다
+(abandon 버리다, 단념하다, 그만두다)",839,waive,The company decided to waive the late fee for this month.,회사는 이번 달 연체료를 면제하기로 결정했습니다.
+840,reach,"(치수,양 등이)~에 달하다;
+~에 도착하다",840,reach,The company aims to reach a wider audience with its new marketing campaign.,회사는 새로운 마케팅 캠페인으로 보다 넓은 관객에게 도달하기를 목표로 하고 있습니다.
+841,authority,권한; 당국,841,authority,The board has the authority to approve budget proposals.,이사회는 예산 제안을 승인할 권한이 있습니다.
+842,acquire,"매입하다, 취득하다",842,acquire,The company plans to acquire a smaller competitor.,회사는 더 작은 경쟁사를 인수할 계획입니다.
+843,surpass,"~을 능가하다, 넘어서다",843,surpass,The new product aims to surpass the performance of its predecessor.,새 제품은 이전 제품의 성능을 능가하기를 목표로 합니다.
+844,run,"~을 운영하다, 경영하다",844,run,The family has been running the business for generations.,그 가족은 세대를 거치며 사업을 운영해 왔습니다.
+845,improbable,"사실이라고 생각할 수 없는,",845,improbable,It seems improbable that he will arrive on time.,그가 시간에 맞게 도착할 것 같지 않습니다.
+846,edge,"우위, 유리함; 가장자리, 끝",846,edge,Our company has an edge over competitors in terms of technology.,우리 회사는 기술적으로 경쟁사들보다 우위를 가지고 있습니다.
+847,simultaneously,동시에,847,simultaneously,The two events will be held simultaneously.,두 행사는 동시에 개최될 예정입니다.
+848,reveal,"밝히다, 누설하다",848,reveal,The investigation revealed new evidence.,조사 결과 새로운 증거가 드러났습니다.
+849,productivity,생산성,849,productivity,Employee training can lead to increased productivity.,직원 교육은 생산성 향상으로 이어질 수 있습니다.
+850,uncertain,"확신이 없는, 불확실한",850,uncertain,The outcome of the negotiations is still uncertain.,협상 결과는 여전히 불확실합니다.
+851,premier,"으뜸의, 첫째의",851,premier,The company's new flagship product is of premier quality.,회사의 새로운 주력 제품은 최고 품질입니다.
+852,agenda,"의제, 의사일정",852,agenda,Let's review the agenda for today's meeting.,오늘 회의의 의제를 검토해 봅시다.
+853,convene,"(회원 등이)모이다, (회의가)개최되다",853,convene,The board will convene next week to discuss the budget.,이사회는 예산에 대해 논의하기 위해 다음 주에 소집될 것입니다.
+854,refute,"부인하다, 반박하다",854,refute,The scientist attempted to refute the theory with new data.,과학자는 새로운 데이터로 그 이론을 반박하려고 했습니다.
+855,coordination,조정,855,coordination,Effective coordination among team members is essential for project success.,팀원들 간의 효과적인 조정은 프로젝트 성공에 필수적입니다.
+856,unanimous,"만장일치의, 동의하는",856,unanimous,The decision to move forward with the project was unanimous.,프로젝트를 진행하기로 한 결정은 만장일치로 이뤄졌습니다.
+857,convince,"납득시키다, 확신시키다",857,convince,She managed to convince the team to adopt her proposal.,그녀는 팀에 자신의 제안을 채택하도록 설득했습니다.
+858,consensus,"여론, 일치된 의견",858,consensus,The committee reached a consensus on the new policy.,위원회는 새로운 정책에 대해 합의에 이르렀습니다.
+859,defer,"연기하다, 미루다",859,defer,The decision on the matter was deferred until the next meeting.,그 문제에 대한 결정은 다음 회의까지 연기되었습니다.
+860,usually,"보통, 일반적으로",860,usually,I usually take the bus to work.,나는 보통 버스를 타고 출근합니다.
+861,reschedule,일정을 바꾸다,861,reschedule,We need to reschedule the appointment for next week.,우리는 다음 주에 예약을 변경해야 합니다.
+862,meeting,회의,862,meeting,The weekly meeting is scheduled for Monday mornings.,주간 회의는 월요일 오전에 예정되어 있습니다.
+863,determine,"알아내다; 결정하다, 확정하다",863,determine,Further research is needed to determine the cause of the problem.,문제의 원인을 결정하기 위해 추가 연구가 필요합니다.
+864,report,"보고하다; 출두하다,보고서; 보도, 기록",864,report,The employee must report any safety hazards to management.,직원은 안전 위험을 경영진에게 보고해야 합니다.
+865,comment,"논평하다, 언급하다",865,comment,Feel free to comment on any aspects of the proposal.,제안의 어떤 측면에 대해든지 의견을 자유롭게 남겨 주세요.
+866,phase,단계,866,phase,The project is currently in the planning phase.,현재 프로젝트는 계획 단계에 있습니다.
+867,approve,"승인하다, 찬성하다",867,approve,The board will review and approve the budget proposal.,이사회는 예산 제안을 검토하고 승인할 것입니다.
+868,enclosed,동봉된,868,enclosed,Please find the documents enclosed in this envelope.,이 봉투 안에 동봉된 문서를 찾아주세요.
+869,easy,"쉬운, 용이한",869,easy,Learning a new language is not always easy.,새로운 언어를 배우는 것은 항상 쉽지 않습니다.
+870,record,"기록; 경력, 이력, 기록하다",870,record,The athlete broke the world record in the 100-meter dash.,그 선수는 100m 달리기에서 세계 기록을 세웠습니다.
+871,suggestion,제안,871,suggestion,Thank you for your suggestion; we will take it into consideration.,제안해 주셔서 감사합니다. 고려해 보겠습니다.
+872,attention,"주의, 경청",872,attention,Please pay attention to the safety instructions.,안전 지침에 주의하세요.
+873,object,반대하다,873,object,I must object to the proposed changes to the contract.,계약 변경 제안에 반대해야 합니다.
+874,coincidentally,"우연히, 일치하게, 동시 발생적으로
+(coincident 일치하는)",874,coincidentally,"Coincidentally, I bumped into my old friend at the airport.",우연히 공항에서 옛 친구를 만났습니다.
+875,crowded,"붐비는, 복잡한",875,crowded,The subway is always crowded during rush hour.,지하철은 통학 시간에 항상 붐비는 편입니다.
+876,undergo,"겪다, 거치다, 경험하다",876,undergo,The patient will undergo surgery tomorrow morning.,환자는 내일 아침 수술을 받게 될 것입니다.
+877,outcome,결과 (=consequence),877,outcome,We are hopeful for a positive outcome in the negotiations.,협상에서 긍정적인 결과를 기대하고 있습니다.
+878,narrowly,"주의 깊게, 좁게; 가까스로, 간신히, 겨우",878,narrowly,The team narrowly won the championship game.,팀이 선박 경기에서 간신히 우승했습니다.
+879,differ,"의견을 달리하다, 다르다",879,differ,Our opinions differ on the best course of action.,우리의 의견은 최선의 대응 방안에 대해 다릅니다.
+880,discuss,"논의하다, 토론하다",880,discuss,Let's sit down and discuss the details of the project.,자세히 논의하고 프로젝트 세부 사항을 결정합시다.
+881,give,"(연설, 수업 등을)하다",881,give,The teacher will give a lecture on American history.,선생님은 미국 역사에 대한 강의를 진행할 것입니다.
+882,brief,"~에게 간단히 설명하다, 브리핑하다",882,brief,"Before the meeting, I'll brief you on the agenda.",회의 전에 의제에 대해 간략히 설명하겠습니다.
+883,distract,(주의를)산만하게 하다,883,distract,Please don't distract me while I'm working.,일하고 있을 때 날 산만하게 하지 마세요.
+884,emphasis,"강조, 중점",884,emphasis,The speaker placed emphasis on the importance of teamwork.,연설자는 팀워크의 중요성에 강조를 두었습니다.
+885,press,"언론(계),보도기관, 누르다",885,press,The press conference will begin in ten minutes.,보도자료 발표회가 10분 후에 시작됩니다.
+886,organize,"준비하다, 조직하다, 정리하다",886,organize,The event coordinator will organize all the logistics.,행사 코디네이터가 모든 물류를 조직할 것입니다.
+887,mention,언급하다,887,mention,Don't forget to mention your previous work experience.,이전의 경험을 언급하는 것을 잊지 마세요.
+888,persuasive,설득력 있는,888,persuasive,The salesperson was very persuasive in convincing me to buy the product.,판매원은 제품을 사도록 나를 설득하는 데 매우 설득력 있었습니다.
+889,understanding,이해심 있는,889,understanding,We need to come to an understanding regarding the terms of the contract.,계약 조건에 대한 합의에 이르기 위해 이해 관계가 필요합니다.
+890,adjourn,(회의 등을)휴회하다,890,adjourn,The meeting will adjourn for a short break.,회의는 잠시 휴회할 것입니다.
+891,constructive,건설적인,891,constructive,Let's try to have a constructive discussion about the issue.,문제에 대해 건설적인 토론을 시도해 봅시다.
+892,preside,"(회의의)사회를 보다, ~의 의장을 맡아보다",892,preside,The judge will preside over the courtroom proceedings.,판사가 법정 절차를 주재할 것입니다.
+893,irrelevant,"관계가 없는, 무관한
+(relevant 관계가 있는)",893,irrelevant,Your personal opinions are irrelevant to the matter at hand.,당신의 개인적인 의견은 현재의 문제와 관련이 없습니다.
+894,constraint,제한(=restriction),894,constraint,We must work within the budget constraint.,우리는 예산 제약 안에서 작업해야 합니다.
+895,host,(대회 등을)주최하다,895,host,The city will host the international conference next year.,도시는 내년에 국제 회의를 주최할 예정입니다.
+896,annual,매년의,896,annual,The company holds an annual meeting for shareholders.,회사는 주주를 위한 연례 회의를 개최합니다.
+897,purpose,"목적, 의도",897,purpose,The purpose of this study is to analyze consumer behavior.,이 연구의 목적은 소비자 행동을 분석하는 것입니다.
+898,enroll,등록하다,898,enroll,Students must enroll in classes before the semester begins.,학생들은 학기 시작 전에 수업에 등록해야 합니다.
+899,lecture,"강의, 강연",899,lecture,The professor delivered a lecture on quantum physics.,교수는 양자 물리학에 대한 강의를 진행했습니다.
+900,participant,참가자,900,participant,All conference participants are required to register in advance.,모든 회의 참가자는 사전에 등록해야 합니다.
+901,attend,"참석하다, 출석하다",901,attend,Will you attend the meeting tomorrow?,내일 회의에 참석하시겠습니까?
+902,encourage,"장려하다, 복돋아주다",902,encourage,Parents should encourage their children to pursue their dreams.,부모님은 자녀들에게 꿈을 추구하도록 격려해야 합니다.
+903,leave,"휴가, 떠나다, 남기다",903,leave,I have to leave early to catch my flight.,비행기를 타기 위해 일찍 떠나야 합니다.
+904,recommendation,"추천사항, 추천",904,recommendation,The committee will review your application and make a recommendation.,위원회가 당신의 지원서를 검토하고 추천서를 작성할 것입니다.
+905,conference,"회의, 회담",905,conference,The annual conference attracts thousands of attendees.,매년 개최되는 회의는 수천 명의 참가자를 끌어모읍니다.
+906,schedule,~을 예정하다,906,schedule,Let's schedule a meeting for next Tuesday.,다음 화요일에 회의 일정을 잡읍시다.
+907,include,포함하다,907,include,The package includes airfare and hotel accommodations.,이 패키지에는 항공료와 호텔 숙박이 포함되어 있습니다.
+908,result,"결과,(~의 결과로)되다",908,result,The investigation resulted in several arrests.,수사 결과 몇 명이 체포되었습니다.
+909,register,등록하다,909,register,Please register your name and email address on the form.,양식에 이름과 이메일 주소를 등록해 주세요.
+910,require,요구하다,910,require,This job position requires a minimum of three years of experience.,이 직책은 최소 세 년의 경험이 필요합니다.
+911,grateful,"고마워하는, 감사하는",911,grateful,I am grateful for your assistance.,당신의 도움에 감사합니다.
+912,overtime,"초과근무, 야근",912,overtime,The employees are entitled to overtime pay for working extra hours.,직원들은 추가 근무 시간에 대한 초과 수당을 받을 자격이 있습니다.
+913,responsibility,"부담, 책임, 의무",913,responsibility,With power comes responsibility.,권력에는 책임이 따릅니다.
+914,assent,"찬성하다, 승인, 동의",914,assent,The committee gave their assent to the proposed changes.,위원회는 변경안에 대해 찬성을 표명했습니다.
+915,regard,"~을 -으로 간주하다, 여기다",915,regard,The company holds its employees in high regard.,회사는 직원들을 높이 평가합니다.
+916,tentative,"임시적인, 잠정적인",916,tentative,"We made a tentative agreement, pending further discussion.",추가 토의를 거쳐 잠정적인 합의를 했습니다.
+917,welcome,"반가운, 기꺼이 받아들여지는",917,welcome,Guests were welcomed with warm hospitality.,손님들이 따뜻한 환대로 맞이되었습니다.
+918,function,"행사, 연회",918,function,The function will take place in the main hall.,행사는 본관에서 열릴 것입니다.
+919,commence,시작되다,919,commence,The project will commence next month.,프로젝트는 다음 달에 시작될 것입니다.
+920,objective,"목표, 목적",920,objective,We need to define our objectives before starting the project.,프로젝트를 시작하기 전에 목표를 정의해야 합니다.
+921,excited,"신이 난, 들뜬",921,excited,I'm excited about the opportunity to work on this project.,이 프로젝트에 참여할 기회에 흥분합니다.
+922,reimbursement,"상환, 변제, 배상",922,reimbursement,Employees are eligible for travel reimbursement.,직원들은 출장 비용 환급 대상입니다.
+923,treatment,"대우, 처우",923,treatment,The patient received excellent medical treatment.,환자는 훌륭한 의료 치료를 받았습니다.
+924,honor,"존경, 명예",924,honor,It's an honor to receive this award.,이 상을 받게 되어 영광입니다.
+925,emphasize,강조하다,925,emphasize,The teacher emphasized the importance of good manners.,선생님은 예의 바른 태도의 중요성을 강조했습니다.
+926,entry,"(경기 등의)참가자, 출품물",926,entry,Contestants must submit their entry forms by the deadline.,참가자들은 마감일까지 등록 양식을 제출해야 합니다.
+927,bonus,"상여금, 보너스",927,bonus,Employees will receive a bonus based on their performance.,직원들은 성과에 따라 보너스를 받게 될 것입니다.
+928,salary,급여,928,salary,The company offers competitive salaries to its employees.,회사는 직원들에게 경쟁력 있는 급여를 제공합니다.
+929,earn,"(금전 등을)벌다; (평판을)받다, 얻다",929,earn,He worked hard to earn his college degree.,그는 대학 학위를 얻기 위해 열심히 노력했습니다.
+930,arise,"(문제 등이)발생하다, 일어나다 = occur",930,arise,Unexpected issues may arise during the project.,예기치 않은 문제가 프로젝트 중에 발생할 수 있습니다.
+931,labor,노동,931,labor,The construction project required a lot of manual labor.,건설 프로젝트에는 많은 노동력이 필요했습니다.
+932,union,노동조합,932,union,The union negotiated better working conditions for its members.,노동 조합은 회원들을 위해 더 나은 근로 조건을 협상했습니다.
+933,existing,"기존의, 현행의",933,existing,The company plans to improve its existing products.,회사는 기존 제품을 개선할 계획입니다.
+934,exploit,"착취하다, 부당하게 이용하다",934,exploit,The company was accused of exploiting its workers.,그 회사는 노동자들을 착취한 혐의로 비난을 받았습니다.
+935,appoint,"임명하다, 지명하다",935,appoint,The board will appoint a new CEO next month.,이사회는 다음 달에 새 CEO를 임명할 것입니다.
+936,appraisal,평가,936,appraisal,Employees receive an annual performance appraisal.,직원들은 매년 성과 평가를 받습니다.
+937,promote,승진시키다; 촉진하다,937,promote,The company promotes a culture of innovation.,회사는 혁신을 장려하는 기업 문화를 촉진합니다.
+938,skilled,"숙련된, 노련한",938,skilled,The job requires skilled workers.,이 직업은 숙련된 노동자가 필요합니다.
+939,radically,"완전히, 철저히, 근본적으로
+(radical 근본적인, 과격한)",939,radically,The company needs to change its approach radically.,그 회사는 접근 방식을 근본적으로 변경해야 합니다.
+940,exceptional,"뛰어난, 예외적인
+(exception 예외, 이의, 반대)",940,exceptional,Her performance at work has been exceptional.,그녀의 직장에서의 성과는 뛰어났습니다.
+941,appreciation,감사,941,appreciation,The employees showed their appreciation for the bonus.,직원들은 보너스에 대한 감사를 표현했습니다.
+942,evaluate,평가하다,942,evaluate,We need to evaluate the results of the experiment.,실험 결과를 평가해야 합니다.
+943,suggest,"제안하다, 추천하다",943,suggest,Can you suggest a good restaurant in the area?,이 지역에서 좋은 식당을 추천해 주실 수 있나요?
+944,preference,선호,944,preference,Please let us know your preference for the meeting time.,회의 시간에 대한 선호도를 알려주세요.
+945,management,"경영진, 경영",945,management,Effective management is crucial for the success of any organization.,효율적인 경영은 모든 조직의 성공에 중요합니다.
+946,predict,예측하다,946,predict,It's difficult to predict the outcome of the election.,선거 결과를 예측하기는 어렵습니다.
+947,transfer,보내다; 전근시키다,947,transfer,She requested a transfer to the company's overseas office.,그녀는 회사 해외 지사로의 이동을 요청했습니다.
+948,award,"상
+(reward 보상하다, 포상,보상)",948,award,She received an award for her outstanding contribution.,그녀는 뛰어난 공헌에 대한 상을 받았습니다.
+949,mandatory,의무적인,949,mandatory,Wearing a seatbelt is mandatory while driving.,운전 중에는 안전벨트 착용이 의무입니다.
+950,competent,"유능한, 능숙한
+(competence 능력)",950,competent,The candidate demonstrated that he was competent for the job.,지원자는 그 직무를 수행할 능력이 있다는 것을 입증했습니다.
+951,performance,"실적,성과; 공연,연주, 연기",951,performance,The athlete's performance exceeded everyone's expectations.,그 선수의 성적은 모두의 기대를 뛰어넘었습니다.
+952,reward,"~에 보답하다, 보상하다, 포상,보상
+(award 상)",952,reward,Hard work should be rewarded.,열심히 일한 것은 보상받아야 합니다.
+953,search,"찾기, 수색, 조사",953,search,They conducted a thorough search of the area.,그들은 지역을 철저히 수색했습니다.
+954,inexperienced,"경험없는, 미숙한",954,inexperienced,He is still inexperienced in handling difficult situations.,그는 여전히 어려운 상황을 다루는 데 미숙합니다.
+955,early,"시간상 이른, 조기의",955,early,It's never too early to start planning for retirement.,퇴직을 위한 계획을 세우기에는 너무 일찍이라는 것은 없습니다.
+956,designate,"지명하다, 지정하다",956,designate,The area has been designated as a protected wildlife sanctuary.,그 지역은 보호받는 야생동물 서식지로 지정되었습니다.
+957,executive,"경영의,관리의",957,executive,She was promoted to an executive position within the company.,그녀는 회사 내에서 임원직으로 승진했습니다.
+958,dedication,헌신,958,dedication,The success of the project was due to the team's dedication.,프로젝트의 성공은 팀의 헌신 덕분입니다.
+959,unanimously,만장일치로,959,anonymously,The donation was made anonymously.,기부는 익명으로 이루어졌습니다.
+960,progress,"진행, 진척, 진전, 진보하다, 발전하다",960,progress,We've made significant progress on the project.,우리는 프로젝트에서 상당한 진전을 이루었습니다.
+961,congratulate,축하하다,961,congratulate,I would like to congratulate you on your promotion.,승진을 축하드립니다.
+962,dismiss,"해임하다, 해고하다",962,dismiss,The manager decided to dismiss the employee for misconduct.,관리자는 직원을 불량행위로 해고하기로 결정했습니다.
+963,independence,독립성,963,independence,The country gained independence from colonial rule.,그 나라는 식민지 통치로부터 독립을 얻었습니다.
+964,participation,"참여, 참가, 가입",964,participation,Active participation is essential for the success of the event.,활발한 참여가 행사의 성공에 중요합니다.
+965,praise,칭찬,965,praise,The teacher praised the student for his excellent performance.,선생님은 학생의 훌륭한 성적에 대해 칭찬했습니다.
+966,accomplishment,"성과,업적",966,accomplishment,Graduating from college was her greatest accomplishment.,대학을 졸업하는 것이 그녀의 가장 큰 성취였습니다.
+967,deliberation,"토의, 심의, 숙고
+(deliberate 고의의, 숙고하다)",967,deliberation,"After much deliberation, they finally reached a decision.","많은 고민 끝에, 그들은 마침내 결정을 내렸습니다."
+968,leadership,"리더십, 지도력",968,leadership,Strong leadership is necessary to guide the team.,팀을 이끄는 데 강력한 리더십이 필요합니다.
+969,retire,"퇴직하다, 은퇴하다",969,retire,He decided to retire after working for the company for 30 years.,그는 회사에서 30년간 일한 뒤 은퇴하기로 결정했습니다.
+970,nomination,"임명, 지명",970,nomination,Her nomination for the award was well-deserved.,그녀의 상 수상 후보 지명은 충분히 자격이 있었습니다.
+971,reorganize,"재편성하다, 재조직하다",971,reorganize,The company plans to reorganize its management structure.,회사는 경영 구조를 재조직할 계획입니다.
+972,serve,"근무하다, 일하다",972,serve,He has served as the company's CEO for over a decade.,그는 회사의 CEO로 10년 이상 재직해 왔습니다.
+973,encouragement,격려,973,encouragement,His words of encouragement motivated me to keep going.,그의 격려의 말이 나를 격려하여 계속 나아가게 했습니다.
+974,resignation,"사임, 사직, 사직서",974,resignation,The manager accepted his resignation with regret.,관리자는 그의 사직을 유감으로 받아들였습니다.
+975,strictly,엄격히,975,strictly,The rules must be followed strictly.,규칙은 엄격히 따라야 합니다.
+976,congestion,"(교통의)체증, 혼잡
+(congest 혼잡하게 하다)",976,congestion,Traffic congestion is a common problem in big cities.,교통 체증은 대도시에서 흔한 문제입니다.
+977,alleviate,완화하다,977,alleviate,The new medicine helps alleviate pain.,새로운 약은 통증을 완화하는 데 도움이 됩니다.
+978,divert,"우회시키다, 다른 곳으로 돌리다",978,divert,The river was diverted to prevent flooding.,강물이 홍수를 방지하기 위해 우회되었습니다.
+979,detour,우회,979,detour,We had to take a detour because of the road closure.,도로 폐쇄로 인해 우회로를 타야 했습니다.
+980,fuel,연료,980,fuel,Renewable energy sources can help reduce our dependence on fossil fuels.,재생 가능한 에너지원은 화석 연료에 대한 의존을 줄일 수 있습니다.
+981,malfunction,"오작동, 기능불량",981,malfunction,The malfunction of the equipment caused a delay in production.,장비의 고장으로 생산이 지연되었습니다.
+982,permit,"허락하다, 허가증",982,permit,The permit allows them to build a new factory.,허가서로 인해 그들은 새로운 공장을 건설할 수 있습니다.
+983,transportation,"교통(수단), 운송 수단",983,transportation,Public transportation is more environmentally friendly than driving cars.,대중 교통은 차량 운전보다 환경 친화적입니다.
+984,opportunity,기회,984,opportunity,Don't miss out on this opportunity to learn new skills.,새로운 기술을 배울 수 있는 이 기회를 놓치지 마세요.
+985,clearly,명확히,985,clearly,The instructions were clearly explained.,지시 사항이 분명히 설명되었습니다.
+986,ongoing,계속 진행 중인,986,ongoing,The investigation into the matter is still ongoing.,그 문제에 대한 조사는 아직 진행 중입니다.
+987,detailed,상세한,987,detailed,The report provides a detailed analysis of the situation.,보고서는 상황에 대한 상세한 분석을 제공합니다.
+988,alternative,"대안, 대체, 다른, 대신의",988,alternative,We need to consider alternative solutions to the problem.,문제에 대한 대안적인 해결책을 고려해야 합니다.
+989,obtain,"획득하다, 얻다",989,obtain,It's not easy to obtain a visa.,비자를 획득하는 것은 쉽지 않습니다.
+990,designated,지정된,990,designated,This area is designated for parking.,이 지역은 주차용으로 지정되었습니다.
+991,intersection,"교차로, 교차지점",991,intersection,There was an accident at the intersection.,교차로에서 사고가 발생했습니다.
+992,equip,"갖추다, 설비하다",992,equip,The kitchen is equipped with modern appliances.,주방에는 최신 가전제품이 설치되어 있습니다.
+993,commute,통근하다,993,commute,Many people commute to work by train.,많은 사람들이 기차로 출퇴근합니다.
+994,downtown,"시내에서, 도심지로",994,downtown,Let's go downtown and explore the shops.,시내로 가서 가게를 탐험해 봅시다.
+995,automotive,자동차의,995,automotive,He works in the automotive industry.,그는 자동차 산업에서 일합니다.
+996,closure,폐쇄,996,closure,The closure of the factory left many people unemployed.,공장 폐쇄로 많은 사람들이 실직했습니다.
+997,vehicle,"차량, 운송 수단",997,vehicle,The police stopped the vehicle for speeding.,경찰이 차량을 속도 위반으로 멈췄습니다.
+998,platform,승강장,998,platform,We waited for the train on the platform.,우리는 플랫폼에서 기차를 기다렸습니다.
+999,official,"공무원, 관리, 공식적인",999,official,The official announcement will be made tomorrow.,공식 발표는 내일 이루어질 예정입니다.
+1000,transit,"교통, 수송, 통과하다",1000,transit,The city invested in improving public transit.,도시는 대중교통 개선을 위해 투자했습니다.
+1001,fare,교통요금,1001,fare,The fare for the bus has increased.,버스 요금이 인상되었습니다.
+1002,expense,"비용, 지출",1002,expense,We need to reduce our expenses.,우리는 비용을 줄여야 합니다.
+1003,trust,"신뢰, 신임, 믿다, 신뢰하다",1003,trust,Trust is essential in any relationship.,신뢰는 어떤 관계에서도 중요합니다.
+1004,head,"(~의 방향으로)나아가다, 향하게 하다",1004,head,We're heading in the right direction.,우리는 올바른 방향으로 향하고 있습니다.
+1005,drive,"(차 등을)운전하다, 타고가다, 조종하다",1005,drive,She learned how to drive last year.,그녀는 작년에 운전하는 법을 배웠습니다.
+1006,fine,벌금,1006,fine,He had to pay a fine for speeding.,그는 속도 위반으로 벌금을 내야 했습니다.
+1007,pass,"지나가다, 통과하다",1007,pass,Please let me pass.,제가 지나가게 해주세요.
+1008,securely,"(매듭 등이)단단하게, 튼튼하게",1008,securely,Make sure to tie the rope securely.,로프를 튼튼하게 매 주세요.
+1009,prominently,"눈에 잘 띄게, 두드러지게
+(prominent 눈에 띄는)",1009,prominently,The sign was prominently displayed.,표지판이 눈에 잘 띄게 배치되어 있었습니다.
+1010,reserved,"예약된, 예약한; 지정된",1010,reserved,The seats are reserved for VIP guests.,좌석은 VIP 손님을 위해 예약되어 있습니다.
+1011,average,"평균치, 평균",1011,average,The average temperature in July is 25 degrees Celsius.,7월의 평균 온도는 섭씨 25도입니다.
+1012,collision,충돌,1012,collision,The collision caused severe damage.,충돌로 심각한 피해가 발생했습니다.
+1013,tow,견인하다,1013,tow,The car was towed to the nearest garage.,차가 가장 가까운 차고로 견인되었습니다.
+1014,reverse,"뒤의, 반대의",1014,reverse,Please reverse the car and park it.,차를 후진해서 주차해주세요.
+1015,obstruct,"(전망 등을)가리다, 차단하다;",1015,obstruct,The fallen tree obstructed the road.,넘어진 나무가 길을 막았습니다.
+1016,delinquent,"(세금 등이)연체된, 미불의",1016,delinquent,The delinquent payment led to penalties.,연체된 지불로 벌금이 부과되었습니다.
+1017,overdue,"(지불,반납 등의)기한이 지난, 지불 기한이 넘은",1017,overdue,The library books are overdue.,도서관 책들이 기한을 넘었습니다.
+1018,regrettably,유감스럽게도,1018,regrettably,"Regrettably, I won't be able to attend the meeting.","유감스럽게도, 회의에 참석할 수 없을 것입니다."
+1019,balance,"잔고, 차감 잔액",1019,balance,Please check your account balance.,계좌 잔액을 확인해 주세요.
+1020,deposit,"입금하다, 예금하다",1020,deposit,You can make a deposit at the ATM.,ATM에서 예금을 입금할 수 있습니다.
+1021,investigation,"조사 (investigate 연구하다, 조사하다)",1021,investigation,The police conducted an investigation into the crime.,경찰은 그 범죄에 대한 조사를 실시했습니다.
+1022,account,계좌; 설명; 고려,1022,account,I need to check my bank account balance.,은행 계좌 잔고를 확인해야 합니다.
+1023,statement,"명세서, 성명서",1023,statement,Please provide a statement of your income.,소득 명세서를 제출해 주세요.
+1024,amount,"액수, 양",1024,amount,The total amount due is $500.,총 금액은 500달러입니다.
+1025,withdrawal,(예금의)인출,1025,withdrawal,I made a withdrawal from the ATM.,ATM에서 인출을 했습니다.
+1026,previously,이전에,1026,previously,Have you met him previously?,그를 이전에 만나본 적이 있나요?
+1027,due,"만기가 된, 지불 기일이 된;",1027,due,The rent is due at the end of the month.,임대료는 달의 끝에 납부해야 합니다.
+1028,receive,"받다, 수취하다",1028,receive,I received a letter from my friend.,친구로부터 편지를 받았습니다.
+1029,expect,"예상하다, 기대하다",1029,expect,We expect the delivery by tomorrow.,우리는 내일까지 배송을 기대합니다.
+1030,certificate,"증명서, 증서",1030,certificate,She received a certificate of achievement.,그녀는 성취증을 받았습니다.
+1031,document,"서류, 문서",1031,document,Please bring all necessary documents.,필요한 모든 서류를 가져와 주세요.
+1032,spending,소비; 지출,1032,spending,I need to review my monthly spending.,월간 지출 내역을 검토해야 합니다.
+1033,successfully,성공적으로,1033,successfully,The project was completed successfully.,프로젝트가 성공적으로 완료되었습니다.
+1034,bill,"~에게 청구서를 보내다, 청구서, 계산서",1034,bill,Please settle your phone bill by the due date.,당신의 전화 요금은 만기일까지 정산해 주세요.
+1035,pleasure,"즐거움, 기쁜, 영광",1035,pleasure,It's a pleasure to meet you.,당신을 만나서 기쁩니다.
+1036,study,연구,1036,study,I need to focus on my study now.,지금은 공부에 집중해야 합니다.
+1037,summary,"요약, 개요",1037,summary,Here's a summary of the meeting.,회의 개요를 보여 드리겠습니다.
+1038,temporary,임시의,1038,temporary,This is just a temporary solution.,이것은 일시적인 해결책에 불과합니다.
+1039,lower,"(양,가격을)줄이다",1039,lower,"Can you lower the volume, please?",볼륨을 낮춰 주실 수 있나요?
+1040,transaction,"거래, 업무",1040,transaction,The bank sent a notification for the transaction.,은행에서 거래 내역을 통지했습니다.
+1041,double,두배로 만들다,1041,double,The company doubled its revenue last year.,그 회사는 작년에 수익을 두 배로 늘렸습니다.
+1042,identification,"신분증, 신분 증명서",1042,identification,You need to show your identification at the entrance.,입구에서 신분증을 제시해야 합니다.
+1043,dissatisfaction,"불만, 불평",1043,dissatisfaction,There was dissatisfaction among the employees.,직원들 사이에 불만이 있었습니다.
+1044,in common,"공통으로, 공동으로",1044,in common,They have a lot in common.,그들은 많은 공통점이 있습니다.
+1045,interest,관심; 권리; 이자,1045,interest,His interest in music led him to become a musician.,음악에 대한 관심이 그를 음악가로 이끌었습니다.
+1046,reject,"거절하다, 거부하다",1046,reject,They rejected our proposal.,그들은 우리의 제안을 거부했습니다.
+1047,relation,관계,1047,relation,There is a close relation between diet and health.,식이와 건강 사이에는 밀접한 관계가 있습니다.
+1048,tentatively,"임시로, 시험적으로",1048,tentatively,We've tentatively scheduled the meeting for next week.,우리는 다음 주에 회의 일정을 임시로 잡았습니다.
+1049,alternatively,"그렇지 않으면, 그 대신에",1049,alternatively,"You can use public transportation, alternatively.",대안으로 대중교통을 이용할 수 있습니다.
+1050,attentive,"주의 깊은, 세심한",1050,attentive,He's very attentive to details.,그는 세부사항에 주의 깊습니다.
+1051,convert,"전환하다, 변환하다",1051,convert,They plan to convert the basement into a gym.,그들은 지하실을 체육관으로 변환할 계획이다.
+1052,heavily,"몹시, 심하게",1052,heavily,It rained heavily all night.,하루 종일 많이 비가 내렸다.
+1053,loan,"대출, 대출금",1053,loan,She took out a loan to buy a car.,그녀는 차를 사기 위해 대출을 받았습니다.
+1054,unexpected,예기치 않은,1054,unexpected,His sudden resignation was unexpected.,그의 갑작스런 사퇴는 예상하지 못한 일이었습니다.
+1055,cash,현금으로 바꾸다,1055,cash,Do you have enough cash for the trip?,여행에 필요한 현금이 충분한가요?
+1056,mortgage,(담보)대출,1056,mortgage,They applied for a mortgage to buy a house.,그들은 집을 사기 위해 모기지를 신청했습니다.
+1057,payable,지불해야 하는,1057,payable,The bill is payable upon receipt.,이 청구서는 영수증에 따라 지불 가능합니다.
+1058,personal,개인의,1058,personal,It's my personal opinion.,이것은 제 개인적인 의견입니다.
+1059,investment,"투자, 투자금",1059,investment,Real estate can be a good investment.,부동산은 좋은 투자가 될 수 있습니다.
+1060,incrative,"수익성 있는, 돈벌이가 되는",1060,incrative,This investment is highly incrative.,이 투자는 매우 수익성이 높습니다.
+1061,inherently,본질적으로,1061,inherently,Cats are inherently independent animals.,고양이는 본질적으로 독립적인 동물입니다.
+1062,secure,"확보하다, 얻어 내다;",1062,secure,The guard helped secure the premises.,경비원이 건물을 안전하게 지켜 주었습니다.
+1063,foreseeable,예견할 수 있는,1063,foreseeable,This was a foreseeable outcome.,이것은 예견할 수 있는 결과였습니다.
+1064,innate,타고난,1064,innate,Humans have an innate desire for companionship.,인간은 동반자에 대한 본능적인 욕구가 있습니다.
+1065,property,재산,1065,property,She inherited a large property from her grandparents.,그녀는 할아버지와 할머니로부터 큰 재산을 상속받았습니다.
+1066,on behalf of,~을 대신해서,1066,on behalf of,I'm speaking on behalf of the entire team.,저는 전 팀을 대표하여 말씀드리고 있습니다.
+1067,lease,임대차(계약),1067,lease,They signed a lease for the apartment.,그들은 아파트 임대 계약을 서명했습니다.
+1068,sponsor,"후원하다, 후원자",1068,sponsor,The company decided to sponsor the event.,그 회사는 그 이벤트를 후원하기로 결정했습니다.
+1069,propose,제안하다,1069,propose,He's going to propose to his girlfriend.,그는 여자친구에게 프러포즈할 예정입니다.
+1070,support,"후원, 원조, 지지, 지원하다,",1070,support,The community rallied to support the cause.,지역 사회는 그 목적을 지원하기 위해 모였습니다.
+1071,distributuion,"분배, 배급",1071,distribution,The distribution of food was organized by volunteers.,음식의 분배는 자원봉사자들에 의해 조직되었습니다.
+1072,consider,고려하다,1072,consider,We need to consider all options.,우리는 모든 옵션을 고려해야 합니다.
+1073,nearly,"거의, 대략",1073,nearly,The project is nearly complete.,그 프로젝트는 거의 완료되었습니다.
+1074,consent,"동의, 허락, 동의하다
+(consentaneous일치하는)",1074,consent,She gave her consent to the proposal.,그녀는 그 제안에 동의했습니다.
+1075,gratitude,"고마움, 감사",1075,gratitude,She expressed her gratitude for the help.,그녀는 도움에 대한 감사를 표현했습니다.
+1076,consult,"상의하다, 상담하다",1076,consult,I'll consult with my lawyer before signing.,계약서에 서명하기 전에 변호사와 상의하겠습니다.
+1077,advice,"조언, 충고",1077,advice,Can you give me some advice on investing?,투자에 관한 조언 좀 해 줄 수 있나요?
+1078,partially,"부분적으로, 일부분은",1078,partially,The project was only partially completed.,그 프로젝트는 일부만 완료되었습니다.
+1079,evident,"분명한, 명백한,",1079,evident,The truth became evident over time.,진실은 시간이 흐르면서 명백해졌습니다.
+1080,reliability,"신뢰도, 믿음직함",1080,reliability,The reliability of the source is questionable.,그 출처의 신뢰성은 의심스럽습니다.
+1081,cautious,"조심하는, 신중한",1081,cautious,Be cautious when crossing the street.,거리를 건널 때 조심하세요.
+1082,insight,"식견, 통찰력",1082,insight,Her insight into the issue was impressive.,그녀의 문제에 대한 통찰력은 인상적이었습니다.
+1083,portfolio,"포트폴리오, 투자 자산 구성",1083,portfolio,He presented his portfolio during the interview.,그는 면접 때 자신의 포트폴리오를 제시했습니다.
+1084,possible,"가능한, 있음직한",1084,possible,Anything is possible if you put your mind to it.,마음을 합쳐 무엇이든 가능합니다.
+1085,speculation,추측,1085,speculation,There's a lot of speculation about the company's future.,그 회사의 미래에 대한 많은 추측이 있습니다.
+1086,solely,"오로지, 혼자서, 전적으로",1086,solely,The decision was solely his.,그 결정은 완전히 그의 것이었습니다.
+1087,entrepreneur,사업가,1087,entrepreneur,Steve Jobs was a famous entrepreneur.,스티브 잡스는 유명한 사업가였습니다.
+1088,eventually,"결국, 마침내",1088,retrieve,He tried to retrieve the lost files.,그는 분실된 파일을 되찾으려고 시도했습니다.
+1089,shareholder,주주,1089,reconcile,They managed to reconcile their differences.,그들은 자신들의 차이를 조화시키는 데 성공했습니다.
+1090,outlook,전망,1090,maintain,It's important to maintain good hygiene.,좋은 위생 상태를 유지하는 것이 중요합니다.
+1091,stability,"안정, 안정성",1091,oversee,She was hired to oversee the project.,그녀는 그 프로젝트를 감독하기 위해 고용되었습니다.
+1092,bond,채권,1092,proficient,He's proficient in three languages.,그는 세 가지 언어에 능숙합니다.
+1093,depreciation,"가치 하락, 화폐의 구매력 저하",1093,acquire,He hopes to acquire new skills.,그는 새로운 기술을 습득하길 희망합니다.
+1094,increasing,증가하는,1094,assess,We need to assess the situation carefully.,우리는 상황을 주의 깊게 평가해야 합니다.
+1095,prevalent,"유행하고 있는, 널리 퍼진
+(prevalence 보급, 유행)",1095,crucial,Time management is crucial for success.,시간 관리는 성공에 매우 중요합니다.
+1096,rapid,"빠른, 신속한",1096,rapid,The company experienced rapid growth.,그 회사는 급속한 성장을 경험했습니다.
+1097,unprecedented,전례 없는,1097,unprecedented,The discovery was unprecedented in the field.,그 발견은 그 분야에서 전례 없었습니다.
+1098,yield,"(이윤을) 가져오다, 산출하다",1098,yield,The investment yielded high returns.,그 투자는 높은 수익을 냈습니다.
+1099,furnished,가구가 비치된,1099,furnished,The apartment comes furnished.,그 아파트는 가구가 비치되어 있습니다.
+1100,residence,"거주지, 주택",1100,residence,She lives in a luxurious residence.,그녀는 호화로운 주택에 살고 있습니다.
+1101,spacious,(공간이)넓은,1101,spacious,The living room is spacious and bright.,거실은 넓고 밝습니다.
+1102,drape,(방 등을 커튼 등으로)장식하다,1102,drape,She used elegant drapes to decorate the room.,그녀는 우아한 커튼으로 방을 장식했습니다.
+1103,unoccupied,"(집 등이)비어 있는, 사람이 살지 않는",1103,unoccupied,The house remained unoccupied for years.,그 집은 수년 동안 사람이 살지 않은 상태로 유지되었습니다.
+1104,renovation,"수리, 개조",1104,renovation,The renovation of the old building was completed.,오래된 건물의 개조가 완료되었습니다.
+1105,appropriate,"적당한, 적합한(appropriately 적합하게)",1105,appropriate,Is this dress appropriate for the occasion?,이 드레스는 이 자리에 적당한가요?
+1106,delay,"연기하다, ~을 뒤로 미루다",1106,delay,There was a delay in the delivery.,배달이 지연되었습니다.
+1107,community,"지역 사회, 공동체",1107,community,He's actively involved in his community.,그는 지역 사회에 적극적으로 참여하고 있습니다.
+1108,construction,"건설, 건축",1108,construction,The construction of the bridge began last month.,다리의 건설이 지난 달에 시작되었습니다.
+1109,repair,수리하다,1109,repair,We need to repair the roof before winter.,겨울이 오기 전에 지붕을 수리해야 합니다.
+1110,currently,현재,1110,currently,"Currently, she works as a freelance writer.",현재 그녀는 프리랜서 작가로 일하고 있습니다.
+1111,regularly,정기적으로,1111,regularly,He exercises regularly to stay fit.,그는 건강을 유지하기 위해 규칙적으로 운동합니다.
+1112,arrange,"배열하다, 정돈하다",1112,arrange,Let's arrange a meeting for next week.,다음 주에 회의를 정해 봅시다.
+1113,location,"장소, 위치",1113,location,The location of the new store is perfect.,새로운 가게의 위치가 완벽합니다.
+1114,restore,"복구하다, 회복시키다",1114,restore,They plan to restore the old house.,그들은 오래된 집을 복원할 계획입니다.
+1115,presently,현재,1115,presently,He's presently working on a new project.,그는 현재 새 프로젝트에 참여하고 있습니다.
+1116,numerous,많은,1116,numerous,The company received numerous complaints.,그 회사는 수많은 불만을 받았습니다.
+1117,abandon,"그만두다; 버리다(abondonment 버림, 포기)",1117,abandon,They had to abandon the mission.,그들은 그 임무를 포기해야 했습니다.
+1118,contractor,"계약자, 도급업자",1118,contractor,The contractor will start work next week.,그 도급업자는 다음 주에 작업을 시작할 것입니다.
+1119,develop,개발하다,1119,develop,They plan to develop new software.,그들은 새 소프트웨어를 개발할 계획입니다.
+1120,maintain,"유지하다, 관리하다",1120,maintain,It's important to maintain good posture.,올바른 자세를 유지하는 것이 중요합니다.
+1121,densely,"빽빽이, 밀집하여",1121,densely,The forest was densely populated with trees.,숲은 나무로 밀집되어 있었습니다.
+1122,prepare,"준비하다, 채비를 갖추다",1122,prepare,She needs time to prepare for the exam.,그녀는 시험 준비를 위해 시간이 필요합니다.
+1123,finally,"결국, 마침내",1123,finally,"Finally, he reached his destination.",결국 그는 목적지에 도착했습니다.
+1124,district,"지역, 지구",1124,district,He's the representative for this district.,그는 이 지역의 대표입니다.
+1125,renewal,재개발,1125,renewal,The renewal of the contract was negotiated.,계약 갱신이 협상되었습니다.
+1126,compulsory,의무적인,1126,compulsory,Education is compulsory for children.,교육은 아이들에게 의무적입니다.
+1127,interfere,"방해하다, 해치다",1127,interfere,Don't interfere with their plans.,그들의 계획에 간섭하지 마세요.
+1128,relocation,"이전, 재배치",1128,relocation,The relocation of the company was necessary.,그 회사의 이전이 필요했습니다.
+1129,totally,"완전히, 전적으로",1129,totally,I totally forgot about the meeting.,나는 회의를 완전히 잊어 버렸습니다.
+1130,actually,"실제로, 사실은",1130,actually,He's actually a very talented musician.,그는 실제로 매우 재능 있는 음악가입니다.
+1131,architect,건축가,1131,architect,The architect designed the new building.,건축가가 그 새 건물을 디자인했습니다.
+1132,enlarge,"확장하다, 확대하다",1132,enlarge,They plan to enlarge the garden.,그들은 정원을 확장할 계획입니다.
+1133,install,"설치하다, 장치하다",1133,install,They installed new software on all computers.,그들은 모든 컴퓨터에 새 소프트웨어를 설치했습니다.
+1134,permanent,영구적인,1134,permanent,She got a permanent job at the company.,그녀는 그 회사에서 정규직을 얻었습니다.
+1135,suppose,"생각하다, 추측하다(guess, infer 추측하다)",1135,suppose,I suppose we'll have to wait.,우리는 기다려야 할 것 같습니다.
+1136,adjacent,인접한,1136,adjacent,Their house is adjacent to ours.,그들의 집은 우리 집 옆에 있습니다.
+1137,consist,"구성되다, 이루어지다",1137,consist,The book consists of ten chapters.,그 책은 열 개의 장으로 이루어져 있습니다.
+1138,utility,공공시설; 공공요금,1138,utility,The utility bills arrived yesterday.,공과금 청구서가 어제 도착했습니다.
+1139,conserve,"보전하다, 유지하다",1139,conserve,It's important to conserve water.,물을 절약하는 것이 중요합니다.
+1140,chance,"가능성, 기회",1140,chance,Don't miss this chance to succeed.,성공할 기회를 놓치지 마세요.
+1141,forecast,(날씨의)예보,1141,forecast,The weather forecast predicts rain.,기상 예보가 비를 예상합니다.
+1142,waste,"쓰레기, 폐기물",1142,waste,It's a waste to throw away food.,음식을 버리는 것은 낭비입니다.
+1143,dispose,"처분하다, 처리하다",1143,dispose,Please dispose of your trash properly.,쓰레기를 올바르게 처리해 주세요.
+1144,recycling,재활용,1144,recycling,Recycling paper helps the environment.,종이 재활용은 환경에 도움이 됩니다.
+1145,clear,"맑게 갠; 명백한, 분명한
+또렷하게, 완전히; 떨어져서",1145,clear,Let's clear the table after dinner.,저녁 식사 후 테이블을 치워 봅시다.
+1146,damage,"피해, 손해, 손상시키다",1146,damage,The storm caused significant damage to the building.,폭풍이 건물에 상당한 피해를 입혔습니다.
+1147,significant,"상당한; 중대한, 중요한",1147,significant,There has been a significant increase in sales.,판매량이 상당히 증가했습니다.
+1148,solution,해결책,1148,solution,They found a solution to the problem.,그들은 문제의 해결책을 찾았습니다.
+1149,occur,"(일이)발생하다, 생기다(happen, take place)",1149,occur,Accidents can occur if you're not careful.,조심하지 않으면 사고가 발생할 수 있습니다.
+1150,ideal,이상적인,1150,ideal,This location is ideal for a picnic.,이 장소는 소풍하기에 이상적입니다.
+1151,preserve,"보존하다, 보호하다",1151,preserve,We must preserve our natural resources.,우리는 우리의 자연 자원을 보존해야 합니다.
+1152,aid,"원조, 돕다",1152,aid,The organization provides aid to refugees.,그 기관은 난민에게 원조를 제공합니다.
+1153,excessive,"지나친, 과도한(excess 초과, 초과량)",1153,excessive,Eating excessive amounts of sugar is unhealthy.,과도한 설탕 섭취는 건강에 해로운 것입니다.
+1154,intensively,집중적으로( intense 격렬한),1154,intensively,They trained intensively for the competition.,그들은 대회를 위해 집중적으로 훈련했습니다.
+1155,vary,"다르다, 다양하다",1155,vary,Prices may vary depending on the location.,가격은 위치에 따라 달라질 수 있습니다.
+1156,pleasing,"즐거운, 기분 좋은, 만족스러운",1156,pleasing,The design received pleasing feedback from customers.,디자인은 고객들로부터 기분 좋은 피드백을 받았습니다.
+1157,mark,"점수, 평점, 표시, 축하하다",1157,mark,She received a high mark on her exam.,그녀는 시험에서 높은 점수를 받았습니다.
+1158,inaccessible,"접근이 불가능한, 이용이 불가능한",1158,inaccessible,The area was inaccessible by road.,그 지역은 도로로 접근할 수 없었습니다.
+1159,disturb,방해하다,1159,disturb,Please do not disturb while I'm working.,저가 일하고 있을 때 방해하지 마세요.
+1160,pollutant,오염물질,1160,pollutant,Air pollution is caused by various pollutants.,공기 오염은 여러 오염물질로 인해 발생합니다.
+1161,emission,"배기가스, 방출",1161,emission,The emission of greenhouse gases contributes to climate change.,온실 가스 배출은 기후 변화에 기여합니다.
+1162,dense,"빽빽한, 밀집한",1162,dense,The fog was so dense that we could hardly see.,안개가 매우 짙어서 우리는 거의 볼 수 없었습니다.
+1163,environmental,환경적인,1163,environmental,It's important to protect the environmental for future generations.,미래 세대를 위해 환경을 보호하는 것이 중요합니다.
+1164,consistent,"일치하는, 지속적인, 한결같은",1164,consistent,Her performance has been consistent throughout the year.,그녀의 성과는 올 해 내내 일관되었습니다.
+1165,leak,"누출, 누출량",1165,leak,There was a leak in the roof after the heavy rain.,폭우 뒤에 지붕에 누수가 있었습니다.
+1166,organization,단체,1166,organization,The organization provides support for underprivileged children.,그 기관은 불우한 아이들에게 지원을 제공합니다.
+1167,continually,계속해서,1167,continually,She's been working on the project continually for months.,그녀는 수개월 동안 계속해서 그 프로젝트에 참여하고 있습니다.
+1168,contaminate,오염시키다(=pollution),1168,contaminate,Waste from the factory has contaminated the river.,공장에서 나오는 폐기물이 강물을 오염시켰습니다.
+1169,disaster,재난,1169,disaster,The earthquake was a natural disaster.,지진은 자연 재해였습니다.
+1170,discharge,방출하다,1170,discharge,The discharge of untreated sewage into the river is illegal.,처리되지 않은 하수를 강으로 방류하는 것은 불법입니다.
+1171,resource,"자원, 자료",1171,resource,Renewable energy is an important resource for the future.,재생 에너지는 미래를 위한 중요한 자원입니다.
+1172,prominent,"유명한, 두드러진",1172,prominent,He's a prominent figure in the field of science.,그는 과학 분야에서 유명한 인물입니다.
+1173,deplete,고갈시키다(depletion 고갈),1173,deplete,Overfishing has depleted the fish population in the ocean.,과잉 어업으로 인해 바다의 물고기 양이 감소했습니다.
+1174,purify,정화시키다,1174,purify,Purify the water before drinking it.,물을 마시기 전에 정화해라.
+1175,endangered,멸종 위기에 처한,1175,endangered,Many species are endangered due to habitat loss.,많은 종들이 서식지의 손실로 인해 멸종 위기에 처해있다.
+1176,extinction,멸종,1176,extinction,The extinction of certain animals is a result of human activities.,특정 동물들의 멸종은 인간의 활동의 결과이다.
+1177,drought,가뭄,1177,drought,The drought has caused crops to wither.,가뭄으로 인해 작물이 시들었다.
+1178,inflict,"(고통,피해를)입히다, 가하다",1178,inflict,The war inflicted great suffering on the civilian population.,전쟁은 민간인들에게 큰 고통을 가했다.
+1179,migration,"이동, 이주",1179,migration,Bird migration patterns have been disrupted by climate change.,새들의 이주 패턴이 기후 변화로 인해 중단되었다.
+1180,ecology,"생태, 자연환경",1180,ecology,Ecology is the study of the relationships between organisms and their environment.,생태학은 생물과 그들의 환경 사이의 관계를 연구하는 학문이다.
+1181,habitat,"(동, 식물의)서식지",1181,habitat,Loss of habitat is a major threat to biodiversity.,서식지의 상실은 생물 다양성에 대한 주요 위협이다.
+1182,fatigue,피로,1182,fatigue,Chronic fatigue can significantly impact daily life.,만성 피로는 일상 생활에 상당한 영향을 미칠 수 있다.
+1183,checkup,건강 진단,1183,checkup,Regular checkups are important for maintaining good health.,정기적인 건강 진단은 건강을 유지하는 데 중요하다.
+1184,symtom,증상,1184,symptom,Fever is a common symptom of influenza.,발열은 독감의 흔한 증상이다.
+1185,physician,내과의사,1185,physician,The physician prescribed medication for the patient.,의사가 환자에게 약을 처방했다.
+1186,diagnosis,진단,1186,diagnosis,The doctor made a diagnosis based on the patient's symptoms.,의사는 환자의 증상을 기반으로 진단을 내렸다.
+1187,prescribe,"(약을)처방하다, 규정하다",1187,prescribe,Doctors can prescribe medication to treat various ailments.,의사들은 다양한 질병을 치료하기 위해 약을 처방할 수 있다.
+1188,recovery,"회복, 쾌유",1188,recovery,Proper rest is essential for a speedy recovery from illness.,적절한 휴식은 질병에서 빠른 회복에 필수적이다.
+1189,recognize,"인정하다, 알아보다",1189,recognize,It's important to recognize the early signs of disease.,질병의 초기 증상을 인식하는 것이 중요하다.
+1190,join,~에 가입하다,1190,join,I decided to join the gym to improve my fitness.,나는 체력을 향상시키기 위해 헬스장에 가입하기로 결정했다.
+1191,comprehensive,"종합적인, 포괄적인",1191,comprehensive,The report provides a comprehensive analysis of the situation.,보고서는 상황에 대한 포괄적인 분석을 제공한다.
+1192,participate,"참여하다, 참가하다",1192,participate,Students are encouraged to participate actively in class discussions.,학생들은 수업 토론에 적극적으로 참여할 것을 권장한다.
+1193,recommend,"권고하다, 추천하다",1193,recommend,The doctor recommended a change in diet for better health.,의사는 건강을 위해 식습관을 변경할 것을 권장했다.
+1194,necessary,필요한,1194,necessary,Adequate sleep is necessary for good mental health.,충분한 수면은 좋은 정신 건강에 필수적이다.
+1195,ability,능력,1195,ability,Practice improves one's ability to perform tasks.,연습은 일을 수행하는 능력을 향상시킨다.
+1196,operation,수술,1196,operation,The patient underwent a successful heart operation.,환자는 성공적인 심장 수술을 받았다.
+1197,cleanliness,청결,1197,cleanliness,Maintaining cleanliness is important for preventing infections.,청결을 유지하는 것은 감염 예방에 중요하다.
+1198,duration,"지속 기간, 지속",1198,duration,The duration of the concert was three hours.,콘서트의 지속 기간은 세 시간이었다.
+1199,examination,"진찰, 검사",1199,examination,The doctor scheduled an examination to assess the patient's condition.,의사는 환자의 상태를 평가하기 위해 진찰을 예약했다.
+1200,eliminate,제거하다(elimination 제거),1200,eliminate,Regular exercise can help eliminate stress.,규칙적인 운동은 스트레스를 제거하는 데 도움이 될 수 있다.
+1201,easily,쉽게,1201,easily,"With practice, you'll find that it becomes easier to play the piano.",연습하면 피아노 연주가 쉬워진다는 것을 알게 될 것이다.
+1202,dental,치과의,1202,dental,Dental care is important for maintaining oral health.,치과 관리는 구강 건강을 유지하는 데 중요하다.
+1203,dietary,"식이 요법의, 규정식의",1203,dietary,Following a balanced dietary plan can improve overall health.,균형 잡힌 식이 계획을 따르면 전반적인 건강이 개선될 수 있다.
+1204,related,관련된,1204,related,Smoking is closely related to various health problems.,흡연은 다양한 건강 문제와 밀접한 관련이 있다.
+1205,transmit,전염시키다,1205,transmit,Mosquitoes can transmit diseases such as malaria.,모기는 말라리아와 같은 질병을 전염시킬 수 있다.
+1206,periodically,주기적으로,1206,periodically,The magazine is published periodically throughout the year.,그 잡지는 연중 주기적으로 발행된다.
+1207,reaction,반응,1207,reaction,An allergic reaction to the medication occurred.,약물에 대한 알레르기 반응이 발생했다.
+1208,simple,단순한,1208,simple,Cooking a simple meal can be a satisfying experience.,간단한 식사를 요리하는 것은 만족스러운 경험이 될 수 있다.
+1209,coverage,"(보험의)보상 범위; (신문 등의)보도, 취재범위",1209,coverage,The insurance provides coverage for medical expenses.,이 보험은 의료 비용에 대한 보상을 제공한다.
+1210,exposure,노출,1210,exposure,Prolonged exposure to sunlight can cause skin damage.,오랜 시간 동안 햇볕에 노출되면 피부 손상을 일으킬 수 있다.
+1211,pharmaceutical,"제약의, 약학의",1211,pharmaceutical,The pharmaceutical industry plays a crucial role in healthcare.,제약 산업은 의료 분야에서 중요한 역할을 한다.
+1212,premium,보험료,1212,premium,The premium for this insurance policy is quite high.,이 보험 가입료는 상당히 높다.
+1213,relieve,완화시키다,1213,relieve,Painkillers can help relieve discomfort.,진통제는 불편함을 완화하는 데 도움이 될 수 있다.
+1214,combination,"결합, 연합",1214,combination,The dish was a combination of flavors from different cuisines.,그 요리는 다양한 요리의 맛을 결합한 것이었다.
+1215,conscious,"알고 있는, 자각하고 있는
+(consciousness : 의식)",1215,conscious,She was conscious of the need to save money.,그녀는 돈을 절약해야 한다는 필요성을 인식하고 있었다.
+1216,deprivation,"박탈, 상실(deprivative 박탈하는, 빼앗는)",1216,deprivation,Sleep deprivation can lead to various health issues.,수면 부족은 다양한 건강 문제로 이어질 수 있다.
+1217,health,"건강; (사회,기관의,)번영,안녕",1217,health,Regular exercise is essential for maintaining good health.,규칙적인 운동은 좋은 건강을 유지하는 데 필수적이다.
+1218,induce,"유발하다 (reduce줄이다, 낮추다)",1218,induce,Certain foods can induce allergic reactions in some people.,특정 음식은 일부 사람들에게 알레르기 반응을 유발할 수 있다.
+1219,insurance,보험,1219,insurance,Car insurance provides financial protection in case of accidents.,자동차 보험은 사고 발생 시 재정적 보호를 제공한다.
+1220,nutrition,영양,1220,nutrition,Proper nutrition is important for overall well-being.,적절한 영양은 전반적인 웰빙에 중요하다.
+1221,prevention,"예방(prevent 예방하다, 방해하다)",1221,prevention,Regular exercise is one way to prevent heart disease.,규칙적인 운동은 심장 질환을 예방하는 한 가지 방법이다.
+1222,susceptible,"~에 감염되기 쉬운, 영향 받기 쉬운",1222,susceptible,Children are more susceptible to certain illnesses than adults.,아이들은 성인보다 특정 질병에 민감할 수 있다.
