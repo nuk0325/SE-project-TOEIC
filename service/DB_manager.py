@@ -6,6 +6,21 @@ class DBManager:
         self.conn = sqlite3.connect('word.db')
         self.cur = self.conn.cursor()
 
+    # db의 모든 테이블 초기 세팅 -> 추후 DB_manager에도 반영
+    def setAllTable(self, user):
+        user_id = user.userId
+
+        # wro_fav 테이블 세팅
+        for line_num in range(1, 1201):
+            self.cur.execute('''INSERT INTO wro_fav (user_id, line_num, wro_is_right, fav_is_right) VALUES (?, ?, ?, ?)''', 
+                        (user_id, line_num, 0, 0))
+            self.conn.commit()
+
+        for unit_index in range(120):
+            self.cur.execute('''INSERT INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
+                        (user_id, unit_index, 0))
+            self.conn.commit()
+
     def save(self, user):
         try:
             user_data = user.toUserData()
@@ -82,7 +97,15 @@ class DBManager:
                 return True
             else :
                 return False
-        
+            
+    def deleteWrongWordIdxList(self, user, idx) : #wro_is_right를 0으로
+        user_id = user.userId
+        self.cur.execute('''UPDATE wro_fav SET wro_is_right = 0 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
+    
+    def insertWrongWordIdxList(self, user, idx) : #wro_is_right를 0으로
+        user_id = user.userId
+        self.cur.execute('''UPDATE wro_fav SET wro_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
+
     def getWord(self, idx, option) :
         self.cur.execute('''SELECT word, mean, sent FROM words_db WHERE line_num = ?''', (idx,))
         result = self.cur.fetchone()
@@ -128,13 +151,32 @@ class DBManager:
                 wordIdxList.append(i)
         return wordIdxList  
     
-    def getStudiedUnitNum(self, user):
+    def getUnitDoneList(self, user, unit_index):
         user_id = user.userId
 
-        self.cur.execute('''SELECT is_done FROM unit WEHRE user_id = ?''', (user_id,))
-        result = self.cur.fetchall()
+        unitDoneList = []
 
-        return result
+        for i in range(unit_index, unit_index + 15, 1):
+            self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND unit_index = ?''', (user_id, i))
+            unitDoneList.append(self.cur.fetchone()[0])
+
+        return unitDoneList
+    
+    def getStudiedUnitCount(self, user, start_idx):
+        user_id = user.userId
+
+        count = 0
+        s = start_idx * 15
+        e = s + 15
+
+        self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND (unit_index >= ? AND unit_index < ?)''', (user_id, s, e))
+        results = self.cur.fetchall()
+
+        for result in results:
+            if result[0] == 1:
+                count = count + 1
+        
+        return count
     
 
 
