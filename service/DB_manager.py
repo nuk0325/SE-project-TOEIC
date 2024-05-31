@@ -198,16 +198,27 @@ class DBManager:
     
     def addStudiedUnitCount(self, user, unit_index): #유닛 클리어 적용
         # 유닛 테이블 정보 수정
-        is_done=1
         user_id = user.userId
         print(f"unit_index:{unit_index} 유닛 클리어")
-        self.cur.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
-                (user_id, unit_index, is_done, ))
-        
-        user.today_learned_unit += 1
-        self.update(user)
 
-        self.closeDB()
+        self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND unit_index = ?''', (user_id, unit_index))
+        result = self.cur.fetchone()
+        if result is not None:
+            is_done = result[0]
+            if is_done == 0:
+                print(False) #해당 유닛이 한번도 클리어 안되었을 때
+
+                if (user.today_learned_unit < user.userGoal):
+                    print(f"unit_index:{unit_index} 유닛 반영")
+                    self.cur.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
+                            (user_id, unit_index, 1, ))
+                    user.today_learned_unit += 1
+                    user.total_learned_unit += 1 #강아지 성장
+                    self.update(user)
+            else:
+                print(True)
+        else:
+            print("No record found") 
 
     def selectNumAndWord(self):
         try:
