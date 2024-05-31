@@ -128,7 +128,7 @@ class ManagerUnitWordNoteUI(QMainWindow) :
         wordFixButton = QPushButton("수정")
         wordFixButton.setFixedSize(QSize(60,25))
         wordFixButton.setStyleSheet("background-color : rgb(224, 224, 224);")
-        wordFixButton.clicked.connect(wordObj.changeWord)
+        wordFixButton.clicked.connect(lambda: self.closeAndGotoChange(wordObj))
 
         wordDeleteButton = QPushButton("삭제")
         wordDeleteButton.setFixedSize(QSize(60,25))
@@ -184,3 +184,7 @@ class ManagerUnitWordNoteUI(QMainWindow) :
             self.parent.use_gotoMenu()
         elif option == "add" :
             self.parent.goAdd()
+
+    def closeAndGotoChange(self, wordObj):
+        self.close()
+        wordObj.changeWord()
