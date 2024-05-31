@@ -188,9 +188,9 @@ class UserPartUI(object):
         elif button.text() == "Part 6":
             self.parent.part6_button_clicked()
         elif button.text() == "Part 7":
-            self.parent.Part7_button_clicked()
+            self.parent.part7_button_clicked()
         elif button.text() == "Part 8":
-            self.parent.Part8_button_clicked()
+            self.parent.part8_button_clicked()
         else:
             print("잘못된 버튼 클릭") 
 

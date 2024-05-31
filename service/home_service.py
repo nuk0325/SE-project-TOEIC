@@ -33,6 +33,7 @@ class Home(QMainWindow):
         self.ui.totalTestHelpBtn.clicked.connect(self.showTestHelp)
         self.ui.myPageHelpBtn.clicked.connect(self.showMypageHelp)
         self.ui.cheatBtn.clicked.connect(self.cheet)
+        self.ui.dayCheatBtn.clicked.connect(self.dayCheet)
 
     def runIfOpenHome(self):
         self.checkDayChange()
@@ -44,6 +45,10 @@ class Home(QMainWindow):
         self.printDogProgressGage()
         self.printGoalProgressGage()
 
+    def dayCheet(self):
+        self.user.last_date = '2024-04-05'
+        self.user = self.dataManager.update(self.user)
+        self.checkDayChange()
 
     def checkDayChange(self):  
         self.user = self.dataManager.find_by_id(self.user.userId)
@@ -55,6 +60,7 @@ class Home(QMainWindow):
                 self.user.last_date = str(datetime.date.today().strftime('%Y-%m-%d'))
                 print(self.user.last_date)
                 self.user = self.dataManager.update(self.user)
+                self.printGoalProgressGage()
         else:
             print("User not found or user data is None")
             
@@ -92,6 +98,9 @@ class Home(QMainWindow):
 
     def printGoalProgressGage(self):
         # 목표 진행 상황 게이지 출력
+        if self.user.today_learned_unit == self.user.userGoal:
+            QMessageBox.information(None, "축하합니다! 목표 학습량에 도달했습니다", "조금 여유가 있다면 조금 더 하는 것도 좋은 습관입니다")
+
         progress = int((self.user.today_learned_unit / self.user.userGoal) * 100) if self.user.userGoal != 0 else 0
         self.ui.goalProgressBar.setValue(progress)
         

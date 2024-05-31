@@ -119,6 +119,11 @@ class HomeUI(object):
         self.cheatBtn = QtWidgets.QPushButton(parent=self.centralwidget)
         self.cheatBtn.setGeometry(QtCore.QRect(355, 58, 5, 5))  # 위치와 크기 설정
         self.cheatBtn.setObjectName("cheatBtn")
+
+        # Add day cheat button at the top right corner
+        self.dayCheatBtn = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.dayCheatBtn.setGeometry(QtCore.QRect(0, 58, 5, 5))  # 위치와 크기 설정
+        self.dayCheatBtn.setObjectName("dayCheatBtn")
         
         # Add speech balloon image
         self.speechBalloonImage = QtWidgets.QLabel(self.centralwidget)
