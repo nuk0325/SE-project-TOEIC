@@ -122,8 +122,8 @@ class PrepareEntireTestUI(object):
         self.label.setObjectName("label")
         self.comboBox = QtWidgets.QComboBox(parent=self.frame_3)
         self.comboBox.setGeometry(QtCore.QRect(110, 90, 131, 31))
-        self.comboBox.setStyleSheet("color: white;\n"
-"background: transparent;\n"
+        self.comboBox.setStyleSheet("color: black;\n"
+"background: white;\n"
 "border: 1px solid rgb(190, 190, 190);\n"
 "border-radius: 8px;")
         self.comboBox.setObjectName("comboBox")
