@@ -213,20 +213,12 @@ class DBManager:
                     self.cur.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
                             (user_id, unit_index, 1, ))
                     user.today_learned_unit += 1
-                    user.total_learned_unit += 12 #강아지 성장 치트
+                    user.total_learned_unit += 1 #강아지 성장
                     self.update(user)
             else:
                 print(True)
         else:
             print("No record found") 
-        
-        
-
-        
-
-
-        
-        self.closeDB()
 
     def selectNumAndWord(self):
         try:
@@ -273,7 +265,7 @@ class DBManager:
         try:
             self.cur.execute("SELECT * FROM words_db WHERE word=?", (word,))
             user_data = self.cur.fetchone()
-
+            
             if user_data:
                 print('중복단어있음')
                 return True

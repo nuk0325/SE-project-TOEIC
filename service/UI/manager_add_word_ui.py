@@ -144,10 +144,36 @@ class ManagerAddWordUI(object):
 ");\n"
 "")
         self.txt3.setObjectName("txt3")
+
+        #예문 뜻 추가
+        self.txt4 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.txt4.setGeometry(QtCore.QRect(20, 380, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("맑은 고딕")
+        font.setPointSize(9)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(87)
+        self.txt4.setFont(font)
+        self.txt4.setStyleSheet("font: 700 9pt \"맑은 고딕\";\n"
+"color: rgb(0, 0, 0\n"
+");\n"
+"")
+        self.txt4.setObjectName("txt4")
+
+
         self.sentence = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.sentence.setGeometry(QtCore.QRect(70, 300, 261, 161))
+        self.sentence.setGeometry(QtCore.QRect(70, 300, 261, 70))
         self.sentence.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.sentence.setObjectName("sentence")
+        
+        #예문 뜻 추가
+        self.sentenceMean = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.sentenceMean.setGeometry(QtCore.QRect(70, 390, 261, 70))
+        self.sentenceMean.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.sentenceMean.setObjectName("sentenceMean")
+
+        
         self.frame = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(20, 110, 320, 4))
         self.frame.setStyleSheet("background-color:rgb(180 ,180 ,180 )")
@@ -174,6 +200,10 @@ class ManagerAddWordUI(object):
         self.retranslateUi(AddByManagerPage)
         QtCore.QMetaObject.connectSlotsByName(AddByManagerPage)
 
+        self.meaning.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 뜻 입력 칸 자동 줄바꿈 설정
+        self.sentence.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 예문 입력 칸 자동 줄바꿈 설정
+        self.sentenceMean.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 예문 뜻 입력 칸 자동 줄바꿈 설정
+
     def retranslateUi(self, AddByManagerPage):
         _translate = QtCore.QCoreApplication.translate
         AddByManagerPage.setWindowTitle(_translate("AddByManagerPage", "MainWindow"))
@@ -187,6 +217,8 @@ class ManagerAddWordUI(object):
         self.txt1.setText(_translate("AddByManagerPage", "단어"))
         self.txt2.setText(_translate("AddByManagerPage", "의미"))
         self.txt3.setText(_translate("AddByManagerPage", "예문"))
+        #예문 뜻 추가
+        self.txt4.setText(_translate("UpdateByManagerPage", "예문 뜻"))
         self.unitName.setText(_translate("AddByManagerPage", ""))
 
     def setUnitName(self, unitNum):

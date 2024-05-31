@@ -10,10 +10,15 @@ class ManagerAddWord(QMainWindow):
         super().__init__()
         self.ui = ManagerAddWordUI()
         self.ui.setupUi(self)
-
+        '''self.ui.meaning.setWordWrap(True)  # 뜻 입력 칸 자동 줄바꿈 설정
+        self.ui.sentence.setWordWrap(True)  # 예문 입력 칸 자동 줄바꿈 설정
+        self.ui.sentenceMean.setWordWrap(True)  # 예문 뜻 입력 칸 자동 줄바꿈 설정
+        '''
         self.newWord = ""
         self.newMeaning = ""
         self.newSentence = ""
+        #에문뜻추가
+        self.newSentenceMean = ""
         self.checkWord = False
 
         self.line_num = line_num
@@ -32,16 +37,19 @@ class ManagerAddWord(QMainWindow):
         self.ui.checkWordBtn.clicked.connect(self.check_word_in_db)
 
     def some_method(self):
-        unitNum = self.line_num % 150 // 10
+        unitNum = self.line_num % 150 // 10+1
         self.ui.setUnitName(unitNum)
 
     def toManagerUnitWordNotePage(self):
-        self.goto.gotoManagerUnitWordNote
+        self.goto.gotoManagerUnitWordNote(self.partNum, self.unitNum, self.user)
+        self.close()
 
     def AddWord(self):
         self.newWord = self.ui.word.text()
         self.newMeaning = self.ui.meaning.text()
         self.newSentence = self.ui.sentence.text()
+        #예문뜻
+        self.newSentenceMean = self.ui.sentenceMean.text()
 
         if len(self.newWord) < 1:
             QMessageBox.information(self, "입력오류", "단어를 입력해주세요")
@@ -51,14 +59,18 @@ class ManagerAddWord(QMainWindow):
             
         if len(self.newSentence) < 1:
             QMessageBox.information(self, "입력오류", "예문을 입력해주세요")
-
+        #예문뜻
+        if len(self.newSentenceMean) < 1:
+            QMessageBox.information(self, "입력오류", "예문 뜻을 입력해주세요")
+            return
+        
         if self.checkWord != self.newWord:
             self.checkWord = False
 
         if self.checkWord == False:
             QMessageBox.information(self, "입력오류", "단어 중복 검사를 확인해주세요")
 
-        if self.db_manager.update_word_and_remove_wro_fav(self.newWord, self.newMeaning, self.newSentence, '', self.line_num):
+        if self.db_manager.update_word_and_remove_wro_fav(self.newWord, self.newMeaning, self.newSentence, self.newSentenceMean, self.line_num):
             print("수정 완료")
             self.toManagerUnitWordNotePage
 

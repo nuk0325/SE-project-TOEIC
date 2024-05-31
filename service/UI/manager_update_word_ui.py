@@ -62,7 +62,7 @@ class ManagerUpdateWordUI(object):
         self.checkWordBtn.setDefault(False)
         self.checkWordBtn.setFlat(False)
         self.checkWordBtn.setObjectName("checkWordBtn")
-        self.word = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.word = QtWidgets.QPlainTextEdit(parent=self.centralwidget)
         self.word.setGeometry(QtCore.QRect(70, 180, 181, 41))
         self.word.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.word.setObjectName("word")
@@ -126,10 +126,11 @@ class ManagerUpdateWordUI(object):
 ");\n"
 "")
         self.txt2.setObjectName("txt2")
-        self.meaning = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.meaning = QtWidgets.QPlainTextEdit(parent=self.centralwidget)
         self.meaning.setGeometry(QtCore.QRect(70, 240, 261, 41))
         self.meaning.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.meaning.setObjectName("meaning")
+
         self.txt3 = QtWidgets.QLabel(parent=self.centralwidget)
         self.txt3.setGeometry(QtCore.QRect(20, 300, 41, 41))
         font = QtGui.QFont()
@@ -144,10 +145,35 @@ class ManagerUpdateWordUI(object):
 ");\n"
 "")
         self.txt3.setObjectName("txt3")
-        self.sentence = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.sentence.setGeometry(QtCore.QRect(70, 300, 261, 161))
+
+        #예문 뜻 추가
+        self.txt4 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.txt4.setGeometry(QtCore.QRect(20, 380, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("맑은 고딕")
+        font.setPointSize(9)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(87)
+        self.txt4.setFont(font)
+        self.txt4.setStyleSheet("font: 700 9pt \"맑은 고딕\";\n"
+"color: rgb(0, 0, 0\n"
+");\n"
+"")
+        self.txt4.setObjectName("txt4")
+
+
+        self.sentence = QtWidgets.QPlainTextEdit(parent=self.centralwidget)
+        self.sentence.setGeometry(QtCore.QRect(70, 300, 261, 70))
         self.sentence.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.sentence.setObjectName("sentence")
+
+        #예문 뜻 추가
+        self.sentenceMean = QtWidgets.QPlainTextEdit(parent=self.centralwidget)
+        self.sentenceMean.setGeometry(QtCore.QRect(70, 390, 261, 70))
+        self.sentenceMean.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.sentenceMean.setObjectName("sentenceMean")
+
         self.frame = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(20, 110, 320, 4))
         self.frame.setStyleSheet("background-color:rgb(180 ,180 ,180 )")
@@ -174,6 +200,10 @@ class ManagerUpdateWordUI(object):
         self.retranslateUi(UpdateByManagerPage)
         QtCore.QMetaObject.connectSlotsByName(UpdateByManagerPage)
 
+        self.meaning.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 뜻 입력 칸 자동 줄바꿈 설정
+        self.sentence.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 예문 입력 칸 자동 줄바꿈 설정
+        self.sentenceMean.setWordWrapMode(QtGui.QTextOption.WrapMode.WordWrap)  # 예문 뜻 입력 칸 자동 줄바꿈 설정
+
     def retranslateUi(self, UpdateByManagerPage):
         _translate = QtCore.QCoreApplication.translate
         UpdateByManagerPage.setWindowTitle(_translate("UpdateByManagerPage", "MainWindow"))
@@ -187,17 +217,22 @@ class ManagerUpdateWordUI(object):
         self.txt1.setText(_translate("UpdateByManagerPage", "단어"))
         self.txt2.setText(_translate("UpdateByManagerPage", "의미"))
         self.txt3.setText(_translate("UpdateByManagerPage", "예문"))
+        #예문 뜻 추가
+        self.txt4.setText(_translate("UpdateByManagerPage", "예문 뜻"))
         self.unitName.setText(_translate("UpdateByManagerPage", ""))
 
     def setUnitName(self, unitNum):
         _translate = QtCore.QCoreApplication.translate
         unit_text = f"Unit {unitNum}"
         self.unitName.setText(_translate("UpdateByManagerPage", unit_text))
+        
 
-    def setDefaultInput(self, word, meaning, sentence):
+        #예문 뜻 추가
+    def setDefaultInput(self, word, meaning, sentence, sentenceMean):
         self.word.setText(word)
         self.meaning.setText(meaning)
         self.sentence.setText(sentence)
+        self.sentenceMean.setText(sentenceMean)
 
         
 if __name__ == "__main__":

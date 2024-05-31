@@ -32,10 +32,17 @@ class Home(QMainWindow):
         self.ui.studyHelpBtn.clicked.connect(self.showStudyHelp)
         self.ui.totalTestHelpBtn.clicked.connect(self.showTestHelp)
         self.ui.myPageHelpBtn.clicked.connect(self.showMypageHelp)
-        
+        self.ui.cheatBtn.clicked.connect(self.cheet)
 
     def runIfOpenHome(self):
         self.checkDayChange()
+
+    def cheet(self):
+        self.user.today_learned_unit +=1
+        self.user.total_learned_unit +=1
+        self.printDogImage(int(self.user.total_learned_unit/24) + 1)
+        self.printDogProgressGage()
+        self.printGoalProgressGage()
 
 
     def checkDayChange(self):  
