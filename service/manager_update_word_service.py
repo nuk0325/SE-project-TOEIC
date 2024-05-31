@@ -21,6 +21,7 @@ class ManagerUpdateWord(QMainWindow):
         #에문뜻추가
         self.newSentenceMean = ""
         self.checkWord = False
+        self._recievedWord = ""
 
         self.line_num = line_num
         self.partNum = partNum
@@ -52,11 +53,11 @@ class ManagerUpdateWord(QMainWindow):
         self.close()
 
     def updateWord(self):
-        self.newWord = self.ui.word.text()
-        self.newMeaning = self.ui.meaning.text()
-        self.newSentence = self.ui.sentence.text()
+        self.newWord = self.ui.word.toPlainText()
+        self.newMeaning = self.ui.meaning.toPlainText()
+        self.newSentence = self.ui.sentence.toPlainText()
         #예문뜻
-        self.newSentenceMean = self.ui.sentenceMean.text()
+        self.newSentenceMean = self.ui.sentenceMean.toPlainText()
 
         if len(self.newWord) < 1:
             QMessageBox.information(self, "입력오류", "단어를 입력해주세요")
@@ -73,7 +74,7 @@ class ManagerUpdateWord(QMainWindow):
             QMessageBox.information(self, "입력오류", "예문 뜻을 입력해주세요")
             return
 
-        if self.checkWord != self.newWord:
+        if self._recievedWord != self.newWord:
             self.checkWord = False
 
         if self.checkWord == False:
@@ -89,14 +90,15 @@ class ManagerUpdateWord(QMainWindow):
         self.close()
 
     def check_word_in_db(self):
-        self.newWord = self.ui.word.text()
+        self.newWord = self.ui.word.toPlainText().strip()
         if len(self.newWord) < 1:
             QMessageBox.information(self, "단어 중복 검사 결과 : ", "단어를 입력해주세요")
             return
         success = self.db_manager.checkEqualWord(self.newWord)
-        if not success:
+        if success:
             self.checkWord = False
             QMessageBox.information(self, "단어 중복검사 결과", "단어를 수정할 수 없습니다.")
         else:
             self.checkWord = True
+            self._recievedWord = self.newWord
             QMessageBox.information(self, "단어 중복검사 결과", "수정 가능한 단어입니다.")

@@ -22,6 +22,10 @@ class UnitWordNote(WordNote, QMainWindow) : # WordNote를 상속받은 유닛 �
         partNum = part
         partName = "Part" + str(partNum)
         return partName
+    
+    def _makeLabel(self, unit) :
+        unitName = "Unit" + ' ' + str(unit)
+        return unitName
 
     def _makeWordIdxList(self, part, unit) :
         idx = (part-1) * 150 + (unit-1) * 10
