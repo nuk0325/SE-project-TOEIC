@@ -1,10 +1,11 @@
-from service.word_note import WordNote
+from word_note import WordNote
 from goto_service import Goto
 
 class WrongNote(WordNote) :
     def __init__(self,user) :
         self.user = user
         self._titleName = "오답노트"
+        self._label = self._makeLabel() # 뜻 전체 보기 왼쪽에 있는 label
         self._testName = "오답노트 테스트 시작"
         self._testChoice = False
         self.db = self._makeDBobj()

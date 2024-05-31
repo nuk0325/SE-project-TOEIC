@@ -108,9 +108,28 @@ def setAllTable(user_id):
         conn.commit()
     
 
+def deleteALLTable(cur):
+    # 모든 테이블에서 모든 데이터 삭제
+    delete_Table(cur, "user")
+    #delete_Table("words_db")
+    delete_Table(cur, "wro_fav")
+    delete_Table(cur, "unit")
+    delete_Table(cur, "day_time")
+
+def delete_Table(cur, table):
+    # 테이블에서 모든 데이터 삭제
+    cur.execute(f'DELETE FROM {table}')
+    conn.commit()
+
+
 if __name__ == "__main__":
     conn = sqlite3.connect('word.db')
     cur = conn.cursor()
+
+
+    deleteALLTable(cur)
+   
+
     # 유저 삭제
     delete_User("taehyen")
     delete_User("sunwook")
@@ -135,12 +154,12 @@ if __name__ == "__main__":
     #유저추가
     add_user(cur, 'sunwook', '1234', '선욱', 10, 1, '2024-05-27', 6, 80)
     add_user(cur, 'taehyen', '1234', '태현', 10, 1, '2024-05-27', 6, 80)
-    add_user(cur, "justID", "justPassword", "justNickname", 10, 1, '2024-05-27', 6, 80)
+    add_user(cur, "qwer", "qwer", "qwer", 10, 1, '2024-05-27', 6, 80)
     
     #유저의 오답,즐겨찾기 1200개 단어, unit테이블 추가
     setAllTable('sunwook')
     setAllTable('taehyen')
-    setAllTable('justID')
+    setAllTable('qwer')
 
     #특정 유닛 클리어 할당
     updateUnitTable('sunwook', 0, 1)
