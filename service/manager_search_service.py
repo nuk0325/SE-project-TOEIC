@@ -67,16 +67,23 @@ class ManagerSearch(QMainWindow):
         button = self.ui.createWordButton(part, unit, word_index[1])
         button.show()
         # 클릭 이벤트에 연결
-        button.clicked.connect(lambda num=word_index: self.show_word_num(num))
+        print(f"Adding button for word_index: {word_index}")
+        button.clicked.connect(self.create_show_word_num_lambda(word_index[0]))
 
+    def create_show_word_num_lambda(self, word_index):
+        return lambda: self.show_word_num(word_index)
+    
     def connect_word_buttons(self, word_indices):
         for word_index in word_indices:
             self.add_word_button(word_index)
 
     def show_word_num(self, word_index):
-        unitNum = word_index % 120 / 15 + 1
+        print(f"Button clicked with word_index: {word_index}")
+        partNum = word_index // 150 + 1
+        unitNum = word_index % 150 //10 + 1
         print(unitNum)
-        #self.goto.uinit(unitNum)
+        self.goto.gotoManagerUnitWordNote(partNum, unitNum, self.user)
+        self.close()
 
     def find_word_indices(self, word):
         reader = self.dataManager.selectNumAndWord()
