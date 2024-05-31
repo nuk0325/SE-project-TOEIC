@@ -62,7 +62,7 @@ class ManagerUnitUI(object):
         self.home_button.setObjectName(u"home_button")
         sizePolicy.setHeightForWidth(self.home_button.sizePolicy().hasHeightForWidth())
         self.home_button.setSizePolicy(sizePolicy)
-
+        self.home_button.setGeometry(QtCore.QRect(290, 0, 70, 60))
         self.horizontalLayout.addWidget(self.home_button)
 
         # Add buttons to scroll area
