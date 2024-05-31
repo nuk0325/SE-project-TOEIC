@@ -131,8 +131,11 @@ class Goto():
     def gotoBookmarkNoteWrongNote(self):
         print("go to Bookmark Note Wrong Note Page")
 
-    def gotoManagerPart(self):
+    def gotoManagerPart(self, user):
         print("go to Manager Part Page")
+        from manager_part_service import ManagerPart
+        self.window = ManagerPart(user)
+        self.window.show()
 
     def gotoManagerUnit(self, partNum, user):
         print("go to Manager Unit Page")
@@ -140,11 +143,24 @@ class Goto():
         self.window = ManagerUnit(partNum, user)
         self.window.show()
 
-    def gotoManagerUnitWordNote(self):
+    def gotoUnitManage(self, partNum, unitNum, user):
         print("go to Manager Unit Word Note Page")
+        from UnitManage import UnitManage
+        # received_word_list = [1,3,5,7,8] # 일단 리스트를 준 상태로 연결
+        UnitManage(user, partNum, unitNum)
 
     def gotoManagerAddWord(self):
         print("go to Manager Add Word Page")
+        line_num = 10  # Example line number to initialize the service
+        from update_by_manager_service import UpdateByManagerService
+        window = UpdateByManagerService(line_num)
+        window.show()
 
-    def gotoMangerSearch(self):
+    def gotoManagerUpdateWord(self,line_num):
+        print("go to Manager Add Word Page")
+        from update_by_manager_service import UpdateByManagerService
+        window = UpdateByManagerService(line_num)
+        window.show()
+
+    def gotoMangerSearch(self, user):
         print("gotoMangerSearch")

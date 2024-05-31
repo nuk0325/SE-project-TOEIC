@@ -103,7 +103,6 @@ class ManagerPartUI(object):
                 part_unit_num.setObjectName(f"part{i * 2 + j + 1}_unit_num")
                 part_unit_num.setEnabled(True)
                 part_unit_num.setGeometry(QtCore.QRect(35, 70, 101, 20))
-                #part_unit_num.setText(f"         {unitNumberList[i * 2 + j]} / 15")
                 part_unit_num.setStyleSheet(u"background-color: transparent")
 
                 # Add to list for later access

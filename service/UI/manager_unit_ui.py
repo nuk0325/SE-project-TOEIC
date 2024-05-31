@@ -1,19 +1,8 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'Manager_unit_2PkJpPq.ui'
-##
-## Created by: Qt Manager Interface Compiler version 5.15.2
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QMessageBox, QPushButton, QApplication, QWidget, QScrollArea
 
-
 class ManagerUnitUI(object):
-    def setupUi(self, ManagerUnit, unitDoneList):
+    def setupUi(self, ManagerUnit):
         self.parent = ManagerUnit
 
         if not ManagerUnit.objectName():
@@ -88,11 +77,7 @@ class ManagerUnitUI(object):
             button1.setObjectName(f"unit{i}_button")
             button1.setFixedSize(150, 120)  # Set button size
 
-            # unit 학습 유무에 따라 unit 버튼 색깔 설정
-            if unitDoneList[i - 1] == 1:
-                button1.setStyleSheet(u"background-color: rgba(36, 174, 95, 0.8)")
-            else :
-                button1.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+            button1.setStyleSheet(u"background-color: rgb(190, 190, 190)")
             
             button1.setText(f"Unit {i}")
 
@@ -105,10 +90,7 @@ class ManagerUnitUI(object):
                 button2.setFixedSize(150, 120)  # Set button size
 
                 # unit 학습 유무에 따라 unit 버튼 색깔 설정
-                if unitDoneList[i] == 1:
-                    button2.setStyleSheet(u"background-color: rgba(36, 174, 95, 0.8)")
-                else :
-                    button2.setStyleSheet(u"background-color: rgb(190, 190, 190)")
+                button2.setStyleSheet(u"background-color: rgb(190, 190, 190)")
                 
                 button2.setText(f"Unit {i+1}")
 
@@ -177,7 +159,6 @@ class ManagerUnitUI(object):
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'.AppleSystemUIFont'; font-size:20pt; font-weight:696;\">Part1</span></p></body></html>", None))
         self.home_button.setText(QtCore.QCoreApplication.translate("ManagerUnitUI", u"홈", None))
 
-
 if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
@@ -186,4 +167,3 @@ if __name__ == "__main__":
     ui.setupUi(ManagerUnitUI)
     ManagerUnitUI.show()
     sys.exit(app.exec())
-

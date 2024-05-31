@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Manager_partabgeSB.ui'
+## Form generated from reading UI file 'user_partabgeSB.ui'
 ##
-## Created by: Qt Manager Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 5.15.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -12,16 +12,16 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QMessageBox, QPushButton, QApplication, QWidget
 
 
-class ManagerPartUI(object):
-    def setupUi(self, ManagerPartUI, unitNumberList):
-        self.parent = ManagerPartUI
+class UserPartUI(object):
+    def setupUi(self, UserPartUI, unitNumberList):
+        self.parent = UserPartUI
 
-        if not ManagerPartUI.objectName():
-            ManagerPartUI.setObjectName(u"ManagerPartUI")
+        if not UserPartUI.objectName():
+            UserPartUI.setObjectName(u"UserPartUI")
 
-        ManagerPartUI.resize(360, 600)
-        ManagerPartUI.setStyleSheet(u"background-color: rgb(255, 255, 255)")
-        self.centralwidget = QWidget(ManagerPartUI)
+        UserPartUI.resize(360, 600)
+        UserPartUI.setStyleSheet(u"background-color: rgb(255, 255, 255)")
+        self.centralwidget = QWidget(UserPartUI)
         self.centralwidget.setObjectName(u"centralwidget")
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setObjectName(u"frame_2")
@@ -121,25 +121,25 @@ class ManagerPartUI(object):
 
             self.verticalLayout.addWidget(frame)
 
-        ManagerPartUI.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(ManagerPartUI)
+        UserPartUI.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(UserPartUI)
         self.statusbar.setObjectName(u"statusbar")
-        ManagerPartUI.setStatusBar(self.statusbar)
+        UserPartUI.setStatusBar(self.statusbar)
 
-        self.retranslateUi(ManagerPartUI)
+        self.retranslateUi(UserPartUI)
 
-        QtCore.QMetaObject.connectSlotsByName(ManagerPartUI)
+        QtCore.QMetaObject.connectSlotsByName(UserPartUI)
     
     # setupUi
-    def retranslateUi(self, ManagerPartUI):
-        ManagerPartUI.setWindowTitle(QtCore.QCoreApplication.translate("ManagerPartUI", u"MainWindow", None))
-        self.back_button.setText(QtCore.QCoreApplication.translate("ManagerPartUI", u"\ub4a4\ub85c\uac00\uae30", None))
-        self.menu_name.setHtml(QtCore.QCoreApplication.translate("ManagerPartUI", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+    def retranslateUi(self, UserPartUI):
+        UserPartUI.setWindowTitle(QtCore.QCoreApplication.translate("UserPartUI", u"MainWindow", None))
+        self.back_button.setText(QtCore.QCoreApplication.translate("UserPartUI", u"\ub4a4\ub85c\uac00\uae30", None))
+        self.menu_name.setHtml(QtCore.QCoreApplication.translate("UserPartUI", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
         "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
         "p, li { white-space: pre-wrap; }\n"
         "</style></head><body style=\" font-family:'Gulim'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
         "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'.AppleSystemUIFont'; font-size:20pt; font-weight:696;\">\ud559\uc2b5\ud558\uae30</span></p></body></html>", None))
-        self.home_button.setText(QtCore.QCoreApplication.translate("ManagerPartUI", u"\ud648", None))
+        self.home_button.setText(QtCore.QCoreApplication.translate("UserPartUI", u"\ud648", None))
 
 
     def partButtonClicked(self, button):
@@ -168,8 +168,8 @@ class ManagerPartUI(object):
 # if __name__ == "__main__":
 #     import sys
 #     app = QtWidgets.QApplication(sys.argv)
-#     ManagerpartUI = QtWidgets.QMainWindow()
-#     ui = ManagerPartUI()
-#     ui.setupUi(ManagerpartUI, [1, 2, 3, 4, 5, 6, 7, 8])
-#     ManagerpartUI.show()
+#     UserpartUI = QtWidgets.QMainWindow()
+#     ui = UserPartUI()
+#     ui.setupUi(UserpartUI, [1, 2, 3, 4, 5, 6, 7, 8])
+#     UserpartUI.show()
 #     sys.exit(app.exec())

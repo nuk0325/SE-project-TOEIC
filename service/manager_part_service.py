@@ -5,12 +5,12 @@ from goto_service import Goto
 from DB_manager import DBManager
 from user import User
 class ManagerPart(QMainWindow):
-    def __init__(self):
+    def __init__(self, user):
         self.goto = Goto()
-
+        self.user = user
         super().__init__()
         self.ui = ManagerPartUI()
-        self.ui.setupUi(self, self.unitNumberList)
+        self.ui.setupUi(self)
 
         # 버튼 연결
         self.ui.back_button.clicked.connect(self.back_button_clicked)#뒤로가기

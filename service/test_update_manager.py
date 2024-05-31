@@ -14,7 +14,7 @@ if __name__ == "__main__":
     window.show()
     sys.exit(app.exec())
 
-'''# 파일: test_update_by_manager.py
+# 파일: test_update_by_manager.py
 
 from PyQt6.QtWidgets import QApplication
 import sys
@@ -31,3 +31,18 @@ if __name__ == "__main__":
     window.show()
     sys.exit(app.exec())
 
+'''
+
+
+from PyQt6.QtWidgets import QApplication
+import sys
+from update_by_manager_service import UpdateByManagerService
+from goto_service import Goto
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    
+    goto = Goto()
+    line_num = 10
+    goto.gotoManagerUpdateWord(line_num)
+    sys.exit(app.exec())
