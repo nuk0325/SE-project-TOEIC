@@ -175,21 +175,21 @@ if __name__ == "__main__":
 
     #유저추가
     add_user(cur, 'sunwook', '1234', '선욱', 3, 0, '2024-05-31', 0, 0)
-    add_user(cur, 'taehyun', '1234', '태현', 3, 0, '2024-05-31', 0, 24)
-    add_user(cur, 'HyonGyeom', '1234', '현겸', 3, 0, '2024-05-31', 0, 48)
-    add_user(cur, 'sunghun', '1234', '성훈', 3, 0, '2024-05-31', 0, 72)
-    add_user(cur, "minwoo", "1234", "민우", 3, 0, '2024-05-31', 0, 96)
-    add_user(cur, "qwer", "1234", "사용자", 3, 0, '2024-05-31', 0, 120)
+    # add_user(cur, 'taehyun', '1234', '태현', 3, 0, '2024-05-31', 0, 23)
+    # add_user(cur, 'HyonGyeom', '1234', '현겸', 3, 0, '2024-05-31', 0, 48)
+    # add_user(cur, 'sunghun', '1234', '성훈', 3, 0, '2024-05-31', 0, 72)
+    # add_user(cur, "minwoo", "1234", "민우", 3, 0, '2024-05-31', 0, 96)
+    # add_user(cur, "qwer", "1234", "사용자", 3, 0, '2024-05-31', 0, 120)
 
     add_user(cur, "admin", "1234", "관리자", 1, 1, '2024-05-31', 0, 0)
     
     #유저의 오답,즐겨찾기 1200개 단어, unit테이블 추가
     setAllTable('sunwook')
-    setAllTable('taehyun')
-    setAllTable('HyonGyeom')
-    setAllTable('sunghun')
-    setAllTable('minwoo')
-    setAllTable('qwer')
+    # setAllTable('taehyun')
+    # setAllTable('HyonGyeom')
+    # setAllTable('sunghun')
+    # setAllTable('minwoo')
+    # setAllTable('qwer')
 
 
     # #특정 유닛 클리어 할당
