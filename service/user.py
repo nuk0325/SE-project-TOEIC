@@ -1,5 +1,5 @@
 class User:
-    def __init__(self, userId, userPassword='', userNickname='사용자', userGoal=3, is_admin=0, last_date="2024-05-01", today_learned_unit=0, total_learned_unit=0):
+    def __init__(self, userId, userPassword='', userNickname='사용자', userGoal=3, is_admin=0, last_date=None, today_learned_unit=0, total_learned_unit=0):
         self.__userId = userId
         self.__userPassword = userPassword
         self.__userNickname = userNickname
@@ -86,8 +86,7 @@ class User:
         return user
 
     def toUserData(self):
-        user = User(self.userId, self.userPassword, self.userNickname, self.userGoal, self.is_admin, self.last_date, self.today_learned_unit, self.total_learned_unit)
-        return user
+        return (self.userId, self.userPassword, self.userNickname, self.userGoal, self.is_admin, self.last_date, self.today_learned_unit, self.total_learned_unit)
     
     def toUpdateUserEntity(user_id, user_data):
         return (user_id, user_data[0], user_data[1], user_data[2], user_data[3], user_data[4], user_data[5], user_data[6])

@@ -57,9 +57,9 @@ class DBManager:
             
             print(user_data + (user_id,))
             print(type(user_data + (user_id,)))
-            self.cur.execute("UPDATE user SET password=?, nickname=?, unit_count=?, is_admin=?, last_date=?, today_learned_unit=?, total_learned_unit=? WHERE id=?", user_data + (user_id,))
+            self.cur.execute("UPDATE user SET password=?, nickname=?, unit_count=?, is_admin=?, last_date=?, today_learned_unit=?, total_learned_unit=? WHERE id=?", user_data + (user_id, ))
             self.conn.commit()
-            self.cur.execute("SELECT * FROM user WHERE id=?", (user_id,))
+            self.cur.execute("SELECT * FROM user WHERE id=?", (user_id, ))
             user_data = self.cur.fetchone()
             #오류확인
             user = User.toUserEntity(user_data)
@@ -70,7 +70,7 @@ class DBManager:
 
     def delete(self, user_id):
         try:
-            self.cur.execute("DELETE FROM user WHERE id=?", (user_id,))
+            self.cur.execute("DELETE FROM user WHERE id=?", (user_id, ))
             self.conn.commit()
             return True, None  # Success
         except Exception as e:
@@ -79,7 +79,7 @@ class DBManager:
 
     def find_by_id(self, user_id):
         try:
-            self.cur.execute("SELECT * FROM user WHERE id=?", (user_id,))
+            self.cur.execute("SELECT * FROM user WHERE id=?", (user_id, ))
             user_data = self.cur.fetchone()
 
             if user_data:
@@ -94,7 +94,7 @@ class DBManager:
     def checkBookmark(self, user, idx) :
         user_id = user.userId
 
-        self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
+        self.cur.execute('''SELECT fav_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         result = self.cur.fetchone()
         if result :
             if result[0] == 1 :
@@ -105,7 +105,7 @@ class DBManager:
     def checkWrongWord(self, user, idx) :
         user_id = user.userId
 
-        self.cur.execute('''SELECT wro_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx))
+        self.cur.execute('''SELECT wro_is_right FROM wro_fav WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
         result = self.cur.fetchone()
         if result :
             if result[0] == 1 :
@@ -122,7 +122,7 @@ class DBManager:
         self.cur.execute('''UPDATE wro_fav SET wro_is_right = 1 WHERE user_id = ? AND line_num = ?''', (user_id, idx, ))
 
     def getWord(self, idx, option) :
-        self.cur.execute('''SELECT word, mean, sent FROM words_db WHERE line_num = ?''', (idx,))
+        self.cur.execute('''SELECT word, mean, sent, sent_mean FROM words_db WHERE line_num = ?''', (idx,))
         result = self.cur.fetchone()
         if result :
             if option == "word" :
@@ -131,6 +131,8 @@ class DBManager:
                 if result[1] : return result[1]
             elif option == "sentence" :
                 if result[2] : return result[2]
+            elif option == "sentMeaning" :
+                if result[3] : return result[3]
             else :
                 print("올바르지 않은 입력")
         
@@ -172,7 +174,7 @@ class DBManager:
         unitDoneList = []
 
         for i in range(unit_index, unit_index + 15, 1):
-            self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND unit_index = ?''', (user_id, i))
+            self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND unit_index = ?''', (user_id, i, ))
             unitDoneList.append(self.cur.fetchone()[0])
 
         return unitDoneList
@@ -184,7 +186,7 @@ class DBManager:
         s = start_idx * 15
         e = s + 15
 
-        self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND (unit_index >= ? AND unit_index < ?)''', (user_id, s, e))
+        self.cur.execute('''SELECT is_done FROM unit WHERE user_id = ? AND (unit_index >= ? AND unit_index < ?)''', (user_id, s, e, ))
         results = self.cur.fetchall()
 
         for result in results:
@@ -200,7 +202,7 @@ class DBManager:
         user_id = user.userId
         print(f"unit_index:{unit_index} 유닛 클리어")
         self.cur.execute('''INSERT OR REPLACE INTO unit (user_id, unit_index, is_done) VALUES (?, ?, ?)''', 
-                (user_id, unit_index, is_done))
+                (user_id, unit_index, is_done, ))
         
         user.today_learned_unit += 1
         self.update(user)

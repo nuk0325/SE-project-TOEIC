@@ -32,16 +32,23 @@ class LogInUI(object):
         self.password.setGeometry(QtCore.QRect(60, 360, 240, 40))
         self.password.setObjectName("password")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(90, 260, 191, 31))
+        self.label.setGeometry(QtCore.QRect(120, 265, 190, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(22)
         font.setBold(True)
         font.setItalic(False)
         self.label.setFont(font)
-        self.label.setStyleSheet("font: 700 22pt \"맑은 고딕\";\n"
-"")
+        self.label.setStyleSheet("font: 700 22pt;")
         self.label.setObjectName("label")
+
+        self.dogImage = QtWidgets.QLabel(self.centralwidget)
+        self.dogImage.setGeometry(QtCore.QRect(75, 70, 220, 180))
+        self.dogImage.setPixmap(QtGui.QPixmap(f"service/UI/image/dog_level5.png"))
+        self.dogImage.setObjectName("dogImage")
+        self.dogImage.setScaledContents(True)
+        self.dogImage.raise_()  # 이미지를 맨 앞으로 가져옴
+
         loginPage.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=loginPage)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 360, 33))
@@ -63,12 +70,3 @@ class LogInUI(object):
         self.password.setText(_translate("loginPage", "비밀번호"))
         self.label.setText(_translate("loginPage", "토익멍 기르기"))
 
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    loginPage = QtWidgets.QMainWindow()
-    ui = Ui_loginPage()
-    ui.setupUi(loginPage)
-    loginPage.show()
-    sys.exit(app.exec())

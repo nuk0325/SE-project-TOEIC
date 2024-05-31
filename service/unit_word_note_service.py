@@ -6,12 +6,12 @@ class UnitWordNote(WordNote, QMainWindow) : # WordNote를 상속받은 유닛 �
     def __init__(self, user, part, unit) :
         self.user = user
         self._titleName = self._getPartName(part)
+        self._label = self._makeLabel()
         self._testName = "복습 테스트 시작"
         self._testChoice = False
         self._wordIdxList = self._makeWordIdxList(part, unit) # index로 구성된 리스트
         self.db = self._makeDBobj()
         self._wordList = self._returnWordList()
-        # self._label = self._makeLabel()
 
         self.main()
 

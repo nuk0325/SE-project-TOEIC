@@ -1,11 +1,12 @@
-from word_note import WordNote
+from service.word_note import WordNote
 from goto_service import Goto
-from UI.word_note_ui import BookmarkUI
+from UI.word_note_ui import BookmarkNoteUI
 
 class BookmarkNote(WordNote) :
     def __init__(self, user) :
         self.user = user
         self._titleName = "즐겨찾기"
+        self._label = self._makeLabel() # 뜻 전체 보기 왼쪽에 있는 label
         self._testName = "즐겨찾기 테스트 시작"
         self._testChoice = False
         self.db = self._makeDBobj()
@@ -22,7 +23,7 @@ class BookmarkNote(WordNote) :
         testName = self._testName
         wordObjList = self._wordList
         #app = QApplication(sys.argv)
-        self.window = BookmarkUI(frameCount, noteLabel, testName, wordObjList, self) #WordNoteUI.py를 기반을 화면 구성
+        self.window = BookmarkNoteUI(frameCount, noteLabel, testName, wordObjList, self) #WordNoteUI.py를 기반을 화면 구성
         self.window.show()
         #sys.exit(app.exec())
     
