@@ -229,10 +229,10 @@ class ManagerUpdateWordUI(object):
 
         #예문 뜻 추가
     def setDefaultInput(self, word, meaning, sentence, sentenceMean):
-        self.word.setText(word)
-        self.meaning.setText(meaning)
-        self.sentence.setText(sentence)
-        self.sentenceMean.setText(sentenceMean)
+        self.word.setPlainText(word)
+        self.meaning.setPlainText(meaning)
+        self.sentence.setPlainText(sentence)
+        self.sentenceMean.setPlainText(sentenceMean)
 
         
 if __name__ == "__main__":
