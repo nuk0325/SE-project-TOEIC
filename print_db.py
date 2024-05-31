@@ -10,15 +10,15 @@ print("user 테이블:")
 for record in cur.fetchall():
     print(record)
 
-# # words_db 테이블의 모든 레코드 출력
-# cur.execute("SELECT * FROM words_db")
-# print("\nwords_db 테이블:")
-# i = 0
-# for record in cur.fetchall():
-#     print(record)
-#     i += 1
-#     if i > 170:
-#         break
+# words_db 테이블의 모든 레코드 출력
+cur.execute("SELECT * FROM words_db")
+print("\nwords_db 테이블:")
+i = 0
+for record in cur.fetchall():
+    print(record)
+    i += 1
+    if i > 170:
+        break
 
 # # favorite 테이블의 모든 레코드 출력
 # cur.execute("SELECT * FROM wro_fav")
