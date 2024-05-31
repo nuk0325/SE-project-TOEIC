@@ -14,12 +14,12 @@ from PyQt6.QtGui import QFont
 from PyQt6.QtWidgets import QMessageBox, QPushButton, QApplication, QWidget, QHBoxLayout, QScrollArea
 
 
-class UserUnitUI(object):
-    def setupUi(self, UserUnit, unitDoneList):
+class ManagerUnitUI(object):
+    def setupUi(self, UserUnit):
         self.parent = UserUnit
 
         if not UserUnit.objectName():
-            UserUnit.setObjectName(u"UserUnitUI")
+            UserUnit.setObjectName(u"ManagerUnitUI")
         UserUnit.resize(360, 600)
         UserUnit.setMinimumSize(QtCore.QSize(360, 600))
         UserUnit.setStyleSheet(u"background-color: rgb(255, 255, 255)")
@@ -42,7 +42,7 @@ class UserUnitUI(object):
 
         self.frame_2 = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(0, 0, 360, 60))
-        self.frame_2.setStyleSheet("background-color: rgba(253, 213, 51, 0.97);")
+        self.frame_2.setStyleSheet("background-color: rgb(64, 64, 64);")
 
         # self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         # self.frame_2.setObjectName(u"frame_2")
@@ -52,20 +52,23 @@ class UserUnitUI(object):
         
         self.back_button = QtWidgets.QPushButton("←")
         self.back_button.setFixedSize(QSize(50, 50))
+        self.back_button.setStyleSheet("color: rgb(255, 255, 255)")
 
         self.menu_name = QtWidgets.QLabel("테스트 시작하기")
         self.menu_name.setFont(QFont("Han Sans", 20))
         self.menu_name.setFixedSize(QSize(240, 50))
         self.menu_name.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.menu_name.setObjectName("menu_name_label")
+        self.menu_name.setStyleSheet("color: rgb(255, 255, 255)")
 
-        self.home_button = QtWidgets.QPushButton("🏠")
-        self.home_button.setFixedSize(QSize(50, 50))
+        self.menu_button = QtWidgets.QPushButton("메뉴")
+        self.menu_button.setFixedSize(QSize(50, 50))
+        self.menu_button.setStyleSheet("color: rgb(255, 255, 255)")
 
         top_layout = QHBoxLayout()
         top_layout.addWidget(self.back_button, alignment=Qt.AlignmentFlag.AlignLeft)
         top_layout.addWidget(self.menu_name)
-        top_layout.addWidget(self.home_button, alignment=Qt.AlignmentFlag.AlignRight)
+        top_layout.addWidget(self.menu_button, alignment=Qt.AlignmentFlag.AlignRight)
 
         self.frame_2.setLayout(top_layout)
         
@@ -114,13 +117,7 @@ class UserUnitUI(object):
             button1 = QPushButton(frame)
             button1.setObjectName(f"unit{i}_button")
             button1.setFixedSize(150, 120)  # Set button size
-
-            # unit 학습 유무에 따라 unit 버튼 색깔 설정
-            if unitDoneList[i - 1] == 1:
-                button1.setStyleSheet(u"background-color: rgba(36, 174, 95, 0.8)")
-            else :
-                button1.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-            
+            button1.setStyleSheet(u"background-color: rgb(190, 190, 190)")
             button1.setText(f"Unit {i}")
 
             frame_layout.addWidget(button1)
@@ -130,13 +127,7 @@ class UserUnitUI(object):
                 button2 = QPushButton(frame)
                 button2.setObjectName(f"unit{i+1}_button")
                 button2.setFixedSize(150, 120)  # Set button size
-
-                # unit 학습 유무에 따라 unit 버튼 색깔 설정
-                if unitDoneList[i] == 1:
-                    button2.setStyleSheet(u"background-color: rgba(36, 174, 95, 0.8)")
-                else :
-                    button2.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-                
+                button2.setStyleSheet(u"background-color: rgb(190, 190, 190)")
                 button2.setText(f"Unit {i+1}")
 
                 frame_layout.addWidget(button2)
@@ -187,12 +178,6 @@ class UserUnitUI(object):
             self.parent.unit15_button_clicked()
         else:
             print("잘못된 버튼 클릭")
-
-    def back_button_clicked(self):
-        print(f"뒤로가기를 눌렀습니다.")
-        
-    def home_button_clicked(self):
-        print(f"홈버튼을 눌렀습니다.")
 
     def retranslateUi(self, UserUnitUI):
         UserUnitUI.setWindowTitle(QtCore.QCoreApplication.translate("UserUnitUI", u"MainWindow", None))

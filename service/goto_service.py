@@ -110,14 +110,38 @@ class Goto():
         from after_test_word_note_service import AfterTestWordNote
         AfterTestWordNote(user, list1, list2, op1, op2)
 
-    def gotoManagerPart(self):
+    def gotoManagerPart(self, user):
         print("go to Manager Part Page")
+        from manager_part_service import ManagerPart
+        self.window = ManagerPart(user)
+        self.window.show()
 
-    def gotoManagerUnit(self):
+    def gotoManagerUnit(self, partNum, user):
         print("go to Manager Unit Page")
+        from manager_unit_service import ManagerUnit
+        self.window = ManagerUnit(partNum, user)
+        self.window.show()
 
-    def gotoManagerUnitWordNote(self):
+    def gotoManagerUnitWordNote(self, partNum, unitNum, user):
         print("go to Manager Unit Word Note Page")
+        from manager_unit_word_note_service import ManagerUnitWordNote
+        ManagerUnitWordNote(user, partNum, unitNum)
 
-    def gotoManagerAddWord(self):
+    def gotoManagerAddWord(self, line_num, partNum, unitNum, user):
         print("go to Manager Add Word Page")
+        from manager_add_word_service import ManagerAddWord
+        self.window = ManagerAddWord(line_num, partNum, unitNum, user)
+        self.window.show()
+
+    def gotoManagerSearch(self, user, option, partNum=None):
+        print("go to Manager Search Page")
+        from manager_search_service import ManagerSearch
+        self.window = ManagerSearch(user, option, partNum)
+        self.window.show()
+
+    def gotoManagerUpdateWord(self, line_num, partNum, unitNum, user):
+        print("go to Manager Update Word page")
+        from manager_update_word_service import ManagerUpdateWord
+        self.window = ManagerUpdateWord(line_num, partNum, unitNum, user)
+        self.window.show()
+

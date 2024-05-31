@@ -228,6 +228,85 @@ class DBManager:
         
         self.closeDB()
 
+    def selectNumAndWord(self):
+        try:
+            self.cur.execute("SELECT line_num, word FROM words_db")
+            rows = self.cur.fetchall()
+            return [list(row) for row in rows]  # 2차원 리스트로 변환
+        except sqlite3.Error as e:
+            print(f"Database error: {e}")
+            return []
+        except Exception as e:
+            print(f"Error: {e}")
+            return []
+        
+
+    #================================manager=====================================
+
+    def deleteWord(self, idx):
+        self.cur.execute('''UPDATE words_db SET word = NULL, mean = NULL, sent = NULL, sent_mean = NULL WHERE line_num = ?''', (idx,))
+        self.conn.commit()
+
+    #관리자페이지에서 단어수정 및 삭제하는 함수
+    def update_word_and_remove_wro_fav(self, word, mean, sent, sent_mean, line_num):
+        try:
+            # words_db 테이블 업데이트
+            self.cur.execute('''
+                UPDATE words_db
+                SET word = ?, mean = ?, sent = ?, sent_mean = ?
+                WHERE line_num = ?
+            ''', (word, mean, sent, sent_mean, line_num))
+
+            # wro_fav 테이블에서 해당 엔티티 삭제
+            self.cur.execute('''
+                DELETE FROM wro_fav
+                WHERE line_num = ?
+            ''', (line_num,))
+
+            self.conn.commit()
+            return True
+        except Exception as e:
+            print("Error:", e)
+            return False
+    
+    def checkEqualWord(self, word):
+        try:
+            self.cur.execute("SELECT * FROM words_db WHERE word=?", (word,))
+            user_data = self.cur.fetchone()
+
+            if user_data:
+                print('중복단어있음')
+                return True
+            else:
+                return None
+        except Exception as e:
+            print("Error:", e)
+            return None
+        
+    def findWordByLine_num(self, line_num):
+        try:
+            self.cur.execute("SELECT * FROM words_db WHERE line_num=?", (line_num,))
+            word_data = self.cur.fetchone()
+
+            if word_data:
+                return word_data
+            else:
+                return None
+        except Exception as e:
+            print("Error:", e)
+            return None
+
+    def selectNumAndWord(self):
+        try:
+            self.cur.execute("SELECT line_num, word FROM words_db")
+            rows = self.cur.fetchall()
+            return [list(row) for row in rows]  # 2차원 리스트로 변환
+        except sqlite3.Error as e:
+            print(f"Database error: {e}")
+            return []
+        except Exception as e:
+            print(f"Error: {e}")
+            return []
 
     def closeDB(self) :
         self.conn.commit()

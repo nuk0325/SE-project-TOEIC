@@ -43,7 +43,7 @@ class Test :
     def _reflectWrong(self) : #틀렸을 때, 오답노트에 추가
         self._wrongCount += 1
         self._wrongIdxList.append(self._wordIdxList[self._wordCount])
-        self.db.insertWrongWordIdxList(self.user, self._wordIdxList[self._wordCount])
+        self.db.insertWrongWordIdxList(self.user, self._wordIdxList[self._wordCount]
     
     def _dbClose(self) :
         self.db.closeDB()

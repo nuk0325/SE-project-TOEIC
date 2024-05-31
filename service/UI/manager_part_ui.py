@@ -14,12 +14,12 @@ from PyQt6.QtGui import QFont
 from PyQt6.QtWidgets import QMessageBox, QPushButton, QApplication, QWidget, QHBoxLayout
 
 
-class UserPartUI(object):
-    def setupUi(self, UserPartUI, unitNumberList):
+class ManagerPartUI(object):
+    def setupUi(self, UserPartUI):
         self.parent = UserPartUI
 
         if not UserPartUI.objectName():
-            UserPartUI.setObjectName(u"UserPartUI")
+            UserPartUI.setObjectName(u"ManagerPartUI")
 
         UserPartUI.resize(360, 600)
         UserPartUI.setStyleSheet(u"background-color: rgb(255, 255, 255)")
@@ -28,7 +28,7 @@ class UserPartUI(object):
 
         self.frame_2 = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(0, 0, 360, 60))
-        self.frame_2.setStyleSheet("background-color: rgba(253, 213, 51, 0.97)")
+        self.frame_2.setStyleSheet("background-color: rgb(64, 64, 64)")
         
         # self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         # self.frame_2.setObjectName(u"frame_2")
@@ -36,22 +36,24 @@ class UserPartUI(object):
         # self.frame_2.setStyleSheet(u"background-color: rgba(253, 213, 51, 0.97)")
         # self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         
-        self.back_button = QtWidgets.QPushButton("←")
-        self.back_button.setFixedSize(QSize(50, 50))
+        # self.back_button = QtWidgets.QPushButton("←")
+        # self.back_button.setFixedSize(QSize(50, 50))
 
-        self.menu_name = QtWidgets.QLabel("테스트 시작하기")
+        self.menu_name = QtWidgets.QLabel("단어 관리")
         self.menu_name.setFont(QFont("Han Sans", 20))
         self.menu_name.setFixedSize(QSize(240, 50))
         self.menu_name.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.menu_name.setObjectName("menu_name")
+        self.menu_name.setStyleSheet("color: rgb(255, 255, 255)")
 
-        self.home_button = QtWidgets.QPushButton("🏠")
-        self.home_button.setFixedSize(QSize(50, 50))
+        self.menu_button = QtWidgets.QPushButton("메뉴")
+        self.menu_button.setFixedSize(QSize(50, 50))
+        self.menu_button.setStyleSheet("color: rgb(255, 255, 255)")
 
         top_layout = QHBoxLayout()
-        top_layout.addWidget(self.back_button, alignment=Qt.AlignmentFlag.AlignLeft)
+        # top_layout.addWidget(self.back_button, alignment=Qt.AlignmentFlag.AlignLeft)
         top_layout.addWidget(self.menu_name)
-        top_layout.addWidget(self.home_button, alignment=Qt.AlignmentFlag.AlignRight)
+        top_layout.addWidget(self.menu_button, alignment=Qt.AlignmentFlag.AlignRight)
 
         self.frame_2.setLayout(top_layout)
 
@@ -125,25 +127,11 @@ class UserPartUI(object):
                 part_button = QPushButton(part_frame)
                 part_button.setObjectName(f"part{i * 2 + j + 1}_button")
                 part_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
+                part_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
                 part_button.setText(f"Part {i * 2 + j + 1}")
-
-                if unitNumberList[i * 2 + j] == 0:
-                    part_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-                elif unitNumberList[i * 2 + j] < 15:
-                    part_button.setStyleSheet(u"background-color: rgba(250, 220, 104, 0.7)")
-                else:
-                    part_button.setStyleSheet(u"background-color: rgba(36, 174, 95, 0.8)")
-                
-                part_unit_num = QtWidgets.QLabel(part_frame)
-                part_unit_num.setObjectName(f"part{i * 2 + j + 1}_unit_num")
-                part_unit_num.setEnabled(True)
-                part_unit_num.setGeometry(QtCore.QRect(35, 70, 101, 20))
-                part_unit_num.setText(f"         {unitNumberList[i * 2 + j]} / 15")
-                part_unit_num.setStyleSheet(u"background-color: transparent")
 
                 # Add to list for later access
                 self.buttons.append(part_button)
-                self.labels.append(part_unit_num)
 
                 part_button.clicked.connect(lambda _, b=part_button: self.partButtonClicked(b))
 
