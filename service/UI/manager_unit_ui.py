@@ -30,7 +30,7 @@ class ManagerUnitUI(object):
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setGeometry(QtCore.QRect(0, 0, 360, 60))
-        self.frame_2.setStyleSheet(u"background-color: rgba(253, 213, 51, 0.97)")
+        self.frame_2.setStyleSheet("background-color:rgba(50, 50, 50,1)")
         self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.horizontalLayoutWidget = QWidget(self.frame_2)
         self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
@@ -147,7 +147,7 @@ class ManagerUnitUI(object):
         print(f"뒤로가기를 눌렀습니다.")
         
     def home_button_clicked(self):
-        print(f"홈버튼을 눌렀습니다.")
+        print(f"메뉴버튼을 눌렀습니다.")
 
     def retranslateUi(self, ManagerUnitUI):
         ManagerUnitUI.setWindowTitle(QtCore.QCoreApplication.translate("ManagerUnitUI", u"MainWindow", None))
@@ -157,7 +157,7 @@ class ManagerUnitUI(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Gulim'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'.AppleSystemUIFont'; font-size:20pt; font-weight:696;\">Part1</span></p></body></html>", None))
-        self.home_button.setText(QtCore.QCoreApplication.translate("ManagerUnitUI", u"홈", None))
+        self.home_button.setText(QtCore.QCoreApplication.translate("ManagerUnitUI", u"메뉴", None))
 
 if __name__ == "__main__":
     import sys

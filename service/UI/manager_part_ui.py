@@ -133,7 +133,7 @@ class ManagerPartUI(object):
         "p, li { white-space: pre-wrap; }\n"
         "</style></head><body style=\" font-family:'Gulim'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
         "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'.AppleSystemUIFont'; font-size:20pt; font-weight:696;\">\ud559\uc2b5\ud558\uae30</span></p></body></html>", None))
-        self.home_button.setText(QtCore.QCoreApplication.translate("ManagerPartUI", u"\ud648", None))
+        self.home_button.setText(QtCore.QCoreApplication.translate("ManagerPartUI", u"메뉴", None))
 
 
     def partButtonClicked(self, button):
