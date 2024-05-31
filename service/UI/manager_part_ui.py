@@ -13,7 +13,7 @@ from PyQt6.QtWidgets import QMessageBox, QPushButton, QApplication, QWidget
 
 
 class ManagerPartUI(object):
-    def setupUi(self, ManagerPartUI, unitNumberList):
+    def setupUi(self, ManagerPartUI):
         self.parent = ManagerPartUI
 
         if not ManagerPartUI.objectName():
@@ -26,7 +26,7 @@ class ManagerPartUI(object):
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setGeometry(QtCore.QRect(0, 0, 360, 60))
-        self.frame_2.setStyleSheet(u"background-color: rgba(253, 213, 51, 0.97)")
+        self.frame_2.setStyleSheet("background-color:rgba(50, 50, 50,1)")
         self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.horizontalLayoutWidget = QWidget(self.frame_2)
         self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
@@ -97,18 +97,13 @@ class ManagerPartUI(object):
                 part_button.setGeometry(QtCore.QRect(10, 10, 150, 90))
                 part_button.setText(f"Part {i * 2 + j + 1}")
 
-                if unitNumberList[i * 2 + j] == 0:
-                    part_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
-                elif unitNumberList[i * 2 + j] < 15:
-                    part_button.setStyleSheet(u"background-color: rgba(250, 220, 104, 0.7)")
-                else:
-                    part_button.setStyleSheet(u"background-color: rgba(36, 174, 95, 0.8)")
+                part_button.setStyleSheet(u"background-color: rgb(190, 190, 190)")
                 
                 part_unit_num = QtWidgets.QLabel(part_frame)
                 part_unit_num.setObjectName(f"part{i * 2 + j + 1}_unit_num")
                 part_unit_num.setEnabled(True)
                 part_unit_num.setGeometry(QtCore.QRect(35, 70, 101, 20))
-                part_unit_num.setText(f"         {unitNumberList[i * 2 + j]} / 15")
+                #part_unit_num.setText(f"         {unitNumberList[i * 2 + j]} / 15")
                 part_unit_num.setStyleSheet(u"background-color: transparent")
 
                 # Add to list for later access

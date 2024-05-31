@@ -134,11 +134,17 @@ class Goto():
     def gotoManagerPart(self):
         print("go to Manager Part Page")
 
-    def gotoManagerUnit(self):
+    def gotoManagerUnit(self, partNum, user):
         print("go to Manager Unit Page")
+        from manager_unit_service import ManagerUnit
+        self.window = ManagerUnit(partNum, user)
+        self.window.show()
 
     def gotoManagerUnitWordNote(self):
         print("go to Manager Unit Word Note Page")
 
     def gotoManagerAddWord(self):
         print("go to Manager Add Word Page")
+
+    def gotoMangerSearch(self):
+        print("gotoMangerSearch")
