@@ -119,5 +119,8 @@ class Goto():
     def gotoManagerUnitWordNote(self):
         print("go to Manager Unit Word Note Page")
 
-    def gotoManagerAddWord(self):
+    def gotoManagerAddWord(idx):
         print("go to Manager Add Word Page")
+        from update_by_manager_service import UpdateByManagerService
+        window = UpdateByManagerService(idx)
+        window.show()

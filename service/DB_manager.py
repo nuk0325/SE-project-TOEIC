@@ -194,6 +194,23 @@ class DBManager:
 
         self.closeDB()
 
+    def findWordByLine_num(self, line_num):
+        try:
+            self.cur.execute("SELECT * FROM words_db WHERE line_num=?", (line_num,))
+            word_data = self.cur.fetchone()
+
+            if word_data:
+                return word_data
+            else:
+                return None
+        except Exception as e:
+            print("Error:", e)
+            return None
+
+    def deleteWord(self, idx):
+        self.cur.execute('''UPDATE words_db SET word = NULL, mean = NULL, sent = NULL, sent_mean = NULL WHERE line_num = ?''', (idx,))
+        self.conn.commit()
+
 
     def closeDB(self) :
         self.conn.commit()
