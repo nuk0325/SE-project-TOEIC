@@ -4,6 +4,7 @@ from DB_manager import DBManager
 from user import User
 from UI.join_membership_ui import JoinMembershipUI
 from goto_service import Goto
+from datetime import date
 
 class JoinMembership(QMainWindow):
     checkedId = ""
@@ -31,6 +32,8 @@ class JoinMembership(QMainWindow):
         self.newUserPassword = self.ui.password.text()
         self.newUserNickname = self.ui.nicname.text()
 
+        self.todayDate = date.today()
+
         if len(self.newUserId) < 1:
             QMessageBox.information(None, "회원가입 실패", "아이디를 입력해주세요")
             return
@@ -47,9 +50,9 @@ class JoinMembership(QMainWindow):
             return
         
         if len(self.newUserNickname)<1:
-            user = User(self.newUserId, self.newUserPassword)
+            user = User(self.newUserId, self.newUserPassword, last_date=self.todayDate)
         else:
-            user = User(self.newUserId, self.newUserPassword, self.newUserNickname)
+            user = User(self.newUserId, self.newUserPassword, self.newUserNickname, last_date=self.todayDate)
 
 
         self.dataManager.save(user)

@@ -20,6 +20,7 @@ class HomeUI(object):
         self.menuBase = QtWidgets.QWidget(parent=self.centralwidget)
         self.menuBase.setGeometry(QtCore.QRect(0, 0, 360, 58))
         self.menuBase.setStyleSheet("background-color:rgba(253, 213, 51, 0.97)")
+        
         self.menuBase.setObjectName("menuBase")
         self.titleName = QtWidgets.QLabel(parent=self.menuBase)
         self.titleName.setGeometry(QtCore.QRect(170, 10, 41, 41))
@@ -33,50 +34,85 @@ class HomeUI(object):
         self.titleName.setStyleSheet("font: 700 20pt \"맑은 고딕\";\n"
 "")
         self.titleName.setObjectName("titleName")
-        self.toStudyBtn = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.toStudyBtn.setGeometry(QtCore.QRect(60, 340, 240, 40))
-        self.toStudyBtn.setStyleSheet("background-color:rgb(255, 240, 129)")
-        self.toStudyBtn.setObjectName("toStudyBtn")
-        self.toTotalTestBtn = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.toTotalTestBtn.setGeometry(QtCore.QRect(60, 400, 240, 40))
-        self.toTotalTestBtn.setStyleSheet("background-color:rgb(255, 240, 129)")
-        self.toTotalTestBtn.setObjectName("toTotalTestBtn")
-        self.toMyPageBtn = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.toMyPageBtn.setGeometry(QtCore.QRect(60, 460, 240, 40))
-        self.toMyPageBtn.setStyleSheet("background-color:rgb(255, 240, 129)")
-        self.toMyPageBtn.setObjectName("toMyPageBtn")
+
         self.dogProgressBar = QtWidgets.QProgressBar(parent=self.centralwidget)
         self.dogProgressBar.setGeometry(QtCore.QRect(40, 280, 311, 16))
         self.dogProgressBar.setProperty("value", 24)
         self.dogProgressBar.setObjectName("dogProgressBar")
+
         self.dogProgressText = QtWidgets.QLabel(parent=self.centralwidget)
         self.dogProgressText.setGeometry(QtCore.QRect(20, 290, 320, 20))
         self.dogProgressText.setObjectName("dogProgressText")
         self.dogProgressText.setText("토익멍 성장까지    0/24")  #초기텍스트
         self.dogProgressText.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.dogProgressText.setWordWrap(True)
+
         self.goalProgressBar = QtWidgets.QProgressBar(parent=self.centralwidget)
         self.goalProgressBar.setGeometry(QtCore.QRect(40, 310, 311, 16))
         self.goalProgressBar.setProperty("value", 24)
         self.goalProgressBar.setObjectName("goalProgressBar")
+
         self.goalProgressText = QtWidgets.QLabel(parent=self.centralwidget)
         self.goalProgressText.setGeometry(QtCore.QRect(20, 320, 320, 20))
         self.goalProgressText.setObjectName("goalProgressText")
         self.goalProgressText.setText("금일 학습유닛    0/0")  #초기텍스트
         self.goalProgressText.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.goalProgressText.setWordWrap(True)
-        self.studyHelpBtn = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.studyHelpBtn.setGeometry(QtCore.QRect(310, 350, 31, 28))
-        self.studyHelpBtn.setStyleSheet("font: 6pt \"맑은 고딕\";")
+
+        self.frame_3 = QtWidgets.QFrame(parent=self.centralwidget)
+        self.frame_3.setGeometry(QtCore.QRect(0, 350, 361, 251))
+        self.frame_3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.frame_3.setStyleSheet("border: 0px;")
+
+        self.toStudyBtn = QtWidgets.QPushButton(parent=self.frame_3)
+        self.toStudyBtn.setGeometry(QtCore.QRect(50, 10, 241, 51))
+        self.toStudyBtn.setStyleSheet("background-color:rgb(255, 230, 130)")
+        self.toStudyBtn.setObjectName("toStudyBtn")
+
+        self.toTotalTestBtn = QtWidgets.QPushButton(parent=self.frame_3)
+        self.toTotalTestBtn.setGeometry(QtCore.QRect(50, 80, 241, 51))
+        self.toTotalTestBtn.setStyleSheet("background-color:rgb(255, 230, 130)")
+        self.toTotalTestBtn.setObjectName("toTotalTestBtn")
+
+        self.toMyPageBtn = QtWidgets.QPushButton(parent=self.frame_3)
+        self.toMyPageBtn.setGeometry(QtCore.QRect(50, 150, 241, 51))
+        self.toMyPageBtn.setStyleSheet("background-color:rgb(255, 230, 130)")
+        self.toMyPageBtn.setObjectName("toMyPageBtn")
+
+        self.studyHelpBtn = QtWidgets.QPushButton(parent=self.frame_3)
         self.studyHelpBtn.setObjectName("studyHelpBtn")
-        self.totalTestHelpBtn = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.totalTestHelpBtn.setGeometry(QtCore.QRect(310, 410, 31, 28))
-        self.totalTestHelpBtn.setStyleSheet("font: 6pt \"맑은 고딕\";")
+        self.studyHelpBtn.setGeometry(QtCore.QRect(300, 30, 20, 20))
+        self.studyHelpBtn.setMinimumSize(QtCore.QSize(20, 20))
+        self.studyHelpBtn.setMaximumSize(QtCore.QSize(20, 20))
+        self.studyHelpBtn.setStyleSheet("color: white;\n"
+"background-color: black;\n"
+"width: 20px;\n"
+"height: 20px;\n"
+"border-radius: 10px;")
+
+        self.totalTestHelpBtn = QtWidgets.QPushButton(parent=self.frame_3)
         self.totalTestHelpBtn.setObjectName("totalTestHelpBtn")
-        self.myPageHelpBtn = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.myPageHelpBtn.setGeometry(QtCore.QRect(310, 470, 31, 28))
-        self.myPageHelpBtn.setStyleSheet("font: 6pt \"맑은 고딕\";")
+        self.totalTestHelpBtn.setGeometry(QtCore.QRect(300, 100, 20, 20))
+        self.totalTestHelpBtn.setMinimumSize(QtCore.QSize(20, 20))
+        self.totalTestHelpBtn.setMaximumSize(QtCore.QSize(20, 20))
+        self.totalTestHelpBtn.setStyleSheet("color: white;\n"
+"background-color: black;\n"
+"width: 20px;\n"
+"height: 20px;\n"
+"border-radius: 10px;")
+
+        self.myPageHelpBtn = QtWidgets.QPushButton(parent=self.frame_3)
         self.myPageHelpBtn.setObjectName("myPageHelpBtn")
+        self.myPageHelpBtn.setGeometry(QtCore.QRect(300, 170, 20, 20))
+        self.myPageHelpBtn.setMinimumSize(QtCore.QSize(20, 20))
+        self.myPageHelpBtn.setMaximumSize(QtCore.QSize(20, 20))
+        self.myPageHelpBtn.setStyleSheet("color: white;\n"
+"background-color: black;\n"
+"width: 20px;\n"
+"height: 20px;\n"
+"border-radius: 10px;")
         
         # Add cheat button at the top right corner
         self.cheatBtn = QtWidgets.QPushButton(parent=self.centralwidget)
@@ -126,9 +162,9 @@ class HomeUI(object):
         self.toStudyBtn.setText(_translate("homePage", "학습하기"))
         self.toTotalTestBtn.setText(_translate("homePage", "테스트 시작하기"))
         self.toMyPageBtn.setText(_translate("homePage", "마이페이지"))
-        self.studyHelpBtn.setText(_translate("homePage", "도움말"))
-        self.totalTestHelpBtn.setText(_translate("homePage", "도움말"))
-        self.myPageHelpBtn.setText(_translate("homePage", "도움말"))
+        self.studyHelpBtn.setText(_translate("homePage", "?"))
+        self.totalTestHelpBtn.setText(_translate("homePage", "?"))
+        self.myPageHelpBtn.setText(_translate("homePage", "?"))
         
     def setDogImageBasedOnLevel(self, dog_level):
         base_width = 100
